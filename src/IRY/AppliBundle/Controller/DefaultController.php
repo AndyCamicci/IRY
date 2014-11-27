@@ -30,6 +30,7 @@ class DefaultController extends Controller
 
     public function testAction()
     {
-    	echo "coucou";exit();
+    	echo "coucou";
+        exit();
     }
 }
