@@ -1,0 +1,17 @@
+IRY\AppliBundle\Entity\Helicopter:
+    type: entity
+    table: Helicopter
+    repositoryClass: IRY\AppliBundle\Entity\HelicopterRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: false
+    lifecycleCallbacks: {  }

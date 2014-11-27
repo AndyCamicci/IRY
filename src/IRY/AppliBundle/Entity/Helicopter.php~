@@ -1,0 +1,65 @@
+<?php
+
+namespace IRY\AppliBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+class Helicopter {
+	private $id;
+	private $name;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Helicopter
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set theme
+     *
+     * @param string $theme
+     * @return Helicopter
+     */
+    public function setTheme($theme)
+    {
+        $this->theme = $theme;
+
+        return $this;
+    }
+
+    /**
+     * Get theme
+     *
+     * @return string 
+     */
+    public function getTheme()
+    {
+        return $this->theme;
+    }
+}

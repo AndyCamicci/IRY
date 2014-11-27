@@ -1,0 +1,7 @@
+parameters:
+#    iry_appli.example.class: IRY\AppliBundle\Example
+
+services:
+#    iry_appli.example:
+#        class: %iry_appli.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
