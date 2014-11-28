@@ -1,0 +1,20 @@
+IRY\AppliBundle\Entity\Theme:
+    type: entity
+    table: Theme
+    repositoryClass: IRY\AppliBundle\Entity\ThemeRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+    manyToOne:
+        helicopter:
+            targetEntity: Helicopter
+            inversedBy: themes
+            joinColumn:
+                name: helicopter_id
+                referencedColumnName: id

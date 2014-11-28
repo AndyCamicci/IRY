@@ -9,10 +9,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-    	$list = array();
-
-    	$em = $this->getDoctrine()->getManager();
-
     	/*for ($i=0; $i < 10; $i++) { 
     		$heli = new Helicopter();
     		$heli->setName('AS350 ' . $i);
@@ -20,18 +16,16 @@ class DefaultController extends Controller
 	    	$em->persist($heli);
     	}
         $em->flush();*/
-    	
-        $list = $em->getRepository("IRYAppliBundle:Helicopter")->findOneBy(array("name" => "AS350"));
 
-    	var_dump($list);
-    	exit();
-        // return $this->render('IRYAppliBundle:Default:index.html.twig', array('list' => $list));
+        return $this->render('IRYAppliBundle:Default:index.html.twig');
     }
 
-    public function testAction()
+    public function homeAction()
     {
-    	echo "coucou";
-
-        exit();
+        $em = $this->getDoctrine()->getManager(); // On récupère l'Entity Manager
+        $repo = $em->getRepository("IRYAppliBundle:Helicopter"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
+        $listeHelicopteres = $repo->findAll();
+        
+        return $this->render('IRYAppliBundle:Default:home.html.twig', array("data" => $listeHelicopteres));
     }
 }

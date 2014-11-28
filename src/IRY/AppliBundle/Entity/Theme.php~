@@ -1,0 +1,10 @@
+<?php
+
+namespace IRY\AppliBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+class Theme {
+    private $id;
+    private $name;
+    private $helicopter;
+}

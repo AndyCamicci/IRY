@@ -1,6 +1,6 @@
 iry_appli_homepage:
     path:     /hello/
     defaults: { _controller: IRYAppliBundle:Default:index }
-test:
-    path:   /monurl/
-    defaults: { _controller: IRYAppliBundle:Default:test }
+ity_appli_home:
+    path:   /home
+    defaults: {_controller: IRYAppliBundle:Default:home}
