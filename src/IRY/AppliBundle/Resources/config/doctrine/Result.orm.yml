@@ -1,0 +1,36 @@
+IRY\AppliBundle\Entity\Result:
+    type: entity
+    table: Result
+    repositoryClass: IRY\AppliBundle\Entity\ResultRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        error:
+            type: integer
+        isFavorite:
+            type: boolean
+        state:
+            type: string
+            length: 255
+    manyToOne:
+        pilot: #le champ de l'entité Course
+            targetEntity: Pilot #L'entité cible
+            inversedBy: result #le champ dans l'entité cible
+            joinColumn:
+                name: pilot_id #colonne de jointure
+                referencedColumnName: id #jointure faite par l'id du themes
+        step: #le champ de l'entité Course
+            targetEntity: Step #L'entité cible
+            inversedBy: result #le champ dans l'entité cible
+            joinColumn:
+                name: step_id #colonne de jointure
+                referencedColumnName: id #jointure faite par l'id du themes
+        trial: #le champ de l'entité Course
+            targetEntity: Trial #L'entité cible
+            inversedBy: result #le champ dans l'entité cible
+            joinColumn:
+                name: trial_id #colonne de jointure
+                referencedColumnName: id #jointure faite par l'id du themes
