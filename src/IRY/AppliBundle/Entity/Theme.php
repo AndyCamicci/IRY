@@ -7,6 +7,7 @@ class Theme {
     private $id;
     private $name;
     private $helicopter;
+    private $course;
 
     /**
      * Get id
@@ -27,7 +28,6 @@ class Theme {
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -50,7 +50,6 @@ class Theme {
     public function setHelicopter(\IRY\AppliBundle\Entity\Helicopter $helicopter = null)
     {
         $this->helicopter = $helicopter;
-
         return $this;
     }
 
@@ -62,5 +61,49 @@ class Theme {
     public function getHelicopter()
     {
         return $this->helicopter;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->course = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add course
+     *
+     * @param \IRY\AppliBundle\Entity\Course $course
+     * @return Theme
+     */
+    public function addCourse(\IRY\AppliBundle\Entity\Course $course)
+    {
+        $this->course[] = $course;
+    
+        return $this;
+    }
+
+    /**
+     * Remove course
+     *
+     * @param \IRY\AppliBundle\Entity\Course $course
+     */
+    public function removeCourse(\IRY\AppliBundle\Entity\Course $course)
+    {
+        $this->course->removeElement($course);
+    }
+
+    /**
+     * Get course
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCourse()
+    {
+        return $this->course;
     }
 }

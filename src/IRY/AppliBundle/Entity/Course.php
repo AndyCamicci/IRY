@@ -3,11 +3,14 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Theme {
-    private $id;
+class Course {
+	private $id;
     private $name;
-    private $helicopter;
-<<<<<<< HEAD
+    /**
+     * @var \IRY\AppliBundle\Entity\Theme
+     */
+    private $theme;
+
 
     /**
      * Get id
@@ -23,7 +26,7 @@ class Theme {
      * Set name
      *
      * @param string $name
-     * @return Theme
+     * @return Course
      */
     public function setName($name)
     {
@@ -43,28 +46,25 @@ class Theme {
     }
 
     /**
-     * Set helicopter
+     * Set theme
      *
-     * @param \IRY\AppliBundle\Entity\Helicopter $helicopter
-     * @return Theme
+     * @param \IRY\AppliBundle\Entity\Theme $theme
+     * @return Course
      */
-    public function setHelicopter(\IRY\AppliBundle\Entity\Helicopter $helicopter = null)
+    public function setTheme(\IRY\AppliBundle\Entity\Theme $theme = null)
     {
-        $this->helicopter = $helicopter;
+        $this->theme = $theme;
     
         return $this;
     }
 
     /**
-     * Get helicopter
+     * Get theme
      *
-     * @return \IRY\AppliBundle\Entity\Helicopter 
+     * @return \IRY\AppliBundle\Entity\Theme 
      */
-    public function getHelicopter()
+    public function getTheme()
     {
-        return $this->helicopter;
+        return $this->theme;
     }
 }
-=======
-}
->>>>>>> 103b6c425f3878692fea192bdc340ec43a86ecdc

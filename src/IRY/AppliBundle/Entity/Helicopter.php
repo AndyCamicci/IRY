@@ -5,7 +5,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Helicopter {
 	private $id;
-	private $name;
+    private $name;
+	private $themes;
 
     /**
      * Get id
@@ -62,7 +63,6 @@ class Helicopter {
     public function addTheme(\IRY\AppliBundle\Entity\Theme $themes)
     {
         $this->themes[] = $themes;
-
         return $this;
     }
 

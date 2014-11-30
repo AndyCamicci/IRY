@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Home</title>
+    <meta charset="UTF-8">
+    <title>Home</title>
 </head>
 <body>
-	<h1>Welcome !</h1>
-	
-	<table>
-		{% for helicopter in data %} <!-- boucle parmi la liste des hélicos -->
-		<tr>
-			<td>{{helicopter.id}}</td>
-			<td>{{helicopter.name}}</td>
-		</tr>
-		{% endfor %}
-	</table>
-
+    <h1>Welcome !</h1>
+    <table>
+        {% for helicopter in data %} <!-- boucle parmi la liste des hélicos -->
+        <tr>
+            <td>{{helicopter.id}}</td>
+            <td><a href="{{ path('iry_appli_choixcours', {'helicopter_id': helicopter.id}) }}">{{helicopter.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

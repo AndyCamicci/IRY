@@ -1,9 +1,10 @@
 iry_appli_home:
     path:   /
     defaults: {_controller: IRYAppliBundle:Default:home}
-iry_theme_list:
-    path:   /themes/{helicopter}
-    defaults: {_controller: IRYAppliBundle:Default:themes}
+
+iry_appli_choixcours:
+    path:   /choixcours/{helicopter_id}
+    defaults: {_controller: "IRYAppliBundle:Default:choixcours"}
 
 iry_crud_heli_list:
     path:   /crud/helicopters
