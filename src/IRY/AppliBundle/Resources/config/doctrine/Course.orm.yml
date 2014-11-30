@@ -21,4 +21,4 @@ IRY\AppliBundle\Entity\Course:
             inversedBy: course #le champ dans l'entité cible
             joinColumn:
                 name: theme_id #colonne de jointure
-                referencedColumnName: id #jointure faite par l'id du theme
+                referencedColumnName: id #jointure faite par l'id du themes
