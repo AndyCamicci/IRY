@@ -1,0 +1,15 @@
+{{ form(addThemeForm) }}
+
+List
+<table>
+
+{% for theme in themes %}
+	<tr>
+		<td>{{theme.id}}</td>
+		<td>{{theme.name}}</td>
+		<td><a href="{{ path('iry_crud_theme_update', { id: theme.id }) }}">MAJ</a></td>
+		<td><a href="{{ path('iry_crud_theme_delete', { id: theme.id }) }}">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>

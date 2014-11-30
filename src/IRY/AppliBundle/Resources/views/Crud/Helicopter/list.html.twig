@@ -1,0 +1,10 @@
+{{ form(helicopterForm) }}
+<table>
+{% for helicopter in helicopters %}
+	<tr>
+		<td>{{helicopter.name}}</td>
+		<td><a href="{{ path('iry_crud_heli_update', {'id': helicopter.id}) }}">Update</a></td>
+		<td><a href="{{ path('iry_crud_heli_delete', {'id': helicopter.id}) }}">Delete</a></td>
+	</tr>
+{% endfor %}
+</ul>

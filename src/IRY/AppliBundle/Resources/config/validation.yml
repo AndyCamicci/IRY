@@ -1,0 +1,4 @@
+IRY\AppliBundle\Entity\Helicopter:
+    properties:
+        name:
+            - NotBlank: ~

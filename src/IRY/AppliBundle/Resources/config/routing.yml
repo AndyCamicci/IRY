@@ -1,6 +1,26 @@
-iry_appli_homepage:
-    path:     /hello/
-    defaults: { _controller: IRYAppliBundle:Default:index }
-ity_appli_home:
-    path:   /home
+iry_appli_home:
+    path:   /
     defaults: {_controller: IRYAppliBundle:Default:home}
+iry_theme_list:
+    path:   /themes/{helicopter}
+    defaults: {_controller: IRYAppliBundle:Default:themes}
+
+iry_crud_heli_list:
+    path:   /crud/helicopters
+    defaults: {_controller: IRYAppliBundle:Crud:helicopters}
+iry_crud_heli_delete:
+    path:   /crud/helicopter/{id}/delete
+    defaults: {_controller: IRYAppliBundle:Crud:deleteHelicopter}
+iry_crud_heli_update:
+    path:   /crud/helicopter/{id}/update
+    defaults: {_controller: IRYAppliBundle:Crud:updateHelicopter}
+
+iry_crud_theme_list:
+    path:   /crud/themes
+    defaults: {_controller: IRYAppliBundle:Crud:themes}
+iry_crud_theme_delete:
+    path:   /crud/theme/{id}/delete
+    defaults: {_controller: IRYAppliBundle:Crud:deleteTheme}
+iry_crud_theme_update:
+    path:   /crud/theme/{id}/update
+    defaults: {_controller: IRYAppliBundle:Crud:updateTheme}
