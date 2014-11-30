@@ -7,6 +7,7 @@ class Theme {
     private $id;
     private $name;
     private $helicopter;
+<<<<<<< HEAD
 
     /**
      * Get id
@@ -64,3 +65,6 @@ class Theme {
         return $this->helicopter;
     }
 }
+=======
+}
+>>>>>>> 103b6c425f3878692fea192bdc340ec43a86ecdc

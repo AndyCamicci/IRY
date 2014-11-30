@@ -42,6 +42,11 @@ class Helicopter {
     }
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $themes;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -58,7 +63,6 @@ class Helicopter {
     public function addTheme(\IRY\AppliBundle\Entity\Theme $themes)
     {
         $this->themes[] = $themes;
-    
         return $this;
     }
 

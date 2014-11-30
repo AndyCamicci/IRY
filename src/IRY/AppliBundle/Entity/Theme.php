@@ -28,7 +28,6 @@ class Theme {
     public function setName($name)
     {
         $this->name = $name;
-    
         return $this;
     }
 
@@ -51,7 +50,6 @@ class Theme {
     public function setHelicopter(\IRY\AppliBundle\Entity\Helicopter $helicopter = null)
     {
         $this->helicopter = $helicopter;
-    
         return $this;
     }
 

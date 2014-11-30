@@ -5,15 +5,12 @@ IRY\AppliBundle\Entity\Helicopter:
     id:
         id:
             type: integer
-            nullable: false
-            id: true
             generator:
                 strategy: IDENTITY
     fields:
         name:
             type: string
             length: 255
-            nullable: false
     oneToMany:
         themes: #Champ dans l'entité Helicopter
             targetEntity: Theme #Entité visée
