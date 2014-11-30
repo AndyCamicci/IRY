@@ -14,4 +14,7 @@ IRY\AppliBundle\Entity\Helicopter:
             type: string
             length: 255
             nullable: false
-    lifecycleCallbacks: {  }
+    oneToMany:
+        themes: #Champ dans l'entité Helicopter
+            targetEntity: Theme #Entité visée
+            mappedBy: helicopter #Champ dans l'entité visée

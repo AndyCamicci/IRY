@@ -5,7 +5,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Helicopter {
 	private $id;
-	private $name;
+    private $name;
+	private $themes;
 
     /**
      * Get id
@@ -41,25 +42,43 @@ class Helicopter {
     }
 
     /**
-     * Set theme
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->themes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add themes
      *
-     * @param string $theme
+     * @param \IRY\AppliBundle\Entity\Theme $themes
      * @return Helicopter
      */
-    public function setTheme($theme)
+    public function addTheme(\IRY\AppliBundle\Entity\Theme $themes)
     {
-        $this->theme = $theme;
-
+        $this->themes[] = $themes;
+    
         return $this;
     }
 
     /**
-     * Get theme
+     * Remove themes
      *
-     * @return string 
+     * @param \IRY\AppliBundle\Entity\Theme $themes
      */
-    public function getTheme()
+    public function removeTheme(\IRY\AppliBundle\Entity\Theme $themes)
     {
-        return $this->theme;
+        $this->themes->removeElement($themes);
+    }
+
+    /**
+     * Get themes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getThemes()
+    {
+        return $this->themes;
     }
 }

@@ -7,31 +7,16 @@ use IRY\AppliBundle\Entity\Helicopter;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function homeAction()
     {
-    	$list = array();
+        $em = $this->getDoctrine()->getManager(); // On récupère l'Entity Manager
+        $repo = $em->getRepository("IRYAppliBundle:Helicopter"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
+        $listeHelicopteres = $repo->findAll();
 
-    	$em = $this->getDoctrine()->getManager();
-
-    	/*for ($i=0; $i < 10; $i++) { 
-    		$heli = new Helicopter();
-    		$heli->setName('AS350 ' . $i);
-	    	
-	    	$em->persist($heli);
-    	}
-        $em->flush();*/
-    	
-        $list = $em->getRepository("IRYAppliBundle:Helicopter")->findOneBy(array("name" => "AS350"));
-
-    	var_dump($list);
-    	exit();
-        // return $this->render('IRYAppliBundle:Default:index.html.twig', array('list' => $list));
+        return $this->render('IRYAppliBundle:Default:home.html.twig', array("data" => $listeHelicopteres));
     }
-
-    public function testAction()
+    public function choixcoursAction(Helicopter $helicopter_id)
     {
-    	echo "coucou";
-
-        exit();
+        return $this->render('IRYAppliBundle:Default:choixcours.html.twig', array("helicopter" => $helicopter_id));
     }
 }

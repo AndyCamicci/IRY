@@ -1,6 +1,6 @@
-iry_appli_homepage:
-    path:     /hello/
-    defaults: { _controller: IRYAppliBundle:Default:index }
-test:
-    path:   /monurl/
-    defaults: { _controller: IRYAppliBundle:Default:test }
+iry_appli_home:
+    path:   /
+    defaults: {_controller: IRYAppliBundle:Default:home}
+iry_appli_choixcours:
+    path:   /choixcours/{helicopter_id}
+    defaults: {_controller: "IRYAppliBundle:Default:choixcours"}
