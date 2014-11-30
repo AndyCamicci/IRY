@@ -15,6 +15,12 @@ class CrudController extends Controller
         $helicopter = new Helicopter();
         $form = $this->createFormBuilder($helicopter)
             ->add('name', 'text')
+            ->add('type', 'choice', array(
+                'choices'   => array(
+                    Helicopter::TYPE_MILITARY => Helicopter::TYPE_MILITARY, 
+                    Helicopter::TYPE_CIVIL => Helicopter::TYPE_CIVIL
+                ),
+            ))
             ->add('save', 'submit')
             ->getForm();
         
