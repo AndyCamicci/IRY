@@ -6,7 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Helicopter {
 	private $id;
     private $name;
-	private $themes;
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $themes;
 
     /**
      * Get id
@@ -41,10 +44,7 @@ class Helicopter {
         return $this->name;
     }
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $themes;
+
 
     /**
      * Constructor
