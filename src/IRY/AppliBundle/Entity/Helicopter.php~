@@ -4,8 +4,13 @@ namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 class Helicopter {
+
+    const TYPE_MILITARY = "Military";
+    const TYPE_CIVIL = "Civil";
+
 	private $id;
     private $name;
+    private $type;
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
