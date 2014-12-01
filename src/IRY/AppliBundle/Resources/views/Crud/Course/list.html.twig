@@ -1,0 +1,15 @@
+{{ form(addCourseForm) }}
+
+List
+<table>
+
+{% for course in courses %}
+	<tr>
+		<td>{{course.id}}</td>
+		<td>{{course.name}}</td>
+		<td><a href="{{ path('iry_crud_course_update', { id: course.id }) }}">MAJ</a></td>
+		<td><a href="{{ path('iry_crud_course_delete', { id: course.id }) }}">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>

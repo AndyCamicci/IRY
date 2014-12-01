@@ -25,3 +25,13 @@ iry_crud_theme_delete:
 iry_crud_theme_update:
     path:   /crud/theme/{id}/update
     defaults: {_controller: IRYAppliBundle:Crud:updateTheme}
+
+iry_crud_course_list:
+    path:   /crud/courses
+    defaults: {_controller: IRYAppliBundle:Crud:courses}
+iry_crud_course_delete:
+    path:   /crud/course/{id}/delete
+    defaults: {_controller: IRYAppliBundle:Crud:deleteCourse}
+iry_crud_course_update:
+    path:   /crud/course/{id}/update
+    defaults: {_controller: IRYAppliBundle:Crud:updateCourse}

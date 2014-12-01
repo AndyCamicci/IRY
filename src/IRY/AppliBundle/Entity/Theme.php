@@ -106,4 +106,9 @@ class Theme {
     {
         return $this->course;
     }
+
+    public function getFullName()
+    {
+        return $this->getHelicopter()->getName() . ' - ' . $this->getName();
+    }
 }
