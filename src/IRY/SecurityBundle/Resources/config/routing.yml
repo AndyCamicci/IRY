@@ -1,0 +1,3 @@
+iry_security_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IRYSecurityBundle:Default:index }

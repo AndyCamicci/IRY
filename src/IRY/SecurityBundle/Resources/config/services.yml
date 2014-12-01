@@ -1,0 +1,7 @@
+parameters:
+#    iry_security.example.class: IRY\SecurityBundle\Example
+
+services:
+#    iry_security.example:
+#        class: %iry_security.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
