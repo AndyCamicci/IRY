@@ -22,7 +22,7 @@
 			<td><!--Liste des cours-->
 		        <ul>
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-				        {% for course in theme.course %} <!-- boucle parmi la liste des thèmes -->
+				        {% for course in theme.courses %} <!-- boucle parmi la liste des thèmes -->
 			        		<li>{{course.name}}</li>
 				        {% endfor %}
 			        {% endfor %}
