@@ -3,12 +3,12 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Theme {
+class Result {
     private $id;
     private $pilot;
-    private $step;
+    // private $step;
     private $error = 0;
-    private $trial;
+    // private $trial;
     private $isFavorite;
     const TYPE_LOCAL = "Local";
     const TYPE_GLOBAL = "Global";

@@ -39,4 +39,49 @@ class Type {
         return $this->name;
     }
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $Helicopter;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Helicopter = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add Helicopter
+     *
+     * @param \IRY\AppliBundle\Entity\Course $helicopter
+     * @return Type
+     */
+    public function addHelicopter(\IRY\AppliBundle\Entity\Course $helicopter)
+    {
+        $this->Helicopter[] = $helicopter;
+
+        return $this;
+    }
+
+    /**
+     * Remove Helicopter
+     *
+     * @param \IRY\AppliBundle\Entity\Course $helicopter
+     */
+    public function removeHelicopter(\IRY\AppliBundle\Entity\Course $helicopter)
+    {
+        $this->Helicopter->removeElement($helicopter);
+    }
+
+    /**
+     * Get Helicopter
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHelicopter()
+    {
+        return $this->Helicopter;
+    }
 }
