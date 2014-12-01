@@ -11,15 +11,7 @@ IRY\AppliBundle\Entity\Pilot:
         name:
             type: string
             length: 255
-   
-    # manyToOne:
-    #     name: #le champ de l'entité pilote
-    #         targetEntity: Pilote #L'entité cible
-    #         inversedBy: pilote #le champ dans l'entité cible
-    #         joinColumn:
-    #             name: Result_id #colonne de jointure
-    #             referencedColumnName: id #jointure faite par l'id de pilote
-    # oneToMany:
-    #     Result: #Champ dans l'entité Helicopter
-    #         targetEntity: Result #Entité visée
-    #         mappedBy: pilote #Champ dans l'entité visée
+    oneToMany:
+        results: #Champ dans l'entité Helicopter
+            targetEntity: Result #Entité visée
+            mappedBy: pilot #Champ dans l'entité visée

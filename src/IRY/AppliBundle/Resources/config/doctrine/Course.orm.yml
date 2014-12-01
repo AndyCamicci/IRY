@@ -11,14 +11,20 @@ IRY\AppliBundle\Entity\Course:
         name:
             type: string
             length: 255
-    fields:
-        name:
-            type: string
-            length: 255
     manyToOne:
         theme: #le champ de l'entité Course
             targetEntity: Theme #L'entité cible
             inversedBy: course #le champ dans l'entité cible
             joinColumn:
                 name: theme_id #colonne de jointure
-                referencedColumnName: id #jointure faite par l'id du themes
+                referencedColumnName: id #jointure faite par l'id du 
+        typeCourse: #le champ de l'entité Course
+            targetEntity: TypeCourse #L'entité cible
+            inversedBy: course #le champ dans l'entité cible
+            joinColumn:
+                name: typeCourse_id #colonne de jointure
+                referencedColumnName: id #jointure faite par l'id du
+    oneToMany:
+        steps: #Champ dans l'entité Helicopter
+            targetEntity: Step #Entité visée
+            mappedBy: course #Champ dans l'entité visée

@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Result {
     private $id;
     private $pilot;
-    // private $step;
+    private $step;
     private $error = 0;
-    // private $trial;
+    private $trial;
     private $isFavorite;
     const TYPE_LOCAL = "Local";
     const TYPE_GLOBAL = "Global";
@@ -94,6 +94,29 @@ class Result {
     }
 
     /**
+     * Set trial
+     *
+     * @param \IRY\AppliBundle\Entity\Trial $trial
+     * @return Result
+     */
+    public function setTrial(\IRY\AppliBundle\Entity\Trial $trial = null)
+    {
+        $this->trial = $trial;
+
+        return $this;
+    }
+
+    /**
+     * Get trial
+     *
+     * @return \IRY\AppliBundle\Entity\Trial 
+     */
+    public function getTrial()
+    {
+        return $this->trial;
+    }
+
+    /**
      * Set pilot
      *
      * @param \IRY\AppliBundle\Entity\Pilot $pilot
@@ -114,5 +137,28 @@ class Result {
     public function getPilot()
     {
         return $this->pilot;
+    }
+
+    /**
+     * Set step
+     *
+     * @param \IRY\AppliBundle\Entity\Step $step
+     * @return Result
+     */
+    public function setStep(\IRY\AppliBundle\Entity\Step $step = null)
+    {
+        $this->step = $step;
+
+        return $this;
+    }
+
+    /**
+     * Get step
+     *
+     * @return \IRY\AppliBundle\Entity\Step 
+     */
+    public function getStep()
+    {
+        return $this->step;
     }
 }

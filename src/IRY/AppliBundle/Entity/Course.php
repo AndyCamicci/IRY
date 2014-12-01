@@ -7,10 +7,27 @@ class Course {
 	private $id;
     private $name;
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $steps;
+
+    /**
      * @var \IRY\AppliBundle\Entity\Theme
      */
     private $theme;
 
+    /**
+     * @var \IRY\AppliBundle\Entity\TypeCourse
+     */
+    private $typeCourse;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->steps = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -31,7 +48,7 @@ class Course {
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
@@ -46,6 +63,39 @@ class Course {
     }
 
     /**
+     * Add steps
+     *
+     * @param \IRY\AppliBundle\Entity\Step $steps
+     * @return Course
+     */
+    public function addStep(\IRY\AppliBundle\Entity\Step $steps)
+    {
+        $this->steps[] = $steps;
+
+        return $this;
+    }
+
+    /**
+     * Remove steps
+     *
+     * @param \IRY\AppliBundle\Entity\Step $steps
+     */
+    public function removeStep(\IRY\AppliBundle\Entity\Step $steps)
+    {
+        $this->steps->removeElement($steps);
+    }
+
+    /**
+     * Get steps
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSteps()
+    {
+        return $this->steps;
+    }
+
+    /**
      * Set theme
      *
      * @param \IRY\AppliBundle\Entity\Theme $theme
@@ -54,7 +104,7 @@ class Course {
     public function setTheme(\IRY\AppliBundle\Entity\Theme $theme = null)
     {
         $this->theme = $theme;
-    
+
         return $this;
     }
 
@@ -66,5 +116,28 @@ class Course {
     public function getTheme()
     {
         return $this->theme;
+    }
+
+    /**
+     * Set typeCourse
+     *
+     * @param \IRY\AppliBundle\Entity\TypeCourse $typeCourse
+     * @return Course
+     */
+    public function setTypeCourse(\IRY\AppliBundle\Entity\TypeCourse $typeCourse = null)
+    {
+        $this->typeCourse = $typeCourse;
+
+        return $this;
+    }
+
+    /**
+     * Get typeCourse
+     *
+     * @return \IRY\AppliBundle\Entity\TypeCourse 
+     */
+    public function getTypeCourse()
+    {
+        return $this->typeCourse;
     }
 }

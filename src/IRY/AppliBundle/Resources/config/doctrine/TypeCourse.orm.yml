@@ -1,0 +1,17 @@
+IRY\AppliBundle\Entity\TypeCourse:
+    type: entity
+    table: TypeCourse
+    repositoryClass: IRY\AppliBundle\Entity\TypeCourseRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        courses: #Champ dans l'entité Helicopter
+            targetEntity: Course #Entité visée
+            mappedBy: typeCourse #Champ dans l'entité visée

@@ -3,20 +3,16 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Pilot {
-	private $id;
+class TypeCourse {
+    private $id;
     private $name;
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $results;
-
+    private $courses;
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->results = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->courses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -33,7 +29,7 @@ class Pilot {
      * Set name
      *
      * @param string $name
-     * @return Pilot
+     * @return TypeCourse
      */
     public function setName($name)
     {
@@ -53,35 +49,35 @@ class Pilot {
     }
 
     /**
-     * Add results
+     * Add courses
      *
-     * @param \IRY\AppliBundle\Entity\Result $results
-     * @return Pilot
+     * @param \IRY\AppliBundle\Entity\Course $courses
+     * @return TypeCourse
      */
-    public function addResult(\IRY\AppliBundle\Entity\Result $results)
+    public function addCourse(\IRY\AppliBundle\Entity\Course $courses)
     {
-        $this->results[] = $results;
+        $this->courses[] = $courses;
 
         return $this;
     }
 
     /**
-     * Remove results
+     * Remove courses
      *
-     * @param \IRY\AppliBundle\Entity\Result $results
+     * @param \IRY\AppliBundle\Entity\Course $courses
      */
-    public function removeResult(\IRY\AppliBundle\Entity\Result $results)
+    public function removeCourse(\IRY\AppliBundle\Entity\Course $courses)
     {
-        $this->results->removeElement($results);
+        $this->courses->removeElement($courses);
     }
 
     /**
-     * Get results
+     * Get courses
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getResults()
+    public function getCourses()
     {
-        return $this->results;
+        return $this->courses;
     }
 }

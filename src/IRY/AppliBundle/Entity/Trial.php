@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Trial {
 	private $id;
     private $video;
-
+    private $result;
 
     /**
      * Get id
