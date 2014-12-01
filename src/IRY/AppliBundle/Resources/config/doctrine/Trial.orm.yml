@@ -1,0 +1,12 @@
+IRY\AppliBundle\Entity\Trial:
+    type: entity
+    table: Trial
+    repositoryClass: IRY\AppliBundle\Entity\TrialRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        video:
+            type: text
