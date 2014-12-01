@@ -1,3 +1,5 @@
-iry_security_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: IRYSecurityBundle:Default:index }
+login:
+    pattern:   /login
+    defaults:  { _controller: IRYSecurityBundle:Security:login }
+login_check:
+    pattern:   /login_check
