@@ -4,14 +4,13 @@ namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
   /**
-     * @var \IRY\AppliBundle\Entity\step
+     * @var \IRY\AppliBundle\Entity\Step
      */
-class step {
+class Step {
 	private $id;
+    private $name;
     private $course;
     private $order;
-  
-
 
     /**
      * Get id
@@ -27,12 +26,12 @@ class step {
      * Set name
      *
      * @param string $name
-     * @return Course
+     * @return Step
      */
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
@@ -47,25 +46,48 @@ class step {
     }
 
     /**
-     * Set theme
+     * Set order
      *
-     * @param \IRY\AppliBundle\Entity\Theme $theme
-     * @return Course
+     * @param integer $order
+     * @return Step
      */
-    public function setTheme(\IRY\AppliBundle\Entity\Theme $theme = null)
+    public function setOrder($order)
     {
-        $this->theme = $theme;
-    
+        $this->order = $order;
+
         return $this;
     }
 
     /**
-     * Get theme
+     * Get order
      *
-     * @return \IRY\AppliBundle\Entity\Theme 
+     * @return integer 
      */
-    public function getTheme()
+    public function getOrder()
     {
-        return $this->theme;
+        return $this->order;
+    }
+
+    /**
+     * Set course
+     *
+     * @param \IRY\AppliBundle\Entity\Course $course
+     * @return Step
+     */
+    public function setCourse(\IRY\AppliBundle\Entity\Course $course = null)
+    {
+        $this->course = $course;
+
+        return $this;
+    }
+
+    /**
+     * Get course
+     *
+     * @return \IRY\AppliBundle\Entity\Course 
+     */
+    public function getCourse()
+    {
+        return $this->course;
     }
 }

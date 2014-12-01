@@ -1,0 +1,14 @@
+<?php
+
+namespace IRY\AppliBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+  /**
+     * @var \IRY\AppliBundle\Entity\Step
+     */
+class Step {
+	private $id;
+    private $name;
+    private $course;
+    private $order;
+}

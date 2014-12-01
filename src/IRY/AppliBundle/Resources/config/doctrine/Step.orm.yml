@@ -1,4 +1,4 @@
-IRY\AppliBundle\Entity\Theme:
+IRY\AppliBundle\Entity\Step:
     type: entity
     table: Step
     repositoryClass: IRY\AppliBundle\Entity\StepRepository
@@ -11,18 +11,12 @@ IRY\AppliBundle\Entity\Theme:
         name:
             type: string
             length: 255
-    fields:
-        name:
-            type: string
-            length: 255
+        order:
+            type: integer
     manyToOne:
-        course: #le champ de l'entité Course
-            targetEntity: Course #L'entité cible
-            inversedBy: Step #le champ dans l'entité cible
+        course:
+            targetEntity: Course
+            inversedBy: steps
             joinColumn:
-                name: course_id #colonne de jointure
-                referencedColumnName: id #jointure faite par l'id de l'hélicoptère
-    oneToMany:
-        result: #Champ dans l'entité Helicopter
-            targetEntity: Result #Entité visée
-            mappedBy: Step #Champ dans l'entité visée
+                name: course_id
+                referencedColumnName: id
