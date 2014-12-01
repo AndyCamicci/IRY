@@ -1,7 +1,7 @@
-IRY\AppliBundle\Entity\Pilote:
+IRY\AppliBundle\Entity\Pilot:
     type: entity
-    table: Pilote
-    repositoryClass: IRY\AppliBundle\Entity\PiloteRepository
+    table: Pilot
+    repositoryClass: IRY\AppliBundle\Entity\PilotRepository
     id:
         id:
             type: integer

@@ -3,11 +3,11 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Pilote {
+class Pilot {
 	private $id;
     private $name;
     /**
-     * @var \IRY\AppliBundle\Entity\Pilote
+     * @var \IRY\AppliBundle\Entity\Pilot
      */
 
     /**
