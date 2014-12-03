@@ -1,7 +1,9 @@
 ALTER TABLE helicopter AUTO_INCREMENT = 0;
-ALTER TABLE theme AUTO_INCREMENT = 0;
+ALTER TABLE subtheme AUTO_INCREMENT = 0;
 ALTER TABLE typecourse AUTO_INCREMENT = 0;
 ALTER TABLE course AUTO_INCREMENT = 0;
+ALTER TABLE theme AUTO_INCREMENT = 0;
+
 
 SET foreign_key_checks = 0;
 
@@ -18,7 +20,11 @@ INSERT INTO iry.helicopter (id, name, type) VALUES
 	(NULL, "Panther", "Military"),
 	(NULL, "Cougar", "Military");
 
-INSERT INTO iry.theme (id, helicopter_id, name) VALUES
+INSERT INTO iry.theme (id, helicopter_id, subtheme_id, name) VALUES
+	(NULL, "2", "4", "Hydrolic system"),
+	(NULL, "2", "1", "Startup");
+
+INSERT INTO iry.subtheme (id, theme_id, name) VALUES
 	(NULL, "2", "Servo control"),
 	(NULL, "2", "Main rotor servocontrols"),
 	(NULL, "2", "Tail rotor servocontrol"),
