@@ -140,32 +140,4 @@ class Course {
     {
         return $this->typeCourse;
     }
-    /**
-     * @var \IRY\AppliBundle\Entity\SubTheme
-     */
-    private $subTheme;
-
-
-    /**
-     * Set subTheme
-     *
-     * @param \IRY\AppliBundle\Entity\SubTheme $subTheme
-     * @return Course
-     */
-    public function setSubTheme(\IRY\AppliBundle\Entity\SubTheme $subTheme = null)
-    {
-        $this->subTheme = $subTheme;
-
-        return $this;
-    }
-
-    /**
-     * Get subTheme
-     *
-     * @return \IRY\AppliBundle\Entity\SubTheme 
-     */
-    public function getSubTheme()
-    {
-        return $this->subTheme;
-    }
 }

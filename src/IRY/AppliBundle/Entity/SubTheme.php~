@@ -3,17 +3,17 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Theme {
+class SubTheme {
     private $id;
     private $name;
-    private $helicopter;
-    private $subthemes;
+    private $theme;
+    private $courses;
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->subthemes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->courses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -55,9 +55,9 @@ class Theme {
      * @param \IRY\AppliBundle\Entity\Course $courses
      * @return Theme
      */
-    public function addSubTheme(\IRY\AppliBundle\Entity\SubTheme $subtheme)
+    public function addCourse(\IRY\AppliBundle\Entity\Course $courses)
     {
-        $this->subtheme[] = $subtheme;
+        $this->courses[] = $courses;
 
         return $this;
     }
@@ -67,9 +67,9 @@ class Theme {
      *
      * @param \IRY\AppliBundle\Entity\Course $courses
      */
-    public function removeSubTheme(\IRY\AppliBundle\Entity\SubTheme $subtheme)
+    public function removeCourse(\IRY\AppliBundle\Entity\Course $courses)
     {
-        $this->subtheme->removeElement($subtheme);
+        $this->courses->removeElement($courses);
     }
 
     /**
@@ -77,9 +77,9 @@ class Theme {
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getSubTheme()
+    public function getCourses()
     {
-        return $this->subtheme;
+        return $this->courses;
     }
 
     /**
@@ -88,9 +88,9 @@ class Theme {
      * @param \IRY\AppliBundle\Entity\Helicopter $helicopter
      * @return Theme
      */
-    public function setHelicopter(\IRY\AppliBundle\Entity\Helicopter $helicopter = null)
+    public function setTheme(\IRY\AppliBundle\Entity\Theme $theme = null)
     {
-        $this->helicopter = $helicopter;
+        $this->theme = $theme;
 
         return $this;
     }
@@ -100,23 +100,8 @@ class Theme {
      *
      * @return \IRY\AppliBundle\Entity\Helicopter 
      */
-    public function getHelicopter()
+    public function getTheme()
     {
-        return $this->helicopter;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $subThemes;
-
-
-    /**
-     * Get subThemes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSubThemes()
-    {
-        return $this->subThemes;
+        return $this->theme;
     }
 }

@@ -19,6 +19,6 @@ IRY\AppliBundle\Entity\Theme:
                 name: helicopter_id #colonne de jointure
                 referencedColumnName: id #jointure faite par l'id de l'hélicoptère
     oneToMany:
-        subthemes: #Champ dans l'entité Helicopter
+        subThemes: #Champ dans l'entité Helicopter
             targetEntity: SubTheme #Entité visée
             mappedBy: theme #Champ dans l'entité visée
