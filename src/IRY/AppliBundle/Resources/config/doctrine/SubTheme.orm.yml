@@ -1,4 +1,4 @@
-IRY\AppliBundle\Entity\Theme:
+IRY\AppliBundle\Entity\SubTheme:
     type: entity
     table: SubTheme
     repositoryClass: IRY\AppliBundle\Entity\SubThemeRepository
@@ -12,7 +12,7 @@ IRY\AppliBundle\Entity\Theme:
             type: string
             length: 255
     manyToOne:
-        Theme: #le champ de l'entité SubTheme
+        theme: #le champ de l'entité SubTheme
             targetEntity: Theme #L'entité cible
             inversedBy: subthemes #le champ dans l'entité cible
             joinColumn:
