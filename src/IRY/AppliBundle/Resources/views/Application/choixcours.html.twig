@@ -22,8 +22,19 @@
 			<td><!--Liste des cours-->
 		        <ul>
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-				        {% for course in theme.courses %} <!-- boucle parmi la liste des thèmes -->
-			        		<li>{{course.name}}</li>
+				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+			        		<li>{{subtheme.name}}</li>
+				        {% endfor %}
+			        {% endfor %}
+		        </ul>				
+			</td>
+			<td><!--Liste des cours-->
+		        <ul>
+			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+					        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
+				        		<li>{{course.name}}</li>
+					        {% endfor %}
 				        {% endfor %}
 			        {% endfor %}
 		        </ul>				
