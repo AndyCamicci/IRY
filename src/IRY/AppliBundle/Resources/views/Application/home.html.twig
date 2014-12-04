@@ -1,18 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Welcome !</h1>
-    <table>
-        {% for helicopter in data %} <!-- boucle parmi la liste des hélicos -->
-        <tr>
-            <td>{{helicopter.id}}</td>
-            <td><a href="{{ path('iry_appli_choixcours', {'helicopter_id': helicopter.id}) }}">{{helicopter.name}}</a></td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+{% block header %}
+    
+    <header class="home-header">
+        <div class="logo"><img src="{{ asset('bundles/iryappli') }}/images/logo.png" alt="IRY"></div>
+        <div class="filters">
+            <ul>
+                <li>Civil range</li>
+                <li>Military range</li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+        </div>
+    </header>
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <h1>Choose your helicopter</h1>
+        
+        <section class="list-helicopters">
+
+            {% for helicopter in data %}
+
+            <div class="helicopter">
+                <header>
+                    <img src="" alt="{{helicopter.name}}">
+                </header>
+                <a href="{{ path('iry_appli_choixcours', {'helicopter_id': helicopter.id}) }}"><span>+</span></a>
+                <footer>
+                    <h2>{{helicopter.name}}</h2>
+                </footer>
+            </div>
+
+            {% endfor %}
+
+        </section>
+
+    </div>
+
+
+{% endblock %}
