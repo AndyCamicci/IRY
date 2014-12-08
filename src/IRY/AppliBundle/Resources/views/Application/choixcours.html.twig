@@ -25,7 +25,7 @@
 			        {% endfor %}
 		        </ul>
 			</td>
-			<td><!--Liste des cours-->
+			<td><!--Liste des subthemes-->
 		        <ul>
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
@@ -39,7 +39,8 @@
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 					        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
-				        		<li>{{course.name}}</li>
+					        <a href="{{ path('iry_appli_step', {'step_id': step.id}) }}"><span><li>{{course.name}}</li></span></a>
+
 					        {% endfor %}
 				        {% endfor %}
 			        {% endfor %}
