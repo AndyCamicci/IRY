@@ -1,45 +1,61 @@
 {% extends 'IRYAppliBundle:Application:base.html.twig' %}
 {% block header %}
     
-    <header class="home-header">
-        <div class="logo"><img src="{{ asset('bundles/iryappli') }}/images/logo.png" alt="IRY"></div>
-        <div class="filters">
-            <ul>
-                <li>Civil range</li>
-                <li>Military range</li>
-            </ul>
+    <header class="cf">
+      <div id="header_left" class="left">
+        <div id="back_btn">
+          
         </div>
-        <div class="search">
-            <input type="text" placeholder="Search">
+        <div id="logo">
+          <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
         </div>
+      </div>
+      <div id="header_right" class="right">
+        <div id="searchbar" class="cf">
+          <img src="{{ asset('bundles/iryappli') }}/img/search.png" class="search_submit left" alt="Searchbar">
+          <input type="text" class="search_content" placeholder="Search">
+        </div>
+      </div>
+      <div id="header_center" class="center">
+        <div class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_CIVIL") }}">
+          Civil Range
+        </div>
+        <div class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_MILITARY") }}">
+          Military Range
+        </div>
+      </div>
     </header>
 
 {% endblock %}
 
 {% block body %}
-    <div class="container">
+    <section id="choose_helicopter">
+      <h2>Choose your Helicopter</h2>
+      <div class="liste_helicopter_wrap">
+        <div class="liste_helicopter">
 
-        <h1>Choose your helicopter</h1>
-        
-        <section class="list-helicopters">
+        {% for index, helicopter in helicopters %}
+            {% if index is divisible by(2) %}
+          <div class="duo">
+            {% endif %}
 
-            {% for helicopter in data %}
+            <a data-type="{{ helicopter.type }}" data-name="{{ helicopter.name }}" href="{{ path('iry_appli_choixcours', {helicopter_id : helicopter.id}) }}" class="helicopter">
+              <div class="helicopter_img">
+                <img src="{{ asset('bundles/iryappli') }}/img/200x130.gif" alt="">
+              </div>
+              <div class="helicopter_name">
+                <span>{{ helicopter.name }}</span>
+              </div>
+            </a>
 
-            <div class="helicopter">
-                <header>
-                    <img src="" alt="{{helicopter.name}}">
-                </header>
-                <a href="{{ path('iry_appli_choixcours', {'helicopter_id': helicopter.id}) }}"><span>+</span></a>
-                <footer>
-                    <h2>{{helicopter.name}}</h2>
-                </footer>
-            </div>
+            {% if not index is divisible by (2) or index == helicopters|length%}
+          </div>
+            {% endif %}
+        {% endfor %}
 
-            {% endfor %}
-
-        </section>
-
-    </div>
+        </div>
+      </div>
+    </section>
 
 
 {% endblock %}

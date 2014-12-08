@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step</title>
+</head>
+<body>
+	<!-- <a href="{{ path('iry_appli_choixcours') }}">Back</a> -->
+    <table>
+    	<tr>
+    		<td>Course</td>
+    		<td>Step</td>
+    	</tr>
+		<tr>
+			<td><!--Nom cours-->
+				{{course.name}}
+			</td>
+			<td><!--Liste des étapes-->
+		        <ul>
+			        {% for step in course.steps %} <!-- boucle parmi la liste des step -->
+		        		<li id="Step{{step.id}}">{{step.name}}</li>
+			        {% endfor %}
+		        </ul>
+			</td>
+		</tr>
+    </table>
+</body>
+</html>
