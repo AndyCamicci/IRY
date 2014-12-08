@@ -5,6 +5,9 @@ iry_appli_home:
 iry_appli_choixcours:
     path:   /choixcours/{helicopter_id}
     defaults: {_controller: "IRYAppliBundle:Application:choixcours"}
+iry_appli_step:
+    path:   /step/{step_id}
+    defaults: {_controller: "IRYAppliBundle:Application:step"}
 
 iry_crud_heli_list:
     path:   /crud/helicopters
