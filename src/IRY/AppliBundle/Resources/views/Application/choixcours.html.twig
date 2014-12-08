@@ -13,6 +13,8 @@
     		<td>Themes</td>
     		<td>Subthemes</td>
     		<td>Courses</td>
+    		<td>Type de cours</td>
+
     	</tr>
 		<tr>
 			<td><!--Nom hélico-->
@@ -42,6 +44,19 @@
 				        		<li>{{course.name}}</li>
 					        {% endfor %}
 				        {% endfor %}
+			        {% endfor %}
+		        </ul>				
+			</td>
+			<td><!--type des cours-->
+		        <ul>
+		        	{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+				   		{% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+					        {% for course in subtheme.courses %}
+								{% for typeCourses in course.typeCourse %} <!-- boucle parmi la liste des cours -->
+		        					<li>{{typeCourse.name}}</li>
+		        				{% endfor %}
+				       		 {% endfor %}
+			        	{% endfor %}
 			        {% endfor %}
 		        </ul>				
 			</td>
