@@ -17,10 +17,10 @@
         </div>
       </div>
       <div id="header_center" class="center">
-        <div class="helicopter_type">
+        <div class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_CIVIL") }}">
           Civil Range
         </div>
-        <div class="helicopter_type">
+        <div class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_MILITARY") }}">
           Military Range
         </div>
       </div>
@@ -39,7 +39,7 @@
           <div class="duo">
             {% endif %}
 
-            <a href="{{ path('iry_appli_choixcours', {helicopter_id : helicopter.id}) }}" class="helicopter">
+            <a data-type="{{ helicopter.type }}" data-name="{{ helicopter.name }}" href="{{ path('iry_appli_choixcours', {helicopter_id : helicopter.id}) }}" class="helicopter">
               <div class="helicopter_img">
                 <img src="{{ asset('bundles/iryappli') }}/img/200x130.gif" alt="">
               </div>
