@@ -19,4 +19,9 @@ class ApplicationController extends Controller
     {
         return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array("helicopter" => $helicopter_id));
     }
+    public function stepAction(Step $step_id)
+    {
+        return $this->render('IRYAppliBundle:Application:step.html.twig', array("step" => $step_id));
+    }
+
 }
