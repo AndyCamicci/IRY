@@ -38,3 +38,17 @@ iry_crud_course_delete:
 iry_crud_course_update:
     path:   /crud/course/{id}/update
     defaults: {_controller: IRYAppliBundle:Crud:updateCourse}
+
+
+iry_rest_helicopters:
+    path:   /rest/helicopters
+    defaults: {_controller: IRYAppliBundle:REST:helicopters}
+    methods:   [GET]
+iry_rest_helicopter:
+    path:   /rest/helicopter/{id}
+    defaults: {_controller: IRYAppliBundle:REST:helicopter}
+    methods:   [GET]
+iry_rest_helicopter_add:
+    path:   /rest/helicopter/{id}
+    defaults: {_controller: IRYAppliBundle:REST:helicopterPost}
+    methods:   [POST]

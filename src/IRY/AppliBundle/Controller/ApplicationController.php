@@ -13,7 +13,7 @@ class ApplicationController extends Controller
         $repo = $em->getRepository("IRYAppliBundle:Helicopter"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
         $listeHelicopteres = $repo->findAll();
 
-        return $this->render('IRYAppliBundle:Application:home.html.twig', array("data" => $listeHelicopteres));
+        return $this->render('IRYAppliBundle:Application:home.html.twig', array("helicopters" => $listeHelicopteres));
     }
     public function choixcoursAction(Helicopter $helicopter_id)
     {
