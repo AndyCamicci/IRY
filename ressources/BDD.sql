@@ -3,6 +3,7 @@ ALTER TABLE subtheme AUTO_INCREMENT = 0;
 ALTER TABLE typecourse AUTO_INCREMENT = 0;
 ALTER TABLE course AUTO_INCREMENT = 0;
 ALTER TABLE theme AUTO_INCREMENT = 0;
+ALTER TABLE pilot AUTO_INCREMENT = 0;
 
 
 SET foreign_key_checks = 0;
@@ -32,6 +33,13 @@ INSERT INTO iry.subtheme (id, theme_id, name) VALUES
 	(NULL, "1", "Limitations"),
 	(NULL, "1", "MMEL"),
 	(NULL, "1", "Emergency procedures");
+
+INSERT INTO iry.pilot (id, name) VALUES
+    (NULL, 'Tarek'),
+    (NULL, 'Andy'),
+    (NULL, 'Warso'),
+    (NULL, 'Yassine'),
+    (NULL, 'Florent');	
 
 INSERT INTO iry.typecourse (id, name) VALUES
 	(NULL, "Theorical Course"),
