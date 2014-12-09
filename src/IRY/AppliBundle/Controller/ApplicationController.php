@@ -27,5 +27,15 @@ class ApplicationController extends Controller
         $listeStep = $repo->findAll();
         return $this->render('IRYAppliBundle:Application:step.html.twig', array("step" => $step_id));
     }
+    public function exercicePratiqueAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository('IRYAppliBundle:Pilot');
+        $pilots = $repo->findAll();
+
+        return $this->render('IRYAppliBundle:Application:exercicePratique.html.twig', array(
+            'pilots' => $pilots
+        ));
+    }
 
 }

@@ -8,6 +8,10 @@ iry_appli_choixcours:
 iry_appli_step:
     path:   /step/{step_id}
     defaults: {_controller: "IRYAppliBundle:Application:step"}
+iry_appli_ep:
+    path:   /exercice-pratique
+    defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
+
 
 iry_crud_heli_list:
     path:   /crud/helicopters
