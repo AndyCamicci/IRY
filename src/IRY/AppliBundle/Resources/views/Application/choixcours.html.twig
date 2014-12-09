@@ -13,6 +13,8 @@
     		<td>Themes</td>
     		<td>Subthemes</td>
     		<td>Courses</td>
+    		<td>Type de cours</td>
+
     	</tr>
 		<tr>
 			<td><!--Nom hélico-->
@@ -39,10 +41,27 @@
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 					        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
+<<<<<<< HEAD
 					        <a href="{{ path('iry_appli_step', {'step_id': step.id}) }}">
 					        	<span><li>{{course.name}}</li></span></a>
+=======
+					        <a href="{{ path('iry_appli_step', {'step_id': course.id}) }}"><span><li>{{course.name}}</li></span></a>
+>>>>>>> d3e11eea72d426456713704f88d5d93bf687bbc7
 					        {% endfor %}
 				        {% endfor %}
+			        {% endfor %}
+		        </ul>				
+			</td>
+			<td><!--type des cours-->
+		        <ul>
+		        	{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+				   		{% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+					        {% for course in subtheme.courses %}
+					        <li>
+					        	{{  course.typeCourse.name }}
+					        </li>
+				       		 {% endfor %}
+			        	{% endfor %}
 			        {% endfor %}
 		        </ul>				
 			</td>
