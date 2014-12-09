@@ -41,12 +41,7 @@
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 					        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
-<<<<<<< HEAD
-					        <a href="{{ path('iry_appli_step', {'step_id': step.id}) }}">
-					        	<span><li>{{course.name}}</li></span></a>
-=======
 					        <a href="{{ path('iry_appli_step', {'step_id': course.id}) }}"><span><li>{{course.name}}</li></span></a>
->>>>>>> d3e11eea72d426456713704f88d5d93bf687bbc7
 					        {% endfor %}
 				        {% endfor %}
 			        {% endfor %}
