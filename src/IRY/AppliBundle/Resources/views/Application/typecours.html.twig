@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+	<a href="{{ path('iry_appli_home') }}">Back</a>
+    <h1>Pratical Training</h1>	
+    <table>
+    	<tr>
+    		<td>Pilot</td>
+    	</tr>
+    	<tr>
+    		<td><!--Liste des Pilotes-->
+		        <ul>
+			        {% for course in typecourse.courses %} <!-- boucle parmi la typecours des cours -->
+		        		{% for course in step.courses %}
+		        			{% for pilot in result.pilot %}
+		        				<li>{{pilot.name}}</li>
+			        {% endfor %}
+		        </ul>
+			</td>
+		</tr>	
