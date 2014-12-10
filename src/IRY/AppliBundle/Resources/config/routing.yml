@@ -6,7 +6,7 @@ iry_appli_choixcours:
     path:   /choixcours/{helicopter_id}
     defaults: {_controller: "IRYAppliBundle:Application:choixcours"}
 iry_appli_step:
-    path:   /step/{step_id}
+    path:   /step/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:step"}
 iry_appli_ep:
     path:   /exercice-pratique
