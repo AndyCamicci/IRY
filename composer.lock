@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cdbf2cb46c44221ec7061c4a5666faa1",
+    "hash": "16f7595d8abfd4e4cb28b0fe2c9d922f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1549,12 +1549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Serializer.git",
-                "reference": "00b85e60ab458413fe277c2ac110bbedf6d9c26b"
+                "reference": "c6ccf43374fe032a40a575b58004909af6db7109"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Serializer/zipball/00b85e60ab458413fe277c2ac110bbedf6d9c26b",
-                "reference": "00b85e60ab458413fe277c2ac110bbedf6d9c26b",
+                "url": "https://api.github.com/repos/symfony/Serializer/zipball/c6ccf43374fe032a40a575b58004909af6db7109",
+                "reference": "c6ccf43374fe032a40a575b58004909af6db7109",
                 "shasum": ""
             },
             "require": {
@@ -1587,7 +1587,7 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:20:06"
+            "time": "2014-12-08 08:44:04"
         },
         {
             "name": "symfony/swiftmailer-bundle",
