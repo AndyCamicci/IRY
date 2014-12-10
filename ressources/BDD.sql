@@ -61,7 +61,7 @@ INSERT INTO iry.course (id, subTheme_id, name, typeCourse_id) VALUES
 	(NULL, "7", "Filter clogging",                                "4"),
 	(NULL, "7", "Load factor",                                    "3");
 
-INSERT INTO `step` (id, course_id, name, order) VALUES
+INSERT INTO `step` (id, course_id, name, `order`) VALUES
 	(NULL, 1, 'demarage', 1),
 	(NULL, 1, 'stabilisation', 2),
 	(NULL, 1, 'tests', 3),
