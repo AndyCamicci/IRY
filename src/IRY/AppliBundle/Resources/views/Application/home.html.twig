@@ -3,9 +3,6 @@
     
     <header class="cf">
       <div id="header_left" class="left">
-        <div id="back_btn">
-          
-        </div>
         <div id="logo">
           <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
         </div>
@@ -29,6 +26,7 @@
 {% endblock %}
 
 {% block body %}
+  <div id="content">
     <section id="choose_helicopter">
       <h2>Choose your Helicopter</h2>
       <div class="liste_helicopter_wrap">
@@ -56,6 +54,7 @@
         </div>
       </div>
     </section>
+  </div>
 
 
 {% endblock %}

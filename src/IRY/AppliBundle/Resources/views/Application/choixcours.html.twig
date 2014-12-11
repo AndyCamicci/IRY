@@ -1,67 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-	<a href="{{ path('iry_appli_home') }}">Back</a>
-    <h1>Welcome !</h1>	
-    <table>
-    	<tr>
-    		<td>Helicopters</td>
-    		<td>Themes</td>
-    		<td>Subthemes</td>
-    		<td>Courses</td>
-    		<td>Type de cours</td>
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+{% block header %}
 
-    	</tr>
-		<tr>
-			<td><!--Nom hélico-->
-				{{helicopter.name}}
-			</td>
-			<td><!--Liste des thèmes-->
-		        <ul>
-			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-		        		<li id="theme{{theme.id}}">{{theme.name}}</li>
+	<header class="cf">
+      <div id="header_left" class="left">
+        <a href="{{ path('iry_appli_home') }}" id="back_btn">
+          <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+        </a>
+        <div id="logo">
+          <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
+        </div>
+      </div>
+      <div id="header_center" class="center">
+        <h1 class="helicopter_name">
+          {{helicopter.name}}
+        </h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="liste_categories_wrap">
+        <div id="categories">
+          <section class="category">
+            <h2>Choose your Theme</h2>
+            <div class="list">
+              <ul>
+		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+	        		<li class="theme" id="theme{{theme.id}}"><span>{{theme.name}}</span></li>
+		        {% endfor %}
+              </ul>
+            </div>
+          </section>
+          <section class="category">
+            <h2>Choose your Subtheme</h2>
+            <div class="list">
+              <ul>
+				{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+		        		<li class="theme" id="subtheme{{subtheme.id}}"><span>{{subtheme.name}}</span></li>
 			        {% endfor %}
-		        </ul>
-			</td>
-			<td><!--Liste des subthemes-->
-		        <ul>
-			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-			        		<li>{{subtheme.name}}</li>
+		        {% endfor %}
+              </ul>
+            </div>
+          </section>
+          <section class="category">
+            <h2>Choose your Course</h2>
+            <div class="list">
+              <ul>
+		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+				        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
+				        <a href="{{ path('iry_appli_step', {'course_id': course.id}) }}">
+				        	<li class="{{course.typeCourse.id}}" id="course{{course.id}}"><span>{{course.name}}</span></li>
+				        </a>
 				        {% endfor %}
 			        {% endfor %}
-		        </ul>				
-			</td>
-			<td><!--Liste des cours-->
-		        <ul>
-			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-					        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
-					        <a href="{{ path('iry_appli_step', {'course_id': course.id}) }}"><span><li>{{course.name}}</li></span></a>
-					        {% endfor %}
-				        {% endfor %}
-			        {% endfor %}
-		        </ul>				
-			</td>
-			<td><!--type des cours-->
-		        <ul>
-		        	{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-				   		{% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-					        {% for course in subtheme.courses %}
-					        <li>
-					        	{{  course.typeCourse.name }}
-					        	<a href="{{ path('iry_appli_ep') }}">Exercice pratique -></a>
-					        </li>
-				       		 {% endfor %}
-			        	{% endfor %}
-			        {% endfor %}
-		        </ul>				
-			</td>
-		</tr>
-    </table>
-</body>
-</html>
+		        {% endfor %}
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div id="legend">
+        <div class="types_course">
+          <div class="type_course cm">
+              <span>Theorical Course</span>
+          </div>
+          <div class="type_course cd">
+              <span>Demonstrative Course</span>
+          </div>
+          <div class="type_course vi">
+              <span>Immersive Movie</span>
+          </div>
+          <div class="type_course ep">
+              <span>Practical Training</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
