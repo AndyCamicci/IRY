@@ -9,7 +9,7 @@ iry_appli_step:
     path:   /step/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:step"}
 iry_appli_ep:
-    path:   /exercice-pratique/{course_id}
+    path:   /Pratical-Training/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
 
 
