@@ -101,7 +101,7 @@ body{
 			margin: auto;
 			/*border-bottom: solid 1px $blue-color;*/
 			
-			.helicopter_type, .helicopter_name{
+			h1{
 				@media (max-width: 740px){
 					margin:15px 0;
 				}
@@ -212,12 +212,8 @@ body{
 			}
 		}
 		.liste_categories_wrap{
-			/*overflow: auto;*/
-			/*margin: auto;*/
-			/*max-width: 945px;*/
 			display: inline-block;
 			#categories{
-				/*white-space: nowrap;*/
 				section.category{
 					float: left;
 					@media (max-width: 980px){
@@ -271,7 +267,7 @@ body{
 										border-left: solid 1px $theme-color;
 									}
 								}
-								&.cm{
+								&.course1{
 									span{
 										color: $cm-color;
 									}
@@ -281,7 +277,7 @@ body{
 										border-left: solid 1px $cm-color;
 									}
 								}
-								&.cd{
+								&.course2{
 									span{
 										color: $cd-color;
 									}
@@ -291,7 +287,7 @@ body{
 										border-left: solid 1px $cd-color;
 									}
 								}
-								&.vi{
+								&.course3{
 									span{
 										color: $vi-color;
 									}
@@ -301,7 +297,7 @@ body{
 										border-left: solid 1px $vi-color;
 									}
 								}
-								&.ep{
+								&.course4{
 									span{
 										color: $ep-color;
 									}
@@ -320,16 +316,16 @@ body{
 											background-size: contain;										
 										}
 									}
-									&.cm{
+									&.course1{
 										background: $cm-color;
 									}
-									&.cd{
+									&.course2{
 										background: $cd-color;
 									}
-									&.vi{
+									&.course3{
 										background: $vi-color;
 									}
-									&.ep{
+									&.course4{
 										background: $ep-color;
 									}
 									span{
@@ -402,6 +398,45 @@ body{
 					}
 				}
 			}
+		}
+		section#ep{
+			text-align: center;
+			.ep_wrap{
+				width: 840px;
+				padding: 30px 0;
+				margin: auto;
+				ul{
+					li{
+						background:$grey-color;
+						.pilot_name{
+							font-size: 1.1rem;
+							margin: 15px;
+							display: inline-block;
+						}
+						.progress_bar{
+							display: inline-block;
+							width: 200px;
+							height: 20px;
+							background: $grey-dark-color;
+							.bar{
+								width: 70%;
+								background: $blue-color;
+								display: block;
+							}
+						}
+						.success{
+
+						}
+						.errors{
+
+						}
+						.call{
+
+						}
+					}
+				}
+			}
+
 		}
 	}
 	footer{

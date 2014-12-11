@@ -1,24 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <a href="{{ path('iry_appli_choixcours', {helicopter_id:course.subTheme.theme.helicopter.id}) }}">Back</a>
-<table>
-    	<tr>
-    		<td>Pilot</td>
-    	</tr>
-    	<tr>
-    		<td><!--Liste des Pilotes-->
-		        <ul>
-        			{% for pilot in pilots %}
-        				<li>{{pilot.name}}</li>
-    				{% endfor %}
-		        </ul>
-			</td>
-		</tr>	
-	</table>
-</body>
-</html>
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+{% block header %}
+    
+    <header class="cf">
+      <div id="header_left" class="left">
+        <a href="{{ path('iry_appli_choixcours', {helicopter_id: course.subTheme.theme.helicopter.id}) }}" id="back_btn">
+          <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+        </a>
+        <div id="logo">
+          <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
+        </div>
+      </div>
+      <div id="header_center" class="center">
+        <h1 class="course_name">
+          {{course.name}}
+        </h1>
+      </div>
+    </header>
+
+{% endblock %}
+
+{% block body %}
+    <div id="content">
+        <section id="ep">
+            <div class="ep_wrap">
+                <div class="list">
+                    <ul>
+                        <li>
+                            <span class="pilot_name">Barak</span>
+                            <div class="progress_bar">
+                                <span class="bar"></span>
+                                <span class="title">GENE ON</span>
+                            </div>
+                            <span class="success">1</span>
+                            <span class="errors">7</span>
+                            <span class="call">AAA</span>
+                        </li>
+                    </ul>
+                </div>
+    			{% for pilot in pilots %}
+    				<li>{{pilot.name}}</li>
+    			{% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock %}

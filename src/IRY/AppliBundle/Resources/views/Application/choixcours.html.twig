@@ -47,17 +47,20 @@
 		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
+					        
+					        {% if 	   (course.typeCourse.id == 1) %}
+								{% set url = path('iry_appli_cm', {'course_id': course.id}) %}
+					        {% elseif (course.typeCourse.id == 2) %}
+								{% set url = path('iry_appli_cd', {'course_id': course.id}) %}
+					        {% elseif (course.typeCourse.id == 3) %}
+								{% set url = path('iry_appli_vi', {'course_id': course.id}) %}
+					        {% elseif (course.typeCourse.id == 4) %}
+								{% set url = path('iry_appli_ep', {'course_id': course.id}) %}	    
+				       		{% endif %}
 
-					        {% if (course.typeCourse.id == 4) %}
-				        		<a href="{{ path('iry_appli_ep', {'course_id': course.id}) }}">
-				        			<li class="{{course.typeCourse.id}}" id="course{{course.id}}"><span>{{course.name}}</span></li>
+				        		<a href="{{ url }}">
+				        			<li class="course{{course.typeCourse.id}}" id="course{{course.id}}"><span>{{course.name}}</span></li>
 				        		</a>
-				       		 {% endif %}
-			       			{% if (course.typeCourse.id != 4) %}
-			       			    <a href="{{ path('iry_appli_step', {'course_id': course.id}) }}">
-			       			   		<li class="{{course.typeCourse.id}}" id="course{{course.id}}"><span>{{course.name}}</span></li>
-			       			   	</a>
-			       			{% endif %}
 
 				        {% endfor %}
 			        {% endfor %}
