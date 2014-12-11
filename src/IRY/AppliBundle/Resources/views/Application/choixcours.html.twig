@@ -13,7 +13,6 @@
     		<td>Themes</td>
     		<td>Subthemes</td>
     		<td>Courses</td>
-    		<td>Type de cours</td>
 
     	</tr>
 		<tr>
@@ -41,23 +40,15 @@
 			        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 					        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
-					        <a href="{{ path('iry_appli_step', {'course_id': course.id}) }}"><span><li>{{course.name}}</li></span></a>
+					       		 {% if (course.typeCourse.id == 4) %}
+					        		<a href="{{ path('iry_appli_ep', {'course_id': course.id}) }}"><span><li>{{course.name}}</li></span></a>
+					       		 {% endif %}
+					       			{% if (course.typeCourse.id != 4) %}
+					       			   <a href="{{ path('iry_appli_step', {'course_id': course.id}) }}"><span><li>{{course.name}}</li></span></a>
+					       			{% endif %}
+
 					        {% endfor %}
 				        {% endfor %}
-			        {% endfor %}
-		        </ul>				
-			</td>
-			<td><!--type des cours-->
-		        <ul>
-		        	{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-				   		{% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-					        {% for course in subtheme.courses %}
-					        <li>
-					        	{{  course.typeCourse.name }}
-					        	<a href="{{ path('iry_appli_ep') }}">Exercice pratique -></a>
-					        </li>
-				       		 {% endfor %}
-			        	{% endfor %}
 			        {% endfor %}
 		        </ul>				
 			</td>
