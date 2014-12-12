@@ -65,6 +65,10 @@ INSERT INTO iry.step (id, course_id, name, `order`) VALUES
 	(NULL, 1, 'demarage', 1),
 	(NULL, 1, 'stabilisation', 2),
 	(NULL, 1, 'tests', 3),
-	(NULL, 1, 'decollage', 4);
+	(NULL, 1, 'decollage', 4),
+	(NULL, 2, 'demarage', 1),
+	(NULL, 2, 'stabilisation', 2),
+	(NULL, 2, 'tests', 3),
+	(NULL, 2, 'decollage', 4);
 
 	SET foreign_key_checks = 1;
