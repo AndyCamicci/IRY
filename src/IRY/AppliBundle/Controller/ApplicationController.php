@@ -31,14 +31,15 @@ class ApplicationController extends Controller
 
         return $this->render('IRYAppliBundle:Application:step.html.twig', array("course" => $course_id));
     }
-    public function exercicePratiqueAction()
+    public function exercicePratiqueAction(Course $course_id)
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('IRYAppliBundle:Pilot');
         $pilots = $repo->findAll();
 
         return $this->render('IRYAppliBundle:Application:exercicePratique.html.twig', array(
-            'pilots' => $pilots
+            'pilots' => $pilots, 
+            "course" => $course_id
         ));
     }
 

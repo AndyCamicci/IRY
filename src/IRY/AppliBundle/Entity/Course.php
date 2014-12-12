@@ -6,20 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Course {
 	private $id;
     private $name;
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
     private $steps;
-
-    /**
-     * @var \IRY\AppliBundle\Entity\Theme
-     */
-    private $theme;
-
-    /**
-     * @var \IRY\AppliBundle\Entity\TypeCourse
-     */
     private $typeCourse;
+    /**
+     * @var \IRY\AppliBundle\Entity\SubTheme
+     */
+    private $subTheme;
 
     /**
      * Constructor
@@ -96,26 +88,26 @@ class Course {
     }
 
     /**
-     * Set theme
+     * Set subTheme
      *
-     * @param \IRY\AppliBundle\Entity\Theme $theme
+     * @param \IRY\AppliBundle\Entity\SubTheme $subTheme
      * @return Course
      */
-    public function setTheme(\IRY\AppliBundle\Entity\Theme $theme = null)
+    public function setSubTheme(\IRY\AppliBundle\Entity\SubTheme $subTheme = null)
     {
-        $this->theme = $theme;
+        $this->subTheme = $subTheme;
 
         return $this;
     }
 
     /**
-     * Get theme
+     * Get subTheme
      *
-     * @return \IRY\AppliBundle\Entity\Theme 
+     * @return \IRY\AppliBundle\Entity\SubTheme 
      */
-    public function getTheme()
+    public function getSubTheme()
     {
-        return $this->theme;
+        return $this->subTheme;
     }
 
     /**
@@ -139,33 +131,5 @@ class Course {
     public function getTypeCourse()
     {
         return $this->typeCourse;
-    }
-    /**
-     * @var \IRY\AppliBundle\Entity\SubTheme
-     */
-    private $subTheme;
-
-
-    /**
-     * Set subTheme
-     *
-     * @param \IRY\AppliBundle\Entity\SubTheme $subTheme
-     * @return Course
-     */
-    public function setSubTheme(\IRY\AppliBundle\Entity\SubTheme $subTheme = null)
-    {
-        $this->subTheme = $subTheme;
-
-        return $this;
-    }
-
-    /**
-     * Get subTheme
-     *
-     * @return \IRY\AppliBundle\Entity\SubTheme 
-     */
-    public function getSubTheme()
-    {
-        return $this->subTheme;
     }
 }

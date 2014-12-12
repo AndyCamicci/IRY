@@ -6,20 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Course {
 	private $id;
     private $name;
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
     private $steps;
-
-    /**
-     * @var \IRY\AppliBundle\Entity\Theme
-     */
-    private $theme;
-
-    /**
-     * @var \IRY\AppliBundle\Entity\TypeCourse
-     */
     private $typeCourse;
+<<<<<<< HEAD
 
     /**
      * Constructor
@@ -168,4 +157,6 @@ class Course {
     {
         return $this->subTheme;
     }
+=======
+>>>>>>> 62ee9d0081c9a88e3e1d8468c35976bb8bde6ed7
 }
