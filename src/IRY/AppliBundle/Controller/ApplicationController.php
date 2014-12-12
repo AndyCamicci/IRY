@@ -22,13 +22,9 @@ class ApplicationController extends Controller
     {
         return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array("helicopter" => $helicopter_id));
     }
-    public function stepAction(Course $course_id)
+    public function coursDemonstratifAction(Course $course_id)
     {
-        // $em = $this->getDoctrine()->getManager();
-        // $repo = $em->getRepository("IRYAppliBundle:Step");
-        // $listeStep = $repo->findBy(array("course" => $course_id));
-
-        return $this->render('IRYAppliBundle:Application:step.html.twig', array("course" => $course_id));
+        return $this->render('IRYAppliBundle:Application:coursDemonstratif.html.twig', array("course" => $course_id));
     }
     public function exercicePratiqueAction(Course $course_id)
     {

@@ -1,20 +1,13 @@
 {% extends 'IRYAppliBundle:Application:base.html.twig' %}
-{% block header %}
-	<header class="cf">
-      <div id="header_left" class="left">
-        <a href="{{ path('iry_appli_home') }}" id="back_btn">
-          <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
-        </a>
-        <div id="logo">
-          <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
-        </div>
-      </div>
-      <div id="header_center" class="center">
-        <h1 class="helicopter_name">
-          {{helicopter.name}}
-        </h1>
-      </div>
-    </header>
+{% block header_title %}
+	{{helicopter.name}}
+{% endblock %}
+{% block header_back_btn %}
+	<a href="{{ path('iry_appli_home') }}" id="back_btn">
+		<img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+	</a>
+{% endblock %}
+{% block body %}
     <div id="content">
       <div class="liste_categories_wrap">
         <div id="categories">

@@ -13,10 +13,20 @@
     </head>
     <body>
 
-        {% block header %}{% endblock %}
-
+        {% block header %}
+            <header class="cf">
+                <div id="header_left" class="left">
+                    {% block header_back_btn %}{% endblock %}
+                    <div id="logo">
+                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
+                    </div>
+                </div>
+                <div id="header_center" class="center">
+                    <h1>{% block header_title %}{% endblock %}</h1>
+                </div>
+            </header>
+        {% endblock %}
         {% block body %}{% endblock %}
-
         {% block footer %}{% endblock %}
         
         <script src="{{ asset('bundles/iryappli/js/script.js') }}"></script>

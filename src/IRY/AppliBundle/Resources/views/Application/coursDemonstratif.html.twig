@@ -12,26 +12,17 @@
 
 {% block body %}
     <div id="content">
-        <section id="ep">
-            <div class="ep_wrap">
+        <section id="cd">
+            <div class="cd_wrap">
+                <h3>Procedure steps</h3>
                 <div class="list">
                     <ul>
-            			{% for pilot in pilots %}
+                        {% for step in course.steps %} <!-- boucle parmi la liste des step -->
                             <li>
-                                <div class="pilot_name element">
-                                    <span>{{pilot.name}}</span>
-                                </div>
                                 <div class="step element">
-                                    <span class="bar"></span>
-                                    <span class="title">GENE ON</span>
+                                    <span class="title">{{step.name}}</span>
                                 </div>
-                                <div class="success element">
-                                    <span>1</span>
-                                </div>
-                                <div class="errors element">
-                                    <span>7</span>
-                                </div>
-                                <div class="call element">
+                                <div class="percent element">
                                     <span></span>
                                 </div>
                             </li>

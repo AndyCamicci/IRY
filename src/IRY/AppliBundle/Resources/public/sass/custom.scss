@@ -53,6 +53,13 @@ body{
 			height: 5px;
 		}
 	}
+	h3{
+		color: white;
+		background: $blue-color;
+		font-size: 1.2rem;
+		padding: 15px 0;
+		text-align: center;
+	}
 	header{
 		$header_height : 60px;
 		$header_padding : 10px;
@@ -399,6 +406,53 @@ body{
 				}
 			}
 		}
+		section#cd{
+			.cd_wrap{
+				width: 600px;
+				background: white;
+				float: right;
+				h2{
+					background: $blue-color;
+					padding: 15px;
+				}
+				ul{
+					background:white;
+					padding: 10px;
+					li{
+						margin-bottom: 10px;
+						div.element{
+							position: relative;
+							display: inline-block;
+							vertical-align: middle;
+							span{
+								font-size: 1.2rem;
+							}
+						}
+						.step{
+							width: 350px;
+							background: $grey-color;
+							text-align: center;
+							margin-right: 10px;
+							.title{
+								font-size: 1.1rem;
+								color: $grey-dark-color;
+								padding: 6px;
+							}
+						}
+						.percent{
+							width: 150px;
+							background: $grey-color;
+							span{
+								height: 30px;
+								width: 70%;
+								background: $grey-dark-color;
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
 		section#ep{
 			text-align: center;
 			.ep_wrap{
@@ -408,30 +462,95 @@ body{
 				ul{
 					li{
 						background:$grey-color;
-						.pilot_name{
-							font-size: 1.1rem;
-							margin: 15px;
+						padding: 10px;
+						margin-bottom: 10px;
+						div.element{
+							position: relative;
 							display: inline-block;
+							vertical-align: middle;
+							span{
+								font-size: 1.2rem;
+							}
 						}
-						.progress_bar{
-							display: inline-block;
-							width: 200px;
-							height: 20px;
+						.step{
+							width: 350px;
 							background: $grey-dark-color;
 							.bar{
+								height: 30px;
 								width: 70%;
 								background: $blue-color;
 								display: block;
 							}
+							.title{
+								font-size: 1.1rem;
+								color: white;
+								position: absolute;
+								padding: 6px;
+								bottom: 0;
+								left: 0;
+								right: 0;
+							}
+						}
+						.pilot_name, .success, .errors, .call{
+							span{
+								font-size: 1.3rem;
+								padding: 5px 0;
+								color: $grey-dark-dark-color;
+							}
+						}
+						.pilot_name{
+							width: 200px;
+							text-align: left;
+						}
+						.success, .errors, .call{
+							width: 75px;
+							height: 30px;
+							span{
+								margin-right: 40px;
+								display: inline-block;
+								/*padding: 5px 10px;*/
+								/*padding-right: 50px;*/
+								&:after{
+									content:"";
+									width:25px;
+									height: 25px;
+									position: absolute;
+									right: 15px;
+									top: 1px;
+								}
+							}
+						}
+						.success, .errors{
+							border-right: 2px solid $blue-color;
+							text-align: right;
+							span{
+								padding: 6px 10px;
+							}
 						}
 						.success{
-
+							span{
+								&:after{
+									background: url(../img/success.png);
+									background-size: contain;
+								}
+							}
 						}
 						.errors{
-
+							span{
+								&:after{
+									background: url(../img/errors.png);
+									background-size: contain;
+								}
+							}
 						}
 						.call{
-
+							span{
+								padding: 5px 30px;
+								&:after{
+									background: url(../img/call.png);
+									background-size: contain;
+								}
+							}
 						}
 					}
 				}
