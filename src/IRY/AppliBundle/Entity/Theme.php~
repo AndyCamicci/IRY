@@ -104,4 +104,19 @@ class Theme {
     {
         return $this->helicopter;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subThemes;
+
+
+    /**
+     * Get subThemes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSubThemes()
+    {
+        return $this->subThemes;
+    }
 }

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use IRY\AppliBundle\Entity\Helicopter;
 use IRY\AppliBundle\Entity\Step;
 use IRY\AppliBundle\Entity\Course;
+use IRY\AppliBundle\Entity\Result;
 
 class ApplicationController extends Controller
 {
