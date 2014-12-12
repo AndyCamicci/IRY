@@ -8,13 +8,12 @@ IRY\AppliBundle\Entity\Result:
             generator:
                 strategy: IDENTITY
     fields:
-        error:
-            type: integer
+        isError:
+            type: boolean
         isFavorite:
             type: boolean
-        state:
-            type: string
-            length: 255
+        isGlobal:
+            type: boolean
     manyToOne:
         pilot:
             targetEntity: Pilot
@@ -31,7 +30,7 @@ IRY\AppliBundle\Entity\Result:
     oneToOne:
         trial:
             targetEntity: Trial
-            inversedBy: result
+            # inversedBy: result
             joinColumn:
                 name: trial_id
                 referencedColumnName: id

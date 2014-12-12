@@ -20,3 +20,7 @@ IRY\AppliBundle\Entity\Step:
             joinColumn:
                 name: course_id
                 referencedColumnName: id
+    oneToMany:
+        results:
+            targetEntity: Result
+            mappedBy: step

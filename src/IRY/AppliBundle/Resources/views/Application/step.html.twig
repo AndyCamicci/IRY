@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step</title>
+</head>
+<body>
+
+    <table>
+    	<tr>
+    		<td>Course</td>
+    	   	<td>Step</td>
+    		<td>Failures</td>
+    	</tr>
+		<tr>
+			<td><!--Nom cours-->
+				{{course.name}}
+			</td>
+
+			<td><!--Liste des étapes-->
+		        <ul>
+			        {% for step in course.steps %}
+		        		<li id="Step{{step.id}}">{{step.name}}</li>
+			        {% endfor %}
+		        </ul>
+			</td>
+
+			<td>
+				{% for etape in course.steps %} <!-- nommée etape pour differencier -->
+					{% set nbEssai = 0 %}
+					{% set nbErrors = 0 %}
+			        {% for resultat in etape.results %}  <!-- nommée resultat pour differencier -->
+			        	{% set nbEssai = nbEssai + 1 %}
+			        	{% if (resultat.isError == true) %}
+			        		{% set nbErrors = nbErrors + 1 %}	
+			        	{% endif%}
+			        {% endfor %}
+			        <li>{{nbErrors*nbEssai*5/20}}%</li>
+			    {% endfor %} 
+		        
+			</td>
+		</tr>
+    </table>
+</body>
+</html>

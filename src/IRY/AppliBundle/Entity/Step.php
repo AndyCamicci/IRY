@@ -11,6 +11,15 @@ class Step {
     private $name;
     private $course;
     private $order;
+    private $results;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->results = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -69,6 +78,39 @@ class Step {
     }
 
     /**
+     * Add results
+     *
+     * @param \IRY\AppliBundle\Entity\Result $results
+     * @return Step
+     */
+    public function addResult(\IRY\AppliBundle\Entity\Result $results)
+    {
+        $this->results[] = $results;
+
+        return $this;
+    }
+
+    /**
+     * Remove results
+     *
+     * @param \IRY\AppliBundle\Entity\Result $results
+     */
+    public function removeResult(\IRY\AppliBundle\Entity\Result $results)
+    {
+        $this->results->removeElement($results);
+    }
+
+    /**
+     * Get results
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getResults()
+    {
+        return $this->results;
+    }
+
+    /**
      * Set course
      *
      * @param \IRY\AppliBundle\Entity\Course $course
@@ -90,4 +132,26 @@ class Step {
     {
         return $this->course;
     }
+
+    // public function getNbEssai()
+    // {
+    //     $nbEssai = 0;
+    //     $i = 0;
+    //     for ($i;$this->isError;$i++)
+    //     {
+    //         $nbEssai = $nbEssai +1;
+    //     }
+    //     return $this->nbEssai;
+    // }
+
+    // public function getNbErrors()
+    // {
+    //     $nbErrors = 0;
+    //     if ($result->isError = true)
+    //     {
+    //         $nbErrors = $nbErrors +1;
+    //     }
+             
+    //     return $this->nbErrors;
+    // }
 }

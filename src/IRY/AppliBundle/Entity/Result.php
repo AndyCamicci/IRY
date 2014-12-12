@@ -7,12 +7,12 @@ class Result {
     private $id;
     private $pilot;
     private $step;
-    private $error = 0;
+    private $isError = 0;
     private $trial;
     private $isFavorite;
-    const TYPE_LOCAL = "Local";
-    const TYPE_GLOBAL = "Global";
-    private $state;
+    private $isGlobal;
+
+
 
     /**
      * Get id
@@ -25,26 +25,26 @@ class Result {
     }
 
     /**
-     * Set error
+     * Set isError
      *
-     * @param integer $error
+     * @param boolean $isError
      * @return Result
      */
-    public function setError($error)
+    public function setIsError($isError)
     {
-        $this->error = $error;
+        $this->isError = $isError;
 
         return $this;
     }
 
     /**
-     * Get error
+     * Get isError
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getError()
+    public function getIsError()
     {
-        return $this->error;
+        return $this->isError;
     }
 
     /**
@@ -71,26 +71,26 @@ class Result {
     }
 
     /**
-     * Set state
+     * Set isGlobal
      *
-     * @param string $state
+     * @param boolean $isGlobal
      * @return Result
      */
-    public function setState($state)
+    public function setIsGlobal($isGlobal)
     {
-        $this->state = $state;
+        $this->isGlobal = $isGlobal;
 
         return $this;
     }
 
     /**
-     * Get state
+     * Get isGlobal
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getState()
+    public function getIsGlobal()
     {
-        return $this->state;
+        return $this->isGlobal;
     }
 
     /**
