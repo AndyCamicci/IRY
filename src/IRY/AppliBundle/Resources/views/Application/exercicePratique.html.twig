@@ -25,8 +25,9 @@
             <div class="ep_wrap">
                 <div class="list">
                     <ul>
+    			{% for pilot in pilots %}
                         <li>
-                            <span class="pilot_name">Barak</span>
+                            <span class="pilot_name">{{pilot.name}}</span>
                             <div class="progress_bar">
                                 <span class="bar"></span>
                                 <span class="title">GENE ON</span>
@@ -35,11 +36,9 @@
                             <span class="errors">7</span>
                             <span class="call">AAA</span>
                         </li>
+                {% endfor %}
                     </ul>
                 </div>
-    			{% for pilot in pilots %}
-    				<li>{{pilot.name}}</li>
-    			{% endfor %}
             </div>
         </section>
     </div>
