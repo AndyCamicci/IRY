@@ -20,13 +20,13 @@
                 <h3>Procedure steps</h3>
                 <div class="list">
                     <ul>
-                        {% for step in course.steps %} <!-- boucle parmi la liste des step -->
+                        {% for step in course.steps %}
                             <li>
                                 <div class="step element">
-                                    <span class="title">{{step.name}}</span>
+                                    <span class="title">{{ step.name }}</span>
                                 </div>
                                 <div class="percent element">
-                                    <span></span>
+                                    <span data-percent="{{ step.nbErrors * 100 / step.results|length }}"></span>
                                 </div>
                             </li>
                         {% endfor %}

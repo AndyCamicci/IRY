@@ -41,7 +41,7 @@
 			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
 					        
-					        {% if 	   (course.typeCourse.id == 1) %}
+					        {% if (course.typeCourse.id == 1) %}
 								{% set url = path('iry_appli_cm', {'course_id': course.id}) %}
 					        {% elseif (course.typeCourse.id == 2) %}
 								{% set url = path('iry_appli_cd', {'course_id': course.id}) %}
