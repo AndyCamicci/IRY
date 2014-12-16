@@ -407,16 +407,23 @@ body{
 			}
 		}
 		section#cd{
+			.cd_video{
+				width: 60%;
+				float: left;
+				video{
+					width: 100%;
+				}
+			}
 			.cd_wrap{
-				width: 600px;
-				background: white;
+				width: 40%;
+				background: $grey-light-color;
 				float: right;
 				ul{
-					background:white;
 					padding: 10px;
 					li{
-						margin-bottom: 10px;
-						div.element{
+						margin-bottom: 5px;
+						display: block;
+						.element{
 							position: relative;
 							display: inline-block;
 							vertical-align: middle;
@@ -425,21 +432,22 @@ body{
 							}
 						}
 						.step{
-							width: 350px;
+							width: 65%;
 							background: $grey-color;
 							text-align: center;
-							margin-right: 10px;
-							.title{
+							margin-right: 2%;
+							span{
+								display: block;
 								font-size: 1.1rem;
 								color: $grey-dark-color;
 								padding: 6px;
 							}
 						}
 						.percent{
-							width: 150px;
+							width: 30%;
 							background: $grey-color;
 							span{
-								height: 30px;
+								height: 14px;
 								width: 70%;
 								background: $grey-dark-color;
 								display: block;

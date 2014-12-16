@@ -504,94 +504,104 @@ body #content #legend .types_course .type_course.ep span:before {
   background-size: contain;
 }
 /* line 410, ../sass/custom.scss */
-body #content section#cd .cd_wrap {
-  width: 600px;
-  background: white;
-  float: right;
+body #content section#cd .cd_video {
+  width: 60%;
+  float: left;
 }
-/* line 414, ../sass/custom.scss */
-body #content section#cd .cd_wrap ul {
-  background: white;
-  padding: 10px;
+/* line 413, ../sass/custom.scss */
+body #content section#cd .cd_video video {
+  width: 100%;
 }
 /* line 417, ../sass/custom.scss */
-body #content section#cd .cd_wrap ul li {
-  margin-bottom: 10px;
+body #content section#cd .cd_wrap {
+  width: 40%;
+  background: #EEE8EA;
+  float: right;
 }
-/* line 419, ../sass/custom.scss */
-body #content section#cd .cd_wrap ul li div.element {
+/* line 421, ../sass/custom.scss */
+body #content section#cd .cd_wrap ul {
+  padding: 10px;
+}
+/* line 423, ../sass/custom.scss */
+body #content section#cd .cd_wrap ul li {
+  margin-bottom: 5px;
+  display: block;
+}
+/* line 426, ../sass/custom.scss */
+body #content section#cd .cd_wrap ul li .element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 423, ../sass/custom.scss */
-body #content section#cd .cd_wrap ul li div.element span {
+/* line 430, ../sass/custom.scss */
+body #content section#cd .cd_wrap ul li .element span {
   font-size: 1.2rem;
 }
-/* line 427, ../sass/custom.scss */
+/* line 434, ../sass/custom.scss */
 body #content section#cd .cd_wrap ul li .step {
-  width: 350px;
+  width: 65%;
   background: #d1cece;
   text-align: center;
-  margin-right: 10px;
+  margin-right: 2%;
 }
-/* line 432, ../sass/custom.scss */
-body #content section#cd .cd_wrap ul li .step .title {
+/* line 439, ../sass/custom.scss */
+body #content section#cd .cd_wrap ul li .step span {
+  display: block;
   font-size: 1.1rem;
   color: #a8a8a7;
   padding: 6px;
 }
-/* line 438, ../sass/custom.scss */
+/* line 446, ../sass/custom.scss */
 body #content section#cd .cd_wrap ul li .percent {
-  width: 150px;
+  width: 30%;
   background: #d1cece;
 }
-/* line 441, ../sass/custom.scss */
+/* line 449, ../sass/custom.scss */
 body #content section#cd .cd_wrap ul li .percent span {
-  height: 30px;
+  height: 14px;
   width: 70%;
   background: #a8a8a7;
   display: block;
 }
-/* line 452, ../sass/custom.scss */
+/* line 460, ../sass/custom.scss */
 body #content section#ep {
   text-align: center;
 }
-/* line 454, ../sass/custom.scss */
+/* line 462, ../sass/custom.scss */
 body #content section#ep .ep_wrap {
   width: 840px;
   padding: 30px 0;
   margin: auto;
 }
-/* line 459, ../sass/custom.scss */
+/* line 467, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li {
   background: #d1cece;
   padding: 10px;
   margin-bottom: 10px;
 }
-/* line 463, ../sass/custom.scss */
+/* line 471, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li div.element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 467, ../sass/custom.scss */
+/* line 475, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li div.element span {
   font-size: 1.2rem;
 }
-/* line 471, ../sass/custom.scss */
+/* line 479, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .step {
   width: 350px;
   background: #a8a8a7;
 }
-/* line 474, ../sass/custom.scss */
+/* line 482, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .step .bar {
   height: 30px;
   width: 70%;
   background: #0fa7b7;
   display: block;
 }
-/* line 480, ../sass/custom.scss */
+/* line 488, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .step .title {
   font-size: 1.1rem;
   color: white;
@@ -601,30 +611,30 @@ body #content section#ep .ep_wrap ul li .step .title {
   left: 0;
   right: 0;
 }
-/* line 491, ../sass/custom.scss */
+/* line 499, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .pilot_name span, body #content section#ep .ep_wrap ul li .success span, body #content section#ep .ep_wrap ul li .errors span, body #content section#ep .ep_wrap ul li .call span {
   font-size: 1.3rem;
   padding: 5px 0;
   color: #909090;
 }
-/* line 497, ../sass/custom.scss */
+/* line 505, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .pilot_name {
   width: 200px;
   text-align: left;
 }
-/* line 501, ../sass/custom.scss */
+/* line 509, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .success, body #content section#ep .ep_wrap ul li .errors, body #content section#ep .ep_wrap ul li .call {
   width: 75px;
   height: 30px;
 }
-/* line 504, ../sass/custom.scss */
+/* line 512, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .success span, body #content section#ep .ep_wrap ul li .errors span, body #content section#ep .ep_wrap ul li .call span {
   margin-right: 40px;
   display: inline-block;
   /*padding: 5px 10px;*/
   /*padding-right: 50px;*/
 }
-/* line 509, ../sass/custom.scss */
+/* line 517, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .success span:after, body #content section#ep .ep_wrap ul li .errors span:after, body #content section#ep .ep_wrap ul li .call span:after {
   content: "";
   width: 25px;
@@ -633,35 +643,35 @@ body #content section#ep .ep_wrap ul li .success span:after, body #content secti
   right: 15px;
   top: 1px;
 }
-/* line 519, ../sass/custom.scss */
+/* line 527, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .success, body #content section#ep .ep_wrap ul li .errors {
   border-right: 2px solid #0fa7b7;
   text-align: right;
 }
-/* line 522, ../sass/custom.scss */
+/* line 530, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .success span, body #content section#ep .ep_wrap ul li .errors span {
   padding: 6px 10px;
 }
-/* line 528, ../sass/custom.scss */
+/* line 536, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .success span:after {
   background: url(../img/success.png);
   background-size: contain;
 }
-/* line 536, ../sass/custom.scss */
+/* line 544, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .errors span:after {
   background: url(../img/errors.png);
   background-size: contain;
 }
-/* line 543, ../sass/custom.scss */
+/* line 551, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .call span {
   padding: 5px 30px;
 }
-/* line 545, ../sass/custom.scss */
+/* line 553, ../sass/custom.scss */
 body #content section#ep .ep_wrap ul li .call span:after {
   background: url(../img/call.png);
   background-size: contain;
 }
-/* line 558, ../sass/custom.scss */
+/* line 566, ../sass/custom.scss */
 body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -669,7 +679,7 @@ body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 564, ../sass/custom.scss */
+/* line 572, ../sass/custom.scss */
 body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
