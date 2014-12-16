@@ -13,6 +13,13 @@ $(document).ready(function() {
 		filterHelicoptersByName(value);
 	});
 
+	/* PERCENT */
+	$(".percent").each(function() {
+		var $element = $(this).find("span");
+		var percent = $element.attr("data-percent");
+		$element.css("width", percent + "%");
+	});
+
 
 });
 

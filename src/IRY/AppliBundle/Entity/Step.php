@@ -144,14 +144,16 @@ class Step {
     //     return $this->nbEssai;
     // }
 
-    // public function getNbErrors()
-    // {
-    //     $nbErrors = 0;
-    //     if ($result->isError = true)
-    //     {
-    //         $nbErrors = $nbErrors +1;
-    //     }
+    public function getNbErrors()
+    {
+        $nbErrors = 0;
+
+        for ($i=0; $i < count($this->results); $i++) { 
+            if ($this->results[$i]->getIsError() == true) {
+                $nbErrors++;
+            }
+        }
              
-    //     return $this->nbErrors;
-    // }
+        return $nbErrors;
+    }
 }

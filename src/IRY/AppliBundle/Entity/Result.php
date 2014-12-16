@@ -7,7 +7,7 @@ class Result {
     private $id;
     private $pilot;
     private $step;
-    private $isError = 0;
+    private $isError = false;
     private $trial;
     private $isFavorite;
     private $isGlobal;
