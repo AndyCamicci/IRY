@@ -20,6 +20,15 @@ $(document).ready(function() {
 		$element.css("width", percent + "%");
 	});
 
+	/* DEMONSTRATIVE COURSE */
+	$(".cd_step").each(function() {
+		var $title = $(this).find(".title");
+		var $percent = $(this).find(".var");
+		$(this).on("click", function() {
+			$title.css("color", "#a8a8a7");
+			$percent.css("background", "#a8a8a7");
+		});
+	});	
 
 });
 

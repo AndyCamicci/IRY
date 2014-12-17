@@ -1,3 +1,5 @@
+@import "functions";
+
 .left{float: left;}
 .right{float: right;}
 .center{text-align: center;}
@@ -418,41 +420,58 @@ body{
 				width: 40%;
 				background: $grey-light-color;
 				float: right;
-				ul{
-					padding: 10px;
-					li{
-						margin-bottom: 5px;
-						display: block;
-						.element{
-							position: relative;
-							display: inline-block;
-							vertical-align: middle;
-							span{
-								font-size: 1.2rem;
+				.list{
+					position: relative;
+					padding-bottom: 40px;
+					ul{
+						padding: 10px;
+						li{
+							margin-bottom: 10px;
+							display: block;
+							cursor: pointer;
+							.element{
+								position: relative;
+								display: inline-block;
+								vertical-align: middle;
+								span{
+									font-size: 1.2rem;
+								}
+							}
+							.step{
+								width: 65%;
+								background: $grey-color;
+								text-align: center;
+								margin-right: 2%;
+								span.title{
+									display: block;
+									font-size: 1.2rem;
+									/*color: $grey-dark-color;*/
+									color: $blue-color;
+									padding: 8px;
+								}
+							}
+							.percent{
+								width: 30%;
+								background: $grey-color;
+								span.var{
+									height: 14px;
+									width: 70%;
+									/*background: $grey-dark-color;*/
+									background: $blue-color;
+									display: block;
+								}
 							}
 						}
-						.step{
-							width: 65%;
-							background: $grey-color;
-							text-align: center;
-							margin-right: 2%;
-							span{
-								display: block;
-								font-size: 1.1rem;
-								color: $grey-dark-color;
-								padding: 6px;
-							}
-						}
-						.percent{
-							width: 30%;
-							background: $grey-color;
-							span{
-								height: 14px;
-								width: 70%;
-								background: $grey-dark-color;
-								display: block;
-							}
-						}
+					}
+					&:after{
+						content: "";
+						position: absolute;
+						bottom: 0;
+						height: 50px;
+						/*width: 100%;*/
+						left: 0;
+						right: 0;
+						background: url(../img/arrow_down.png) center no-repeat;
 					}
 				}
 			}
@@ -561,6 +580,44 @@ body{
 			}
 
 		}
+		.modal{
+		  &:before{
+		    display: block;
+		    background: rgba(0,0,0,.6);
+		    position: fixed;
+		    top: 0; left: 0; right: 0; bottom: 0; 
+		    z-index: 10;
+		  }
+		  &:target{
+		    &:before{
+		    }  
+		    .modal-dialog{
+		      @include translate(0,0); 
+		    }
+		  }
+		}
+		.modal{
+			.modal-dialog{
+			  background: #fefefe;
+			  position: fixed; 
+			  z-index: 11;
+			  width: 100%;
+			  @include translate(0,-2000px);
+			  @transition(all, 0.3, ease-in-out);
+			  video{
+			  	width: 100%;
+			  }
+			  .close{
+			  	position: absolute;
+			  	top:10px;
+			  	right: 10px;
+			  }
+			}
+		}
+		#close {
+		  display: none; 
+		}
+
 	}
 	footer{
 		.fake_scrollbar{
