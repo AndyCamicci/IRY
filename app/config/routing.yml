@@ -6,3 +6,6 @@ iry_appli:
     resource: "@IRYAppliBundle/Resources/config/routing.yml"
     prefix:   /
 
+_console:
+    resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"
+    prefix: /_console

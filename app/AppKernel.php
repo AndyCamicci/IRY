@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new IRY\AppliBundle\IRYAppliBundle(),
             new IRY\SecurityBundle\IRYSecurityBundle(),
+            new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

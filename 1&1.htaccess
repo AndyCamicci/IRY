@@ -1,0 +1,9 @@
+AddType x-mapp-php6 .php 
+AddHandler x-mapp-php6 .php
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(phpmyadmin)($|/) - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ web/$1 [QSA,L]
