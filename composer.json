@@ -20,7 +20,8 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "symfony/serializer": "3.0.*@dev",
-        "jms/serializer-bundle": "~0.13"
+        "jms/serializer-bundle": "~0.13",
+        "coresphere/console-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
