@@ -17,29 +17,29 @@
 	  </div>
       <div class="liste_categories_wrap">
         <div id="categories">
-          <section class="category">
+          <section class="category theme_section">
             <h2>Choose your Theme</h2>
             <div class="list">
               <ul>
 		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-	        		<li class="theme" id="theme{{theme.id}}"><span>{{theme.name}}</span></li>
+	        		<li class="theme" data-theme="{{theme.id}}" id="theme{{theme.id}}"><span>{{theme.name}}</span></li>
 		        {% endfor %}
               </ul>
             </div>
           </section>
-          <section class="category">
+          <section class="category subtheme_section">
             <h2>Choose your Subtheme</h2>
             <div class="list">
               <ul>
 				{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-		        		<li class="theme" id="subtheme{{subtheme.id}}"><span>{{subtheme.name}}</span></li>
+		        		<li class="subtheme" data-theme="{{theme.id}}" data-subtheme="{{subtheme.id}}" id="subtheme{{subtheme.id}}"><span>{{subtheme.name}}</span></li>
 			        {% endfor %}
 		        {% endfor %}
               </ul>
             </div>
           </section>
-          <section class="category">
+          <section class="category course_section">
             <h2>Choose your Course</h2>
             <div class="list">
               <ul>
@@ -47,18 +47,18 @@
 			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
 				        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
 					        
-					        {% if (course.typeCourse.id == 1) %}
+					        {% if (course.typeCourse.id == 1) %} {# cm #}
 								{% set url = path('iry_appli_cm', {'course_id': course.id}) %}
-					        {% elseif (course.typeCourse.id == 2) %}
+					        {% elseif (course.typeCourse.id == 2) %} {# cd #}
 								{% set url = path('iry_appli_cd', {'course_id': course.id}) %}
-					        {% elseif (course.typeCourse.id == 3) %}
+					        {% elseif (course.typeCourse.id == 3) %} {# vi #}
 								{% set url = "#modal-one" %}
-					        {% elseif (course.typeCourse.id == 4) %}
+					        {% elseif (course.typeCourse.id == 4) %} {# ep #}
 								{% set url = path('iry_appli_ep', {'course_id': course.id}) %}	    
 				       		{% endif %}
 
 				        		<a href="{{ url }}">
-				        			<li class="course{{course.typeCourse.id}}" id="course{{course.id}}"><span>{{course.name}}</span></li>
+				        			<li data-subtheme="{{subtheme.id}}" theme="{{theme.id}}" class="course course{{course.typeCourse.id}}" id="course{{course.id}}"><span>{{course.name}}</span></li>
 				        		</a>
 
 				        {% endfor %}

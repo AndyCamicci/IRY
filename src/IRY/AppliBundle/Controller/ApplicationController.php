@@ -23,6 +23,11 @@ class ApplicationController extends Controller
     {
         return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array("helicopter" => $helicopter_id));
     }
+    public function coursMagistralAction(Course $course_id)
+    {
+        //lancer diapo interactives
+        
+    }
     public function coursDemonstratifAction(Course $course_id)
     {
         return $this->render('IRYAppliBundle:Application:coursDemonstratif.html.twig', array("course" => $course_id));

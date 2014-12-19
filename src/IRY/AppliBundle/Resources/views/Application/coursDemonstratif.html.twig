@@ -12,7 +12,7 @@
 
 {% block body %}
     <div id="content">
-        <section id="cd">
+        <section id="cd" class="cf">
             <div class="cd_video">
                 <video src="{{ asset('bundles/iryappli') }}/img/video.mp4" controls muted></video>
             </div>
@@ -21,6 +21,22 @@
                 <div class="list">
                     <ul>
                         {% for step in course.steps %}
+                            <li class="cd_step">
+                                <div class="step element">
+                                    <span class="title">{{ step.name }}</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }}"></span>
+                                </div>
+                            </li>
+                            <li class="cd_step">
+                                <div class="step element">
+                                    <span class="title">{{ step.name }}</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }}"></span>
+                                </div>
+                            </li>
                             <li class="cd_step">
                                 <div class="step element">
                                     <span class="title">{{ step.name }}</span>

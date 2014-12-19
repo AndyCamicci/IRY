@@ -10,13 +10,13 @@ iry_appli_step:
     defaults: {_controller: "IRYAppliBundle:Application:step"}
 iry_appli_cm:
     path:   /theorical-course/{course_id}
-    defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
+    defaults: {_controller: "IRYAppliBundle:Application:coursMagistral"}
 iry_appli_cd:
     path:   /demonstrative-course/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:coursDemonstratif"}
-iry_appli_vi:
-    path:   /immersive-movie/{course_id}
-    defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
+# iry_appli_vi:
+#     path:   /immersive-movie/{course_id}
+#     defaults: {_controller: "IRYAppliBundle:Application:videoImmersive"}
 iry_appli_ep:
     path:   /practical-training/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
