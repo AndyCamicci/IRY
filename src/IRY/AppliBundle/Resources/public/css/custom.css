@@ -729,6 +729,7 @@ html body #content section#ep .ep_wrap ul li.gotodebriefing span {
 }
 /* line 614, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap {
+  @transition (all, 0.3, ease-in-out);
   left: 100%;
   background: #EEE8EA;
   float: right;
@@ -754,29 +755,33 @@ html body #content section#ep .ep_list_wrap {
     width: 40%;
   }
 }
+/* line 625, ../sass/custom.scss */
+html body #content section#ep .ep_list_wrap.ep_list_opened {
+  @transition (all, 0.3, ease-in-out);
+}
 @media (max-width: 640px) {
-  /* line 624, ../sass/custom.scss */
+  /* line 625, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 20%;
   }
 }
 @media (min-width: 640px) {
-  /* line 624, ../sass/custom.scss */
+  /* line 625, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 40%;
   }
 }
 @media (min-width: 1000px) {
-  /* line 624, ../sass/custom.scss */
+  /* line 625, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 60%;
   }
 }
-/* line 641, ../sass/custom.scss */
+/* line 643, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap h3 {
   cursor: pointer;
 }
-/* line 643, ../sass/custom.scss */
+/* line 645, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap h3:before {
   content: "";
   position: absolute;
@@ -786,49 +791,49 @@ html body #content section#ep .ep_list_wrap h3:before {
   left: -48px;
   background: #0fa7b7;
 }
-/* line 653, ../sass/custom.scss */
+/* line 655, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list {
   position: relative;
   padding-bottom: 40px;
   height: 100%;
   overflow: auto;
 }
-/* line 658, ../sass/custom.scss */
+/* line 660, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul {
   padding: 10px;
   overflow: auto;
 }
-/* line 661, ../sass/custom.scss */
+/* line 663, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step {
   margin-bottom: 10px;
   display: block;
   cursor: pointer;
 }
-/* line 667, ../sass/custom.scss */
+/* line 669, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step.activated .step .title {
   color: #a8a8a7;
 }
-/* line 672, ../sass/custom.scss */
+/* line 674, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step.activated .percent .var {
   background-color: #a8a8a7;
 }
-/* line 677, ../sass/custom.scss */
+/* line 679, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 681, ../sass/custom.scss */
+/* line 683, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .element span {
   font-size: 1.2rem;
 }
-/* line 685, ../sass/custom.scss */
+/* line 687, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .step {
   width: 65%;
   text-align: left;
   margin-right: 2%;
 }
-/* line 689, ../sass/custom.scss */
+/* line 691, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .step .title {
   display: block;
   font-size: 1.2rem;
@@ -836,12 +841,12 @@ html body #content section#ep .ep_list_wrap .list ul li.ep_step .step .title {
   color: #a8a8a7;
   padding: 5px;
 }
-/* line 697, ../sass/custom.scss */
+/* line 699, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent {
   width: 30%;
   background: #d1cece;
 }
-/* line 700, ../sass/custom.scss */
+/* line 702, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent span.var {
   height: 14px;
   width: 70%;
@@ -849,17 +854,17 @@ html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent span.va
   background: #0fa7b7;
   display: block;
 }
-/* line 708, ../sass/custom.scss */
+/* line 710, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .list_title {
   width: 30%;
   text-align: left;
 }
-/* line 711, ../sass/custom.scss */
+/* line 713, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .list_title span {
   color: #a8a8a7;
   font-size: 1.1rem;
 }
-/* line 718, ../sass/custom.scss */
+/* line 720, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list:after {
   content: "";
   position: absolute;
@@ -870,7 +875,7 @@ html body #content section#ep .ep_list_wrap .list:after {
   right: 0;
   background: url(../img/arrow_down.png) center no-repeat;
 }
-/* line 733, ../sass/custom.scss */
+/* line 735, ../sass/custom.scss */
 html body #content .modal:before {
   display: block;
   background: rgba(0, 0, 0, 0.6);
@@ -881,7 +886,7 @@ html body #content .modal:before {
   bottom: 0;
   z-index: 10;
 }
-/* line 743, ../sass/custom.scss */
+/* line 745, ../sass/custom.scss */
 html body #content .modal:target .modal-dialog {
   transform: translate(0, 0);
   -o-transform: translate(0, 0);
@@ -889,7 +894,7 @@ html body #content .modal:target .modal-dialog {
   -moz-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
 }
-/* line 749, ../sass/custom.scss */
+/* line 751, ../sass/custom.scss */
 html body #content .modal .modal-dialog {
   background: #fefefe;
   position: fixed;
@@ -902,21 +907,21 @@ html body #content .modal .modal-dialog {
   -webkit-transform: translate(0, -2000px);
   @transition (all, 0.3, ease-in-out);
 }
-/* line 756, ../sass/custom.scss */
+/* line 758, ../sass/custom.scss */
 html body #content .modal .modal-dialog video {
   width: 100%;
 }
-/* line 759, ../sass/custom.scss */
+/* line 761, ../sass/custom.scss */
 html body #content .modal .modal-dialog .close {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 766, ../sass/custom.scss */
+/* line 768, ../sass/custom.scss */
 html body #content #close {
   display: none;
 }
-/* line 772, ../sass/custom.scss */
+/* line 774, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -924,7 +929,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 778, ../sass/custom.scss */
+/* line 780, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;

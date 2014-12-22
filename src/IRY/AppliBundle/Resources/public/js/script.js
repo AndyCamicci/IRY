@@ -59,13 +59,13 @@ $(document).ready(function() {
 		var $title = $(this).find(".title");
 		var $percent = $(this).find(".var");
 		$(this).on("click", function() {
-			$(this).toggleClass('activated'); // Allow user to show a previous step
+			$(this).toggleClass("activated"); // Allow user to show a previous step
 		});
 	});	
 
 	/* PRACTICAL TRAINING */
 	$(".ep_list_wrap").on("click", function() {
-		$(this).toggleClass('ep_list_opened'); // Allow user to show a previous step
+		$(this).toggleClass("ep_list_opened"); // Allow user to show a previous step
 	});	
 
 

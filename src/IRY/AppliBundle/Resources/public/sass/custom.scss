@@ -612,6 +612,7 @@ html{
 					}
 				}
 				.ep_list_wrap{
+					@transition(all, 0.3, ease-in-out);
 					@media (max-width: 640px){
 						width: 80%;
 					}
@@ -622,6 +623,7 @@ html{
 						width: 40%;
 					}
 					&.ep_list_opened{
+						@transition(all, 0.3, ease-in-out);
 						@media (max-width: 640px){
 							left: 20%;
 						}
