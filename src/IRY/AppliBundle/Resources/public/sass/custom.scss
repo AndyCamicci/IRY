@@ -36,6 +36,7 @@ html{
 		height: 100%;
 		overflow: hidden;
 		h1{
+			position: relative;
 			@media (min-width: 640px){
 				font-size: 1.2rem;
 			}
@@ -46,6 +47,7 @@ html{
 			text-align: center;
 		}
 		h2{
+			position: relative;
 			color: $grey-dark-color;
 			font-size: 1.2rem;
 			text-transform: uppercase;
@@ -62,6 +64,7 @@ html{
 			}
 		}
 		h3{
+			position: relative;
 			color: white;
 			background: $blue-color;
 			font-size: 1.2rem;
@@ -535,7 +538,7 @@ html{
 									right: 0;
 								}
 							}
-							.pilot_name, .success, .errors, .call{
+							&.gotodebriefing, .pilot_name, .success, .errors, .call, &.gotodebrifing{
 								span{
 									font-size: 1.3rem;
 									padding: 5px 0;
@@ -596,6 +599,131 @@ html{
 									}
 								}
 							}
+							&.gotodebriefing{
+								display: inline-block;
+								float: right;
+								span{
+									display: block;
+									text-transform: uppercase;
+									padding: 3px 3px 0;
+								}
+							}
+						}
+					}
+				}
+				.ep_list_wrap{
+					@media (max-width: 640px){
+						width: 80%;
+					}
+					@media (min-width: 640px){
+						width: 60%;
+					}
+					@media (min-width: 1000px){
+						width: 40%;
+					}
+					&.ep_list_opened{
+						@media (max-width: 640px){
+							left: 20%;
+						}
+						@media (min-width: 640px){
+							left: 40%;
+						}
+						@media (min-width: 1000px){
+							left: 60%;
+						}
+					}
+					left: 100%;
+					background: $grey-light-color;
+					float: right;
+					position: absolute;
+					top: 5%;
+					height: 90%;
+					h3{
+						cursor: pointer;
+						&:before{
+							content: "";
+							position: absolute;
+							top: 0;
+							height: 100%;
+							width: 48px;
+							left: -48px;
+							background: $blue-color;
+						}
+					}
+					.list{
+						position: relative;
+						padding-bottom: 40px;
+						height: 100%;
+						overflow: auto;
+						ul{
+							padding: 10px;
+								overflow: auto;
+							li.ep_step{
+								margin-bottom: 10px;
+								display: block;
+								cursor: pointer;
+								&.activated {
+									.step {
+										.title {
+											color: $grey-dark-color;
+										}
+									}
+									.percent {
+										.var{
+											background-color: $grey-dark-color;
+										}
+									}
+								}
+								.element{
+									position: relative;
+									display: inline-block;
+									vertical-align: middle;
+									span{
+										font-size: 1.2rem;
+									}
+								}
+								.step{
+									width: 65%;
+									text-align: left;
+									margin-right: 2%;
+									.title{
+										display: block;
+										font-size: 1.2rem;
+										/*color: $grey-dark-color;*/
+										color: $grey-dark-color;
+										padding: 5px;
+									}
+								}
+								.percent{
+									width: 30%;
+									background: $grey-color;
+									span.var{
+										height: 14px;
+										width: 70%;
+										/*background: $grey-dark-color;*/
+										background: $blue-color;
+										display: block;
+									}
+								}
+								.list_title{
+									width: 30%;
+									text-align: left;
+									span{
+										color: $grey-dark-color;
+										font-size: 1.1rem;
+									}
+								}
+							}
+						}
+						&:after{
+							content: "";
+							position: absolute;
+							bottom: 0;
+							height: 50px;
+							/*width: 100%;*/
+							left: 0;
+							right: 0;
+							background: url(../img/arrow_down.png) center no-repeat;
 						}
 					}
 				}

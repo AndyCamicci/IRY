@@ -63,6 +63,11 @@ $(document).ready(function() {
 		});
 	});	
 
+	/* PRACTICAL TRAINING */
+	$(".ep_list_wrap").on("click", function() {
+		$(this).toggleClass('ep_list_opened'); // Allow user to show a previous step
+	});	
+
 
 
 });

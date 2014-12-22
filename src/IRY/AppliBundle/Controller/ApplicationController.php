@@ -43,5 +43,8 @@ class ApplicationController extends Controller
             "course" => $course_id
         ));
     }
-
+    public function debriefingAction()
+    {
+        return $this->render('IRYAppliBundle:Application:debriefing.html.twig');
+    }
 }

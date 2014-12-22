@@ -17,7 +17,7 @@
                 <div class="list">
                     <ul>
             			{% for pilot in pilots %}
-                            <li>
+                            <li class="pilot">
                                 <div class="pilot_name element">
                                     <span>{{pilot.name}}</span>
                                 </div>
@@ -36,6 +36,201 @@
                                 </div>
                             </li>
                         {% endfor %}
+                        <a href="{{ path('iry_appli_dc') }}">
+                            <li class="gotodebriefing">
+                                <div class="element">
+                                    <span>Go to Debriefing</span>
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="ep_list_wrap">
+                <h3>
+                    {{course.name}}
+                    {# <div class="plus"></div> #}
+                </h3>
+                <div class="list">
+                    <ul>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title"></span>
+                                </div>
+                                <div class="list_title element">
+                                    <span>Failures</span>
+                                </div>
+                            </li>
+                        {# {% for step in course.steps %} #}
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                            <li class="ep_step">
+                                <div class="step element">
+                                    <span class="title">{# {{ step.name }} #}Nom étape</span>
+                                </div>
+                                <div class="percent element">
+                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                </div>
+                            </li>
+                        {# {% endfor %} #}
                     </ul>
                 </div>
             </div>
