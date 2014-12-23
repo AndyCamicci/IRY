@@ -60,6 +60,10 @@ $(document).ready(function() {
 		var $percent = $(this).find(".var");
 		$(this).on("click", function() {
 			$(this).toggleClass("activated"); // Allow user to show a previous step
+
+			if ($(this).hasClass("activated") == true) {
+				immersiveApp.showItem( $(this).attr("data-btn-name"), $(this).attr("data-btn-state") );
+			}
 		});
 	});	
 
@@ -127,3 +131,17 @@ function showCourseOfSubtheme(subtheme) {
 		}
 	});
 }
+
+var IAClass = function() {
+	this.showItem = function(name, state) {
+
+
+		console.log("On immersive app, show", name, "on position", state);
+
+		u.getUnity().SendMessage("NETWORK", "SetAsInstructor", "");
+		u.getUnity().SendMessage("NETWORK", "SetActive", name);
+
+	};
+};
+
+var immersiveApp = new IAClass();
