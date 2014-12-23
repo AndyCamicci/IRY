@@ -129,6 +129,9 @@ html{
 					padding: 10px;
 					text-align: center;
 				}
+				.filters{
+					display: inline-block;
+				}
 				.helicopter_type{
 					text-transform: uppercase;
 				}
@@ -170,6 +173,17 @@ html{
 					}
 				}
 			}
+		}
+		.introjs{
+			position: absolute;
+			z-index: 10000;
+			top: 50px;
+			left: 50px;
+			background: white;
+			color: $blue-color;
+			border: 1px solid $blue-color;
+			border-radius: 5px;
+			padding: 10px;
 		}
 		#content{
 			position: relative;
@@ -729,7 +743,6 @@ html{
 						}
 					}
 				}
-
 			}
 			.modal{
 			  &:before{
@@ -768,7 +781,6 @@ html{
 			#close {
 			  display: none; 
 			}
-
 		}
 		footer{
 			.fake_scrollbar{
