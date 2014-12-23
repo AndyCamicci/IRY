@@ -5,9 +5,9 @@ iry_appli_home:
 iry_appli_choixcours:
     path:   /choixcours/{helicopter_id}
     defaults: {_controller: "IRYAppliBundle:Application:choixcours"}
-iry_appli_step:
-    path:   /step/{course_id}
-    defaults: {_controller: "IRYAppliBundle:Application:step"}
+# iry_appli_step:
+#     path:   /step/{course_id}
+#     defaults: {_controller: "IRYAppliBundle:Application:step"}
 iry_appli_cm:
     path:   /theorical-course/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:coursMagistral"}

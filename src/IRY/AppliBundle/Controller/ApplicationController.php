@@ -26,7 +26,7 @@ class ApplicationController extends Controller
     public function coursMagistralAction(Course $course_id)
     {
         //lancer diapo interactives
-        
+        return $this->render('IRYAppliBundle:Application:coursMagistral.html.twig', array("course" => $course_id));
     }
     public function coursDemonstratifAction(Course $course_id)
     {

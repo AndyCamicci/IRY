@@ -9,16 +9,17 @@
 {% endblock %}
 {% block body %}
     <div id="content">
-	  <div class="modal" id="modal-one" aria-hidden="true">
+      <a id="startButton" class="introjs" href="javascript:void(0);">Guide de présentation</a>
+{# 	  <div class="modal" id="modal-one" aria-hidden="true">
 		<div class="modal-dialog">
 			<video src="{{ asset('bundles/iryappli') }}/img/video.mp4" controls muted></video>
 			<a href="#close" class="close">x</a>
 		</div>
-	  </div>
+	  </div> #}
       <div class="liste_categories_wrap">
         <div id="categories">
           <section class="category theme_section">
-            <h2 data-step="6" data-intro="Cette interface est similaire au CAI que vous utilisez actuellement.<br>Choisssez un thème (Hydraulic system par exemple) puis un sous-thème. Pour chaque sous-thème, vous pouvez lancer un cours qui peut être de 4 types différents..." data-position='right'>Choose your Theme</h2>
+            <h2 data-step="1" data-intro="Cette interface est similaire au CAI que vous utilisez actuellement.<br>Choisssez un thème (Hydraulic system par exemple) puis un sous-thème. Pour chaque sous-thème, vous pouvez lancer un cours qui peut être de 4 types différents..." data-position='right'>Choose your Theme</h2>
             <div class="list">
               <ul>
 		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
@@ -28,7 +29,7 @@
             </div>
           </section>
           <section class="category subtheme_section">
-            <h2>Choose your Subtheme</h2>
+            <h2 data-step="3" data-intro="Pas évident de focus ce qui est display none" data-position='right'>Choose your Subtheme</h2>
             <div class="list">
               <ul>
 				{% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
@@ -70,7 +71,7 @@
         </div>
       </div>
       <div id="legend">
-        <div class="types_course">
+        <div class="types_course" data-step="2" data-intro="Chaque îcone, placé à côté du nom des cours, représente un type de cours différent." data-position='top'>
           <div class="type_course cm">
               <span>Theorical Course</span>
           </div>
