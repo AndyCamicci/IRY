@@ -10,7 +10,6 @@
         <link href="{{ asset('bundles/iryappli/css/screen.css') }}" rel="stylesheet">
         <link href="{{ asset('bundles/iryappli/css/custom.css') }}" rel="stylesheet">
         <link href="{{ asset('bundles/iryappli/css/introjs.css') }}" rel="stylesheet">
-        <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     </head>
     <body>
@@ -38,9 +37,14 @@
         <script type="text/javascript">
           document.getElementById('startButton').onclick = function() {
             introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
-              window.location.href = 'second.html?multipage=true';
+              window.location.href = 'choixcours/2?multipage=true';
             });
           };
         </script>
+            <script type="text/javascript">
+      if (RegExp('multipage', 'gi').test(window.location.search)) {
+        introJs().start();
+      }
+    </script>
     </body>
 </html>	

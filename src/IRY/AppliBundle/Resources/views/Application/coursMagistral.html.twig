@@ -1,0 +1,21 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    {{course.name}}
+{% endblock %}
+
+{% block header_back_btn %}
+    <a href="{{ path('iry_appli_choixcours', {helicopter_id: course.subTheme.theme.helicopter.id}) }}" id="back_btn">
+        <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+    </a>
+{% endblock %}
+
+{% block body %}
+    <div id="content">
+        <section class="cf">
+            <h1>
+                Aucun contenu pour ce type de cours pour l'instant. Il s'agira des contenus interactifs que vous projetez actuellement au tableau.
+            </h1>
+        </section>
+    </div>
+{% endblock %}

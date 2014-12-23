@@ -180,54 +180,58 @@ html body header #header_center h1 {
   }
 }
 /* line 132, ../sass/custom.scss */
+html body header #header_center .filters {
+  display: inline-block;
+}
+/* line 135, ../sass/custom.scss */
 html body header #header_center .helicopter_type {
   text-transform: uppercase;
 }
-/* line 139, ../sass/custom.scss */
+/* line 142, ../sass/custom.scss */
 html body header #header_right {
   /*max-width: 20%;*/
   position: absolute;
   right: 0;
 }
 @media (max-width: 500px) {
-  /* line 139, ../sass/custom.scss */
+  /* line 142, ../sass/custom.scss */
   html body header #header_right {
     display: none;
   }
 }
-/* line 146, ../sass/custom.scss */
+/* line 149, ../sass/custom.scss */
 html body header #header_right #searchbar {
   margin: 15px;
   border: solid 1px #a8a8a7;
   border-radius: 5px;
 }
-/* line 150, ../sass/custom.scss */
+/* line 153, ../sass/custom.scss */
 html body header #header_right #searchbar .search_submit {
   padding: 7px;
   width: 16px;
   height: 16px;
 }
-/* line 155, ../sass/custom.scss */
+/* line 158, ../sass/custom.scss */
 html body header #header_right #searchbar ::-webkit-input-placeholder {
   font: 15px 'biko';
   color: #a8a8a7;
 }
-/* line 156, ../sass/custom.scss */
+/* line 159, ../sass/custom.scss */
 html body header #header_right #searchbar ::-moz-placeholder {
   font: 15px 'biko';
   color: #a8a8a7;
 }
-/* line 157, ../sass/custom.scss */
+/* line 160, ../sass/custom.scss */
 html body header #header_right #searchbar :-ms-input-placeholder {
   font: 15px 'biko';
   color: #a8a8a7;
 }
-/* line 158, ../sass/custom.scss */
+/* line 161, ../sass/custom.scss */
 html body header #header_right #searchbar input:-moz-placeholder {
   font: 15px 'biko';
   color: #a8a8a7;
 }
-/* line 159, ../sass/custom.scss */
+/* line 162, ../sass/custom.scss */
 html body header #header_right #searchbar .search_content {
   outline: 0;
   height: 30px;
@@ -239,42 +243,54 @@ html body header #header_right #searchbar .search_content {
   color: #a8a8a7;
 }
 @media (max-width: 640px) {
-  /* line 159, ../sass/custom.scss */
+  /* line 162, ../sass/custom.scss */
   html body header #header_right #searchbar .search_content {
     width: 100px;
   }
 }
 @media (min-width: 640px) {
-  /* line 159, ../sass/custom.scss */
+  /* line 162, ../sass/custom.scss */
   html body header #header_right #searchbar .search_content {
     width: 150px;
   }
 }
-/* line 174, ../sass/custom.scss */
+/* line 177, ../sass/custom.scss */
+html body .introjs {
+  position: absolute;
+  z-index: 10000;
+  top: 50px;
+  left: 50px;
+  background: white;
+  color: #0fa7b7;
+  border: 1px solid #0fa7b7;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* line 188, ../sass/custom.scss */
 html body #content {
   position: relative;
   text-align: center;
 }
-/* line 177, ../sass/custom.scss */
+/* line 191, ../sass/custom.scss */
 html body #content section#choose_helicopter {
   text-align: center;
 }
-/* line 179, ../sass/custom.scss */
+/* line 193, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap {
   width: 840px;
   margin: auto;
   overflow: auto;
   height: 460px;
 }
-/* line 184, ../sass/custom.scss */
+/* line 198, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter {
   white-space: nowrap;
 }
-/* line 186, ../sass/custom.scss */
+/* line 200, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter .duo {
   display: inline-block;
 }
-/* line 192, ../sass/custom.scss */
+/* line 206, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter .duo .helicopter_link .helicopter_block {
   position: relative;
   display: block;
@@ -282,12 +298,12 @@ html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helic
   width: 200px;
   margin: 0 40px 40px;
 }
-/* line 198, ../sass/custom.scss */
+/* line 212, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter .duo .helicopter_link .helicopter_block .helicopter_img {
   position: relative;
   height: 130px;
 }
-/* line 201, ../sass/custom.scss */
+/* line 215, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter .duo .helicopter_link .helicopter_block .helicopter_img::after {
   content: url(../img/plus.png);
   /*background-image: url(../img/plus.png);*/
@@ -299,12 +315,12 @@ html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helic
   right: 0;
   margin: auto;
 }
-/* line 213, ../sass/custom.scss */
+/* line 227, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter .duo .helicopter_link .helicopter_block .helicopter_name {
   background: #343434;
   height: 50px;
 }
-/* line 216, ../sass/custom.scss */
+/* line 230, ../sass/custom.scss */
 html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helicopter .duo .helicopter_link .helicopter_block .helicopter_name span {
   display: block;
   text-align: center;
@@ -312,63 +328,63 @@ html body #content section#choose_helicopter .liste_helicopter_wrap .liste_helic
   color: white;
   font-size: 1.1rem;
 }
-/* line 230, ../sass/custom.scss */
+/* line 244, ../sass/custom.scss */
 html body #content .liste_categories_wrap {
   display: inline-block;
 }
-/* line 233, ../sass/custom.scss */
+/* line 247, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category {
   float: left;
 }
 @media (max-width: 980px) {
-  /* line 233, ../sass/custom.scss */
+  /* line 247, ../sass/custom.scss */
   html body #content .liste_categories_wrap #categories section.category {
     padding: 20px 5px;
   }
 }
 @media (min-width: 980px) {
-  /* line 233, ../sass/custom.scss */
+  /* line 247, ../sass/custom.scss */
   html body #content .liste_categories_wrap #categories section.category {
     padding: 20px;
   }
 }
-/* line 241, ../sass/custom.scss */
+/* line 255, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list {
   height: 360px;
   overflow-y: auto;
 }
 @media (max-width: 640px) {
-  /* line 241, ../sass/custom.scss */
+  /* line 255, ../sass/custom.scss */
   html body #content .liste_categories_wrap #categories section.category .list {
     width: 175px;
   }
 }
 @media (min-width: 640px) {
-  /* line 241, ../sass/custom.scss */
+  /* line 255, ../sass/custom.scss */
   html body #content .liste_categories_wrap #categories section.category .list {
     width: 225px;
   }
 }
 @media (min-width: 880px) {
-  /* line 241, ../sass/custom.scss */
+  /* line 255, ../sass/custom.scss */
   html body #content .liste_categories_wrap #categories section.category .list {
     width: 275px;
   }
 }
-/* line 257, ../sass/custom.scss */
+/* line 271, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li {
   position: relative;
   background: #d1cece;
   text-align: left;
   margin: 0 10px 5px 0;
 }
-/* line 262, ../sass/custom.scss */
+/* line 276, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li span {
   font-size: 1.1rem;
   margin: 15px 60px 15px 15px;
   display: inline-block;
 }
-/* line 267, ../sass/custom.scss */
+/* line 281, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:after {
   position: absolute;
   right: 0;
@@ -378,116 +394,116 @@ html body #content .liste_categories_wrap #categories section.category .list ul 
   top: 50%;
   margin-top: -13px;
 }
-/* line 277, ../sass/custom.scss */
+/* line 291, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.theme span, html body #content .liste_categories_wrap #categories section.category .list ul li.subtheme span {
   color: #909090;
 }
-/* line 280, ../sass/custom.scss */
+/* line 294, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.theme:after, html body #content .liste_categories_wrap #categories section.category .list ul li.subtheme:after {
   background: url(../img/play.png) 10px no-repeat;
   background-size: contain;
   border-left: solid 1px #909090;
 }
-/* line 287, ../sass/custom.scss */
+/* line 301, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course1 span {
   color: #176c73;
 }
-/* line 290, ../sass/custom.scss */
+/* line 304, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course1:after {
   background: url(../img/cm.png) 10px no-repeat;
   background-size: contain;
   border-left: solid 1px #176c73;
 }
-/* line 297, ../sass/custom.scss */
+/* line 311, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course2 span {
   color: #178098;
 }
-/* line 300, ../sass/custom.scss */
+/* line 314, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course2:after {
   background: url(../img/cd.png) 10px no-repeat;
   background-size: contain;
   border-left: solid 1px #178098;
 }
-/* line 307, ../sass/custom.scss */
+/* line 321, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course3 span {
   color: #0b8ead;
 }
-/* line 310, ../sass/custom.scss */
+/* line 324, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course3:after {
   background: url(../img/vi.png) 10px no-repeat;
   background-size: contain;
   border-left: solid 1px #0b8ead;
 }
-/* line 317, ../sass/custom.scss */
+/* line 331, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course4 span {
   color: #0fa7b7;
 }
-/* line 320, ../sass/custom.scss */
+/* line 334, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li.course4:after {
   background: url(../img/ep.png) 10px no-repeat;
   background-size: contain;
   border-left: solid 1px #0fa7b7;
 }
-/* line 326, ../sass/custom.scss */
+/* line 340, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover, html body #content .liste_categories_wrap #categories section.category .list ul li:active, html body #content .liste_categories_wrap #categories section.category .list ul li.active {
   cursor: pointer;
 }
-/* line 328, ../sass/custom.scss */
+/* line 342, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover.theme, html body #content .liste_categories_wrap #categories section.category .list ul li:hover.subtheme, html body #content .liste_categories_wrap #categories section.category .list ul li:active.theme, html body #content .liste_categories_wrap #categories section.category .list ul li:active.subtheme, html body #content .liste_categories_wrap #categories section.category .list ul li.active.theme, html body #content .liste_categories_wrap #categories section.category .list ul li.active.subtheme {
   background: #0fa7b7;
 }
-/* line 330, ../sass/custom.scss */
+/* line 344, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover.theme:after, html body #content .liste_categories_wrap #categories section.category .list ul li:hover.subtheme:after, html body #content .liste_categories_wrap #categories section.category .list ul li:active.theme:after, html body #content .liste_categories_wrap #categories section.category .list ul li:active.subtheme:after, html body #content .liste_categories_wrap #categories section.category .list ul li.active.theme:after, html body #content .liste_categories_wrap #categories section.category .list ul li.active.subtheme:after {
   background: url(../img/play_h.png) 10px no-repeat;
   background-size: contain;
 }
-/* line 335, ../sass/custom.scss */
+/* line 349, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover.course1, html body #content .liste_categories_wrap #categories section.category .list ul li:active.course1, html body #content .liste_categories_wrap #categories section.category .list ul li.active.course1 {
   background: #176c73;
 }
-/* line 338, ../sass/custom.scss */
+/* line 352, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover.course2, html body #content .liste_categories_wrap #categories section.category .list ul li:active.course2, html body #content .liste_categories_wrap #categories section.category .list ul li.active.course2 {
   background: #178098;
 }
-/* line 341, ../sass/custom.scss */
+/* line 355, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover.course3, html body #content .liste_categories_wrap #categories section.category .list ul li:active.course3, html body #content .liste_categories_wrap #categories section.category .list ul li.active.course3 {
   background: #0b8ead;
 }
-/* line 344, ../sass/custom.scss */
+/* line 358, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover.course4, html body #content .liste_categories_wrap #categories section.category .list ul li:active.course4, html body #content .liste_categories_wrap #categories section.category .list ul li.active.course4 {
   background: #0fa7b7;
 }
-/* line 347, ../sass/custom.scss */
+/* line 361, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover span, html body #content .liste_categories_wrap #categories section.category .list ul li:active span, html body #content .liste_categories_wrap #categories section.category .list ul li.active span {
   color: white;
 }
-/* line 350, ../sass/custom.scss */
+/* line 364, ../sass/custom.scss */
 html body #content .liste_categories_wrap #categories section.category .list ul li:hover:after, html body #content .liste_categories_wrap #categories section.category .list ul li:active:after, html body #content .liste_categories_wrap #categories section.category .list ul li.active:after {
   border-color: white;
 }
-/* line 360, ../sass/custom.scss */
+/* line 374, ../sass/custom.scss */
 html body #content #legend {
   position: fixed;
   width: 100%;
   border-top: 1px solid #d1cece;
 }
-/* line 364, ../sass/custom.scss */
+/* line 378, ../sass/custom.scss */
 html body #content #legend .types_course {
   display: inline-block;
 }
-/* line 366, ../sass/custom.scss */
+/* line 380, ../sass/custom.scss */
 html body #content #legend .types_course .type_course {
   float: left;
   margin: 23px 10px 20px 40px;
 }
-/* line 369, ../sass/custom.scss */
+/* line 383, ../sass/custom.scss */
 html body #content #legend .types_course .type_course span {
   font-size: 1.1rem;
   color: #a8a8a7;
   padding: 12px;
   position: relative;
 }
-/* line 374, ../sass/custom.scss */
+/* line 388, ../sass/custom.scss */
 html body #content #legend .types_course .type_course span:before {
   position: absolute;
   content: "";
@@ -496,36 +512,36 @@ html body #content #legend .types_course .type_course span:before {
   left: -25px;
   top: 5px;
 }
-/* line 385, ../sass/custom.scss */
+/* line 399, ../sass/custom.scss */
 html body #content #legend .types_course .type_course.cm span:before {
   background: url(../img/cm.png);
   background-size: contain;
 }
-/* line 393, ../sass/custom.scss */
+/* line 407, ../sass/custom.scss */
 html body #content #legend .types_course .type_course.cd span:before {
   background: url(../img/cd.png);
   background-size: contain;
 }
-/* line 401, ../sass/custom.scss */
+/* line 415, ../sass/custom.scss */
 html body #content #legend .types_course .type_course.vi span:before {
   background: url(../img/vi.png);
   background-size: contain;
 }
-/* line 409, ../sass/custom.scss */
+/* line 423, ../sass/custom.scss */
 html body #content #legend .types_course .type_course.ep span:before {
   background: url(../img/ep.png);
   background-size: contain;
 }
-/* line 419, ../sass/custom.scss */
+/* line 433, ../sass/custom.scss */
 html body #content section#cd .cd_video {
   width: 60%;
   float: left;
 }
-/* line 422, ../sass/custom.scss */
+/* line 436, ../sass/custom.scss */
 html body #content section#cd .cd_video video {
   width: 100%;
 }
-/* line 426, ../sass/custom.scss */
+/* line 440, ../sass/custom.scss */
 html body #content section#cd .cd_wrap {
   width: 40%;
   background: #EEE8EA;
@@ -536,47 +552,47 @@ html body #content section#cd .cd_wrap {
   height: 100%;
   overflow-y: auto;
 }
-/* line 435, ../sass/custom.scss */
+/* line 449, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list {
   position: relative;
   padding-bottom: 40px;
 }
-/* line 438, ../sass/custom.scss */
+/* line 452, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul {
   padding: 10px;
 }
-/* line 440, ../sass/custom.scss */
+/* line 454, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li {
   margin-bottom: 10px;
   display: block;
   cursor: pointer;
 }
-/* line 446, ../sass/custom.scss */
+/* line 460, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li.activated .step .title {
   color: #a8a8a7;
 }
-/* line 451, ../sass/custom.scss */
+/* line 465, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li.activated .percent .var {
   background-color: #a8a8a7;
 }
-/* line 456, ../sass/custom.scss */
+/* line 470, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li .element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 460, ../sass/custom.scss */
+/* line 474, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li .element span {
   font-size: 1.2rem;
 }
-/* line 464, ../sass/custom.scss */
+/* line 478, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li .step {
   width: 65%;
   background: #d1cece;
   text-align: center;
   margin-right: 2%;
 }
-/* line 469, ../sass/custom.scss */
+/* line 483, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li .step .title {
   display: block;
   font-size: 1.2rem;
@@ -584,12 +600,12 @@ html body #content section#cd .cd_wrap .list ul li .step .title {
   color: #0fa7b7;
   padding: 8px;
 }
-/* line 477, ../sass/custom.scss */
+/* line 491, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li .percent {
   width: 30%;
   background: #d1cece;
 }
-/* line 480, ../sass/custom.scss */
+/* line 494, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list ul li .percent span.var {
   height: 14px;
   width: 70%;
@@ -597,7 +613,7 @@ html body #content section#cd .cd_wrap .list ul li .percent span.var {
   background: #0fa7b7;
   display: block;
 }
-/* line 490, ../sass/custom.scss */
+/* line 504, ../sass/custom.scss */
 html body #content section#cd .cd_wrap .list:after {
   content: "";
   position: absolute;
@@ -608,45 +624,45 @@ html body #content section#cd .cd_wrap .list:after {
   right: 0;
   background: url(../img/arrow_down.png) center no-repeat;
 }
-/* line 503, ../sass/custom.scss */
+/* line 517, ../sass/custom.scss */
 html body #content section#ep {
   text-align: center;
 }
-/* line 505, ../sass/custom.scss */
+/* line 519, ../sass/custom.scss */
 html body #content section#ep .ep_wrap {
   width: 840px;
   padding: 30px 0;
   margin: auto;
 }
-/* line 510, ../sass/custom.scss */
+/* line 524, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li {
   background: #d1cece;
   padding: 10px;
   margin-bottom: 10px;
 }
-/* line 514, ../sass/custom.scss */
+/* line 528, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li div.element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 518, ../sass/custom.scss */
+/* line 532, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li div.element span {
   font-size: 1.2rem;
 }
-/* line 522, ../sass/custom.scss */
+/* line 536, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .step {
   width: 350px;
   background: #a8a8a7;
 }
-/* line 525, ../sass/custom.scss */
+/* line 539, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .step .bar {
   height: 30px;
   width: 70%;
   background: #0fa7b7;
   display: block;
 }
-/* line 531, ../sass/custom.scss */
+/* line 545, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .step .title {
   font-size: 1.1rem;
   color: white;
@@ -656,30 +672,30 @@ html body #content section#ep .ep_wrap ul li .step .title {
   left: 0;
   right: 0;
 }
-/* line 542, ../sass/custom.scss */
+/* line 556, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li.gotodebriefing span, html body #content section#ep .ep_wrap ul li .pilot_name span, html body #content section#ep .ep_wrap ul li .success span, html body #content section#ep .ep_wrap ul li .errors span, html body #content section#ep .ep_wrap ul li .call span, html body #content section#ep .ep_wrap ul li.gotodebrifing span {
   font-size: 1.3rem;
   padding: 5px 0;
   color: #909090;
 }
-/* line 548, ../sass/custom.scss */
+/* line 562, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .pilot_name {
   width: 200px;
   text-align: left;
 }
-/* line 552, ../sass/custom.scss */
+/* line 566, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success, html body #content section#ep .ep_wrap ul li .errors, html body #content section#ep .ep_wrap ul li .call {
   width: 75px;
   height: 30px;
 }
-/* line 555, ../sass/custom.scss */
+/* line 569, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span, html body #content section#ep .ep_wrap ul li .errors span, html body #content section#ep .ep_wrap ul li .call span {
   margin-right: 40px;
   display: inline-block;
   /*padding: 5px 10px;*/
   /*padding-right: 50px;*/
 }
-/* line 560, ../sass/custom.scss */
+/* line 574, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span:after, html body #content section#ep .ep_wrap ul li .errors span:after, html body #content section#ep .ep_wrap ul li .call span:after {
   content: "";
   width: 25px;
@@ -688,46 +704,46 @@ html body #content section#ep .ep_wrap ul li .success span:after, html body #con
   right: 15px;
   top: 1px;
 }
-/* line 570, ../sass/custom.scss */
+/* line 584, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success, html body #content section#ep .ep_wrap ul li .errors {
   border-right: 2px solid #0fa7b7;
   text-align: right;
 }
-/* line 573, ../sass/custom.scss */
+/* line 587, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span, html body #content section#ep .ep_wrap ul li .errors span {
   padding: 6px 10px;
 }
-/* line 579, ../sass/custom.scss */
+/* line 593, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span:after {
   background: url(../img/success.png);
   background-size: contain;
 }
-/* line 587, ../sass/custom.scss */
+/* line 601, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .errors span:after {
   background: url(../img/errors.png);
   background-size: contain;
 }
-/* line 594, ../sass/custom.scss */
+/* line 608, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .call span {
   padding: 5px 30px;
 }
-/* line 596, ../sass/custom.scss */
+/* line 610, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .call span:after {
   background: url(../img/call.png);
   background-size: contain;
 }
-/* line 602, ../sass/custom.scss */
+/* line 616, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li.gotodebriefing {
   display: inline-block;
   float: right;
 }
-/* line 605, ../sass/custom.scss */
+/* line 619, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li.gotodebriefing span {
   display: block;
   text-transform: uppercase;
   padding: 3px 3px 0;
 }
-/* line 614, ../sass/custom.scss */
+/* line 628, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap {
   @transition (all, 0.3, ease-in-out);
   left: 100%;
@@ -738,50 +754,50 @@ html body #content section#ep .ep_list_wrap {
   height: 90%;
 }
 @media (max-width: 640px) {
-  /* line 614, ../sass/custom.scss */
+  /* line 628, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap {
     width: 80%;
   }
 }
 @media (min-width: 640px) {
-  /* line 614, ../sass/custom.scss */
+  /* line 628, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap {
     width: 60%;
   }
 }
 @media (min-width: 1000px) {
-  /* line 614, ../sass/custom.scss */
+  /* line 628, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap {
     width: 40%;
   }
 }
-/* line 625, ../sass/custom.scss */
+/* line 639, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap.ep_list_opened {
   @transition (all, 0.3, ease-in-out);
 }
 @media (max-width: 640px) {
-  /* line 625, ../sass/custom.scss */
+  /* line 639, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 20%;
   }
 }
 @media (min-width: 640px) {
-  /* line 625, ../sass/custom.scss */
+  /* line 639, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 40%;
   }
 }
 @media (min-width: 1000px) {
-  /* line 625, ../sass/custom.scss */
+  /* line 639, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 60%;
   }
 }
-/* line 643, ../sass/custom.scss */
+/* line 657, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap h3 {
   cursor: pointer;
 }
-/* line 645, ../sass/custom.scss */
+/* line 659, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap h3:before {
   content: "";
   position: absolute;
@@ -791,49 +807,49 @@ html body #content section#ep .ep_list_wrap h3:before {
   left: -48px;
   background: #0fa7b7;
 }
-/* line 655, ../sass/custom.scss */
+/* line 669, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list {
   position: relative;
   padding-bottom: 40px;
   height: 100%;
   overflow: auto;
 }
-/* line 660, ../sass/custom.scss */
+/* line 674, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul {
   padding: 10px;
   overflow: auto;
 }
-/* line 663, ../sass/custom.scss */
+/* line 677, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step {
   margin-bottom: 10px;
   display: block;
   cursor: pointer;
 }
-/* line 669, ../sass/custom.scss */
+/* line 683, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step.activated .step .title {
   color: #a8a8a7;
 }
-/* line 674, ../sass/custom.scss */
+/* line 688, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step.activated .percent .var {
   background-color: #a8a8a7;
 }
-/* line 679, ../sass/custom.scss */
+/* line 693, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 683, ../sass/custom.scss */
+/* line 697, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .element span {
   font-size: 1.2rem;
 }
-/* line 687, ../sass/custom.scss */
+/* line 701, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .step {
   width: 65%;
   text-align: left;
   margin-right: 2%;
 }
-/* line 691, ../sass/custom.scss */
+/* line 705, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .step .title {
   display: block;
   font-size: 1.2rem;
@@ -841,12 +857,12 @@ html body #content section#ep .ep_list_wrap .list ul li.ep_step .step .title {
   color: #a8a8a7;
   padding: 5px;
 }
-/* line 699, ../sass/custom.scss */
+/* line 713, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent {
   width: 30%;
   background: #d1cece;
 }
-/* line 702, ../sass/custom.scss */
+/* line 716, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent span.var {
   height: 14px;
   width: 70%;
@@ -854,17 +870,17 @@ html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent span.va
   background: #0fa7b7;
   display: block;
 }
-/* line 710, ../sass/custom.scss */
+/* line 724, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .list_title {
   width: 30%;
   text-align: left;
 }
-/* line 713, ../sass/custom.scss */
+/* line 727, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .list_title span {
   color: #a8a8a7;
   font-size: 1.1rem;
 }
-/* line 720, ../sass/custom.scss */
+/* line 734, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list:after {
   content: "";
   position: absolute;
@@ -875,7 +891,7 @@ html body #content section#ep .ep_list_wrap .list:after {
   right: 0;
   background: url(../img/arrow_down.png) center no-repeat;
 }
-/* line 735, ../sass/custom.scss */
+/* line 748, ../sass/custom.scss */
 html body #content .modal:before {
   display: block;
   background: rgba(0, 0, 0, 0.6);
@@ -886,7 +902,7 @@ html body #content .modal:before {
   bottom: 0;
   z-index: 10;
 }
-/* line 745, ../sass/custom.scss */
+/* line 758, ../sass/custom.scss */
 html body #content .modal:target .modal-dialog {
   transform: translate(0, 0);
   -o-transform: translate(0, 0);
@@ -894,7 +910,7 @@ html body #content .modal:target .modal-dialog {
   -moz-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
 }
-/* line 751, ../sass/custom.scss */
+/* line 764, ../sass/custom.scss */
 html body #content .modal .modal-dialog {
   background: #fefefe;
   position: fixed;
@@ -907,21 +923,21 @@ html body #content .modal .modal-dialog {
   -webkit-transform: translate(0, -2000px);
   @transition (all, 0.3, ease-in-out);
 }
-/* line 758, ../sass/custom.scss */
+/* line 771, ../sass/custom.scss */
 html body #content .modal .modal-dialog video {
   width: 100%;
 }
-/* line 761, ../sass/custom.scss */
+/* line 774, ../sass/custom.scss */
 html body #content .modal .modal-dialog .close {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 768, ../sass/custom.scss */
+/* line 781, ../sass/custom.scss */
 html body #content #close {
   display: none;
 }
-/* line 774, ../sass/custom.scss */
+/* line 786, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -929,7 +945,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 780, ../sass/custom.scss */
+/* line 792, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
