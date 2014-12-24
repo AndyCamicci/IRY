@@ -12,32 +12,33 @@
 
 {% block body %}
     <div id="content">
+        <a id="startButton" class="introjs" href="javascript:void(0);">Guide de présentation</a>
         <section id="ep">
-            <div class="ep_wrap">
+            <div class="ep_wrap" data-step="1" data-intro="Pendant l'exercice pratique de chaque apprenant, l'instructeur pourra suivre l'avancement de chaque pilote via cette interface.">
                 <div class="list">
                     <ul>
             			{% for pilot in pilots %}
                             <li class="pilot">
-                                <div class="pilot_name element">
+                                <div class="pilot_name element" data-step="2" data-intro="Pour chaque pilote, différentes informations sont transmises à l'instructeur en direct, comme le nom...">
                                     <span>{{pilot.name}}</span>
                                 </div>
-                                <div class="step element">
+                                <div class="step element" data-step="3" data-intro="...le nom de l'étape où il en est, avec le pourcentage d'avancement dans l'ensemble de la procédure...">
                                     <span class="bar"></span>
                                     <span class="title">GENE ON</span>
                                 </div>
-                                <div class="success element">
+                                <div class="success element" data-step="4" data-intro="...le nombre de procédures réussies...">
                                     <span>1</span>
                                 </div>
-                                <div class="errors element">
+                                <div class="errors element" data-step="5" data-intro=" ainsi que le nombre de procédures échouées.">
                                     <span>7</span>
                                 </div>
-                                <div class="call element">
+                                <div class="call element" data-step="6" data-intro="Enfin, cet icone signifie que cet apprennat a besoin d'aide et souhaiterait que l'instructeur rentre en communication avec lui. Afin de faciliter le travail de l'instructeur, l'apprenant qui a appelé le premier sera automatiquement remonté dans la liste et sera aidé le premier.">
                                     <span></span>
                                 </div>
                             </li>
                         {% endfor %}
                         <a href="{{ path('iry_appli_dc') }}">
-                            <li class="gotodebriefing">
+                            <li class="gotodebriefing" data-step="8" data-intro="Lorsque l'exercice pratique est terminé, l'instructeur propose aux apprennats de débriefer autour de cet exercice (page pas encore développée).">
                                 <div class="element">
                                     <span>Go to Debriefing</span>
                                 </div>
@@ -47,9 +48,9 @@
                 </div>
             </div>
             <div class="ep_list_wrap">
+                <div class="plus" data-step="7" data-intro="Une fenêtre dépliable permet également à l'instructeur de savoir lors de quelle étape de la procédure les echecs des apprennats ont été commis" data-position='left'></div>
                 <h3>
                     {{course.name}}
-                    {# <div class="plus"></div> #}
                 </h3>
                 <div class="list">
                     <ul>
@@ -67,7 +68,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -75,7 +76,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="10"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -83,7 +84,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -91,7 +92,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="25"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -99,7 +100,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -107,7 +108,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="10"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -115,7 +116,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="15"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -123,7 +124,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="35"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -131,7 +132,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -139,7 +140,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -147,7 +148,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="15"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -155,7 +156,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="0.5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -163,7 +164,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -171,7 +172,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="10"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -179,7 +180,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -187,7 +188,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="0.5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -195,7 +196,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="0.5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -203,7 +204,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -211,7 +212,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="15"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -219,7 +220,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="5"></span>
                                 </div>
                             </li>
                             <li class="ep_step">
@@ -227,7 +228,7 @@
                                     <span class="title">{# {{ step.name }} #}Nom étape</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{# {{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }} #}"></span>
+                                    <span class="var" data-percent="0.5"></span>
                                 </div>
                             </li>
                         {# {% endfor %} #}

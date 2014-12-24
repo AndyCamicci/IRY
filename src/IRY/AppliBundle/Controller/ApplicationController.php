@@ -32,6 +32,10 @@ class ApplicationController extends Controller
     {
         return $this->render('IRYAppliBundle:Application:coursDemonstratif.html.twig', array("course" => $course_id));
     }
+    public function videoImmersiveAction(Course $course_id)
+    {
+        return $this->render('IRYAppliBundle:Application:videoImmersive.html.twig', array("course" => $course_id));
+    }
     public function exercicePratiqueAction(Course $course_id)
     {
         $em = $this->getDoctrine()->getManager();

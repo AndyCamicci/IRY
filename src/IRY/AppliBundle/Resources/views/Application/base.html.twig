@@ -36,15 +36,9 @@
         <script type="text/javascript" src="{{ asset('bundles/iryappli/js/intro.js') }}"></script>
         <script type="text/javascript">
           document.getElementById('startButton').onclick = function() {
-            introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
-              window.location.href = 'choixcours/2?multipage=true';
-            });
+            introJs().start();
           };
         </script>
-            <script type="text/javascript">
-      if (RegExp('multipage', 'gi').test(window.location.search)) {
-        introJs().start();
-      }
     </script>
     </body>
 </html>	
