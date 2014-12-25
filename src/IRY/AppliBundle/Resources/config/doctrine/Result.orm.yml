@@ -17,13 +17,13 @@ IRY\AppliBundle\Entity\Result:
     manyToOne:
         pilot:
             targetEntity: Pilot
-            inversedBy: result
+            inversedBy: results
             joinColumn:
                 name: pilot_id
                 referencedColumnName: id
         step:
             targetEntity: Step
-            inversedBy: result
+            inversedBy: results
             joinColumn:
                 name: step_id
                 referencedColumnName: id

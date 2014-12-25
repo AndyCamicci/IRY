@@ -14,7 +14,7 @@ IRY\AppliBundle\Entity\SubTheme:
     manyToOne:
         theme:
             targetEntity: Theme
-            inversedBy: subthemes
+            inversedBy: subThemes
             joinColumn:
                 name: theme_id
                 referencedColumnName: id
