@@ -8,6 +8,7 @@ use IRY\AppliBundle\Entity\Helicopter;
 use IRY\AppliBundle\Entity\Step;
 use IRY\AppliBundle\Entity\Course;
 use IRY\AppliBundle\Entity\Result;
+use IRY\AppliBundle\Entity\Pilot;
 
 class ApplicationController extends Controller
 {
@@ -50,5 +51,13 @@ class ApplicationController extends Controller
     public function debriefingAction()
     {
         return $this->render('IRYAppliBundle:Application:debriefing.html.twig');
+    }
+
+    public function exercicePratiqueCentrePiloteAction(Course $course_id, Pilot $pilot_id)
+    {
+        return $this->render('IRYAppliBundle:Application:exercicePratiqueCentrePilote.html.twig', array(
+            'pilot' => $pilot_id, 
+            "course" => $course_id
+        ));
     }
 }
