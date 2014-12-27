@@ -1,0 +1,13 @@
+IRY\AppliBundle\Entity\Result:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        isError:
+            expose: true
+        trial:
+            expose: true
+        isFavorite:
+            expose: true
+        isGlobal:
+            expose: true

@@ -1,0 +1,7 @@
+iry_api_main:
+    resource: "@IRYApiBundle/Controller/"
+    type:     annotation
+
+pilots:
+    type: rest
+    resource: IRY\ApiBundle\Controller\PilotController

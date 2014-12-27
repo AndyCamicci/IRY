@@ -11,6 +11,11 @@ IRY\AppliBundle\Entity\Step:
         name:
             type: string
             length: 255
+        btn_name:
+            type: string
+            length: 255
+        btn_state:
+            type: boolean
         order:
             type: integer
     manyToOne:

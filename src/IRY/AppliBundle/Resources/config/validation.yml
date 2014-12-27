@@ -1,4 +1,4 @@
-IRY\AppliBundle\Entity\Helicopter:
+IRY\AppliBundle\Entity\Pilot:
     properties:
         name:
             - NotBlank: ~

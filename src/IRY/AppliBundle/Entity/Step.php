@@ -7,11 +7,20 @@ use Doctrine\ORM\Mapping as ORM;
      * @var \IRY\AppliBundle\Entity\Step
      */
 class Step {
-	private $id;
+    private $id;
     private $name;
     private $course;
     private $order;
     private $results;
+    /**
+     * @var string
+     */
+    private $btn_name;
+
+    /**
+     * @var boolean
+     */
+    private $btn_state;
 
     /**
      * Constructor
@@ -155,5 +164,64 @@ class Step {
         }
              
         return $nbErrors;
+    }
+
+
+    /**
+     * Set btn_name
+     *
+     * @param string $btnName
+     * @return Step
+     */
+    public function setBtnName($btnName)
+    {
+        $this->btn_name = $btnName;
+
+        return $this;
+    }
+
+    /**
+     * Get btn_name
+     *
+     * @return string 
+     */
+    public function getBtnName()
+    {
+        return $this->btn_name;
+    }
+
+    /**
+     * Set btn_state
+     *
+     * @param boolean $btnState
+     * @return Step
+     */
+    public function setBtnState($btnState)
+    {
+        $this->btn_state = $btnState;
+
+        return $this;
+    }
+
+    /**
+     * Get btn_state
+     *
+     * @return boolean 
+     */
+    public function getBtnState()
+    {
+        return $this->btn_state;
+    }
+
+    public function isLastStep()
+    {
+        $lastStep = $this->course->getLastStep();
+
+        if (is_null($lastStep) == false) {
+            
+            return $lastStep->getId() == $this->getId();
+        }
+
+        return false;
     }
 }

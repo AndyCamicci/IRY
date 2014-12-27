@@ -14,13 +14,13 @@ IRY\AppliBundle\Entity\Course:
     manyToOne:
         subTheme: #le champ de l'entité Course
             targetEntity: SubTheme #L'entité cible
-            inversedBy: course #le champ dans l'entité cible
+            inversedBy: courses #le champ dans l'entité cible
             joinColumn:
                 name: subTheme_id #colonne de jointure
                 referencedColumnName: id #jointure faite par l'id du 
         typeCourse: #le champ de l'entité Course
             targetEntity: TypeCourse #L'entité cible
-            inversedBy: course #le champ dans l'entité cible
+            inversedBy: courses #le champ dans l'entité cible
             joinColumn:
                 name: typeCourse_id #colonne de jointure
                 referencedColumnName: id #jointure faite par l'id du
