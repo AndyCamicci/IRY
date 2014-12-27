@@ -54,7 +54,7 @@
 					        {% elseif (course.typeCourse.id == 3) %}
 								{% set url = "#modal-one" %}
 					        {% elseif (course.typeCourse.id == 4) %}
-								{% set url = path('iry_appli_ep', {'course_id': course.id}) %}	    
+								{% set url = path('iry_appli_step', {'course_id': course.id}) %}	    
 				       		{% endif %}
 
 				        		<a href="{{ url }}">

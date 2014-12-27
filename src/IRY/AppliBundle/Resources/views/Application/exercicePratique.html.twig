@@ -25,7 +25,7 @@
                                     <span class="bar"></span>
                                     <span class="title">GENE ON</span>
                                 </div>
-                                <div class="success element">
+                                 <div class="success element">
                                     <span>1</span>
                                 </div>
                                 <div class="errors element">
@@ -34,8 +34,31 @@
                                 <div class="call element">
                                     <span></span>
                                 </div>
+                                <div class="GLobal error">
+                                    <span></span>
+                                </div>
                             </li>
+                        
+                            {% for etape in course.steps %}
+                                {{etape.name}}
+                                {% set nbEssai = 0 %}
+                                {% set nbErrors = 0 %}
+                                {% set nbErrorsLocal = 0 %}
+                                    {% for resultat in etape.results %} 
+                                        {% set nbEssai = nbEssai + 1 %}
+                                        {% if (resultat.isError == 1) %}
+                                            {% if (resultat.isGlobal == 1) %}
+                                                {% set nbErrors = nbErrors + 1 %}
+                                            {% else %}
+                                                {% set nbErrorsLocal = nbErrorsLocal + 1 %}
+                                            {% endif %}
+                                        {% endif %}                                         
+                                    {% endfor %}
+                                <li> <span> Global Failures </span> {{nbErrors*100/nbEssai}}%</li>
+                                <li> <span> Local Failures </span> {{nbErrorsLocal*100/nbEssai}}%</li>
+                            {% endfor %}
                         {% endfor %}
+                        
                     </ul>
                 </div>
             </div>

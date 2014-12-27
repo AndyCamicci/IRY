@@ -1,0 +1,19 @@
+IRY\AppliBundle\Entity\Schema:
+    type: entity
+    table: Schema
+    repositoryClass: IRY\AppliBundle\Entity\SchemaRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        img:
+            type: text
+
+    oneToOne:
+        course:
+            targetEntity: Course
+            joinColumn:
+                name: course_id
+                referencedColumnName: id
