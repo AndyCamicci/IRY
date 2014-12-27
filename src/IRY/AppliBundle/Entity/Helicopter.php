@@ -10,6 +10,7 @@ class Helicopter {
     private $name;
     private $type;
     private $themes;
+    private $imgHelico;
     /**
      * Constructor
      */
@@ -105,5 +106,28 @@ class Helicopter {
     public function getThemes()
     {
         return $this->themes;
+    }
+
+    /**
+     * Set image helico
+     *
+     * @param string $imgHelico
+     * @return Helicopter
+     */
+    public function setImgHelico($imgHelico)
+    {
+        $this->imgHelico = $imgHelico;
+
+        return $this;
+    }
+
+    /**
+     * Get image helico
+     *
+     * @return string 
+     */
+    public function getImgHelico()
+    {
+        return $this->imgHelico;
     }
 }

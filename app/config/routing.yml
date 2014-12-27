@@ -1,3 +1,7 @@
+iry_api:
+    resource: "@IRYApiBundle/Resources/config/routing.yml"
+    prefix:   /api
+
 iry_security:
     resource: "@IRYSecurityBundle/Resources/config/routing.yml"
     prefix:   /
@@ -9,3 +13,7 @@ iry_appli:
 _console:
     resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"
     prefix: /_console
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

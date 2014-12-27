@@ -84,4 +84,28 @@ class Pilot {
     {
         return $this->results;
     }
+
+    public function getNbErrors()
+    {
+        $errors = 0;
+        foreach ($this->results as $result) {
+            if ($result->getIsError() == true) {
+                $errors++;
+            }
+        }
+
+        return $errors;
+    }
+    public function getNbSuccess()
+    {
+        $success = 0;
+        
+        foreach ($this->results as $result) {
+            if ($result->getStep()->isLastStep() == true && $result->getIsError() == false) {
+                $success++;
+            }
+        }
+
+        return $success;
+    }
 }

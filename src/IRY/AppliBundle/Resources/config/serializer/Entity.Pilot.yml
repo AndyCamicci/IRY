@@ -1,0 +1,12 @@
+IRY\AppliBundle\Entity\Pilot:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true
+    virtual_properties:
+        getNbErrors:
+          serialized_name: nbErrors
+        getNbSuccess:
+          serialized_name: nbSuccess

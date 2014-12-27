@@ -14,9 +14,9 @@ iry_appli_cm:
 iry_appli_cd:
     path:   /demonstrative-course/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:coursDemonstratif"}
-# iry_appli_vi:
-#     path:   /immersive-movie/{course_id}
-#     defaults: {_controller: "IRYAppliBundle:Application:videoImmersive"}
+iry_appli_vi:
+    path:   /immersive-movie/{course_id}
+    defaults: {_controller: "IRYAppliBundle:Application:videoImmersive"}
 iry_appli_ep:
     path:   /practical-training/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
@@ -24,6 +24,9 @@ iry_appli_dc:
     path:   /defriefing/
     defaults: {_controller: "IRYAppliBundle:Application:debriefing"}
 
+iry_appli_ep_centre_pilote:
+    path:   /practical-training/{course_id}/view-pilot/{pilot_id}
+    defaults: {_controller: "IRYAppliBundle:Application:exercicePratiqueCentrePilote"}
 
 iry_crud_heli_list:
     path:   /crud/helicopters
@@ -56,15 +59,15 @@ iry_crud_course_update:
     defaults: {_controller: IRYAppliBundle:Crud:updateCourse}
 
 
-iry_rest_helicopters:
-    path:   /rest/helicopters
-    defaults: {_controller: IRYAppliBundle:REST:helicopters}
-    methods:   [GET]
-iry_rest_helicopter:
-    path:   /rest/helicopter/{id}
-    defaults: {_controller: IRYAppliBundle:REST:helicopter}
-    methods:   [GET]
-iry_rest_helicopter_add:
-    path:   /rest/helicopter/{id}
-    defaults: {_controller: IRYAppliBundle:REST:helicopterPost}
-    methods:   [POST]
+# iry_rest_helicopters:
+#     path:   /rest/helicopters
+#     defaults: {_controller: IRYAppliBundle:REST:helicopters}
+#     methods:   [GET]
+# iry_rest_helicopter:
+#     path:   /rest/helicopter/{id}
+#     defaults: {_controller: IRYAppliBundle:REST:helicopter}
+#     methods:   [GET]
+# iry_rest_helicopter_add:
+#     path:   /rest/helicopter/{id}
+#     defaults: {_controller: IRYAppliBundle:REST:helicopterPost}
+#     methods:   [POST]

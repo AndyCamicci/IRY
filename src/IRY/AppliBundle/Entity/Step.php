@@ -212,4 +212,16 @@ class Step {
     {
         return $this->btn_state;
     }
+
+    public function isLastStep()
+    {
+        $lastStep = $this->course->getLastStep();
+
+        if (is_null($lastStep) == false) {
+            
+            return $lastStep->getId() == $this->getId();
+        }
+
+        return false;
+    }
 }

@@ -8,6 +8,7 @@ class Course {
     private $name;
     private $steps;
     private $typeCourse;
+    private $schema;
     /**
      * @var \IRY\AppliBundle\Entity\SubTheme
      */
@@ -131,5 +132,50 @@ class Course {
     public function getTypeCourse()
     {
         return $this->typeCourse;
+    }
+
+<<<<<<< HEAD
+    /**
+     * Set typeCourse
+     *
+     * @param \IRY\AppliBundle\Entity\Schema $schema
+     * @return Course
+     */
+    public function setSchema(\IRY\AppliBundle\Entity\Schema $schema = null)
+    {
+        $this->schema = $schema;
+
+        return $this;
+    }
+
+    /**
+     * Get schema
+     *
+     * @return \IRY\AppliBundle\Entity\schema
+     */
+    public function getSchema()
+    {
+        return $this->schema;
+=======
+    public function getLastStep()
+    {
+        $higherStep;
+        $higherStepOrder = null;
+
+        foreach ($this->getSteps() as $key => $step) {
+            if ($key == 0) {
+                $higherStep = $step;
+                $higherStepOrder = $step->getOrder();
+            } else {
+
+                if ($step->getOrder() >= $higherStepOrder) {
+                    $higherStep = $step;
+                    $higherStepOrder = $step->getOrder();
+                }
+            }
+        }
+
+        return $higherStep;
+>>>>>>> 6c8b75a022e3554d1dd8be979c0ac79da134db69
     }
 }
