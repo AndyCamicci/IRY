@@ -9,6 +9,7 @@ class Course {
     private $name;
     private $steps;
     private $typeCourse;
+    private $schema;
     /**
      * @var \IRY\AppliBundle\Entity\SubTheme
      */
@@ -150,6 +151,29 @@ class Course {
         return $this->typeCourse;
     }
 
+
+    /**
+     * Set typeCourse
+     *
+     * @param \IRY\AppliBundle\Entity\Schema $schema
+     * @return Course
+     */
+    public function setSchema(\IRY\AppliBundle\Entity\Schema $schema = null)
+    {
+        $this->schema = $schema;
+
+        return $this;
+    }
+
+    /**
+     * Get schema
+     *
+     * @return \IRY\AppliBundle\Entity\schema
+     */
+    public function getSchema()
+    {
+        return $this->schema;
+    }
     public function getLastStep()
     {
         $higherStep;
@@ -169,5 +193,6 @@ class Course {
         }
 
         return $higherStep;
+
     }
 }
