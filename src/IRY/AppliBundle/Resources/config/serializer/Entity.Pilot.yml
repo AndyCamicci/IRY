@@ -7,8 +7,6 @@ IRY\AppliBundle\Entity\Pilot:
             expose: true
         isCalling:
             expose: true
-        dateCalling:
-            expose: true
     virtual_properties:
         getNbErrors:
           serialized_name: nb_errors
@@ -16,3 +14,5 @@ IRY\AppliBundle\Entity\Pilot:
           serialized_name: nb_success
         getCurrentStep:
           serialized_name: current_step
+        getJavascriptTimestampDateCalling:
+          serialized_name: date_calling

@@ -49,9 +49,7 @@ $(document).ready(function() {
 
 	/* PERCENT */
 	$(".percent").each(function() {
-		var $element = $(this).find(".percent-value");
-		var percent = $element.attr("data-percent");
-		$element.css("width", percent + "%");
+		updatePercentValue($(this).find(".percent-value"));
 	});
 
 	/* DEMONSTRATIVE COURSE */
@@ -108,29 +106,24 @@ $(document).ready(function() {
 					});
 					currentPilots = currentPilots.splice( $.inArray(diff[i], currentPilots), 1 ); // remove id from current pilots list
 				}
+
+				updatePilotsValues(pilots);
+				sortPilots();
 			});
 		})(checkPilotsUrl, currentPilots, templateEPPilot);
-	}, 1000);
+	}, 3000);
 
 	sortPilots();
 
 });
 
+function updatePercentValue($el) {
+	var percent = $el.attr("data-percent");
+	$el.animate({width: percent + "%"}, 200);
+	// $el.css("width", percent + "%");
+}
 
 function sortPilots() {
-
-	// var $list = $('.pilot_list');
-
-	// var $listItems = $list.find('a').sort(function(a,b){ 
-	// 	return $(a).find(".pilot").attr('data-pilot-id') - $(b).find(".pilot").attr('data-pilot-id');
-	// });
-
-	// console.log($listItems);
-	// $list.find('a').remove();
-	// $list.append($listItems);
-
-
-
 	var $Ul = $('.pilot_list');
 	$Ul.css({position:'relative',height:$Ul.height(),display:'block'});
 	var iLnH;
@@ -147,8 +140,23 @@ function sortPilots() {
 	$LiSorted = $Li.sort(function(a,b){ 
 		var aId = $(a).find("*[data-call-time]").attr('data-call-time');
 		var bId = $(b).find("*[data-call-time]").attr('data-call-time');
-		// console.log(aId, bId);
-		return bId - aId;
+
+		var aActive = $(a).find("*[data-call-time]").hasClass("active");
+		var bActive = $(b).find("*[data-call-time]").hasClass("active");
+
+		var returnValue = null;
+
+		if (aActive == true && bActive == false) {
+			returnValue = -1;
+		}
+		if (aActive == false && bActive == true) {
+			returnValue = 1;
+		}
+		if (aActive == false && bActive == false) {
+			returnValue = 0;
+		}
+		// console.log($(a).find('.pilot').attr("data-pilot-id"), aId, aActive, $(b).find('.pilot').attr("data-pilot-id"), bId, bActive, returnValue == null ? bId - aId : returnValue );
+		return returnValue == null ? bId - aId : returnValue;
 	});
 
 
@@ -156,15 +164,51 @@ function sortPilots() {
 		var $El = $(el);
 		var iFr = $.data(el,'h');
 		var iTo = i*iLnH;
-		$El.css({position:'absolute',top:iFr, left:0}).animate({top:iTo},1000);
+		$El.css({position:'absolute',top:iFr, left:0, right:0}).animate({top:iTo},1000);
 		// console.log($El.find('.pilot').attr('data-pilot-id'));
 	});
 
 	setTimeout(function() {
 		$Ul.empty();
 		$Ul.append($LiSorted);
-		$LiSorted.css({position: 'static', top:'auto', left: 'auto'});
+		// $LiSorted.css({position: 'static', top:'auto', left: 'auto'});
 	}, 1000);
+}
+
+function updatePilotsValues(pilots) {
+	for (var i in pilots) {
+		updatePilotValues(pilots[i]);
+	}
+}
+
+function updatePilotValues(pilot) {
+	var $ul = $(".pilot_list");
+	var $a = $ul.find("*[data-pilot-id=" + pilot.id + "]").parent();
+
+	var $percentProgression = $a.find(".step .percent-value");
+	var $stepName = $a.find(".step .title");
+	var $pilotSuccess = $a.find(".success span");
+	var $pilotErrors = $a.find(".errors span");
+	var $call = $a.find(".call span");
+
+	if (pilot.current_step == null) {
+		$percentProgression.attr("data-percent", 0);
+		$stepName.html("Pilot has not started");
+	} else {
+		$percentProgression.attr("data-percent", pilot.current_step.percent_in_course);
+		updatePercentValue($percentProgression);
+		$stepName.html(pilot.current_step.name);
+	}
+
+	$pilotSuccess.html(pilot.nb_success);
+	$pilotErrors.html(pilot.nb_errors);
+
+	if (pilot.is_calling == true) {
+		$call.addClass("active");
+		$call.attr("data-call-time", new Date(pilot.date_calling).getTime());
+	} else {
+		$call.removeClass("active");
+	}
 }
 
 function addPilotToEP(template, pilot) {
@@ -180,9 +224,12 @@ function addPilotToEP(template, pilot) {
 		"callTime": pilot.date_calling,
 	});
 
-  	var $rendered = $(rendered).insertBefore($('.pilot_list a:last-of-type'));
+  	var $rendered = $(rendered).insertAfter($('.pilot_list a:last-of-type'));
   	$rendered.find(".pilot").css("display", "none");
   	$rendered.find(".pilot").slideDown(200);
+
+	updatePercentValue($rendered.find('.percent-value'));
+
 }
 
 function resize() {

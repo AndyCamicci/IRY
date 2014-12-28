@@ -170,4 +170,8 @@ class Pilot {
     {
         return $this->dateCalling;
     }
+    public function getJavascriptTimestampDateCalling()
+    {
+        return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
+    }
 }
