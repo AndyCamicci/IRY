@@ -134,7 +134,7 @@ class Course {
         return $this->typeCourse;
     }
 
-<<<<<<< HEAD
+
     /**
      * Set typeCourse
      *
@@ -156,7 +156,7 @@ class Course {
     public function getSchema()
     {
         return $this->schema;
-=======
+    }
     public function getLastStep()
     {
         $higherStep;
@@ -176,6 +176,6 @@ class Course {
         }
 
         return $higherStep;
->>>>>>> 6c8b75a022e3554d1dd8be979c0ac79da134db69
+
     }
 }

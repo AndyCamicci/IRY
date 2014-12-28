@@ -15,7 +15,7 @@ IRY\AppliBundle\Entity\Helicopter:
             type: string
             length: 255
         imgHelico:
-            type: Text
+            type: text
     oneToMany:
         themes: #Champ dans l'entité Helicopter
             targetEntity: Theme #Entité visée
