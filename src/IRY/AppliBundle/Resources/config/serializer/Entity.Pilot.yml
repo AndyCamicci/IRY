@@ -5,8 +5,14 @@ IRY\AppliBundle\Entity\Pilot:
             expose: true
         name:
             expose: true
+        isCalling:
+            expose: true
+        dateCalling:
+            expose: true
     virtual_properties:
         getNbErrors:
-          serialized_name: nbErrors
+          serialized_name: nb_errors
         getNbSuccess:
-          serialized_name: nbSuccess
+          serialized_name: nb_success
+        getCurrentStep:
+          serialized_name: current_step

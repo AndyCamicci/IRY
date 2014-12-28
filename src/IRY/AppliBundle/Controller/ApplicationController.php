@@ -41,6 +41,7 @@ class ApplicationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('IRYAppliBundle:Pilot');
+        // $pilots = $repo->findAllSortedByCall();
         $pilots = $repo->findAll();
 
         return $this->render('IRYAppliBundle:Application:exercicePratique.html.twig', array(

@@ -728,7 +728,7 @@ html body #content section#ep .ep_wrap ul li .call span {
   padding: 5px 30px;
 }
 /* line 610, ../sass/custom.scss */
-html body #content section#ep .ep_wrap ul li .call span:after {
+html body #content section#ep .ep_wrap ul li .call span.active:after {
   background: url(../img/call.png);
   background-size: contain;
 }

@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 	/* PERCENT */
 	$(".percent").each(function() {
-		var $element = $(this).find("span");
+		var $element = $(this).find(".percent-value");
 		var percent = $element.attr("data-percent");
 		$element.css("width", percent + "%");
 	});
@@ -73,20 +73,20 @@ $(document).ready(function() {
 	});	
 
 	/* PRACTICAL TRAINING : Check if new users are presents */
-
 	// Get current pilots
 	var currentPilots = [];
 
+	// Fill the array with the if of the pilots currently displayed
 	$(".pilot[data-pilot-id]").each(function() {
 		currentPilots.push(parseInt($(this).attr("data-pilot-id")));
 	});
 
 	var templateEPPilot = $('#template-ep-pilot').html();
 
+	// Each x milliseconds, check for new pilots
 	setInterval(function() {
-
 		(function(url, currentPilots, templateEPPilot) {
-
+			// Make the HTTP request to the REST API
 			$.ajax(url).done(function(results) {
 				var pilots = results.data;
 				var pilot;
@@ -94,47 +94,93 @@ $(document).ready(function() {
 
 				for (i in pilots) {
 					pilot = pilots[i];
-
 					refreshedPilots.push(pilot.id);
-					
-					if ($.inArray(pilot.id, currentPilots) == -1) { // Pilot has not been currently
+					if ($.inArray(pilot.id, currentPilots) == -1) { // Pilot has not been currently added
 						currentPilots.push(pilot.id);
-
 						addPilotToEP(templateEPPilot, pilot);
 					}
-
 				}
 
 				var diff = $(currentPilots).not(refreshedPilots).get();
-
 				for (i in diff) {
-
 					$(".pilot[data-pilot-id=" + diff[i] + "]").slideUp(200, function() {
 						$(this).remove();
 					});
-					
-
 					currentPilots = currentPilots.splice( $.inArray(diff[i], currentPilots), 1 ); // remove id from current pilots list
 				}
-
 			});
-
 		})(checkPilotsUrl, currentPilots, templateEPPilot);
-
 	}, 1000);
 
-
+	sortPilots();
 
 });
+
+
+function sortPilots() {
+
+	// var $list = $('.pilot_list');
+
+	// var $listItems = $list.find('a').sort(function(a,b){ 
+	// 	return $(a).find(".pilot").attr('data-pilot-id') - $(b).find(".pilot").attr('data-pilot-id');
+	// });
+
+	// console.log($listItems);
+	// $list.find('a').remove();
+	// $list.append($listItems);
+
+
+
+	var $Ul = $('.pilot_list');
+	$Ul.css({position:'relative',height:$Ul.height(),display:'block'});
+	var iLnH;
+	var $Li = $('.pilot_list > a');
+
+	$Li.each(function(i,el){
+		var iY = $(el).position().top;
+		$.data(el,'h',iY);
+		if (i===1) iLnH = iY;
+		// console.log($(el).find('.pilot').attr('data-pilot-id'));
+	});
+
+
+	$LiSorted = $Li.sort(function(a,b){ 
+		var aId = $(a).find("*[data-call-time]").attr('data-call-time');
+		var bId = $(b).find("*[data-call-time]").attr('data-call-time');
+		// console.log(aId, bId);
+		return bId - aId;
+	});
+
+
+	$LiSorted.each(function(i,el){
+		var $El = $(el);
+		var iFr = $.data(el,'h');
+		var iTo = i*iLnH;
+		$El.css({position:'absolute',top:iFr, left:0}).animate({top:iTo},1000);
+		// console.log($El.find('.pilot').attr('data-pilot-id'));
+	});
+
+	setTimeout(function() {
+		$Ul.empty();
+		$Ul.append($LiSorted);
+		$LiSorted.css({position: 'static', top:'auto', left: 'auto'});
+	}, 1000);
+}
 
 function addPilotToEP(template, pilot) {
 	var rendered = Mustache.render(template, {
 		"pilotId": pilot.id,
 		"pilotName": pilot.name,
 		"pilotCenteredPath": viewPilotUrl.replace("pilotId", pilot.id),
+		"pilotSuccess": pilot.nb_success,
+		"pilotErrors": pilot.nb_errors,
+		"percentProgression": pilot.current_step == null ? 0 : pilot.current_step.percent_in_course,
+		"stepName": pilot.current_step == null ? "Pilot has not started" : pilot.current_step.name,
+		"callIsActive": pilot.is_calling == true ? 'class="active"' : '',
+		"callTime": pilot.date_calling,
 	});
 
-  	var $rendered = $(rendered).insertAfter($('.pilot_list .pilot:last-of-type'));
+  	var $rendered = $(rendered).insertBefore($('.pilot_list a:last-of-type'));
   	$rendered.find(".pilot").css("display", "none");
   	$rendered.find(".pilot").slideDown(200);
 }

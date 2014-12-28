@@ -1,0 +1,10 @@
+IRY\AppliBundle\Entity\Step:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true
+    virtual_properties:
+        getPercentInCourse:
+            serialized_name: percent_in_course

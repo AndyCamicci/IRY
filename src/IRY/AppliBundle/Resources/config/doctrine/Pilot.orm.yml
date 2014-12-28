@@ -11,6 +11,10 @@ IRY\AppliBundle\Entity\Pilot:
         name:
             type: string
             length: 255
+        isCalling:
+            type: boolean
+        dateCalling:
+            type: datetime
     oneToMany:
         results: #Champ dans l'entité Helicopter
             targetEntity: Result #Entité visée

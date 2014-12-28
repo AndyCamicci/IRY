@@ -2,6 +2,7 @@
 
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class Course {
 	private $id;
@@ -84,7 +85,23 @@ class Course {
      */
     public function getSteps()
     {
-        return $this->steps;
+        $steps = $this->steps;
+        
+        // Order steps by order field
+        $iterator = $steps->getIterator();
+        $iterator->uasort(function ($a, $b) {
+
+            // If the orders are identical, sort using theirs id's
+            if ($a->getOrder() == $b->getOrder()) {
+                return ($a->getId() < $b->getId()) ? -1 : 1;
+            }
+
+            return ($a->getOrder() < $b->getOrder()) ? -1 : 1;
+        });
+
+        $steps = new ArrayCollection(iterator_to_array($iterator));
+
+        return $steps;
     }
 
     /**

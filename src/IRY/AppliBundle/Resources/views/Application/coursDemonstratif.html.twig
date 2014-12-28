@@ -27,7 +27,7 @@
                                     <span class="title">{{ step.name }}</span>
                                 </div>
                                 <div class="percent element">
-                                    <span class="var" data-percent="{{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }}"></span>
+                                    <span class="var percent-value" data-percent="{{ step.results|length > 0 ? step.nbErrors * 100 / step.results|length : "" }}"></span>
                                 </div>
                             </li>
                         {% endfor %}

@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Pilot {
 	private $id;
     private $name;
+    private $isCalling;
+    private $dateCalling;
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -88,7 +90,7 @@ class Pilot {
     public function getNbErrors()
     {
         $errors = 0;
-        foreach ($this->results as $result) {
+        foreach ($this->getResults() as $result) {
             if ($result->getIsError() == true) {
                 $errors++;
             }
@@ -100,12 +102,72 @@ class Pilot {
     {
         $success = 0;
         
-        foreach ($this->results as $result) {
-            if ($result->getStep()->isLastStep() == true && $result->getIsError() == false) {
+        foreach ($this->getResults() as $result) {
+            if ($result->getIsGlobal() == false && $result->getStep()->isLastStep() == true && $result->getIsError() == false) {
                 $success++;
             }
         }
 
         return $success;
+    }
+
+    public function getCurrentStep()
+    {
+        $results = $this->getResults();
+
+        if (count($results) > 0) {
+            $lastResult = $results[count($results) - 1];
+            $lastStep = $lastResult->getStep();
+
+            return $lastStep->getNextStep();
+        }
+
+        return null;
+    }
+
+    /**
+     * Set isCalling
+     *
+     * @param boolean $isCalling
+     * @return Pilot
+     */
+    public function setIsCalling($isCalling)
+    {
+        $this->isCalling = $isCalling;
+
+        return $this;
+    }
+
+    /**
+     * Get isCalling
+     *
+     * @return boolean 
+     */
+    public function getIsCalling()
+    {
+        return $this->isCalling;
+    }
+
+    /**
+     * Set dateCalling
+     *
+     * @param \DateTime $dateCalling
+     * @return Pilot
+     */
+    public function setDateCalling($dateCalling)
+    {
+        $this->dateCalling = $dateCalling;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCalling
+     *
+     * @return \DateTime 
+     */
+    public function getDateCalling()
+    {
+        return $this->dateCalling;
     }
 }

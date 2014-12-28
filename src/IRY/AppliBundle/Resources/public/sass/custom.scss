@@ -607,7 +607,7 @@ html{
 							.call{
 								span{
 									padding: 5px 30px;
-									&:after{
+									&.active:after{
 										background: url(../img/call.png);
 										background-size: contain;
 									}
