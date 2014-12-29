@@ -20,6 +20,9 @@ iry_appli_vi:
 iry_appli_ep:
     path:   /practical-training/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:exercicePratique"}
+iry_appli_pilot:
+    path:   /practical-training/{course_id}/pilot/{pilot_id}
+    defaults: {_controller: "IRYAppliBundle:Application:exercicePratiqueVuePilote"}
 iry_appli_dc:
     path:   /defriefing/
     defaults: {_controller: "IRYAppliBundle:Application:debriefing"}

@@ -638,31 +638,32 @@ html body #content section#ep .ep_wrap {
 html body #content section#ep .ep_wrap ul li {
   background: #d1cece;
   padding: 10px;
+  box-shadow: -4px 4px #a8a8a7;
   margin-bottom: 10px;
 }
-/* line 528, ../sass/custom.scss */
+/* line 529, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li div.element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 532, ../sass/custom.scss */
+/* line 533, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li div.element span {
   font-size: 1.2rem;
 }
-/* line 536, ../sass/custom.scss */
+/* line 537, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .step {
   width: 350px;
   background: #a8a8a7;
 }
-/* line 539, ../sass/custom.scss */
+/* line 540, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .step .bar {
   height: 30px;
   width: 70%;
   background: #0fa7b7;
   display: block;
 }
-/* line 545, ../sass/custom.scss */
+/* line 546, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .step .title {
   font-size: 1.1rem;
   color: white;
@@ -672,30 +673,30 @@ html body #content section#ep .ep_wrap ul li .step .title {
   left: 0;
   right: 0;
 }
-/* line 556, ../sass/custom.scss */
+/* line 557, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li.gotodebriefing span, html body #content section#ep .ep_wrap ul li .pilot_name span, html body #content section#ep .ep_wrap ul li .success span, html body #content section#ep .ep_wrap ul li .errors span, html body #content section#ep .ep_wrap ul li .call span, html body #content section#ep .ep_wrap ul li.gotodebrifing span {
   font-size: 1.3rem;
   padding: 5px 0;
   color: #909090;
 }
-/* line 562, ../sass/custom.scss */
+/* line 563, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .pilot_name {
   width: 200px;
   text-align: left;
 }
-/* line 566, ../sass/custom.scss */
+/* line 567, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success, html body #content section#ep .ep_wrap ul li .errors, html body #content section#ep .ep_wrap ul li .call {
   width: 75px;
   height: 30px;
 }
-/* line 569, ../sass/custom.scss */
+/* line 570, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span, html body #content section#ep .ep_wrap ul li .errors span, html body #content section#ep .ep_wrap ul li .call span {
   margin-right: 40px;
   display: inline-block;
   /*padding: 5px 10px;*/
   /*padding-right: 50px;*/
 }
-/* line 574, ../sass/custom.scss */
+/* line 575, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span:after, html body #content section#ep .ep_wrap ul li .errors span:after, html body #content section#ep .ep_wrap ul li .call span:after {
   content: "";
   width: 25px;
@@ -704,46 +705,46 @@ html body #content section#ep .ep_wrap ul li .success span:after, html body #con
   right: 15px;
   top: 1px;
 }
-/* line 584, ../sass/custom.scss */
+/* line 585, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success, html body #content section#ep .ep_wrap ul li .errors {
   border-right: 2px solid #0fa7b7;
   text-align: right;
 }
-/* line 587, ../sass/custom.scss */
+/* line 588, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span, html body #content section#ep .ep_wrap ul li .errors span {
   padding: 6px 10px;
 }
-/* line 593, ../sass/custom.scss */
+/* line 594, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .success span:after {
   background: url(../img/success.png);
   background-size: contain;
 }
-/* line 601, ../sass/custom.scss */
+/* line 602, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .errors span:after {
   background: url(../img/errors.png);
   background-size: contain;
 }
-/* line 608, ../sass/custom.scss */
+/* line 609, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .call span {
   padding: 5px 30px;
 }
-/* line 610, ../sass/custom.scss */
+/* line 611, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li .call span:after {
   background: url(../img/call.png);
   background-size: contain;
 }
-/* line 616, ../sass/custom.scss */
+/* line 617, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li.gotodebriefing {
   display: inline-block;
   float: right;
 }
-/* line 619, ../sass/custom.scss */
+/* line 620, ../sass/custom.scss */
 html body #content section#ep .ep_wrap ul li.gotodebriefing span {
   display: block;
   text-transform: uppercase;
   padding: 3px 3px 0;
 }
-/* line 628, ../sass/custom.scss */
+/* line 629, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap {
   @transition (all, 0.3, ease-in-out);
   left: 100%;
@@ -754,52 +755,52 @@ html body #content section#ep .ep_list_wrap {
   height: 90%;
 }
 @media (max-width: 640px) {
-  /* line 628, ../sass/custom.scss */
+  /* line 629, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap {
     width: 80%;
   }
 }
 @media (min-width: 640px) {
-  /* line 628, ../sass/custom.scss */
+  /* line 629, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap {
     width: 60%;
   }
 }
 @media (min-width: 1000px) {
-  /* line 628, ../sass/custom.scss */
+  /* line 629, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap {
     width: 40%;
   }
 }
-/* line 639, ../sass/custom.scss */
+/* line 640, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap.ep_list_opened {
   @transition (all, 0.3, ease-in-out);
 }
 @media (max-width: 640px) {
-  /* line 639, ../sass/custom.scss */
+  /* line 640, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 20%;
   }
 }
 @media (min-width: 640px) {
-  /* line 639, ../sass/custom.scss */
+  /* line 640, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 40%;
   }
 }
 @media (min-width: 1000px) {
-  /* line 639, ../sass/custom.scss */
+  /* line 640, ../sass/custom.scss */
   html body #content section#ep .ep_list_wrap.ep_list_opened {
     left: 60%;
   }
 }
-/* line 657, ../sass/custom.scss */
+/* line 658, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap h3 {
   cursor: pointer;
 }
-/* line 659, ../sass/custom.scss */
+/* line 660, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap h3:before {
-  content: "";
+  content: url(../img/plus_entoure.png) center no-repeat;
   position: absolute;
   top: 0;
   height: 100%;
@@ -807,7 +808,7 @@ html body #content section#ep .ep_list_wrap h3:before {
   left: -48px;
   background: #0fa7b7;
 }
-/* line 670, ../sass/custom.scss */
+/* line 671, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .plus {
   position: absolute;
   top: 0;
@@ -815,49 +816,49 @@ html body #content section#ep .ep_list_wrap .plus {
   width: 48px;
   left: -285px;
 }
-/* line 677, ../sass/custom.scss */
+/* line 678, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list {
   position: relative;
   padding-bottom: 40px;
   height: 100%;
   overflow: auto;
 }
-/* line 682, ../sass/custom.scss */
+/* line 683, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul {
   padding: 10px;
   overflow: auto;
 }
-/* line 685, ../sass/custom.scss */
+/* line 686, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step {
   margin-bottom: 10px;
   display: block;
   cursor: pointer;
 }
-/* line 691, ../sass/custom.scss */
+/* line 692, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step.activated .step .title {
   color: #a8a8a7;
 }
-/* line 696, ../sass/custom.scss */
+/* line 697, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step.activated .percent .var {
   background-color: #a8a8a7;
 }
-/* line 701, ../sass/custom.scss */
+/* line 702, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 705, ../sass/custom.scss */
+/* line 706, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .element span {
   font-size: 1.2rem;
 }
-/* line 709, ../sass/custom.scss */
+/* line 710, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .step {
   width: 65%;
   text-align: left;
   margin-right: 2%;
 }
-/* line 713, ../sass/custom.scss */
+/* line 714, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .step .title {
   display: block;
   font-size: 1.2rem;
@@ -865,12 +866,12 @@ html body #content section#ep .ep_list_wrap .list ul li.ep_step .step .title {
   color: #a8a8a7;
   padding: 5px;
 }
-/* line 721, ../sass/custom.scss */
+/* line 722, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent {
   width: 30%;
   background: #d1cece;
 }
-/* line 724, ../sass/custom.scss */
+/* line 725, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent span.var {
   height: 14px;
   width: 70%;
@@ -878,17 +879,17 @@ html body #content section#ep .ep_list_wrap .list ul li.ep_step .percent span.va
   background: #0fa7b7;
   display: block;
 }
-/* line 732, ../sass/custom.scss */
+/* line 733, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .list_title {
   width: 30%;
   text-align: left;
 }
-/* line 735, ../sass/custom.scss */
+/* line 736, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list ul li.ep_step .list_title span {
   color: #a8a8a7;
   font-size: 1.1rem;
 }
-/* line 742, ../sass/custom.scss */
+/* line 743, ../sass/custom.scss */
 html body #content section#ep .ep_list_wrap .list:after {
   content: "";
   position: absolute;
@@ -900,6 +901,20 @@ html body #content section#ep .ep_list_wrap .list:after {
   background: url(../img/arrow_down.png) center no-repeat;
 }
 /* line 756, ../sass/custom.scss */
+html body #content section#vi {
+  text-align: center;
+}
+/* line 758, ../sass/custom.scss */
+html body #content section#vi .video_wrap {
+  width: 840px;
+  padding: 30px 0;
+  margin: auto;
+}
+/* line 762, ../sass/custom.scss */
+html body #content section#vi .video_wrap video {
+  width: 100%;
+}
+/* line 768, ../sass/custom.scss */
 html body #content .modal:before {
   display: block;
   background: rgba(0, 0, 0, 0.6);
@@ -910,7 +925,7 @@ html body #content .modal:before {
   bottom: 0;
   z-index: 10;
 }
-/* line 766, ../sass/custom.scss */
+/* line 778, ../sass/custom.scss */
 html body #content .modal:target .modal-dialog {
   transform: translate(0, 0);
   -o-transform: translate(0, 0);
@@ -918,7 +933,7 @@ html body #content .modal:target .modal-dialog {
   -moz-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
 }
-/* line 772, ../sass/custom.scss */
+/* line 784, ../sass/custom.scss */
 html body #content .modal .modal-dialog {
   background: #fefefe;
   position: fixed;
@@ -931,21 +946,21 @@ html body #content .modal .modal-dialog {
   -webkit-transform: translate(0, -2000px);
   @transition (all, 0.3, ease-in-out);
 }
-/* line 779, ../sass/custom.scss */
+/* line 791, ../sass/custom.scss */
 html body #content .modal .modal-dialog video {
   width: 100%;
 }
-/* line 782, ../sass/custom.scss */
+/* line 794, ../sass/custom.scss */
 html body #content .modal .modal-dialog .close {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 789, ../sass/custom.scss */
+/* line 801, ../sass/custom.scss */
 html body #content #close {
   display: none;
 }
-/* line 794, ../sass/custom.scss */
+/* line 806, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -953,7 +968,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 800, ../sass/custom.scss */
+/* line 812, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;

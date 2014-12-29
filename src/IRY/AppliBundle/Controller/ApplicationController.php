@@ -38,12 +38,28 @@ class ApplicationController extends Controller
     }
     public function exercicePratiqueAction(Course $course_id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository('IRYAppliBundle:Pilot');
-        $pilots = $repo->findAll();
-
+        // $em = $this->getDoctrine()->getManager();
+        // $repo = $em->getRepository('IRYAppliBundle:Step');
+        // $repo_results = $em->getRepository('IRYAppliBundle:Step');
+        // $repo_results = $em->getRepository('IRYAppliBundle:Result');
+        // $repo_pilots = $em->getRepository('IRYAppliBundle:Pilot');
+        // $local_results = $repo_results->findBy(
+        //     array('isGlobal' => '0')
+        // );
+        // $local_pilots = $repo_pilots->findBy(
+        //     array('isGlobal' => '0')
+        // );
         return $this->render('IRYAppliBundle:Application:exercicePratique.html.twig', array(
-            'pilots' => $pilots, 
+            // 'local_results' => $local_results, 
+            "course" => $course_id
+        ));
+    }
+    public function exercicePratiqueVuePiloteAction(Course $course_id, Pilot $pilot_id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        return $this->render('IRYAppliBundle:Application:exercicePratiqueVuePilote.html.twig', array(
+            'pilot' => $pilot_id, 
             "course" => $course_id
         ));
     }
