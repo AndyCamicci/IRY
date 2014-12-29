@@ -520,6 +520,17 @@ html{
 					width: 840px;
 					padding: 30px 0;
 					margin: auto;
+
+					.gotodebriefing {
+						background:$grey-color;
+						display: inline-block;
+						font-size: 1.3rem;
+						padding: 10px 5px;
+						color: $grey-dark-dark-color;
+						margin-top: 20px;
+						float: right
+					}
+
 					ul{
 						li{
 							background:$grey-color;
@@ -553,7 +564,7 @@ html{
 									right: 0;
 								}
 							}
-							&.gotodebriefing, .pilot_name, .success, .errors, .call, &.gotodebrifing{
+							.pilot_name, .success, .errors, .call {
 								span{
 									font-size: 1.3rem;
 									padding: 5px 0;
@@ -608,7 +619,7 @@ html{
 							.call{
 								span{
 									padding: 5px 30px;
-									&:after{
+									&.active:after{
 										background: url(../img/call.png);
 										background-size: contain;
 									}

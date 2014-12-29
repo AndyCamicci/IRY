@@ -49,9 +49,7 @@ $(document).ready(function() {
 
 	/* PERCENT */
 	$(".percent").each(function() {
-		var $element = $(this).find("span");
-		var percent = $element.attr("data-percent");
-		$element.css("width", percent + "%");
+		updatePercentValue($(this).find(".percent-value"));
 	});
 
 	/* DEMONSTRATIVE COURSE */
@@ -72,10 +70,167 @@ $(document).ready(function() {
 		$(this).toggleClass("ep_list_opened"); // Allow user to show a previous step
 	});	
 
+	/* PRACTICAL TRAINING : Check if new users are presents */
+	// Get current pilots
+	var currentPilots = [];
 
+	// Fill the array with the if of the pilots currently displayed
+	$(".pilot[data-pilot-id]").each(function() {
+		currentPilots.push(parseInt($(this).attr("data-pilot-id")));
+	});
+
+	var templateEPPilot = $('#template-ep-pilot').html();
+
+	// Each x milliseconds, check for new pilots
+	setInterval(function() {
+		(function(url, currentPilots, templateEPPilot) {
+			// Make the HTTP request to the REST API
+			$.ajax(url).done(function(results) {
+				var pilots = results.data;
+				var pilot;
+				var refreshedPilots = []; // used to detect if a pilot has been deleted
+
+				for (i in pilots) {
+					pilot = pilots[i];
+					refreshedPilots.push(pilot.id);
+					if ($.inArray(pilot.id, currentPilots) == -1) { // Pilot has not been currently added
+						currentPilots.push(pilot.id);
+						addPilotToEP(templateEPPilot, pilot);
+					}
+				}
+
+				var diff = $(currentPilots).not(refreshedPilots).get();
+				for (i in diff) {
+					$(".pilot[data-pilot-id=" + diff[i] + "]").slideUp(200, function() {
+						$(this).remove();
+					});
+					currentPilots = currentPilots.splice( $.inArray(diff[i], currentPilots), 1 ); // remove id from current pilots list
+				}
+
+				updatePilotsValues(pilots);
+				sortPilots();
+			});
+		})(checkPilotsUrl, currentPilots, templateEPPilot);
+	}, 3000);
+
+	sortPilots();
 
 });
 
+function updatePercentValue($el) {
+	var percent = $el.attr("data-percent");
+	$el.animate({width: percent + "%"}, 200);
+	// $el.css("width", percent + "%");
+}
+
+function sortPilots() {
+	var $Ul = $('.pilot_list');
+	$Ul.css({position:'relative',height:$Ul.height(),display:'block'});
+	var iLnH;
+	var $Li = $('.pilot_list > a');
+
+	$Li.each(function(i,el){
+		var iY = $(el).position().top;
+		$.data(el,'h',iY);
+		if (i===1) iLnH = iY;
+		// console.log($(el).find('.pilot').attr('data-pilot-id'));
+	});
+
+
+	$LiSorted = $Li.sort(function(a,b){ 
+		var aId = $(a).find("*[data-call-time]").attr('data-call-time');
+		var bId = $(b).find("*[data-call-time]").attr('data-call-time');
+
+		var aActive = $(a).find("*[data-call-time]").hasClass("active");
+		var bActive = $(b).find("*[data-call-time]").hasClass("active");
+
+		var returnValue = null;
+
+		if (aActive == true && bActive == false) {
+			returnValue = -1;
+		}
+		if (aActive == false && bActive == true) {
+			returnValue = 1;
+		}
+		if (aActive == false && bActive == false) {
+			returnValue = 0;
+		}
+		// console.log($(a).find('.pilot').attr("data-pilot-id"), aId, aActive, $(b).find('.pilot').attr("data-pilot-id"), bId, bActive, returnValue == null ? bId - aId : returnValue );
+		return returnValue == null ? bId - aId : returnValue;
+	});
+
+
+	$LiSorted.each(function(i,el){
+		var $El = $(el);
+		var iFr = $.data(el,'h');
+		var iTo = i*iLnH;
+		$El.css({position:'absolute',top:iFr, left:0, right:0}).animate({top:iTo},1000);
+		// console.log($El.find('.pilot').attr('data-pilot-id'));
+	});
+
+	setTimeout(function() {
+		$Ul.empty();
+		$Ul.append($LiSorted);
+		// $LiSorted.css({position: 'static', top:'auto', left: 'auto'});
+	}, 1000);
+}
+
+function updatePilotsValues(pilots) {
+	for (var i in pilots) {
+		updatePilotValues(pilots[i]);
+	}
+}
+
+function updatePilotValues(pilot) {
+	var $ul = $(".pilot_list");
+	var $a = $ul.find("*[data-pilot-id=" + pilot.id + "]").parent();
+
+	var $percentProgression = $a.find(".step .percent-value");
+	var $stepName = $a.find(".step .title");
+	var $pilotSuccess = $a.find(".success span");
+	var $pilotErrors = $a.find(".errors span");
+	var $call = $a.find(".call span");
+
+	if (pilot.current_step == null) {
+		$percentProgression.attr("data-percent", 0);
+		$stepName.html("Pilot has not started");
+	} else {
+		$percentProgression.attr("data-percent", pilot.current_step.percent_in_course);
+		updatePercentValue($percentProgression);
+		$stepName.html(pilot.current_step.name);
+	}
+
+	$pilotSuccess.html(pilot.nb_success);
+	$pilotErrors.html(pilot.nb_errors);
+
+	if (pilot.is_calling == true) {
+		$call.addClass("active");
+		$call.attr("data-call-time", new Date(pilot.date_calling).getTime());
+	} else {
+		$call.removeClass("active");
+	}
+}
+
+function addPilotToEP(template, pilot) {
+	var rendered = Mustache.render(template, {
+		"pilotId": pilot.id,
+		"pilotName": pilot.name,
+		"pilotCenteredPath": viewPilotUrl.replace("pilotId", pilot.id),
+		"pilotSuccess": pilot.nb_success,
+		"pilotErrors": pilot.nb_errors,
+		"percentProgression": pilot.current_step == null ? 0 : pilot.current_step.percent_in_course,
+		"stepName": pilot.current_step == null ? "Pilot has not started" : pilot.current_step.name,
+		"callIsActive": pilot.is_calling == true ? 'class="active"' : '',
+		"callTime": pilot.date_calling,
+	});
+
+  	var $rendered = $(rendered).insertAfter($('.pilot_list a:last-of-type'));
+  	$rendered.find(".pilot").css("display", "none");
+  	$rendered.find(".pilot").slideDown(200);
+
+	updatePercentValue($rendered.find('.percent-value'));
+
+}
 
 function resize() {
 	var header_height = $("#header").height();

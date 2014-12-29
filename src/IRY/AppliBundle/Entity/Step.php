@@ -166,6 +166,40 @@ class Step {
         return $nbErrors;
     }
 
+    public function getNbLocalErrors()
+    {
+        $nbErrors = 0;
+
+        for ($i=0; $i < count($this->results); $i++) { 
+            if ($this->results[$i]->getIsGlobal() == false && $this->results[$i]->getIsError() == true) {
+                $nbErrors++;
+            }
+        }
+             
+        return $nbErrors;
+    }
+
+    public function getPercentNbLocalErrors()
+    {
+        $nbErrors = 0;
+        $nbEssais = 0;
+
+        for ($i=0; $i < count($this->results); $i++) { 
+            if ($this->results[$i]->getIsGlobal() == false) {
+                $nbEssais++;
+                if ($this->results[$i]->getIsError() == true) {
+                    $nbErrors++;
+                }
+            }
+        }
+
+        if ($nbEssais == 0) {
+            return 0; // if we don't explicitely return 0, we will get an Exception, division by 0
+        }
+        
+        return $nbErrors * 100 / $nbEssais;
+    }
+
 
     /**
      * Set btn_name
@@ -211,5 +245,58 @@ class Step {
     public function getBtnState()
     {
         return $this->btn_state;
+    }
+
+    public function isLastStep()
+    {
+        $lastStep = $this->course->getLastStep();
+
+        if (is_null($lastStep) == false) {
+            
+            return $lastStep->getId() == $this->getId();
+        }
+
+        return false;
+    }
+
+    public function getNextStep()
+    {
+        $steps = $this->getCourse()->getSteps();
+
+        $index = null;
+
+        foreach ($steps as $i => $step) {
+            if ($step->getId() == $this->getId()) {
+                $index = $i;
+                break;
+            }
+        }
+
+        // return null if the step has not been found (bug) or if there is no next step.
+        return (is_null($index) == true || $i >= count($steps) ) ? null : $steps[$i + 1];
+    }
+
+    public function getPercentInCourse()
+    {
+        $steps = $this->getCourse()->getSteps();
+        $index = null;
+
+        $foreachIndex = 0; // use this variable because the sorting doesn't affect the indexes.
+        foreach ($steps as $step) {
+            if ($step->getId() == $this->getId()) {
+                $index = $foreachIndex;
+                break;
+            }
+            $foreachIndex++;
+        }
+
+        $percent = 0;
+
+        if (is_null($index) == false) {
+            $index++; // Because an array starts from 0
+            $percent = $index * 100 / count($steps);
+        }
+
+        return $percent;
     }
 }

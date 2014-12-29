@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Pilot {
 	private $id;
     private $name;
+    private $isCalling;
+    private $dateCalling;
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -83,5 +85,93 @@ class Pilot {
     public function getResults()
     {
         return $this->results;
+    }
+
+    public function getNbErrors()
+    {
+        $errors = 0;
+        foreach ($this->getResults() as $result) {
+            if ($result->getIsError() == true) {
+                $errors++;
+            }
+        }
+
+        return $errors;
+    }
+    public function getNbSuccess()
+    {
+        $success = 0;
+        
+        foreach ($this->getResults() as $result) {
+            if ($result->getIsGlobal() == false && $result->getStep()->isLastStep() == true && $result->getIsError() == false) {
+                $success++;
+            }
+        }
+
+        return $success;
+    }
+
+    public function getCurrentStep()
+    {
+        $results = $this->getResults();
+
+        if (count($results) > 0) {
+            $lastResult = $results[count($results) - 1];
+            $lastStep = $lastResult->getStep();
+
+            return $lastStep->getNextStep();
+        }
+
+        return null;
+    }
+
+    /**
+     * Set isCalling
+     *
+     * @param boolean $isCalling
+     * @return Pilot
+     */
+    public function setIsCalling($isCalling)
+    {
+        $this->isCalling = $isCalling;
+
+        return $this;
+    }
+
+    /**
+     * Get isCalling
+     *
+     * @return boolean 
+     */
+    public function getIsCalling()
+    {
+        return $this->isCalling;
+    }
+
+    /**
+     * Set dateCalling
+     *
+     * @param \DateTime $dateCalling
+     * @return Pilot
+     */
+    public function setDateCalling($dateCalling)
+    {
+        $this->dateCalling = $dateCalling;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCalling
+     *
+     * @return \DateTime 
+     */
+    public function getDateCalling()
+    {
+        return $this->dateCalling;
+    }
+    public function getJavascriptTimestampDateCalling()
+    {
+        return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
     }
 }
