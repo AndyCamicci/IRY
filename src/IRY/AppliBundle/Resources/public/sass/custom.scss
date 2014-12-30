@@ -525,10 +525,16 @@ html{
 						background:$grey-color;
 						display: inline-block;
 						font-size: 1.3rem;
-						padding: 10px 5px;
+						padding: 12px 10px;
 						color: $grey-dark-dark-color;
-						margin-top: 20px;
-						float: right
+						margin-top: 10px;
+						float: right;
+						box-shadow: -4px 4px $grey-dark-color;
+						@transition(all, 0.3, ease-in-out);
+						&:active{
+							box-shadow : 0px 0px $grey-dark-color;
+							margin: 14px 4px 0 0;
+						} 
 					}
 
 					ul{
@@ -537,6 +543,11 @@ html{
 							padding: 10px;
 							box-shadow: -4px 4px $grey-dark-color; 
 							margin-bottom: 10px;
+							@transition(all, 0.3, ease-in-out);
+							&:active{
+								box-shadow : 0px 0px $grey-dark-color;
+								margin : 4px 4px 10px 0;
+							} 
 							div.element{
 								position: relative;
 								display: inline-block;
@@ -648,6 +659,12 @@ html{
 					@media (min-width: 1000px){
 						width: 40%;
 					}
+					left: 100%;
+					background: $grey-light-color;
+					float: right;
+					position: absolute;
+					top: 5%;
+					height: 90%;
 					&.ep_list_opened{
 						@transition(all, 0.3, ease-in-out);
 						@media (max-width: 640px){
@@ -660,12 +677,6 @@ html{
 							left: 60%;
 						}
 					}
-					left: 100%;
-					background: $grey-light-color;
-					float: right;
-					position: absolute;
-					top: 5%;
-					height: 90%;
 					h3{
 						cursor: pointer;
 						&:before{
