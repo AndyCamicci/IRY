@@ -18,7 +18,7 @@
                 <div class="list">
                     <ul class="pilot_list">
             			{% for pilot in pilots %}
-                            <a href="{{ path("iry_appli_ep_centre_pilote", {course_id: course.id, pilot_id: pilot.id}) }}">
+                            <a href="{{ path("iry_appli_ep_pilot", {course_id: course.id, pilot_id: pilot.id}) }}">
                                 
                                 <li class="pilot" data-pilot-id="{{ pilot.id }}">
                                     <div class="pilot_name element" data-step="2" data-intro="Pour chaque pilote, différentes informations sont transmises à l'instructeur en direct, comme le nom...">
@@ -108,11 +108,9 @@
         </a>
     </script>
 
-
     <script>
         var checkPilotsUrl = "{{ path('get_pilots', { "_format" : "json" }) }}";
-        var viewPilotUrl = "{{ path("iry_appli_ep_centre_pilote", {course_id: course.id, pilot_id: "pilotId"}) }}";
+        var viewPilotUrl = "{{ path("iry_appli_ep_pilot", {course_id: course.id, pilot_id: "pilotId"}) }}";
     </script>
-
 
 {% endblock %}
