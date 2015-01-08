@@ -131,7 +131,7 @@ class Pilot {
      * @param boolean $isCalling
      * @return Pilot
      */
-    public function setIsCalling($isCalling)
+    public function setIsCalling($isCalling = false)
     {
         $this->isCalling = $isCalling;
 
@@ -172,6 +172,9 @@ class Pilot {
     }
     public function getJavascriptTimestampDateCalling()
     {
-        return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
+        if (is_null($this->getDateCalling()) == false) {
+            return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
+        }
+        return 0;
     }
 }
