@@ -527,122 +527,116 @@ html{
 						font-size: 1.3rem;
 						padding: 12px 10px;
 						color: $grey-dark-dark-color;
-						margin-top: 10px;
 						float: right;
 						box-shadow: -4px 4px $grey-dark-color;
+						margin: 0 0 10px 0px;
 						@transition(all, 0.3, ease-in-out);
-						&:active{
-							box-shadow : 0px 0px $grey-dark-color;
-							margin: 14px 4px 0 0;
-						} 
 					}
 
 					ul{
-						li{
-							background:$grey-color;
-							padding: 10px;
-							box-shadow: -4px 4px $grey-dark-color; 
-							margin-bottom: 10px;
-							@transition(all, 0.3, ease-in-out);
-							&:active{
-								box-shadow : 0px 0px $grey-dark-color;
-								margin : 4px 4px 10px 0;
-							} 
-							div.element{
-								position: relative;
-								display: inline-block;
-								vertical-align: middle;
-								span{
-									font-size: 1.2rem;
-								}
-							}
-							.step{
-								width: 350px;
-								background: $grey-dark-color;
-								.bar{
-									height: 30px;
-									width: 70%;
-									background: $blue-color;
-									display: block;
-								}
-								.title{
-									font-size: 1.1rem;
-									color: white;
-									position: absolute;
-									padding: 6px;
-									bottom: 0;
-									left: 0;
-									right: 0;
-								}
-							}
-							.pilot_name, .success, .errors, .call {
-								span{
-									font-size: 1.3rem;
-									padding: 5px 0;
-									color: $grey-dark-dark-color;
-								}
-							}
-							.pilot_name{
-								width: 200px;
-								text-align: left;
-							}
-							.success, .errors, .call{
-								width: 75px;
-								height: 30px;
-								span{
-									margin-right: 40px;
+						a{
+							li{
+								background:$grey-color;
+								padding: 10px;
+								box-shadow: -4px 4px $grey-dark-color; 
+								margin: 0px 0px 10px 0px;
+								@transition(all, 0.3, ease-in-out);
+								div.element{
+									position: relative;
 									display: inline-block;
-									/*padding: 5px 10px;*/
-									/*padding-right: 50px;*/
-									&:after{
-										content:"";
-										width:25px;
-										height: 25px;
+									vertical-align: middle;
+									span{
+										font-size: 1.2rem;
+									}
+								}
+								.step{
+									width: 350px;
+									background: $grey-dark-color;
+									.bar{
+										height: 30px;
+										width: 70%;
+										background: $blue-color;
+										display: block;
+									}
+									.title{
+										font-size: 1.1rem;
+										color: white;
 										position: absolute;
-										right: 15px;
-										top: 1px;
+										padding: 6px;
+										bottom: 0;
+										left: 0;
+										right: 0;
 									}
 								}
-							}
-							.success, .errors{
-								border-right: 2px solid $blue-color;
-								text-align: right;
-								span{
-									padding: 6px 10px;
-								}
-							}
-							.success{
-								span{
-									&:after{
-										background: url(../img/success.png);
-										background-size: contain;
+								.pilot_name, .success, .errors, .call {
+									span{
+										font-size: 1.3rem;
+										padding: 5px 0;
+										color: $grey-dark-dark-color;
 									}
 								}
-							}
-							.errors{
-								span{
-									&:after{
-										background: url(../img/errors.png);
-										background-size: contain;
+								.pilot_name{
+									width: 200px;
+									text-align: left;
+								}
+								.success, .errors, .call{
+									width: 75px;
+									height: 30px;
+									span{
+										margin-right: 40px;
+										display: inline-block;
+										/*padding: 5px 10px;*/
+										/*padding-right: 50px;*/
+										&:after{
+											content:"";
+											width:25px;
+											height: 25px;
+											position: absolute;
+											right: 15px;
+											top: 1px;
+										}
 									}
 								}
-							}
-							.call{
-								span{
-									padding: 5px 30px;
-									&.active:after{
-										background: url(../img/call.png);
-										background-size: contain;
+								.success, .errors{
+									border-right: 2px solid $blue-color;
+									text-align: right;
+									span{
+										padding: 6px 10px;
 									}
 								}
-							}
-							&.gotodebriefing{
-								display: inline-block;
-								float: right;
-								span{
-									display: block;
-									text-transform: uppercase;
-									padding: 3px 3px 0;
+								.success{
+									span{
+										&:after{
+											background: url(../img/success.png);
+											background-size: contain;
+										}
+									}
+								}
+								.errors{
+									span{
+										&:after{
+											background: url(../img/errors.png);
+											background-size: contain;
+										}
+									}
+								}
+								.call{
+									span{
+										padding: 5px 30px;
+										&.active:after{
+											background: url(../img/call.png);
+											background-size: contain;
+										}
+									}
+								}
+								&.gotodebriefing{
+									display: inline-block;
+									float: right;
+									span{
+										display: block;
+										text-transform: uppercase;
+										padding: 3px 3px 0;
+									}
 								}
 							}
 						}
