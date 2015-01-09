@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
 	/* PRACTICAL TRAINING : Check if new users are presents */
-	if (checkPilotsUrl) {
+	if (typeof checkPilotsUrl !== 'undefined') {
 
 		// Get current pilots
 		var currentPilots = [];
