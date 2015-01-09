@@ -373,6 +373,7 @@ html{
 			}
 			#legend{
 				position: fixed;
+				bottom: 0;
 				width: 100%;
 				border-top: 1px solid $grey-color;
 				.types_course{
@@ -816,6 +817,68 @@ html{
 			}
 			#close {
 			  display: none; 
+			}
+			.schema_image{
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				.schema_image_plus{
+					position: absolute;
+					background: $grey-dark-color url(../img/moins_entoure.png) center no-repeat;
+					height: 48px;
+					width: 48px;
+					top: -175px;
+					right: 0;
+					cursor: pointer;
+					&.close{
+					/*@transition(all, 3s, ease-in-out);*/
+						top: -48px;
+						background-image: url(../img/plus_entoure.png);
+					}
+				}
+				.schema_image_wrap{
+					position: fixed;
+					bottom: 0;
+					width: 100%;
+					height: 126px;
+					margin: auto;
+					overflow-x: auto;
+					border-top: 1px solid $grey-dark-color;
+					background: $grey-light-color;
+					ul{
+						white-space: nowrap;
+						padding: 10px;
+						li{
+							display: inline-block;
+							text-align: center;
+							margin: 0 5px;
+							cursor: pointer;
+							span{
+								display: block;
+								font: 1rem 'biko';
+								color: $grey-dark-dark-color;
+								margin : 0 0 5px 0;
+							}
+							img{
+								height: 60px;
+								border: solid 1px $grey-dark-dark-color;
+							}
+							&:hover, &:active {
+								span{
+									color: $blue-color;
+								}
+								img{
+									border-color: $blue-color;
+								}
+							}
+						}
+					}
+					&.close{
+					/*@transition(all, 3s, ease-in-out);*/
+						height: 1px;
+					}
+				}
 			}
 		}
 		footer{

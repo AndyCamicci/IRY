@@ -47,6 +47,11 @@ class ApplicationController extends Controller
         // );
         $repo_pilots = $em->getRepository('IRYAppliBundle:Pilot');
         $pilots = $repo_pilots->findAll();
+        foreach ($pilots as $pilot) {
+            echo $pilot->getId();
+            var_dump($pilot->getCurrentStep());
+        }
+        die();
         return $this->render('IRYAppliBundle:Application:exercicePratique.html.twig', array(
             // 'local_results' => $local_results, 
             "course" => $course_id,

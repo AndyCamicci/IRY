@@ -114,7 +114,8 @@ class Pilot {
     public function getCurrentStep()
     {
         $results = $this->getResults();
-
+        echo count($results);
+        die();
         if (count($results) > 0) {
             $lastResult = $results[count($results) - 1];
             $lastStep = $lastResult->getStep();
