@@ -1,7 +1,7 @@
-IRY\AppliBundle\Entity\Schema:
+IRY\AppliBundle\Entity\SchemaImage:
     type: entity
-    table: Schema
-    repositoryClass: IRY\AppliBundle\Entity\SchemaRepository
+    table: SchemaImage
+    repositoryClass: IRY\AppliBundle\Entity\SchemaImageRepository
     id:
         id:
             type: integer
@@ -11,9 +11,11 @@ IRY\AppliBundle\Entity\Schema:
         img:
             type: text
 
-    oneToOne:
+    manyToOne:
         course:
+            nullable: true
             targetEntity: Course
+            inversedBy: schemaimages
             joinColumn:
                 name: course_id
                 referencedColumnName: id

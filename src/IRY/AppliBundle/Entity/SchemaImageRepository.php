@@ -3,6 +3,6 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\EntityRepository;
 
-class SchemaRepository extends EntityRepository
+class SchemaImageRepository extends EntityRepository
 {
 }

@@ -206,42 +206,4 @@ class Course {
     {
         return $this->schemas;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $schemaimages;
-
-
-    /**
-     * Add schemaimages
-     *
-     * @param \IRY\AppliBundle\Entity\SchemaImage $schemaimages
-     * @return Course
-     */
-    public function addSchemaimage(\IRY\AppliBundle\Entity\SchemaImage $schemaimages)
-    {
-        $this->schemaimages[] = $schemaimages;
-
-        return $this;
-    }
-
-    /**
-     * Remove schemaimages
-     *
-     * @param \IRY\AppliBundle\Entity\SchemaImage $schemaimages
-     */
-    public function removeSchemaimage(\IRY\AppliBundle\Entity\SchemaImage $schemaimages)
-    {
-        $this->schemaimages->removeElement($schemaimages);
-    }
-
-    /**
-     * Get schemaimages
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSchemaimages()
-    {
-        return $this->schemaimages;
-    }
 }

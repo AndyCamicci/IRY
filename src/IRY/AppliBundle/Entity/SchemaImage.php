@@ -3,7 +3,7 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Schema {
+class SchemaImage {
 	private $id;
     private $course;
     private $img;
