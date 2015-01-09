@@ -9,7 +9,6 @@ class Course {
     private $name;
     private $steps;
     private $typeCourse;
-    private $schemas;
     /**
      * @var \IRY\AppliBundle\Entity\SubTheme
      */
@@ -173,39 +172,7 @@ class Course {
         return $higherStep;
 
     }
-
-    /**
-     * Add schemas
-     *
-     * @param \IRY\AppliBundle\Entity\Schema $schemas
-     * @return Course
-     */
-    public function addSchema(\IRY\AppliBundle\Entity\Schema $schemas)
-    {
-        $this->schemas[] = $schemas;
-
-        return $this;
-    }
-
-    /**
-     * Remove schemas
-     *
-     * @param \IRY\AppliBundle\Entity\Schema $schemas
-     */
-    public function removeSchema(\IRY\AppliBundle\Entity\Schema $schemas)
-    {
-        $this->schemas->removeElement($schemas);
-    }
-
-    /**
-     * Get schemas
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSchemas()
-    {
-        return $this->schemas;
-    }
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
