@@ -643,7 +643,7 @@ html body #content section#ep .ep_wrap .gotodebriefing {
   color: #909090;
   float: right;
   box-shadow: -4px 4px #a8a8a7;
-  margin: 0 0 10px 0px;
+  margin: 10px 0px;
   @transition (all, 0.3, ease-in-out);
 }
 /* line 538, ../sass/custom.scss */
