@@ -1,0 +1,18 @@
+IRY\AppliBundle\Entity\ImmersiveApplicationData:
+    type: entity
+    table: ImmersiveApplicationData
+    repositoryClass: IRY\AppliBundle\Entity\ImmersiveApplicationDataRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+        type:
+            type: string
+            length: 255
+        data:
+            type: array

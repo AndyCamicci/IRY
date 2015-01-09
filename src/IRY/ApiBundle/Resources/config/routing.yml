@@ -5,3 +5,7 @@ iry_api_main:
 pilots:
     type: rest
     resource: IRY\ApiBundle\Controller\PilotController
+
+immersive_application_data:
+    type: rest
+    resource: IRY\ApiBundle\Controller\ImmersiveApplicationDataController
