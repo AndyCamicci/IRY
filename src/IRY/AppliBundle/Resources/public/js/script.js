@@ -47,6 +47,27 @@ $(document).ready(function() {
 		});
 	});
 
+	// Deploy arborescence if hash is present
+
+	var navTheme = $.cookie("navigation-theme");
+	var navSubTheme = $.cookie("navigation-subtheme");
+	var navigationInCookie = navTheme != undefined || navSubTheme != undefined;
+
+	if (navigationInCookie == true) {
+
+		if (navTheme != undefined) {
+			// We have just the themes
+			$('.theme[data-theme="' + navTheme + '"]').trigger("click");
+
+			if (navSubTheme != undefined) {
+				// We have the subtheme
+				$('.theme[data-theme="' + navTheme + '"]').trigger("click");
+				$('.subtheme[data-theme="' + navTheme + '"][data-subtheme="' + navSubTheme + '"]').trigger("click");
+			}
+		}
+	}
+
+
 	/* PERCENT */
 	$(".percent").each(function() {
 		updatePercentValue($(this).find(".percent-value"));
@@ -271,6 +292,9 @@ function filterHelicoptersByName(name) {
 }
 
 function showSubthemeOfTheme(theme) {
+
+	$.cookie("navigation-theme", theme);
+
 	$("li.subtheme[data-theme]").each(function() {
 		if ($(this).attr("data-theme") == theme) {
 			$(this).slideDown(300);
@@ -281,6 +305,9 @@ function showSubthemeOfTheme(theme) {
 	});
 }
 function showCourseOfSubtheme(subtheme) {
+	
+	$.cookie("navigation-subtheme", subtheme);
+
 	$("li.course[data-subtheme]").each(function() {
 		if ($(this).attr("data-subtheme") == subtheme) {
 			$(this).slideDown(300);
