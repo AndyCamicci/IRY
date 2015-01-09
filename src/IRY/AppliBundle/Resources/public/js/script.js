@@ -70,51 +70,55 @@ $(document).ready(function() {
 		$(this).toggleClass("ep_list_opened"); // Allow user to show a previous step
 	});	
 
+
 	/* PRACTICAL TRAINING : Check if new users are presents */
-	// Get current pilots
-	var currentPilots = [];
+	if (checkPilotsUrl) {
 
-	// Fill the array with the if of the pilots currently displayed
-	$(".pilot[data-pilot-id]").each(function() {
-		currentPilots.push(parseInt($(this).attr("data-pilot-id")));
-	});
+		// Get current pilots
+		var currentPilots = [];
 
-	var templateEPPilot = $('#template-ep-pilot').html();
+		// Fill the array with the if of the pilots currently displayed
+		$(".pilot[data-pilot-id]").each(function() {
+			currentPilots.push(parseInt($(this).attr("data-pilot-id")));
+		});
 
-	// Each x milliseconds, check for new pilots
-	setInterval(function() {
-		(function(url, currentPilots, templateEPPilot) {
-			// Make the HTTP request to the REST API
-			$.ajax(url).done(function(results) {
-				var pilots = results.data;
-				var pilot;
-				var refreshedPilots = []; // used to detect if a pilot has been deleted
+		var templateEPPilot = $('#template-ep-pilot').html();
 
-				for (i in pilots) {
-					pilot = pilots[i];
-					refreshedPilots.push(pilot.id);
-					if ($.inArray(pilot.id, currentPilots) == -1) { // Pilot has not been currently added
-						currentPilots.push(pilot.id);
-						addPilotToEP(templateEPPilot, pilot);
+		// Each x milliseconds, check for new pilots
+		setInterval(function() {
+			(function(url, currentPilots, templateEPPilot) {
+				// Make the HTTP request to the REST API
+				$.ajax(url).done(function(results) {
+					var pilots = results.data;
+					var pilot;
+					var refreshedPilots = []; // used to detect if a pilot has been deleted
+
+					for (i in pilots) {
+						pilot = pilots[i];
+						refreshedPilots.push(pilot.id);
+						if ($.inArray(pilot.id, currentPilots) == -1) { // Pilot has not been currently added
+							currentPilots.push(pilot.id);
+							addPilotToEP(templateEPPilot, pilot);
+						}
 					}
-				}
 
-				var diff = $(currentPilots).not(refreshedPilots).get();
-				for (i in diff) {
-					$(".pilot[data-pilot-id=" + diff[i] + "]").slideUp(200, function() {
-						$(this).remove();
-					});
-					currentPilots = currentPilots.splice( $.inArray(diff[i], currentPilots), 1 ); // remove id from current pilots list
-				}
+					var diff = $(currentPilots).not(refreshedPilots).get();
+					for (i in diff) {
+						$(".pilot[data-pilot-id=" + diff[i] + "]").slideUp(200, function() {
+							$(this).remove();
+						});
+						currentPilots = currentPilots.splice( $.inArray(diff[i], currentPilots), 1 ); // remove id from current pilots list
+					}
 
-				updatePilotsValues(pilots);
-				sortPilots();
-			});
-		})(checkPilotsUrl, currentPilots, templateEPPilot);
-	}, 3000);
+					updatePilotsValues(pilots);
+					sortPilots();
+				});
+			})(checkPilotsUrl, currentPilots, templateEPPilot);
+		}, 3000);
 
-	sortPilots();
+		sortPilots();
 
+	} // End if checkPilotsUrl
 });
 
 function updatePercentValue($el) {
