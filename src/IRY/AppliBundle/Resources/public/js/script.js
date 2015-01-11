@@ -88,8 +88,8 @@ $(document).ready(function() {
 
 	/* IMMERSIVE MOVIE */
 	$(".schema_image_plus").on("click", function() {
-		$(this).toggleClass("close", 3000, "linear");
-		$(".schema_image_wrap").toggleClass("close", 3000, "linear");
+		$(this).toggleClass("close", 300, "easeInOutQuad");
+		$(".schema_image_wrap").toggleClass("close", 300, "easeInOutQuad");
 	});	
 
 	/* PRACTICAL TRAINING */

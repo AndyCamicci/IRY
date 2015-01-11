@@ -1,5 +1,20 @@
 <?php
 
+/*
+
+array (
+  'downloadLink' => 'http://localhost:8000',
+  'initialPosition' => '(0, 0, 0)',
+  'initialRotation' => '(0, 0, 0, 0)',
+  'initialScale' => '(0, 0, 0)',
+  'filePath' => 'AS350/helicopter',
+)
+
+
+
+*/
+
+
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -67,5 +82,28 @@ class ImmersiveApplicationData {
     public function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return ImmersiveApplicationData
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

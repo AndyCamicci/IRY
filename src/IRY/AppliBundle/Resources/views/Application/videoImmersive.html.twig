@@ -22,74 +22,12 @@
             <div class="schema_image_plus"></div>
             <div class="schema_image_wrap">
                 <ul class="images">
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
-                    <li>
-                        <span>Nom image</span>
-                        <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Retour accueil">
-                    </li>
+                    {% for image in images %}
+                        <li>
+                            <span>{{image.name}}</span>
+                            <img src="{{ asset('bundles/iryappli') }}/img/schema/{{image.img}}" alt="{{image.name}}">
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>

@@ -3,6 +3,7 @@
 namespace IRY\AppliBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Finder\Finder;
 
 use IRY\AppliBundle\Entity\Helicopter;
 use IRY\AppliBundle\Entity\Step;
@@ -26,8 +27,15 @@ class ApplicationController extends Controller
     }
     public function coursMagistralAction(Course $course_id)
     {
-        //lancer diapo interactives
-        return $this->render('IRYAppliBundle:Application:coursMagistral.html.twig', array("course" => $course_id));
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
+        $images = $repo->findBy(
+            array('course' => $course_id)
+        );
+        return $this->render('IRYAppliBundle:Application:coursMagistral.html.twig', array(
+            "course" => $course_id,
+            "images" => $images
+        ));
     }
     public function coursDemonstratifAction(Course $course_id)
     {
@@ -35,7 +43,15 @@ class ApplicationController extends Controller
     }
     public function videoImmersiveAction(Course $course_id)
     {
-        return $this->render('IRYAppliBundle:Application:videoImmersive.html.twig', array("course" => $course_id));
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
+        $images = $repo->findBy(
+            array('course' => $course_id)
+        );
+        return $this->render('IRYAppliBundle:Application:videoImmersive.html.twig', array(
+            "course" => $course_id,
+            "images" => $images
+        ));
     }
     public function exercicePratiqueAction(Course $course_id)
     {
@@ -47,13 +63,7 @@ class ApplicationController extends Controller
         // );
         $repo_pilots = $em->getRepository('IRYAppliBundle:Pilot');
         $pilots = $repo_pilots->findAll();
-        foreach ($pilots as $pilot) {
-            echo $pilot->getId();
-            var_dump($pilot->getCurrentStep());
-        }
-        die();
         return $this->render('IRYAppliBundle:Application:exercicePratique.html.twig', array(
-            // 'local_results' => $local_results, 
             "course" => $course_id,
             "pilots" => $pilots
         ));
