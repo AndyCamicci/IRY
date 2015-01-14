@@ -2,11 +2,10 @@
 
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
-class SubTheme {
-    private $id;
-    private $name;
-    private $theme;
+class Serie {
+	private $id;
     private $courses;
     /**
      * Constructor
@@ -27,33 +26,10 @@ class SubTheme {
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Theme
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Add courses
      *
      * @param \IRY\AppliBundle\Entity\Course $courses
-     * @return Theme
+     * @return Serie
      */
     public function addCourse(\IRY\AppliBundle\Entity\Course $courses)
     {
@@ -80,28 +56,5 @@ class SubTheme {
     public function getCourses()
     {
         return $this->courses;
-    }
-
-    /**
-     * Set helicopter
-     *
-     * @param \IRY\AppliBundle\Entity\Helicopter $helicopter
-     * @return Theme
-     */
-    public function setTheme(\IRY\AppliBundle\Entity\Theme $theme = null)
-    {
-        $this->theme = $theme;
-
-        return $this;
-    }
-
-    /**
-     * Get helicopter
-     *
-     * @return \IRY\AppliBundle\Entity\Helicopter 
-     */
-    public function getTheme()
-    {
-        return $this->theme;
     }
 }
