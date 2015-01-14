@@ -31,3 +31,10 @@ IRY\AppliBundle\Entity\Course:
         images:
             targetEntity: Image #Entité visée
             mappedBy: course #Champ dans l'entité visée
+    oneToOne:
+        immersiveMovie:
+            nullable: true
+            targetEntity: ImmersiveMovie
+            joinColumn:
+                name: immersiveMovie_id
+                referencedColumnName: id

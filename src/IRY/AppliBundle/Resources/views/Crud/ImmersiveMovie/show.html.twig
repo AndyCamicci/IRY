@@ -1,0 +1,11 @@
+{{form(Form)}}
+
+<table>
+	{% for immersiveMovie in immersiveMovies %}
+		<tr>
+			<td>
+				<img src="/{{immersiveMovie.webPath}}" alt="{{immersiveMovie.name}}">
+			</td>
+		</tr>
+	{% endfor %}
+</table>

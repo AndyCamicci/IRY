@@ -1,7 +1,7 @@
-IRY\AppliBundle\Entity\Image:
+IRY\AppliBundle\Entity\ImmersiveMovie:
     type: entity
-    table: Image
-    repositoryClass: IRY\AppliBundle\Entity\ImageRepository
+    table: ImmersiveMovie
+    repositoryClass: IRY\AppliBundle\Entity\ImmersiveMovieRepository
     id:
         id:
             type: integer
@@ -13,16 +13,6 @@ IRY\AppliBundle\Entity\Image:
             length: 255
         path:
             type: text
-        theOrder:
-            type: integer
-    manyToOne:
-        course:
-            nullable: true
-            targetEntity: Course
-            inversedBy: images
-            joinColumn:
-                name: course_id
-                referencedColumnName: id
     lifecycleCallbacks:
         prePersist: [ preUpload ]
         preUpdate: [ preUpload ]

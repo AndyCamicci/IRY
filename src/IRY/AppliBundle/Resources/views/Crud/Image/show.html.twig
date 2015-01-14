@@ -1,0 +1,11 @@
+{{form(Form)}}
+
+<table>
+	{% for image in images %}
+		<tr>
+			<td>
+				<img src="/{{image.webPath}}" alt="{{image.name}}">
+			</td>
+		</tr>
+	{% endfor %}
+</table>

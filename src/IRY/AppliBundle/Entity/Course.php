@@ -5,12 +5,16 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Course {
-	private $id;
+    private $id;
     private $name;
     private $steps;
     private $typeCourse;
-    private $subTheme;
     private $images;
+    private $immersiveMovie;
+    /**
+     * @var \IRY\AppliBundle\Entity\SubTheme
+     */
+    private $subTheme;
 
     /**
      * Constructor
@@ -18,7 +22,6 @@ class Course {
     public function __construct()
     {
         $this->steps = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -84,40 +87,23 @@ class Course {
      */
     public function getSteps()
     {
-        return $this->steps;
-    }
+        $steps = $this->steps;
+        
+        // Order steps by order field
+        $iterator = $steps->getIterator();
+        $iterator->uasort(function ($a, $b) {
 
-    /**
-     * Add images
-     *
-     * @param \IRY\AppliBundle\Entity\Image $images
-     * @return Course
-     */
-    public function addImage(\IRY\AppliBundle\Entity\Image $images)
-    {
-        $this->images[] = $images;
+            // If the orders are identical, sort using theirs id's
+            if ($a->getOrder() == $b->getOrder()) {
+                return ($a->getId() < $b->getId()) ? -1 : 1;
+            }
 
-        return $this;
-    }
+            return ($a->getOrder() < $b->getOrder()) ? -1 : 1;
+        });
 
-    /**
-     * Remove images
-     *
-     * @param \IRY\AppliBundle\Entity\Image $images
-     */
-    public function removeImage(\IRY\AppliBundle\Entity\Image $images)
-    {
-        $this->images->removeElement($images);
-    }
+        $steps = new ArrayCollection(iterator_to_array($iterator));
 
-    /**
-     * Get images
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getImages()
-    {
-        return $this->images;
+        return $steps;
     }
 
     /**
@@ -164,5 +150,61 @@ class Course {
     public function getTypeCourse()
     {
         return $this->typeCourse;
+    }
+
+
+    public function getLastStep()
+    {
+        $higherStep;
+        $higherStepOrder = null;
+
+        foreach ($this->getSteps() as $key => $step) {
+            if ($key == 0) {
+                $higherStep = $step;
+                $higherStepOrder = $step->getOrder();
+            } else {
+
+                if ($step->getOrder() >= $higherStepOrder) {
+                    $higherStep = $step;
+                    $higherStepOrder = $step->getOrder();
+                }
+            }
+        }
+
+        return $higherStep;
+
+    }
+
+    /**
+     * Add images
+     *
+     * @param \IRY\AppliBundle\Entity\Image $images
+     * @return Course
+     */
+    public function addImage(\IRY\AppliBundle\Entity\Image $images)
+    {
+        $this->images[] = $images;
+
+        return $this;
+    }
+
+    /**
+     * Remove images
+     *
+     * @param \IRY\AppliBundle\Entity\Image $images
+     */
+    public function removeImage(\IRY\AppliBundle\Entity\Image $images)
+    {
+        $this->images->removeElement($images);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 }

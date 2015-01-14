@@ -3,7 +3,7 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-class Image {
+class ImmersiveMovie {
     private $id;
     private $course;
     private $path;
@@ -15,11 +15,8 @@ class Image {
     /**
      * @var integer
      */
-    private $theOrder = 1;
     protected $file;
-    private $folder;
-    const IMAGE_CM = "cm";
-    const IMAGE_SCHEMA = "schema";
+    private $folder = "vi";
 
     /**
      * Get id
@@ -138,9 +135,8 @@ class Image {
     public function preUpload()
     {   
         if (null !== $this->file) {
-            // do whatever you want to generate a unique name
-            $filename = $this->getFolder() . "/" . sha1(uniqid(mt_rand(), true));
-            $this->path = $filename.'.'.$this->file->guessExtension();
+            $filename = $this->getFolder().'.'.$this->name;
+            $this->path = $this->name.'.'.$this->file->guessExtension();
         }
     }
 
@@ -170,10 +166,14 @@ class Image {
             $this->path
         );
 
-        // Set the path property to the filename where you've saved the file
-        //$this->path = $this->file->getClientOriginalName();
-
-        // Clean up the file property as you won't need it anymore
+        $zip = new \ZipArchive;
+        if ($zip->open($this->getAbsolutePath(), \ZipArchive::CREATE) === TRUE) {
+            $toto=$zip->extractTo($this->getUploadRootDir().'/'.$this->name);
+            $zip->close();
+        } else {
+            echo 'Problem';
+        }
+        unlink($this->getAbsolutePath());
         $this->file = null;
     }
 
@@ -181,14 +181,14 @@ class Image {
     {
         return null === $this->path
             ? null
-            : $this->getUploadRootDir().$this->path;
+            : $this->getUploadRootDir().'/'.$this->path;
     }
 
     public function getWebPath()
     {
         return null === $this->path
             ? null
-            : $this->getUploadDir().$this->path;
+            : $this->getUploadDir().$this->name;
     }
 
     protected function getUploadRootDir()
@@ -202,7 +202,7 @@ class Image {
     {
         // get rid of the __DIR__ so it doesn't screw up.
         // when displaying uploaded doc/image in the view.
-        return 'uploads/';
+        return 'uploads/vi/';
     }
 
     public function setFolder($folder)
