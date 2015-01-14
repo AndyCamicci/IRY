@@ -86,6 +86,12 @@ $(document).ready(function() {
 		});
 	});	
 
+	/* IMMERSIVE MOVIE */
+	$(".schema_image_plus").on("click", function() {
+		$(this).toggleClass("close", 300, "easeInOutQuad");
+		$(".schema_image_wrap").toggleClass("close", 300, "easeInOutQuad");
+	});	
+
 	/* PRACTICAL TRAINING */
 	$(".ep_list_wrap").on("click", function() {
 		$(this).toggleClass("ep_list_opened"); // Allow user to show a previous step

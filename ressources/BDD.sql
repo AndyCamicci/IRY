@@ -62,17 +62,93 @@ INSERT INTO iry.course (id, subTheme_id, name, typeCourse_id) VALUES
 	(NULL, "7", "Filter clogging",                                "4"),
 	(NULL, "7", "Load factor",                                    "3");
 
-INSERT INTO iry.step (id, course_id, name, `order`) VALUES
-	(NULL, 1, 'demarage', 1),
-	(NULL, 1, 'stabilisation', 2),
-	(NULL, 1, 'tests', 3),
-	(NULL, 1, 'decollage', 4),
-	(NULL, 2, 'demarage', 1),
-	(NULL, 2, 'stabilisation', 2),
-	(NULL, 2, 'tests', 3),
-	(NULL, 2, 'decollage', 4);
+INSERT INTO iry.step (id, course_id, name, `order`, btn_name, btn_state) VALUES
+	(NULL, 1, 'demarage', 1, 'btn_OFF1', 1),
+	(NULL, 1, 'stabilisation', 2, 'btn_PLUS', 0),
+	(NULL, 1, 'tests', 3,'Rectangle003', 1),
+	(NULL, 1, 'decollage', 4,'has_decolled', 1);
 
-
+INSERT INTO iry.trial (id, video) VALUES
+	(NULL, 1),
+	(NULL, 2),
+	(NULL, 3),
+	(NULL, 4),
+	(NULL, 5),
+	(NULL, 6),
+	(NULL, 7),
+	(NULL, 8),
+	(NULL, 9),
+	(NULL, 10),
+	(NULL, 11),
+	(NULL, 12),
+	(NULL, 13),
+	(NULL, 14),
+	(NULL, 15),
+	(NULL, 16),
+	(NULL, 17),
+	(NULL, 18),
+	(NULL, 19),
+	(NULL, 20),
+	(NULL, 21),
+	(NULL, 22),
+	(NULL, 23),
+	(NULL, 24),
+	(NULL, 25),
+	(NULL, 26),
+	(NULL, 27),
+	(NULL, 28),
+	(NULL, 29),
+	(NULL, 30),
+	(NULL, 31),
+	(NULL, 32),
+	(NULL, 33),
+	(NULL, 34),
+	(NULL, 35),
+	(NULL, 36),
+	(NULL, 37),
+	(NULL, 38),
+	(NULL, 39),
+	(NULL, 40),
+	(NULL, 41),
+	(NULL, 42),
+	(NULL, 43),
+	(NULL, 44),
+	(NULL, 45),
+	(NULL, 46),
+	(NULL, 47),
+	(NULL, 48),
+	(NULL, 49),
+	(NULL, 50),
+	(NULL, 51),
+	(NULL, 52),
+	(NULL, 53),
+	(NULL, 54),
+	(NULL, 55),
+	(NULL, 56),
+	(NULL, 57),
+	(NULL, 58),
+	(NULL, 59),
+	(NULL, 60),
+	(NULL, 61),
+	(NULL, 62),
+	(NULL, 63),
+	(NULL, 64),
+	(NULL, 65),
+	(NULL, 66),
+	(NULL, 67),
+	(NULL, 68),
+	(NULL, 69),
+	(NULL, 70),
+	(NULL, 71),
+	(NULL, 72),
+	(NULL, 73),
+	(NULL, 74),
+	(NULL, 75),
+	(NULL, 76),
+	(NULL, 77),
+	(NULL, 78),
+	(NULL, 79),
+	(NULL, 80);
 
 INSERT INTO iry.result (id, trial_id, pilot_id, step_id, isError, isFavorite, isGlobal) VALUES
 	(NULL,  1, 1, 1, 0, 0, 1),
@@ -97,8 +173,6 @@ INSERT INTO iry.result (id, trial_id, pilot_id, step_id, isError, isFavorite, is
 	(NULL, 19, 1, 1, 0, 0, 0),
 	(NULL, 20, 1, 1, 0, 0, 0),
 
-
-
 	(NULL, 21, 1, 2, 0, 0, 1),
 	(NULL, 22, 1, 2, 0, 0, 1),
 	(NULL, 23, 1, 2, 0, 0, 1),
@@ -120,8 +194,6 @@ INSERT INTO iry.result (id, trial_id, pilot_id, step_id, isError, isFavorite, is
 	(NULL, 38, 1, 2, 0, 0, 0),
 	(NULL, 39, 1, 2, 0, 0, 0),
 	(NULL, 40, 1, 2, 1, 0, 0),
-
-
 
 	(NULL, 41, 1, 3, 0, 0, 1),
 	(NULL, 42, 1, 3, 0, 0, 1),
@@ -145,8 +217,6 @@ INSERT INTO iry.result (id, trial_id, pilot_id, step_id, isError, isFavorite, is
 	(NULL, 59, 1, 3, 0, 0, 0),
 	(NULL, 60, 1, 3, 1, 0, 0),
 
-
-
 	(NULL, 61, 1, 4, 0, 0, 1),
 	(NULL, 62, 1, 4, 0, 0, 1),
 	(NULL, 63, 1, 4, 0, 0, 1),
@@ -169,7 +239,18 @@ INSERT INTO iry.result (id, trial_id, pilot_id, step_id, isError, isFavorite, is
 	(NULL, 79, 1, 4, 0, 0, 0),
 	(NULL, 80, 1, 4, 1, 0, 0);
 
-
+INSERT INTO iry.image (id, course_id, img, name, `order`) VALUES
+	(NULL, 1, "logo.png",  "Logo", 1),                      
+	(NULL, 1, "logo2.png", "Logo", 2),
+	(NULL, 2, "logo.png",  "Logo", 1),  
+	(NULL, 2, "logo2.png", "Logo", 2),                        
+	(NULL, 3, "logo.png",  "Logo", 1),                        
+	(NULL, 3, "logo2.png", "Logo", 2),                    
+	(NULL, 4, "logo.png",  "Logo", 1),              
+	(NULL, 4, "logo2.png", "Logo", 2),                        
+	(NULL, 5, "logo.png",  "Logo", 1),                
+	(NULL, 5, "logo2.png", "Logo", 2),              
+	(NULL, 5, "logo.png",  "Logo", 3);
 
 
 

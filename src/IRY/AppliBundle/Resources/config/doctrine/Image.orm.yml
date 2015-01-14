@@ -1,0 +1,25 @@
+IRY\AppliBundle\Entity\Image:
+    type: entity
+    table: Image
+    repositoryClass: IRY\AppliBundle\Entity\ImageRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+        img:
+            type: text
+        order:
+            type: integer
+    manyToOne:
+        course:
+            nullable: true
+            targetEntity: Course
+            inversedBy: images
+            joinColumn:
+                name: course_id
+                referencedColumnName: id

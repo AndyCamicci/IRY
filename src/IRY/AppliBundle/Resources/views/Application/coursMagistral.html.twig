@@ -13,9 +13,15 @@
 {% block body %}
     <div id="content">
         <section class="cf">
-            <h1>
-                Aucun contenu pour ce type de cours pour l'instant. Il s'agira des contenus interactifs que vous projetez actuellement au tableau.
-            </h1>
+            <div class="cm_images">
+                {% for image in images %}
+                    <div class="image">
+                        <h2>{{image.name}}</h2>
+                        <img src="{{ asset('bundles/iryappli') }}/img/cm/{{image.img}}" alt="{{image.name}}">
+                        <h4>{{image.order}}</h4>
+                    </div>
+                {% endfor %}
+            </div>
         </section>
     </div>
 {% endblock %}

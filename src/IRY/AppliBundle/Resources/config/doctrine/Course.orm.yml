@@ -28,6 +28,6 @@ IRY\AppliBundle\Entity\Course:
         steps: #Champ dans l'entité Helicopter
             targetEntity: Step #Entité visée
             mappedBy: course #Champ dans l'entité visée
-        schemaimages:
-            targetEntity: SchemaImage #Entité visée
+        images:
+            targetEntity: Image #Entité visée
             mappedBy: course #Champ dans l'entité visée

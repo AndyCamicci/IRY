@@ -18,5 +18,18 @@
                 <video src="{{ asset('bundles/iryappli') }}/img/video.mp4" controls autoplay muted></video>
             </div>
         </section>
+        <section class="schema_image">
+            <div class="schema_image_plus"></div>
+            <div class="schema_image_wrap">
+                <ul class="images">
+                    {% for image in images %}
+                        <li>
+                            <span>{{image.name}}</span>
+                            <img src="{{ asset('bundles/iryappli') }}/img/schema/{{image.img}}" alt="{{image.name}}">
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
     </div>
 {% endblock %}
