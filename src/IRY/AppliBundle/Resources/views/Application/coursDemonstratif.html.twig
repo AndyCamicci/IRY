@@ -15,7 +15,9 @@
         <a id="startButton" class="introjs" style="top:-50px;left:300px;" href="javascript:void(0);">Guide de présentation</a>
         <section id="cd" class="cf">
             <div class="cd_video" data-step="1" data-intro="Ce type de cours permettra à l'instructeur de montrer différents boutons d'une procédure aux apprennants qui seront plongés dans cet environnement virtuel." data-position='right'>
-            {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'applicationName' : "WebPlayer.unity3d"}) }}
+
+            {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }}
+            
             </div>
             <div class="cd_wrap">
                 <h3>Procedure steps</h3>
