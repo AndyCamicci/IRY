@@ -8,6 +8,7 @@ class Pilot {
     private $name;
     private $isCalling;
     private $dateCalling;
+    private $serie;
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -176,5 +177,28 @@ class Pilot {
             return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
         }
         return 0;
+    }
+
+    /**
+     * Set serie
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $serie
+     * @return Pilot
+     */
+    public function setSerie(\IRY\AppliBundle\Entity\Serie $serie = null)
+    {
+        $this->serie = $serie;
+
+        return $this;
+    }
+
+    /**
+     * Get serie
+     *
+     * @return \IRY\AppliBundle\Entity\Serie 
+     */
+    public function getSerie()
+    {
+        return $this->serie;
     }
 }

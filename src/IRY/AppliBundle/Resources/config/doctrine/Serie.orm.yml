@@ -1,0 +1,20 @@
+IRY\AppliBundle\Entity\Serie:
+    type: entity
+    table: Serie
+    repositoryClass: IRY\AppliBundle\Entity\SerieRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    manyToMany:
+        courses:
+          targetEntity: Course
+          joinTable:
+            name: serie_courses
+            joinColumns:
+              course_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              serie_id:
+                referencedColumnName: id
