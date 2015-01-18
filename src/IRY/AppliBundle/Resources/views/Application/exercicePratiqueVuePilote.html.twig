@@ -1,7 +1,7 @@
 {% extends 'IRYAppliBundle:Application:base.html.twig' %}
 
 {% block header_title %}
-    {{course.name}}
+    {{pilot.name}}
 {% endblock %}
 
 {% block header_back_btn %}
@@ -12,8 +12,53 @@
 
 {% block body %}
     <div id="content">
-        <section id="ep">
-            <h1>YAAAAAAA</h1>
+        <section id="ep-pilote" class="cf">
+            <div class="cd_video">
+
+            {# {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }} #}
+            
+            </div>
+            <div class="ep_list_wrap">
+            	<div class="head">
+	                <h3>
+	                    {{course.name}}
+	                </h3>
+                    <div class="errors element">
+                        <span>{{ pilot.nbErrors }}</span>
+                    </div>
+                    <div class="success element">
+                        <span>{{ pilot.nbSuccess }}</span>
+                    </div>
+	            </div>
+                <div class="list">
+                    <ul>
+                        <li class="li_head">
+                            <div class="list_title element">
+                                <span>Errors</span>
+                            </div>
+                            <div class="list_title element">
+                                <span>Success</span>
+                            </div>
+                        </li>
+                        {% for step in course.steps %}
+                            <li class="step" data-step-id="{{ step.id }}">
+                                <div class="favorite">                              
+                                </div>
+                                <div class="step_name element">
+                                    <span>{{step.name}}</span>
+                                </div>
+                                <div class="errors element">
+                                    <span>{{ pilot.nbErrors }}</span>
+                                </div>
+                                <div class="success element">
+                                    <span>{{ pilot.nbSuccess }}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
         </section>
     </div>
 {% endblock %}

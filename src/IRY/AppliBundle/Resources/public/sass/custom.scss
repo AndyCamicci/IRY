@@ -49,7 +49,7 @@ html{
 		}
 		h2{
 			position: relative;
-			color: $black-color;
+			color: $grey-dark-dark-color;
 			font-size: 1.2rem;
 			text-transform: uppercase;
 			padding: 35px 0;
@@ -385,7 +385,7 @@ html{
 						margin: 23px 10px 20px 40px;
 						span{
 							font-size: 1.1rem;
-							color: $black-color;
+							color: $grey-dark-dark-color;
 							padding: 12px;
 							position: relative;
 							&:before{
@@ -673,6 +673,11 @@ html{
 						@media (min-width: 1000px){
 							left: 60%;
 						}
+						h3{
+							&:before{
+								content: url(../img/moins_entoure.png) center no-repeat;
+							}
+						}
 					}
 					h3{
 						cursor: pointer;
@@ -772,6 +777,222 @@ html{
 					}
 				}
 			}
+			section#ep-pilote{
+				text-align: center;
+				height:100%;
+				background:white;
+				.ep_list_wrap{
+					@transition(all, 0.3, ease-in-out);
+					@media (max-width: 640px){
+						width: 80%;
+					}
+					@media (min-width: 640px){
+						width: 60%;
+					}
+					@media (min-width: 1000px){
+						width: 40%;
+					}
+					left: 100%;
+					background: $grey-light-color;
+					float: right;
+					position: absolute;
+					top: 5%;
+					height: 90%;
+					&.ep_list_opened{
+						@transition(all, 0.3, ease-in-out);
+						@media (max-width: 640px){
+							left: 20%;
+						}
+						@media (min-width: 640px){
+							left: 40%;
+						}
+						@media (min-width: 1000px){
+							left: 60%;
+						}
+						h3{
+							&:before{
+								content: url(../img/moins_entoure.png) center no-repeat;
+							}
+						}
+					}
+					.head{
+						h3{
+							cursor: pointer;
+							padding: 15px 160px 15px 0;
+							&:before{
+								content: url(../img/plus_entoure.png) center no-repeat;
+								position: absolute;
+								top: 0;
+								height: 100%;
+								width: 48px;
+								left: -48px;
+								background: $blue-color;
+							}
+						}
+						.success, .errors{
+							width: 75px;
+							height: 30px;
+							text-align: right;
+							margin:10px;
+							float:right;
+							position: absolute;
+							top: 0;
+							span{
+								font-size: 1.3rem;
+								padding: 5px 0;
+								color: white;
+								padding: 6px 10px;
+								margin-right: 40px;
+								display: inline-block;
+								&:after{
+									content:"";
+									width:25px;
+									height: 25px;
+									position: absolute;
+									right: 15px;
+									top: 1px;
+								}
+							}
+						}
+						.success{
+							right: 85px;
+							span{
+								&:after{
+									background: url(../img/success_w.png);
+									background-size: contain;
+								}
+							}
+						}
+						.errors{
+							right: 10px;
+							span{
+								&:after{
+									background: url(../img/errors_w.png);
+									background-size: contain;
+								}
+							}
+						}
+					}
+					.plus{
+						position: absolute;
+						top: 0;
+						height: 48px;
+						width: 48px;
+						left: -285px;
+					}
+					.list{
+						position: relative;
+						padding-bottom: 40px;
+						height: 100%;
+						overflow: auto;
+						ul{
+							padding: 10px;
+							overflow: auto;
+							li.step{
+								background:$grey-color;
+								padding: 10px;
+								height:30px;
+								margin: 0px 0px 10px 0px;
+								@transition(all, 0.3, ease-in-out);
+								div.element{
+									position: relative;
+									display: inline-block;
+									vertical-align: middle;
+									span{
+										font-size: 1.2rem;
+									}
+								}
+								.step_name, .success, .errors {
+									span{
+										font-size: 1.3rem;
+										padding: 5px 0;
+										color: $grey-dark-dark-color;
+									}
+								}
+								.step_name{
+									width: 200px;
+									margin : 6px 10px;
+									float:left;
+									text-align: left;
+								}
+								.success, .errors{
+									width: 75px;
+									height: 30px;
+									span{
+										margin-right: 40px;
+										display: inline-block;
+										/*padding: 5px 10px;*/
+										/*padding-right: 50px;*/
+										&:after{
+											content:"";
+											width:25px;
+											height: 25px;
+											position: absolute;
+											right: 15px;
+											top: 1px;
+										}
+									}
+								}
+								.success, .errors{
+									text-align: right;
+									float:right;
+									span{
+										padding: 6px 10px;
+									}
+								}
+								.success{
+									border-right: 2px solid $blue-color;
+									span{
+										&:after{
+											background: url(../img/success.png);
+											background-size: contain;
+										}
+									}
+								}
+								.errors{
+									span{
+										&:after{
+											background: url(../img/errors.png);
+											background-size: contain;
+										}
+									}
+								}
+								.favorite{
+									height:30px;
+									width:30px;
+									cursor:pointer;
+									float:left;
+									background: url(../img/fav_off.png);
+									background-size:cover;
+									&.is_favorite{
+										background: url(../img/fav_on.png);
+										background-size:cover;
+									}
+								}
+							}
+							li.li_head{
+								height:25px;
+								padding: 0 10px;
+								.list_title{
+									float:right;
+									width:75px;
+									color:$grey-dark-color;
+								}
+							}
+						}
+						&:after{
+							content: "";
+							position: absolute;
+							bottom: 0;
+							height: 50px;
+							/*width: 100%;*/
+							left: 0;
+							right: 0;
+							background: url(../img/arrow_down.png) center no-repeat;
+						}
+					}
+				}
+			}
 			section#vi{
 				text-align: center;
 				.video_wrap{
@@ -819,20 +1040,6 @@ html{
 			}
 			#close {
 			  display: none; 
-			}
-			.cm_images{
-				margin: auto;
-				width: 80%;
-				.image{
-					h2{}
-					img{
-						margin: auto;
-					}
-					h4{
-						padding: 35px;
-						color: $grey-dark-color;
-					}
-				}
 			}
 			.schema_image{
 				position: fixed;
@@ -892,6 +1099,18 @@ html{
 						/*@transition(all, 3s, ease-in-out);*/
 						height: 1px;
 					}
+				}
+			}
+		}
+		.cm_images{
+			margin: auto;
+			width: 100%;
+			.image{
+				embed{
+					margin: auto;
+					display: block;
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}

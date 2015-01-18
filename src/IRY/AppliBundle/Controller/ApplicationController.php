@@ -70,7 +70,21 @@ class ApplicationController extends Controller
     }
     public function exercicePratiqueVuePiloteAction(Course $course_id, Pilot $pilot_id)
     {
+    	$em = $this->getDoctrine()->getManager();
+        $repo_steps = $em->getRepository('IRYAppliBundle:Step');
+        $steps = $repo_steps->findBy(array(
+        	'course' => $course_id,
+        ));
+        $repo_results = $em->getRepository('IRYAppliBundle:Result');
+        $results = $repo_results->findBy(array(
+        	'pilot' => $pilot_id
+        ));
+        foreach ($results as $result => $result_value) {
+        	foreach ($steps as $step => $step_value) {
+        	}
+        }
         return $this->render('IRYAppliBundle:Application:exercicePratiqueVuePilote.html.twig', array(
+            'results' => $results, 
             'pilot' => $pilot_id, 
             "course" => $course_id
         ));
