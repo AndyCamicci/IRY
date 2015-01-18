@@ -31,13 +31,13 @@
 
     this._options = {
       /* Next button label in tooltip box */
-      nextLabel: 'Suivant &rarr;',
+      nextLabel: 'Next &rarr;',
       /* Previous button label in tooltip box */
-      prevLabel: '&larr; Précédent',
+      prevLabel: '&larr; Back',
       /* Skip button label in tooltip box */
-      skipLabel: 'Masquer',
+      skipLabel: 'Skip',
       /* Done button label in tooltip box */
-      doneLabel: 'Terminer',
+      doneLabel: 'Done',
       /* Default tooltip box position */
       tooltipPosition: 'bottom',
       /* Next CSS class for tooltip boxes */
@@ -472,7 +472,7 @@
           // In this case, right would have fallen below the bottom of the screen.
           // Modify so that the bottom of the tooltip connects with the target
           arrowLayer.className = "introjs-arrow left-bottom";
-          tooltipLayer.style.top = "-" + (tooltipHeight - targetOffset.height ) + "px"
+          tooltipLayer.style.top = "-" + (tooltipHeight - targetOffset.height - 20) + "px"
         }
         arrowLayer.className = 'introjs-arrow left';
         break;
@@ -484,7 +484,7 @@
         if (targetOffset.top + tooltipHeight > windowSize.height) {
           // In this case, left would have fallen below the bottom of the screen.
           // Modify so that the bottom of the tooltip connects with the target
-          tooltipLayer.style.top = "-" + (tooltipHeight - targetOffset.height ) + "px"
+          tooltipLayer.style.top = "-" + (tooltipHeight - targetOffset.height - 20) + "px"
           arrowLayer.className = 'introjs-arrow right-bottom';
         } else {
           arrowLayer.className = 'introjs-arrow right';

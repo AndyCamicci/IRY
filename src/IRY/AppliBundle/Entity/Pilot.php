@@ -8,6 +8,7 @@ class Pilot {
     private $name;
     private $isCalling;
     private $dateCalling;
+    private $serie;
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -114,7 +115,6 @@ class Pilot {
     public function getCurrentStep()
     {
         $results = $this->getResults();
-
         if (count($results) > 0) {
             $lastResult = $results[count($results) - 1];
             $lastStep = $lastResult->getStep();
@@ -131,7 +131,7 @@ class Pilot {
      * @param boolean $isCalling
      * @return Pilot
      */
-    public function setIsCalling($isCalling)
+    public function setIsCalling($isCalling = false)
     {
         $this->isCalling = $isCalling;
 
@@ -172,6 +172,32 @@ class Pilot {
     }
     public function getJavascriptTimestampDateCalling()
     {
-        return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
+        if (is_null($this->getDateCalling()) == false) {
+            return $this->dateCalling->getTimestamp() * 1000; // Because PHP counts the numbers of seconds, and JS the milliseconds
+        }
+        return 0;
+    }
+
+    /**
+     * Set serie
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $serie
+     * @return Pilot
+     */
+    public function setSerie(\IRY\AppliBundle\Entity\Serie $serie = null)
+    {
+        $this->serie = $serie;
+
+        return $this;
+    }
+
+    /**
+     * Get serie
+     *
+     * @return \IRY\AppliBundle\Entity\Serie 
+     */
+    public function getSerie()
+    {
+        return $this->serie;
     }
 }

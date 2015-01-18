@@ -13,9 +13,17 @@ IRY\AppliBundle\Entity\Pilot:
             length: 255
         isCalling:
             type: boolean
+            nullable: true
         dateCalling:
             type: datetime
+            nullable: true
     oneToMany:
         results: #Champ dans l'entité Helicopter
             targetEntity: Result #Entité visée
             mappedBy: pilot #Champ dans l'entité visée
+    manyToOne:
+        serie:
+            targetEntity: Serie
+            joinColumn:
+                name: serie_id
+                referencedColumnName: id

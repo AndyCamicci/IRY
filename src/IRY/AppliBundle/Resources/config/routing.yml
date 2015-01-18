@@ -9,7 +9,7 @@ iry_appli_choixcours:
 #     path:   /step/{course_id}
 #     defaults: {_controller: "IRYAppliBundle:Application:step"}
 iry_appli_cm:
-    path:   /theorical-course/{course_id}
+    path:   /theoretical-course/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:coursMagistral"}
 iry_appli_cd:
     path:   /demonstrative-course/{course_id}
@@ -57,6 +57,13 @@ iry_crud_course_update:
     path:   /crud/course/{id}/update
     defaults: {_controller: IRYAppliBundle:Crud:updateCourse}
 
+iry_crud_images:
+    path:   /crud/images/
+    defaults: {_controller: IRYAppliBundle:Crud:images}
+iry_crud_immersiveMovies:
+    path:   /crud/immersiveMovies/
+    defaults: {_controller: IRYAppliBundle:Crud:immersiveMovies}
+
 
 # iry_rest_helicopters:
 #     path:   /rest/helicopters
@@ -70,3 +77,7 @@ iry_crud_course_update:
 #     path:   /rest/helicopter/{id}
 #     defaults: {_controller: IRYAppliBundle:REST:helicopterPost}
 #     methods:   [POST]
+
+
+# iry_folder_theoretical_course:
+#     defaults: { /src/IRY/AppliBundle/Resources/public/cm }

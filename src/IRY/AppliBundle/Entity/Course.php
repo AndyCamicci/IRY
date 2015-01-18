@@ -5,11 +5,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Course {
-	private $id;
+    private $id;
     private $name;
     private $steps;
     private $typeCourse;
-    private $schema;
+    private $images;
+    private $immersiveMovie;
     /**
      * @var \IRY\AppliBundle\Entity\SubTheme
      */
@@ -152,28 +153,6 @@ class Course {
     }
 
 
-    /**
-     * Set typeCourse
-     *
-     * @param \IRY\AppliBundle\Entity\Schema $schema
-     * @return Course
-     */
-    public function setSchema(\IRY\AppliBundle\Entity\Schema $schema = null)
-    {
-        $this->schema = $schema;
-
-        return $this;
-    }
-
-    /**
-     * Get schema
-     *
-     * @return \IRY\AppliBundle\Entity\schema
-     */
-    public function getSchema()
-    {
-        return $this->schema;
-    }
     public function getLastStep()
     {
         $higherStep;
@@ -194,5 +173,38 @@ class Course {
 
         return $higherStep;
 
+    }
+
+    /**
+     * Add images
+     *
+     * @param \IRY\AppliBundle\Entity\Image $images
+     * @return Course
+     */
+    public function addImage(\IRY\AppliBundle\Entity\Image $images)
+    {
+        $this->images[] = $images;
+
+        return $this;
+    }
+
+    /**
+     * Remove images
+     *
+     * @param \IRY\AppliBundle\Entity\Image $images
+     */
+    public function removeImage(\IRY\AppliBundle\Entity\Image $images)
+    {
+        $this->images->removeElement($images);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 }
