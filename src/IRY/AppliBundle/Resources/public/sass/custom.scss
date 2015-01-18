@@ -823,6 +823,97 @@ html{
 			#close {
 			  display: none; 
 			}
+			section#dc{
+				text-align: center;
+				.dc_wrap{
+					width: 840px;
+					padding: 30px 0;
+					margin: auto;
+
+					ul{
+						li{
+							background:$grey-color;
+							padding: 10px;
+							box-shadow: -4px 4px $grey-dark-color; 
+							margin-bottom: 10px;
+							@transition(all, 0.3, ease-in-out);
+							&:active{
+								box-shadow : 0px 0px $grey-dark-color;
+								margin : 4px 4px 10px 0;
+							} 
+							div.element{
+								position: relative;
+								display: inline-block;
+								vertical-align: middle;
+								span{
+									font-size: 1.2rem;
+								}
+							}
+							.success, .errors, .favorites {
+								span{
+									font-size: 1.3rem;
+									padding: 5px 0;
+									color: $grey-dark-dark-color;
+								}
+							}
+							.success, .errors, .favorites{
+								width: 75px;
+								height: 30px;
+								span{
+									margin-right: 40px;
+									display: inline-block;
+									/*padding: 5px 10px;*/
+									/*padding-right: 50px;*/
+									&:after{
+										content:"";
+										width:25px;
+										height: 25px;
+										position: absolute;
+										right: 15px;
+										top: 1px;
+									}
+								}
+							}
+							.success, .errors, .favorites{
+								border-right: 2px solid $blue-color;
+								text-align: right;
+								span{
+									padding: 6px 10px;
+								}
+							}
+							.success{
+								span{
+									&:after{
+										background: url(../img/sucess_dc.png);
+										background-size: contain;
+									}
+									&.active:after{
+										background: url(../img/sucesss.png);
+										background-size: contain;
+									}
+								}
+							}
+							.errors{
+								span{
+									&:after{
+										background: url(../img/errors_dc.png);
+										background-size: contain;
+									}
+								}
+							}
+							.favorites{
+								span{
+									&:after{
+										background: url(../img/favori.png);
+										background-size: contain;
+									}
+								}
+							}							
+						}
+					}
+				}
+			}
+			
 		}
 		footer{
 			.fake_scrollbar{

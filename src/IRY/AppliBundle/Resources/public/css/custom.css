@@ -983,7 +983,96 @@ html body #content .modal .modal-dialog .close {
 html body #content #close {
   display: none;
 }
+/* line 826, ../sass/custom.scss */
+html body #content section#dc {
+  text-align: center;
+}
 /* line 828, ../sass/custom.scss */
+html body #content section#dc .dc_wrap {
+  width: 840px;
+  padding: 30px 0;
+  margin: auto;
+}
+/* line 834, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li {
+  background: #d1cece;
+  padding: 10px;
+  box-shadow: -4px 4px #a8a8a7;
+  margin-bottom: 10px;
+  @transition (all, 0.3, ease-in-out);
+}
+/* line 840, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li:active {
+  box-shadow: 0px 0px #a8a8a7;
+  margin: 4px 4px 10px 0;
+}
+/* line 844, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li div.element {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 848, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li div.element span {
+  font-size: 1.2rem;
+}
+/* line 853, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
+  font-size: 1.3rem;
+  padding: 5px 0;
+  color: #909090;
+}
+/* line 859, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors, html body #content section#dc .dc_wrap ul li .favorites {
+  width: 75px;
+  height: 30px;
+}
+/* line 862, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
+  margin-right: 40px;
+  display: inline-block;
+  /*padding: 5px 10px;*/
+  /*padding-right: 50px;*/
+}
+/* line 867, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success span:after, html body #content section#dc .dc_wrap ul li .errors span:after, html body #content section#dc .dc_wrap ul li .favorites span:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 15px;
+  top: 1px;
+}
+/* line 877, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors, html body #content section#dc .dc_wrap ul li .favorites {
+  border-right: 2px solid #0fa7b7;
+  text-align: right;
+}
+/* line 880, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
+  padding: 6px 10px;
+}
+/* line 886, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success span:after {
+  background: url(../img/sucess_dc.png);
+  background-size: contain;
+}
+/* line 890, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .success span.active:after {
+  background: url(../img/sucesss.png);
+  background-size: contain;
+}
+/* line 898, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .errors span:after {
+  background: url(../img/errors_dc.png);
+  background-size: contain;
+}
+/* line 906, ../sass/custom.scss */
+html body #content section#dc .dc_wrap ul li .favorites span:after {
+  background: url(../img/favori.png);
+  background-size: contain;
+}
+/* line 919, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -991,7 +1080,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 834, ../sass/custom.scss */
+/* line 925, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
