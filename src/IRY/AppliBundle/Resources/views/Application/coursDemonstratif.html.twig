@@ -12,9 +12,8 @@
 
 {% block body %}
     <div id="content">
-        <a id="startButton" class="introjs" style="top:-50px;left:300px;" href="javascript:void(0);">Guide de présentation</a>
         <section id="cd" class="cf">
-            <div class="cd_video" data-step="1" data-intro="Ce type de cours permettra à l'instructeur de montrer différents boutons d'une procédure aux apprennants qui seront plongés dans cet environnement virtuel." data-position='right'>
+            <div class="cd_video">
 
             {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }}
             
@@ -22,7 +21,7 @@
             <div class="cd_wrap">
                 <h3>Procedure steps</h3>
                 <div class="list">
-                    <ul data-step="2" data-intro="Au clic sur chacune des étapes de cette procédure, le bouton concerné par cette étape sera mis en valeur graphiquement dans l'environnement de l'apprennant. Il s'agit pour l'instant d'un carré blanc." data-position='bottom'>
+                    <ul>
                         {% for step in course.steps %}
                             <li class="cd_step" data-btn-name="{{ step.btnName }}" data-btn-state="{{ step.btnState }}">
                                 <div class="step element">
