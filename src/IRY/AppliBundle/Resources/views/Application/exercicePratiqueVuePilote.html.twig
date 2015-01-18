@@ -21,13 +21,21 @@
             <div class="ep_list_wrap">
             	<div class="head">
 	                <h3>
-	                    {{course.name}}
+	                    Procedure
 	                </h3>
                     <div class="errors element">
-                        <span>{{ pilot.nbErrors }}</span>
+                        <span>{{ results_errors|length }}</span>
                     </div>
                     <div class="success element">
-                        <span>{{ pilot.nbSuccess }}</span>
+                        <span>
+                        	{% set totalSuccess = 0 %}
+                        	{% for result in results_success %}
+                            	{% if result.step.id == lastStep.id %}
+                            		{% set totalSuccess = totalSuccess + 1 %}
+                                {% endif %}
+                        	{% endfor %}
+                        	{{totalSuccess}}
+                        </span>
                     </div>
 	            </div>
                 <div class="list">
@@ -40,7 +48,19 @@
                                 <span>Success</span>
                             </div>
                         </li>
-                        {% for step in course.steps %}
+                        {% for step in steps %}
+							{% set nbErrors = 0 %}
+							{% set nbSuccess = 0 %}
+                        	{% for result in results_errors %}
+                            	{% if result.step.id == step.id %}
+                            		{% set nbErrors = nbErrors + 1 %}
+                                {% endif %}
+                        	{% endfor %}
+                        	{% for result in results_success %}
+                            	{% if result.step.id == step.id %}
+                            		{% set nbSuccess = nbSuccess + 1 %}
+                                {% endif %}
+                        	{% endfor %}
                             <li class="step" data-step-id="{{ step.id }}">
                                 <div class="favorite">                              
                                 </div>
@@ -48,10 +68,10 @@
                                     <span>{{step.name}}</span>
                                 </div>
                                 <div class="errors element">
-                                    <span>{{ pilot.nbErrors }}</span>
+                                    <span>{{ nbErrors }}</span>
                                 </div>
                                 <div class="success element">
-                                    <span>{{ pilot.nbSuccess }}</span>
+                                    <span>{{ nbSuccess }}</span>
                                 </div>
                             </li>
                         {% endfor %}

@@ -200,4 +200,15 @@ class Pilot {
     {
         return $this->serie;
     }
+    public function getResultsInCourse($course)
+    {
+        $resultsInCourse = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach ($this->getResults() as $result) {
+            if ($result->getStep()->getCourse()->getId() == $course->getId()) {
+                $resultsInCourse[] = $result;
+            }
+        }
+        return $resultsInCourse;
+    }
 }

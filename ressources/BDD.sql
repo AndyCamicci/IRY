@@ -356,7 +356,9 @@ INSERT INTO iry.result (id, trial_id, pilot_id, step_id, isError, isFavorite, is
 	(NULL,117, 4,18, 1, 0, 1),
 	(NULL,118, 4,18, 0, 0, 0),
 	(NULL,119, 4,18, 1, 1, 1),
-	(NULL,120, 5,18, 0, 0, 0);
+	(NULL,120, 5,18, 0, 0, 0),
+	(NULL,121, 2,21, 0, 0, 1),
+	(NULL,122, 2,22, 0, 1, 0);
 
 INSERT INTO iry.image (id, course_id, `path`, name, theOrder) VALUES
 	(NULL, 1, "logo.png",  "Logo", 1),                      
