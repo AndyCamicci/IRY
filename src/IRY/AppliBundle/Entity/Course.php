@@ -11,6 +11,7 @@ class Course {
     private $typeCourse;
     private $images;
     private $immersiveMovie;
+    private $series;
     /**
      * @var \IRY\AppliBundle\Entity\SubTheme
      */

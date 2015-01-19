@@ -10,6 +10,7 @@ use IRY\AppliBundle\Entity\Step;
 use IRY\AppliBundle\Entity\Course;
 use IRY\AppliBundle\Entity\Result;
 use IRY\AppliBundle\Entity\Pilot;
+use IRY\AppliBundle\Entity\Serie;
 
 class ApplicationController extends Controller
 {
@@ -21,9 +22,12 @@ class ApplicationController extends Controller
 
         return $this->render('IRYAppliBundle:Application:home.html.twig', array("helicopters" => $listeHelicopteres));
     }
-    public function choixcoursAction(Helicopter $helicopter_id)
+    public function choixcoursAction(Helicopter $helicopter_id, Serie $serie_id)
     {
-        return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array("helicopter" => $helicopter_id));
+        return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array(
+        	"helicopter" => $helicopter_id,
+        	"serie" => $serie_id
+        ));
     }
     public function coursMagistralAction(Course $course_id)
     {

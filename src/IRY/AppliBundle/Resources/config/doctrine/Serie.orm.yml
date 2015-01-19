@@ -4,9 +4,9 @@ IRY\AppliBundle\Entity\Serie:
     repositoryClass: IRY\AppliBundle\Entity\SerieRepository
     id:
         id:
-                type: integer
-                generator:
-                        strategy: IDENTITY
+            type: integer
+            generator:
+                    strategy: IDENTITY
     fields:
         name:
             type: string

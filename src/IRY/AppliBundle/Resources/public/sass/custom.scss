@@ -337,6 +337,23 @@ html{
 											border-left: solid 1px $ep-color;
 										}
 									}
+									&.saw{
+										&:before{
+											content:"";
+											position: absolute;
+											width: 26px;
+											height: 24px;
+											top: 0;
+											background: url(../img/check-gris.png);
+											background-size: cover;
+										}
+										&.active, &:hover, &:focus{
+											&:before{
+												background: url(../img/check-blanc.png);
+												background-size: cover;
+											}
+										}
+									}
 									&:hover, &:active, &.active{
 										cursor: pointer;
 										&.theme, &.subtheme{

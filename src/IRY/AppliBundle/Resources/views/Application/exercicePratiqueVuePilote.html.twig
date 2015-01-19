@@ -15,7 +15,7 @@
         <section id="ep-pilote" class="cf">
             <div class="cd_video">
 
-            {# {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }} #}
+            {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }}
             
             </div>
             <div class="ep_list_wrap">
@@ -62,7 +62,7 @@
                                 {% endif %}
                         	{% endfor %}
                             <li class="step" data-step-id="{{ step.id }}">
-                                <div class="favorite">                              
+                                <div class="favorite {{ step.lastResultFromPilot(pilot).isFavorite == true ? "is_favorite" : "" }}">                              
                                 </div>
                                 <div class="step_name element">
                                     <span>{{step.name}}</span>
@@ -81,16 +81,10 @@
 
         </section>
     </div>
+	<script type="text/javascript">
+		var editResultUrl = "{{path("put_result", { 
+			"result"  : 0,
+			"_format" : "json"
+		})}}";
+	</script>
 {% endblock %}
-
-<script type="text/javascript">
-	var isFavorite = 
-	var url = 
-	$.ajax({
-	  url: "url",
-	  type: "PUT",
-	  data: { isFavorite:  }
-	}).done(function() {
-	  $( this ).addClass( "done" );
-	});
-</script>

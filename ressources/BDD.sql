@@ -63,6 +63,20 @@ INSERT INTO iry.course (id, subTheme_id, name, typeCourse_id) VALUES
 	(NULL, "7", "Filter clogging",                                "4"),
 	(NULL, "7", "Load factor",                                    "3");
 
+INSERT INTO iry.serie_courses (course_id, serie_id) VALUES 
+	( 1,1),
+	( 2,1),
+	( 3,1),
+	( 4,1),
+	( 5,1),
+	( 6,1),
+	( 7,1),
+	( 8,1),
+	( 9,1),
+	(10,1),
+	(11,1),
+	(12,1);
+
 INSERT INTO iry.step (id, course_id, name, `order`, btn_name, btn_state) VALUES
 	(NULL, 1, 'demarage', 1, 'btn_OFF1', 1),
 	(NULL, 1, 'stabilisation', 2, 'btn_PLUS', 0),
@@ -372,6 +386,7 @@ INSERT INTO iry.image (id, course_id, `path`, name, theOrder) VALUES
 	(NULL, 5, "logo.png",  "Logo", 1),                
 	(NULL, 5, "logo2.png", "Logo", 2),              
 	(NULL, 5, "logo.png",  "Logo", 3);
+
 
 
 INSERT INTO `iry`.`step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Set Scroll to on', '1', 'btn_SCROLL', '1');
