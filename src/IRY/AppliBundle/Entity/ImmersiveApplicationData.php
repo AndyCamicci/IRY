@@ -22,6 +22,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class ImmersiveApplicationData {
 
     const TYPE_HELICOPTER = "Helicopter";
+    const TYPE_OTHER = "Other";
 
     private $id;
     private $name;

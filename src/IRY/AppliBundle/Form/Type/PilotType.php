@@ -10,8 +10,11 @@ class PilotType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', 'text');
-            // ->add('save', 'submit');
+        $builder->add('name', 'text')
+            ->add('serie', 'entity', array(
+                'class' => 'IRYAppliBundle:Serie',
+                'property' => 'name',
+            ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

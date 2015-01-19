@@ -200,6 +200,7 @@ class Pilot {
     {
         return $this->serie;
     }
+
     public function getResultsInCourse($course)
     {
         $resultsInCourse = new \Doctrine\Common\Collections\ArrayCollection();
