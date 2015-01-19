@@ -93,8 +93,8 @@ $(document).ready(function() {
 	});	
 
 	/* PRACTICAL TRAINING */
-	$(".ep_list_wrap").on("click", function() {
-		$(this).toggleClass("ep_list_opened"); // Allow user to show a previous step
+	$(".ep_list_wrap h3").on("click", function() {
+		$(".ep_list_wrap").toggleClass("ep_list_opened", 300, "easeInOutQuad"); // Allow user to show a previous step
 	});	
 
 
@@ -146,6 +146,11 @@ $(document).ready(function() {
 		sortPilots();
 
 	} // End if checkPilotsUrl
+
+	/* PRACTICAL TRAINING PILOT VIEW */
+	$(".favorite").on("click", function() {
+		$(this).toggleClass("is_favorite");
+	});	
 });
 
 function updatePercentValue($el) {
@@ -267,7 +272,9 @@ function resize() {
 	var header_height = $("#header").height();
 	var total_height = $("body").height();
 	$("#content").height(total_height - header_height);
+	$(".cm_embed").height(total_height - header_height);
 }
+
 
 function showHelicoptersOfType(type) {
 	$("a[data-type]").each(function() {

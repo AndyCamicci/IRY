@@ -1,6 +1,5 @@
 @import "functions";
 @import "font.scss";
-@import "slick.scss";
 
 .left{float: left;}
 .right{float: right;}
@@ -49,7 +48,7 @@ html{
 		}
 		h2{
 			position: relative;
-			color: $black-color;
+			color: $grey-dark-dark-color;
 			font-size: 1.2rem;
 			text-transform: uppercase;
 			padding: 35px 0;
@@ -374,10 +373,8 @@ html{
 			}
 			#legend{
 				position: fixed;
-				bottom: 0;
 				width: 100%;
 				border-top: 1px solid $grey-color;
-				background: $grey-light-color;
 				.types_course{
 					display: inline-block;
 					.type_course{
@@ -385,7 +382,7 @@ html{
 						margin: 23px 10px 20px 40px;
 						span{
 							font-size: 1.1rem;
-							color: $black-color;
+							color: $grey-dark-dark-color;
 							padding: 12px;
 							position: relative;
 							&:before{
@@ -530,116 +527,122 @@ html{
 						font-size: 1.3rem;
 						padding: 12px 10px;
 						color: $grey-dark-dark-color;
+						margin-top: 10px;
 						float: right;
 						box-shadow: -4px 4px $grey-dark-color;
-						margin: 10px 0px;
 						@transition(all, 0.3, ease-in-out);
+						&:active{
+							box-shadow : 0px 0px $grey-dark-color;
+							margin: 14px 4px 0 0;
+						} 
 					}
 
 					ul{
-						a{
-							li{
-								background:$grey-color;
-								padding: 10px;
-								box-shadow: -4px 4px $grey-dark-color; 
-								margin: 0px 0px 10px 0px;
-								@transition(all, 0.3, ease-in-out);
-								div.element{
-									position: relative;
-									display: inline-block;
-									vertical-align: middle;
-									span{
-										font-size: 1.2rem;
-									}
+						li{
+							background:$grey-color;
+							padding: 10px;
+							box-shadow: -4px 4px $grey-dark-color; 
+							margin-bottom: 10px;
+							@transition(all, 0.3, ease-in-out);
+							&:active{
+								box-shadow : 0px 0px $grey-dark-color;
+								margin : 4px 4px 10px 0;
+							} 
+							div.element{
+								position: relative;
+								display: inline-block;
+								vertical-align: middle;
+								span{
+									font-size: 1.2rem;
 								}
-								.step{
-									width: 350px;
-									background: $grey-dark-color;
-									.bar{
-										height: 30px;
-										width: 70%;
-										background: $blue-color;
-										display: block;
-									}
-									.title{
-										font-size: 1.1rem;
-										color: white;
-										position: absolute;
-										padding: 6px;
-										bottom: 0;
-										left: 0;
-										right: 0;
-									}
-								}
-								.pilot_name, .success, .errors, .call {
-									span{
-										font-size: 1.3rem;
-										padding: 5px 0;
-										color: $grey-dark-dark-color;
-									}
-								}
-								.pilot_name{
-									width: 200px;
-									text-align: left;
-								}
-								.success, .errors, .call{
-									width: 75px;
+							}
+							.step{
+								width: 350px;
+								background: $grey-dark-color;
+								.bar{
 									height: 30px;
-									span{
-										margin-right: 40px;
-										display: inline-block;
-										/*padding: 5px 10px;*/
-										/*padding-right: 50px;*/
-										&:after{
-											content:"";
-											width:25px;
-											height: 25px;
-											position: absolute;
-											right: 15px;
-											top: 1px;
-										}
-									}
+									width: 70%;
+									background: $blue-color;
+									display: block;
 								}
-								.success, .errors{
-									border-right: 2px solid $blue-color;
-									text-align: right;
-									span{
-										padding: 6px 10px;
-									}
+								.title{
+									font-size: 1.1rem;
+									color: white;
+									position: absolute;
+									padding: 6px;
+									bottom: 0;
+									left: 0;
+									right: 0;
 								}
-								.success{
-									span{
-										&:after{
-											background: url(../img/success.png);
-											background-size: contain;
-										}
-									}
+							}
+							.pilot_name, .success, .errors, .call {
+								span{
+									font-size: 1.3rem;
+									padding: 5px 0;
+									color: $grey-dark-dark-color;
 								}
-								.errors{
-									span{
-										&:after{
-											background: url(../img/errors.png);
-											background-size: contain;
-										}
-									}
-								}
-								.call{
-									span{
-										padding: 5px 30px;
-										&.active:after{
-											background: url(../img/call.png);
-											background-size: contain;
-										}
-									}
-								}
-								&.gotodebriefing{
+							}
+							.pilot_name{
+								width: 200px;
+								text-align: left;
+							}
+							.success, .errors, .call{
+								width: 75px;
+								height: 30px;
+								span{
+									margin-right: 40px;
 									display: inline-block;
-									float: right;
-									span{
-										display: block;
-										text-transform: uppercase;
-										padding: 3px 3px 0;
+									/*padding: 5px 10px;*/
+									/*padding-right: 50px;*/
+									&:after{
+										content:"";
+										width:25px;
+										height: 25px;
+										position: absolute;
+										right: 15px;
+										top: 1px;
 									}
+								}
+							}
+							.success, .errors{
+								border-right: 2px solid $blue-color;
+								text-align: right;
+								span{
+									padding: 6px 10px;
+								}
+							}
+							.success{
+								span{
+									&:after{
+										background: url(../img/success.png);
+										background-size: contain;
+									}
+								}
+							}
+							.errors{
+								span{
+									&:after{
+										background: url(../img/errors.png);
+										background-size: contain;
+									}
+								}
+							}
+							.call{
+								span{
+									padding: 5px 30px;
+									&.active:after{
+										background: url(../img/call.png);
+										background-size: contain;
+									}
+								}
+							}
+							&.gotodebriefing{
+								display: inline-block;
+								float: right;
+								span{
+									display: block;
+									text-transform: uppercase;
+									padding: 3px 3px 0;
 								}
 							}
 						}
@@ -672,6 +675,11 @@ html{
 						}
 						@media (min-width: 1000px){
 							left: 60%;
+						}
+						h3{
+							&:before{
+								content: url(../img/moins_entoure.png) center no-repeat;
+							}
 						}
 					}
 					h3{
@@ -772,6 +780,223 @@ html{
 					}
 				}
 			}
+			section#ep-pilote{
+				text-align: center;
+				height:100%;
+				background:white;
+				.ep_list_wrap{
+					@transition(all, 0.3, ease-in-out);
+					@media (max-width: 640px){
+						width: 80%;
+					}
+					@media (min-width: 640px){
+						width: 60%;
+					}
+					@media (min-width: 1000px){
+						width: 40%;
+					}
+					left: 100%;
+					background: $grey-light-color;
+					float: right;
+					position: absolute;
+					top: 5%;
+					height: 90%;
+					&.ep_list_opened{
+						@transition(all, 0.3, ease-in-out);
+						@media (max-width: 640px){
+							left: 20%;
+						}
+						@media (min-width: 640px){
+							left: 40%;
+						}
+						@media (min-width: 1000px){
+							left: 60%;
+						}
+						h3{
+							&:before{
+								content: url(../img/moins_entoure.png) center no-repeat;
+							}
+						}
+					}
+					.head{
+						h3{
+							text-transform:uppercase;
+							cursor: pointer;
+							padding: 15px 160px 15px 0;
+							&:before{
+								content: url(../img/plus_entoure.png) center no-repeat;
+								position: absolute;
+								top: 0;
+								height: 100%;
+								width: 48px;
+								left: -48px;
+								background: $blue-color;
+							}
+						}
+						.success, .errors{
+							width: 75px;
+							height: 30px;
+							text-align: right;
+							margin:10px;
+							float:right;
+							position: absolute;
+							top: 0;
+							span{
+								font-size: 1.3rem;
+								padding: 5px 0;
+								color: white;
+								padding: 6px 10px;
+								margin-right: 40px;
+								display: inline-block;
+								&:after{
+									content:"";
+									width:25px;
+									height: 25px;
+									position: absolute;
+									right: 15px;
+									top: 1px;
+								}
+							}
+						}
+						.success{
+							right: 85px;
+							span{
+								&:after{
+									background: url(../img/success_w.png);
+									background-size: contain;
+								}
+							}
+						}
+						.errors{
+							right: 10px;
+							span{
+								&:after{
+									background: url(../img/errors_w.png);
+									background-size: contain;
+								}
+							}
+						}
+					}
+					.plus{
+						position: absolute;
+						top: 0;
+						height: 48px;
+						width: 48px;
+						left: -285px;
+					}
+					.list{
+						position: relative;
+						padding-bottom: 40px;
+						height: 100%;
+						overflow: auto;
+						ul{
+							padding: 10px;
+							overflow: auto;
+							li.step{
+								background:$grey-color;
+								padding: 10px;
+								height:30px;
+								margin: 0px 0px 10px 0px;
+								@transition(all, 0.3, ease-in-out);
+								div.element{
+									position: relative;
+									display: inline-block;
+									vertical-align: middle;
+									span{
+										font-size: 1.2rem;
+									}
+								}
+								.step_name, .success, .errors {
+									span{
+										font-size: 1.3rem;
+										padding: 5px 0;
+										color: $grey-dark-dark-color;
+									}
+								}
+								.step_name{
+									width: 200px;
+									margin : 6px 10px;
+									float:left;
+									text-align: left;
+								}
+								.success, .errors{
+									width: 75px;
+									height: 30px;
+									span{
+										margin-right: 40px;
+										display: inline-block;
+										/*padding: 5px 10px;*/
+										/*padding-right: 50px;*/
+										&:after{
+											content:"";
+											width:25px;
+											height: 25px;
+											position: absolute;
+											right: 15px;
+											top: 1px;
+										}
+									}
+								}
+								.success, .errors{
+									text-align: right;
+									float:right;
+									span{
+										padding: 6px 10px;
+									}
+								}
+								.success{
+									border-right: 2px solid $blue-color;
+									span{
+										&:after{
+											background: url(../img/success.png);
+											background-size: contain;
+										}
+									}
+								}
+								.errors{
+									span{
+										&:after{
+											background: url(../img/errors.png);
+											background-size: contain;
+										}
+									}
+								}
+								.favorite{
+									height:30px;
+									width:30px;
+									cursor:pointer;
+									float:left;
+									background: url(../img/fav_off.png);
+									background-size:cover;
+									&.is_favorite{
+										background: url(../img/fav_on.png);
+										background-size:cover;
+									}
+								}
+							}
+							li.li_head{
+								height:25px;
+								padding: 0 10px;
+								.list_title{
+									float:right;
+									width:75px;
+									color:$grey-dark-color;
+								}
+							}
+						}
+						&:after{
+							content: "";
+							position: absolute;
+							bottom: 0;
+							height: 50px;
+							/*width: 100%;*/
+							left: 0;
+							right: 0;
+							background: url(../img/arrow_down.png) center no-repeat;
+						}
+					}
+				}
+			}
 			section#vi{
 				text-align: center;
 				.video_wrap{
@@ -820,20 +1045,6 @@ html{
 			#close {
 			  display: none; 
 			}
-			.cm_images{
-				margin: auto;
-				width: 80%;
-				.image{
-					h2{}
-					img{
-						margin: auto;
-					}
-					h4{
-						padding: 35px;
-						color: $grey-dark-color;
-					}
-				}
-			}
 			.schema_image{
 				position: fixed;
 				bottom: 0;
@@ -856,42 +1067,108 @@ html{
 					position: relative;
 					width: 100%;
 					height: 126px;
+				}
+			}
+			section#dc{
+				text-align: center;
+				.dc_wrap{
+					width: 840px;
+					padding: 30px 0;
 					margin: auto;
-					overflow-x: auto;
-					border-top: 1px solid $grey-dark-color;
-					background: $grey-light-color;
 					ul{
-						white-space: nowrap;
-						padding: 10px;
 						li{
-							display: inline-block;
-							text-align: center;
-							margin: 0 5px;
-							cursor: pointer;
-							span{
-								display: block;
-								font: 1rem 'biko';
-								color: $grey-dark-dark-color;
-								margin : 0 0 5px 0;
-							}
-							img{
-								height: 60px;
-								border: solid 1px $grey-dark-dark-color;
-							}
-							&:hover, &:active {
+							background:$grey-color;
+							padding: 10px;
+							box-shadow: -4px 4px $grey-dark-color; 
+							margin-bottom: 10px;
+							@transition(all, 0.3, ease-in-out);
+							&:active{
+								box-shadow : 0px 0px $grey-dark-color;
+								margin : 4px 4px 10px 0;
+							} 
+							div.element{
+								position: relative;
+								display: inline-block;
+								vertical-align: middle;
 								span{
-									color: $blue-color;
-								}
-								img{
-									border-color: $blue-color;
+									font-size: 1.2rem;
 								}
 							}
+							.success, .errors, .favorites {
+								span{
+									font-size: 1.3rem;
+									padding: 5px 0;
+									color: $grey-dark-dark-color;
+								}
+							}
+							.success, .errors, .favorites{
+								width: 75px;
+								height: 30px;
+								span{
+									margin-right: 40px;
+									display: inline-block;
+									/*padding: 5px 10px;*/
+									/*padding-right: 50px;*/
+									&:after{
+										content:"";
+										width:25px;
+										height: 25px;
+										position: absolute;
+										right: 15px;
+										top: 1px;
+									}
+								}
+							}
+							.success, .errors, .favorites{
+								border-right: 2px solid $blue-color;
+								text-align: right;
+								span{
+									padding: 6px 10px;
+								}
+							}
+							.success{
+								span{
+									&:after{
+										background: url(../img/sucess_dc.png);
+										background-size: contain;
+									}
+									&.active:after{
+										background: url(../img/sucesss.png);
+										background-size: contain;
+									}
+								}
+							}
+							.errors{
+								span{
+									&:after{
+										background: url(../img/errors_dc.png);
+										background-size: contain;
+									}
+								}
+							}
+							.favorites{
+								span{
+									&:after{
+										background: url(../img/favori.png);
+										background-size: contain;
+									}
+								}
+							}							
 						}
 					}
-					&.close{
-						/*@transition(all, 3s, ease-in-out);*/
-						height: 1px;
-					}
+				}
+			}
+			
+		}
+		.cm_images{
+			margin: auto;
+			width: 100%;
+			.image{
+				embed{
+					margin: auto;
+					display: block;
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}

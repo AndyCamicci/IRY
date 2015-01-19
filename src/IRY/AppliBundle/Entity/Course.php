@@ -207,4 +207,31 @@ class Course {
     {
         return $this->images;
     }
+
+    /**
+     * Set immersiveMovie
+     *
+     * @param \IRY\AppliBundle\Entity\ImmersiveMovie $immersiveMovie
+     * @return Course
+     */
+    public function setImmersiveMovie(\IRY\AppliBundle\Entity\ImmersiveMovie $immersiveMovie = null)
+    {
+        $this->immersiveMovie = $immersiveMovie;
+
+        return $this;
+    }
+
+    /**
+     * Get immersiveMovie
+     *
+     * @return \IRY\AppliBundle\Entity\ImmersiveMovie 
+     */
+    public function getImmersiveMovie()
+    {
+        return $this->immersiveMovie;
+    }
+    public function getFullName()
+    {
+        return $this->getSubTheme()->getTheme()->getName().' > '.$this->getSubTheme()->getName().' > '.$this->getName();
+    }
 }

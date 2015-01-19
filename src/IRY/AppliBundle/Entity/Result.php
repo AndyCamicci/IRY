@@ -161,4 +161,17 @@ class Result {
     {
         return $this->step;
     }
+/*    public function getResultsErrors($results)
+    {
+        $resultsErrors = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach ($this->getResults() as $result) {
+            if ($result->isError) {
+                $resultsErrors[] = $result;
+            }
+        }
+
+        return $resultsInCourse;
+    }
+*/
 }

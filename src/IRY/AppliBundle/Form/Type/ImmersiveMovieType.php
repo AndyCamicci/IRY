@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use IRY\AppliBundle\Entity\ImmersiveMovie;
+use IRY\AppliBundle\Entity\CourseRepository;
 
 class ImmersiveMovieType extends AbstractType
 {
@@ -13,6 +14,13 @@ class ImmersiveMovieType extends AbstractType
     {
         $builder->add('name', 'text')
             ->add('file', 'file')
+            ->add('course', 'entity',array(
+                'class'=>'IRYAppliBundle:Course',
+                'property'=>'fullName',
+                'query_builder' => function(CourseRepository $er) {
+                    return $er->createQueryBuilder('c')
+                    ->where('c.typeCourse = 3');
+                }))
             ->add('save', 'submit');
     }
 
