@@ -82,3 +82,15 @@
         </section>
     </div>
 {% endblock %}
+
+<script type="text/javascript">
+	var isFavorite = 
+	var url = 
+	$.ajax({
+	  url: "url",
+	  type: "PUT",
+	  data: { isFavorite:  }
+	}).done(function() {
+	  $( this ).addClass( "done" );
+	});
+</script>
