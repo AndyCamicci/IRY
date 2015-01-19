@@ -38,3 +38,7 @@ IRY\AppliBundle\Entity\Course:
             joinColumn:
                 name: immersiveMovie_id
                 referencedColumnName: id
+    manyToMany:
+        series:
+          targetEntity: Serie
+          mappedBy: courses

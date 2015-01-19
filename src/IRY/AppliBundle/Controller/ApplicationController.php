@@ -22,11 +22,18 @@ class ApplicationController extends Controller
 
         return $this->render('IRYAppliBundle:Application:home.html.twig', array("helicopters" => $listeHelicopteres));
     }
-    public function choixcoursAction(Helicopter $helicopter_id, Serie $serie_id)
+    public function choixcoursAction(Helicopter $helicopter_id)
     {
+    	//On récupère la première Serie pour l'instant, on la récupèrera ensuite en param.
+    	$em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Serie");
+		$serie = $repo->find('1');
+		//TO DELETE
+
+
         return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array(
         	"helicopter" => $helicopter_id,
-        	"serie" => $serie_id
+        	"serie" => $serie
         ));
     }
     public function coursMagistralAction(Course $course_id)

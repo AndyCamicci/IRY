@@ -105,4 +105,13 @@ class Serie {
     {
         return $this->helicopter;
     }
+    public function hasCourse(Course $course_id)
+    {
+        foreach ($this->getCourses() as $course) {
+            if ($course->getId() == $course_id->getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

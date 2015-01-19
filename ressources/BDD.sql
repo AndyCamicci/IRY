@@ -63,7 +63,10 @@ INSERT INTO iry.course (id, subTheme_id, name, typeCourse_id) VALUES
 	(NULL, "7", "Filter clogging",                                "4"),
 	(NULL, "7", "Load factor",                                    "3");
 
-INSERT INTO iry.serie_courses (course_id, serie_id) VALUES 
+INSERT INTO iry.serie (id, helicopter_id, name) VALUES 
+	(NULL, 2, "FirstTeam");
+
+INSERT INTO iry.series_courses (course_id, serie_id) VALUES 
 	( 1,1),
 	( 2,1),
 	( 3,1),

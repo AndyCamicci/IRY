@@ -38,31 +38,25 @@
             <h2>Choose your Chapter</h2>
             <div class="list">
               <ul>
-		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
-			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-				        {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
-                  {% if (course.typeCourse.id == 1) %} {# cm #}
-                {% set url = path('iry_appli_cm', {'course_id': course.id}) %}
-                  {% elseif (course.typeCourse.id == 2) %} {# cd #}
-                {% set url = path('iry_appli_cd', {'course_id': course.id}) %}
-                  {% elseif (course.typeCourse.id == 3) %} {# vi #}
-                {% set url = path('iry_appli_vi', {'course_id': course.id}) %}
-                  {% elseif (course.typeCourse.id == 4) %} {# ep #}
-                {% set url = path('iry_appli_ep', {'course_id': course.id}) %}      
-                  {% endif %}
-				        		<a href="{{ url }}">
-				        			<li data-subtheme="{{subtheme.id}}" theme="{{theme.id}}" class="
-                       course course{{course.typeCourse.id}}
-                        {% for courseOfSerie in coursesOfSerie %}
-                          {% if (courseOfSerie.id == course.id) %}
-                            saw
-                          {% endif %}
-                        {% endfor %}
-                      " id="course{{course.id}}"><span>{{course.name}}</span></li>
-				        		</a>
-				        {% endfor %}
-			        {% endfor %}
-		        {% endfor %}
+	              {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
+		              {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
+                    {% for course in subtheme.courses %} <!-- boucle parmi la liste des thèmes -->
+                      {% if (course.typeCourse.id == 1) %} {# cm #}
+                        {% set url = path('iry_appli_cm', {'course_id': course.id}) %}
+                      {% elseif (course.typeCourse.id == 2) %} {# cd #}
+                        {% set url = path('iry_appli_cd', {'course_id': course.id}) %}
+                      {% elseif (course.typeCourse.id == 3) %} {# vi #}
+                        {% set url = path('iry_appli_vi', {'course_id': course.id}) %}
+                      {% elseif (course.typeCourse.id == 4) %} {# ep #}
+                        {% set url = path('iry_appli_ep', {'course_id': course.id}) %}      
+                      {% endif %}
+                      <a href="{{ url }}">
+                        <li data-subtheme="{{subtheme.id}}" theme="{{theme.id}}" class="course course{{course.typeCourse.id}} {{ serie.hasCourse(course) == true ? "saw" : "" }}" id="course{{course.id}}"><span>{{course.name}}</span></li>
+                        {# {{ serie.hasCourse(course) == true ? "saw" : "" }} #}
+                      </a>
+                    {% endfor %}
+		              {% endfor %}
+	              {% endfor %}
               </ul>
             </div>
           </section>
