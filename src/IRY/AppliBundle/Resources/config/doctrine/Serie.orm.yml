@@ -24,6 +24,7 @@ IRY\AppliBundle\Entity\Serie:
     manyToOne:
         helicopter:
             targetEntity: Helicopter
+            inversedBy: series
             joinColumn:
-                    name: helicopter_id
-                    referencedColumnName: id
+                name: helicopter_id
+                referencedColumnName: id
