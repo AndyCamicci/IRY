@@ -106,5 +106,8 @@
             </li>
         </a>
     </script>
-
+    <script>
+        var checkPilotsUrl = "{{ path('get_pilots', { "_format" : "json" }) }}";
+        var viewPilotUrl = "{{ path("iry_appli_ep_pilot", {course_id: course.id, pilot_id: "pilotId"}) }}";
+    </script>
 {% endblock %}
