@@ -253,7 +253,11 @@ INSERT INTO iry.image (id, course_id, `path`, name, theOrder) VALUES
 	(NULL, 5, "logo.png",  "Logo", 3);
 
 
-
+INSERT INTO `iry`.`step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Set Scroll to on', '1', 'btn_SCROLL', '1');
+INSERT INTO `iry`.`step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Set Off1 to on', '2', 'btn_OFF1', '1');
+INSERT INTO `iry`.`step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Turn Gene to on', '3', 'btn_GENE', '1');
+INSERT INTO `iry`.`step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Push Pitot to on', '4', 'btn_PITOT', '1');
+INSERT INTO `iry`.`step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Active Accu tests', '5', 'btn_ACCU TST', '1');
 
 
 	SET foreign_key_checks = 1;

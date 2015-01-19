@@ -9,3 +9,15 @@ pilots:
 immersive_application_data:
     type: rest
     resource: IRY\ApiBundle\Controller\ImmersiveApplicationDataController
+
+serie:
+    type: rest
+    resource: IRY\ApiBundle\Controller\SerieController
+
+procedure:
+    type: rest
+    resource: IRY\ApiBundle\Controller\ProcedureController
+
+result:
+    type: rest
+    resource: IRY\ApiBundle\Controller\ResultController

@@ -20,3 +20,6 @@ IRY\AppliBundle\Entity\Helicopter:
         themes: #Champ dans l'entité Helicopter
             targetEntity: Theme #Entité visée
             mappedBy: helicopter #Champ dans l'entité visée
+        series:
+            targetEntity: Serie
+            mappedBy: helicopter
