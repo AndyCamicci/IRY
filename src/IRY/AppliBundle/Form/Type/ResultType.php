@@ -13,18 +13,25 @@ class ResultType extends AbstractType
         $builder->add('pilot', "entity", array(
             'class' => 'IRYAppliBundle:Pilot',
             'property' => 'name',
+            'required' => false,
         ))
         ->add('step', "entity", array(
             'class' => 'IRYAppliBundle:Step',
             'property' => 'name',
+            'required' => false,
         ))
         ->add('isError', "checkbox")
         ->add('trial', "entity", array(
             'class' => 'IRYAppliBundle:Trial',
             'property' => 'id',
+            'required' => false,
         ))
-        ->add('isFavorite', "checkbox")
-        ->add('isGlobal', "checkbox");
+        ->add('isFavorite', "checkbox", array(
+            'required' => false,
+        ))
+        ->add('isGlobal', "checkbox", array(
+            'required' => false,
+        ));
 
     }
 

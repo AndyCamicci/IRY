@@ -12,15 +12,16 @@ IRY\AppliBundle\Entity\Serie:
             type: string
     manyToMany:
         courses:
-            targetEntity: Course
-            joinTable:
-                name: serie_courses
-                joinColumns:
-                    course_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    serie_id:
-                        referencedColumnName: id
+          targetEntity: Course
+          inversedBy: series
+          joinTable:
+            name: series_courses
+            joinColumns:
+              serie_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              course_id:
+                referencedColumnName: id
     manyToOne:
         helicopter:
             targetEntity: Helicopter

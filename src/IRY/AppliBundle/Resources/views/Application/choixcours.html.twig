@@ -17,7 +17,7 @@
               <ul>
 		        {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 
-	        		<li class="theme {% (theme.subthemes|lenght == 0) ? "inactive" : "" %}" data-theme="{{theme.id}}" id="theme{{theme.id}}"><span>{{theme.name}}</span></li>
+	        		<li class="theme {{ (theme.subthemes|length == 0) ? "inactive" : "" }}" data-theme="{{theme.id}}" id="theme{{theme.id}}"><span>{{theme.name}}</span></li>
 		        {% endfor %}
               </ul>
             </div>
@@ -28,7 +28,7 @@
               <ul>
 			      {% for theme in helicopter.themes %} <!-- boucle parmi la liste des thèmes -->
 			        {% for subtheme in theme.subthemes %} <!-- boucle parmi la liste des thèmes -->
-		        		<li class="subtheme {% (subtheme.courses|lenght == 0) ? "inactive" : "" %}" data-theme="{{theme.id}}" data-subtheme="{{subtheme.id}}" id="subtheme{{subtheme.id}}"><span>{{subtheme.name}}</span></li>
+		        		<li class="subtheme {{ (subtheme.courses|length == 0) ? "inactive" : "" }}" data-theme="{{theme.id}}" data-subtheme="{{subtheme.id}}" id="subtheme{{subtheme.id}}"><span>{{subtheme.name}}</span></li>
 			        {% endfor %}
 		        {% endfor %}
               </ul>

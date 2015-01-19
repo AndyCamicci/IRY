@@ -234,4 +234,42 @@ class Course {
     {
         return $this->getSubTheme()->getTheme()->getName().' > '.$this->getSubTheme()->getName().' > '.$this->getName();
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $series;
+
+
+    /**
+     * Add series
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $series
+     * @return Course
+     */
+    public function addSeries(\IRY\AppliBundle\Entity\Serie $series)
+    {
+        $this->series[] = $series;
+
+        return $this;
+    }
+
+    /**
+     * Remove series
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $series
+     */
+    public function removeSeries(\IRY\AppliBundle\Entity\Serie $series)
+    {
+        $this->series->removeElement($series);
+    }
+
+    /**
+     * Get series
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeries()
+    {
+        return $this->series;
+    }
 }
