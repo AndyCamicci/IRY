@@ -10,9 +10,9 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-                    iry: { password: iry, roles: [ 'ROLE_ADMIN' ] }
+                    user:  { password: %userpass%, roles: [ 'ROLE_USER' ] }
+                    admin: { password: %adminpass%, roles: [ 'ROLE_ADMIN' ] }
+                    iry: { password: %irypass%, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -36,6 +36,6 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        # - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
-        # - { path: ^/, roles: ROLE_ADMIN } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/, roles: ROLE_ADMIN } #UNCOMMENT FOR AUTHENTICATION
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
