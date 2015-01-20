@@ -823,6 +823,12 @@ html{
 			#close {
 			  display: none; 
 			}
+			/**.text{
+				text-align: right;
+                margin: auto;
+                padding: 6px 210px;
+      
+				}**/
 			section#dc{
 				text-align: center;
 				.dc_wrap{
@@ -845,9 +851,20 @@ html{
 								position: relative;
 								display: inline-block;
 								vertical-align: middle;
+								text-align : left;
 								span{
 									font-size: 1.2rem;
 								}
+							}
+							.pilot_name {
+								width: 50%;
+								float: left;
+								margin-top:	7px;
+							}
+							.stats {
+								width: 50%;
+								float: right;
+								text-align: right;
 							}
 							.success, .errors, .favorites {
 								span{
@@ -874,7 +891,7 @@ html{
 									}
 								}
 							}
-							.success, .errors, .favorites{
+							.success, .errors{
 								border-right: 2px solid $blue-color;
 								text-align: right;
 								span{
@@ -902,6 +919,7 @@ html{
 								}
 							}
 							.favorites{
+								text-align: right;
 								span{
 									&:after{
 										background: url(../img/favori.png);
