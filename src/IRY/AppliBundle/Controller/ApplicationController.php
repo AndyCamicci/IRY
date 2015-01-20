@@ -30,7 +30,6 @@ class ApplicationController extends Controller
 		$serie = $repo->find('1');
 		//TO DELETE
 
-
         return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array(
         	"helicopter" => $helicopter_id,
         	"serie" => $serie

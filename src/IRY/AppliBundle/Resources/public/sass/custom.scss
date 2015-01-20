@@ -139,6 +139,21 @@ html{
 				.helicopter_name{
 
 				}
+				#logo{
+					@media (max-width: 500px){
+						display:none;
+					}
+					img{
+						@media (max-width: 640px){
+							padding: 6px 20px;
+							height: $header_height - 12;
+						}
+						@media (min-width: 640px){
+							padding: 0 20px;
+							height: $header_height;
+						}
+					}
+				}
 			}
 			#header_right{
 				/*max-width: 20%;*/
@@ -1176,7 +1191,87 @@ html{
 					}
 				}
 			}
-			
+			&.login{
+				background: url(../img/bg_login.jpg) 50% -100px;
+				background-size: cover;
+				padding: 150px;
+				text-align: left;
+				form{
+					display: inline-block;
+					::-webkit-input-placeholder { color:$grey-color; font: 1.5rem 'biko'; height: 40px; line-height: 40px; }
+					::-moz-placeholder          { color:$grey-color; font: 1.5rem 'biko'; height: 40px; line-height: 40px; } /* firefox 19+ */
+					:-ms-input-placeholder      { color:$grey-color; font: 1.5rem 'biko'; height: 40px; line-height: 40px; } /* ie */
+					input:-moz-placeholder      { color:$grey-color; font: 1.5rem 'biko'; height: 40px; line-height: 40px; }
+					.container{
+						display: block;
+						background: white;
+						margin: 0 0 20px;
+						border-radius: 5px;
+						label{
+							display: block;
+							float: left;
+							width: 28px;
+							height: 30px;
+							margin: 5px;
+							&#username{
+								background: url('../img/user_icon.png');
+								background-size: cover;
+							}
+							&#password{
+								background: url('../img/password_icon.png');
+								background-size: cover;
+							}
+						}
+						input{
+							color: $grey-dark-color!important;
+							font: 1.5rem 'biko';
+							height: 40px;
+							line-height: 40px;
+							float: right;
+							background: none;
+							border:none;
+							padding: 0 10px;
+						}
+						.select2-container{
+							height: 40px;
+							line-height: 40px;
+							width: 100%;
+							font: 1.5rem 'biko';
+							color: $grey-dark-color;
+							span, a{
+								color: $grey-dark-color;
+								text-align: center;
+								height: 40px!important;
+								line-height: 40px!important;
+							}
+							.select2-choice{
+								.select2-arrow{
+									width: 40px;
+									b{
+										width: 18px;
+										margin: 0 11px;
+										background-position-y: 7px;
+									}
+								}
+							}
+						}
+						.select2-results .select2-result-label{
+							color: $grey-dark-color!important;
+						}
+					}
+					button{
+						border-radius: 5px;
+						background: $blue-color;
+						width: 100%;
+						font: 1.5rem 'biko';
+						color: white;
+						border: none;
+						height: 40px;
+						line-height: 40px;
+						cursor: pointer;
+					}
+				}
+			}
 		}
 		.cm_images{
 			margin: auto;
@@ -1190,6 +1285,7 @@ html{
 				}
 			}
 		}
+
 		footer{
 			.fake_scrollbar{
 				position: fixed;

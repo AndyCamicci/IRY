@@ -160,6 +160,7 @@ $(document).ready(function() {
 			console.log(e, $favorite);
 		});
 	});
+	$("select").select2();
 
 });
 
@@ -255,6 +256,7 @@ function updatePilotValues(pilot) {
 	} else {
 		$call.removeClass("active");
 	}
+
 }
 
 function addPilotToEP(template, pilot) {

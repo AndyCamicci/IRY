@@ -1,19 +1,39 @@
-{% if error %}
-    <div>{{ error.message }}</div>
-{% endif %}
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+        {% block header %}
+            <header id="header" class="cf">
+                <div id="header_center" class="center">
+                    <div id="logo">
+                        <a href="{{ path('iry_appli_home') }}">
+                            <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
+                        </a>
+                    </div>
+                </div>
+            </header>
+        {% endblock %}
+{% block body %}
+    <div id="content" class="login">
+        {% if error %}
+            <div>{{ error.message }}</div>
+        {% endif %}
 
-<form action="{{ path('login_check') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
-
-    {#
-        If you want to control the URL the user
-        is redirected to on success (more details below)
-        <input type="hidden" name="_target_path" value="/account" />
-    #}
-
-    <button type="submit">login</button>
-</form>
+        <form action="{{ path('login_check') }}" method="post">
+            <div class="container cf">
+                <label for="username" id="username"></label>
+                <input type="text" id="username" placeholder="Username" name="_username" value="{{ last_username }}" />
+            </div>
+            <div class="container cf">
+                <label for="password" id="password"></label>
+                <input type="password" id="password" placeholder="Password" name="_password" />
+            </div>
+            <div class="container cf">
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
