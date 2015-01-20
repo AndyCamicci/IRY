@@ -5,3 +5,8 @@ services:
 #    iry_security.example:
 #        class: %iry_security.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    login_listener:
+        class: 'IRY\SecurityBundle\Listener\LoginListener'
+        arguments: ['@security.context', '@doctrine']
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }

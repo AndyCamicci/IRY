@@ -24,12 +24,24 @@ class ApplicationController extends Controller
     }
     public function choixcoursAction(Helicopter $helicopter_id)
     {
-    	//On récupère la première Serie pour l'instant, on la récupèrera ensuite en param.
+        $request = $this->get('request');
+        $cookies = $request->cookies;
+
     	$em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository("IRYAppliBundle:Serie");
-		$serie = $repo->find('1');
-		//TO DELETE
 
+        if ($cookies->has('serie')) {
+            $serieCookie = $cookies->get('serie');
+        } else {
+            $serieCookie = 0;
+        }
+
+		$serie = $repo->find($serieCookie);
+        if (is_null($serie) == true) {
+            $this->get('security.context')->setToken(null);
+            $this->get('request')->getSession()->invalidate();
+            return $this->redirect($this->generateUrl('login'));
+        }
         return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array(
         	"helicopter" => $helicopter_id,
         	"serie" => $serie
@@ -37,6 +49,8 @@ class ApplicationController extends Controller
     }
     public function coursMagistralAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
         $images = $repo->findBy(
@@ -49,10 +63,14 @@ class ApplicationController extends Controller
     }
     public function coursDemonstratifAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        
         return $this->render('IRYAppliBundle:Application:coursDemonstratif.html.twig', array("course" => $course_id));
     }
     public function videoImmersiveAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
         $images = $repo->findBy(
@@ -65,6 +83,8 @@ class ApplicationController extends Controller
     }
     public function exercicePratiqueAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+
         $em = $this->getDoctrine()->getManager();
         // $repo_results = $em->getRepository('IRYAppliBundle:Step');
         // $repo_results = $em->getRepository('IRYAppliBundle:Result');
@@ -78,6 +98,30 @@ class ApplicationController extends Controller
             "pilots" => $pilots
         ));
     }
+
+    private function addCourseToSerie(Course $course) {
+        $request = $this->get('request');
+        $cookies = $request->cookies;
+
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Serie");
+
+        if ($cookies->has('serie')) {
+            $serieCookie = $cookies->get('serie');
+        } else {
+            $serieCookie = 0;
+        }
+
+        $serie = $repo->find($serieCookie);
+        if (is_null($serie) == false) {
+            $serie->addCourseIfNotExists($course);
+
+            $em->persist($serie);
+            $em->flush();
+        }
+
+    }
+
     public function exercicePratiqueVuePiloteAction(Course $course_id, Pilot $pilot_id)
     {
     	$em = $this->getDoctrine()->getManager();

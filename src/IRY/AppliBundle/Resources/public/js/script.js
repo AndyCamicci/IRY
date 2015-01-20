@@ -203,7 +203,7 @@ function sortPilots() {
 			returnValue = 0;
 		}
 		// console.log($(a).find('.pilot').attr("data-pilot-id"), aId, aActive, $(b).find('.pilot').attr("data-pilot-id"), bId, bActive, returnValue == null ? bId - aId : returnValue );
-		return returnValue == null ? bId - aId : returnValue;
+		return returnValue == null ? aId - bId : returnValue;
 	});
 
 
