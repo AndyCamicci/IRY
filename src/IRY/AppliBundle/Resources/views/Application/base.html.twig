@@ -24,9 +24,13 @@
                         </a>
                     </div>
                 </div>
+                <div id="header_right" class="right">
+                    <a href="{{path('logout')}}" class="logout">Logout</a>
+                </div>
                 <div id="header_center" class="center">
                     <h1>{% block header_title %}{% endblock %}</h1>
                 </div>
+
             </header>
         {% endblock %}
         {% block body %}{% endblock %}

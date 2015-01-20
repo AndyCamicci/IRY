@@ -114,4 +114,13 @@ class Serie {
         }
         return false;
     }
+
+    public function addCourseIfNotExists(\IRY\AppliBundle\Entity\Course $course)
+    {
+        if ($this->courses->contains($course) == false) {
+            $this->courses[] = $courses;
+        }
+
+        return $this;
+    }
 }

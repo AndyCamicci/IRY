@@ -1,18 +1,20 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        IRY\SecurityBundle\Entity\User: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: %userpass%, roles: [ 'ROLE_USER' ] }
-                    admin: { password: %adminpass%, roles: [ 'ROLE_ADMIN' ] }
-                    iry: { password: %irypass%, roles: [ 'ROLE_ADMIN' ] }
+        administrators:
+            entity: { class: IRYSecurityBundle:User, property: username }
+        # in_memory:
+        #     memory:
+        #         users:
+        #             user:  { password: %userpass%, roles: [ 'ROLE_USER' ] }
+        #             admin: { password: %adminpass%, roles: [ 'ROLE_ADMIN' ] }
+        #             iry: { password: %irypass%, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -29,13 +31,18 @@ security:
             form_login:
                 login_path: login
                 check_path: login_check
+            http_basic: ~
             # logout:
                 # path:   _demo_logout
                 # target: _demo
+            logout:
+                path:   /logout
+                target: /
             #http_basic:
             #    realm: "Secured Demo Area"
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
-        - { path: ^/, roles: ROLE_ADMIN } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/, roles: ROLE_USER } #UNCOMMENT FOR AUTHENTICATION
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
