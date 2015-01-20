@@ -11,6 +11,7 @@ class Course {
     private $typeCourse;
     private $images;
     private $immersiveMovie;
+    private $series;
     /**
      * @var \IRY\AppliBundle\Entity\SubTheme
      */
@@ -206,5 +207,69 @@ class Course {
     public function getImages()
     {
         return $this->images;
+    }
+
+    /**
+     * Set immersiveMovie
+     *
+     * @param \IRY\AppliBundle\Entity\ImmersiveMovie $immersiveMovie
+     * @return Course
+     */
+    public function setImmersiveMovie(\IRY\AppliBundle\Entity\ImmersiveMovie $immersiveMovie = null)
+    {
+        $this->immersiveMovie = $immersiveMovie;
+
+        return $this;
+    }
+
+    /**
+     * Get immersiveMovie
+     *
+     * @return \IRY\AppliBundle\Entity\ImmersiveMovie 
+     */
+    public function getImmersiveMovie()
+    {
+        return $this->immersiveMovie;
+    }
+    public function getFullName()
+    {
+        return $this->getSubTheme()->getTheme()->getName().' > '.$this->getSubTheme()->getName().' > '.$this->getName();
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+
+
+    /**
+     * Add series
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $series
+     * @return Course
+     */
+    public function addSeries(\IRY\AppliBundle\Entity\Serie $series)
+    {
+        $this->series[] = $series;
+
+        return $this;
+    }
+
+    /**
+     * Remove series
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $series
+     */
+    public function removeSeries(\IRY\AppliBundle\Entity\Serie $series)
+    {
+        $this->series->removeElement($series);
+    }
+
+    /**
+     * Get series
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeries()
+    {
+        return $this->series;
     }
 }

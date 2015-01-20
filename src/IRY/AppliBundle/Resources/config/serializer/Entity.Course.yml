@@ -1,0 +1,9 @@
+IRY\AppliBundle\Entity\Course:
+    exclusion_policy: ALL
+    properties:
+        id:
+          expose: true
+        name:
+          expose: true
+        steps:
+          expose: true

@@ -93,8 +93,8 @@ $(document).ready(function() {
 	});	
 
 	/* PRACTICAL TRAINING */
-	$(".ep_list_wrap").on("click", function() {
-		$(this).toggleClass("ep_list_opened"); // Allow user to show a previous step
+	$(".ep_list_wrap h3").on("click", function() {
+		$(".ep_list_wrap").toggleClass("ep_list_opened", 300, "easeInOutQuad"); // Allow user to show a previous step
 	});	
 
 
@@ -146,6 +146,21 @@ $(document).ready(function() {
 		sortPilots();
 
 	} // End if checkPilotsUrl
+
+	/* PRACTICAL TRAINING PILOT VIEW */
+	$(".favorite").on("click", function() {
+		var url = editResultUrl.replace("0", $(this).parent().attr("data-step-id"));
+		var $favorite = $(this);
+		$.ajax({
+		  url: url,
+		  type: "PUT",
+		  data: { "result[isFavorite]": !$(this).hasClass("is_favorite")  }
+		}).done(function(e) {
+			$favorite.toggleClass("is_favorite");
+			console.log(e, $favorite);
+		});
+	});
+
 });
 
 function updatePercentValue($el) {
@@ -267,7 +282,9 @@ function resize() {
 	var header_height = $("#header").height();
 	var total_height = $("body").height();
 	$("#content").height(total_height - header_height);
+	$(".cm_embed").height(total_height - header_height);
 }
+
 
 function showHelicoptersOfType(type) {
 	$("a[data-type]").each(function() {

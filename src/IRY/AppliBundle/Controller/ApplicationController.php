@@ -10,6 +10,7 @@ use IRY\AppliBundle\Entity\Step;
 use IRY\AppliBundle\Entity\Course;
 use IRY\AppliBundle\Entity\Result;
 use IRY\AppliBundle\Entity\Pilot;
+use IRY\AppliBundle\Entity\Serie;
 
 class ApplicationController extends Controller
 {
@@ -23,7 +24,17 @@ class ApplicationController extends Controller
     }
     public function choixcoursAction(Helicopter $helicopter_id)
     {
-        return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array("helicopter" => $helicopter_id));
+    	//On récupère la première Serie pour l'instant, on la récupèrera ensuite en param.
+    	$em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Serie");
+		$serie = $repo->find('1');
+		//TO DELETE
+
+
+        return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array(
+        	"helicopter" => $helicopter_id,
+        	"serie" => $serie
+        ));
     }
     public function coursMagistralAction(Course $course_id)
     {
@@ -70,7 +81,32 @@ class ApplicationController extends Controller
     }
     public function exercicePratiqueVuePiloteAction(Course $course_id, Pilot $pilot_id)
     {
+    	$em = $this->getDoctrine()->getManager();
+
+        $repo_steps = $em->getRepository('IRYAppliBundle:Step');
+        $steps = $repo_steps->findBy(array(
+        	'course' => $course_id,
+        ));
+
+        $repo_results = $em->getRepository('IRYAppliBundle:Result');
+        $results = $pilot_id->getResultsInCourse($course_id);
+        $results_errors = new \Doctrine\Common\Collections\ArrayCollection();
+        $results_success = new \Doctrine\Common\Collections\ArrayCollection();
+        foreach ($results as $result => $value) {
+        	if ($value->getIsError()) {
+        		$results_errors[] = $value;
+        	}
+        	else{
+        		$results_success[] = $value;        		
+        	}
+        }
+        $lastStep = $course_id->getLastStep();
         return $this->render('IRYAppliBundle:Application:exercicePratiqueVuePilote.html.twig', array(
+            'steps' => $steps, 
+            'lastStep' => $lastStep, 
+            'results' => $results, 
+            'results_errors' => $results_errors, 
+            'results_success' => $results_success, 
             'pilot' => $pilot_id, 
             "course" => $course_id
         ));

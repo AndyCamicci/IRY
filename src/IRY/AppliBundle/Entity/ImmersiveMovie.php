@@ -6,11 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 class ImmersiveMovie {
     private $id;
     private $course;
-    private $path;
+    private $path; //uploads/vi/
+                   //hydraulic.zip
+    private $name; //hydraulic
     /**
      * @var string
      */
-    private $name;
 
     /**
      * @var integer
@@ -195,7 +196,8 @@ class ImmersiveMovie {
     {
         // the absolute directory path where uploaded
         // documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir().$this->getFolder();
+        $reflClass = new \ReflectionClass(get_class($this));
+        return dirname($reflClass->getFileName()).'/../../../../web/'.$this->getUploadDir().$this->getFolder();
     }
 
     protected function getUploadDir()
@@ -214,5 +216,8 @@ class ImmersiveMovie {
     public function getFolder()
     {
         return $this->folder;
+    }
+    public function getUnityPath(){
+        return $this->getWebPath().'/'.$this->name.'.unity3d';
     }
 }

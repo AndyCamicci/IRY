@@ -5,7 +5,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Serie {
-	private $id;
+    private $id;
+    private $name;
+	private $helicopter;
     private $courses;
     /**
      * Constructor
@@ -56,5 +58,60 @@ class Serie {
     public function getCourses()
     {
         return $this->courses;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Serie
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set helicopter
+     *
+     * @param \IRY\AppliBundle\Entity\Helicopter $helicopter
+     * @return Serie
+     */
+    public function setHelicopter(\IRY\AppliBundle\Entity\Helicopter $helicopter = null)
+    {
+        $this->helicopter = $helicopter;
+
+        return $this;
+    }
+
+    /**
+     * Get helicopter
+     *
+     * @return \IRY\AppliBundle\Entity\Helicopter 
+     */
+    public function getHelicopter()
+    {
+        return $this->helicopter;
+    }
+    public function hasCourse(Course $course_id)
+    {
+        foreach ($this->getCourses() as $course) {
+            if ($course->getId() == $course_id->getId()) {
+                return true;
+            }
+        }
+        return false;
     }
 }
