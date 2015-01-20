@@ -24,45 +24,45 @@ iry_appli_ep_pilot:
     path:   /practical-training/{course_id}/pilot/{pilot_id}
     defaults: {_controller: "IRYAppliBundle:Application:exercicePratiqueVuePilote"}
 iry_appli_dc:
-    path:   /debriefing/
+    path:   /defriefing/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:debriefing"}
 
 iry_crud_heli_list:
     path:   /crud/helicopters
-    defaults: {_controller: IRYAppliBundle:Crud:helicopters}
+    defaults: {_controller: IRYAppliBundle:CrudHelicopter:helicopters}
 iry_crud_heli_delete:
     path:   /crud/helicopter/{id}/delete
-    defaults: {_controller: IRYAppliBundle:Crud:deleteHelicopter}
+    defaults: {_controller: IRYAppliBundle:CrudHelicopter:deleteHelicopter}
 iry_crud_heli_update:
     path:   /crud/helicopter/{id}/update
-    defaults: {_controller: IRYAppliBundle:Crud:updateHelicopter}
+    defaults: {_controller: IRYAppliBundle:CrudHelicopter:updateHelicopter}
 
 iry_crud_theme_list:
     path:   /crud/themes
-    defaults: {_controller: IRYAppliBundle:Crud:themes}
+    defaults: {_controller: IRYAppliBundle:CrudTheme:themes}
 iry_crud_theme_delete:
     path:   /crud/theme/{id}/delete
-    defaults: {_controller: IRYAppliBundle:Crud:deleteTheme}
+    defaults: {_controller: IRYAppliBundle:CrudTheme:deleteTheme}
 iry_crud_theme_update:
     path:   /crud/theme/{id}/update
-    defaults: {_controller: IRYAppliBundle:Crud:updateTheme}
+    defaults: {_controller: IRYAppliBundle:CrudTheme:updateTheme}
 
 iry_crud_course_list:
     path:   /crud/courses
-    defaults: {_controller: IRYAppliBundle:Crud:courses}
+    defaults: {_controller: IRYAppliBundle:CrudCourse:courses}
 iry_crud_course_delete:
     path:   /crud/course/{id}/delete
-    defaults: {_controller: IRYAppliBundle:Crud:deleteCourse}
+    defaults: {_controller: IRYAppliBundle:CrudCourse:deleteCourse}
 iry_crud_course_update:
     path:   /crud/course/{id}/update
-    defaults: {_controller: IRYAppliBundle:Crud:updateCourse}
+    defaults: {_controller: IRYAppliBundle:CrudCourse:updateCourse}
 
 iry_crud_images:
     path:   /crud/images/
-    defaults: {_controller: IRYAppliBundle:Crud:images}
+    defaults: {_controller: IRYAppliBundle:CrudImage:images}
 iry_crud_immersiveMovies:
     path:   /crud/immersiveMovies/
-    defaults: {_controller: IRYAppliBundle:Crud:immersiveMovies}
+    defaults: {_controller: IRYAppliBundle:CrudImmersiveMovie:immersiveMovies}
 
 
 # iry_rest_helicopters:

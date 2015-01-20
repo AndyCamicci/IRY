@@ -110,8 +110,10 @@ class ApplicationController extends Controller
             "course" => $course_id
         ));
     }
-    public function debriefingAction()
+    public function debriefingAction(Course $course_id)
     {
-        return $this->render('IRYAppliBundle:Application:debriefing.html.twig');
+        return $this->render('IRYAppliBundle:Application:debriefing.html.twig', array(
+            "course" => $course_id
+        )); 
     }
 }

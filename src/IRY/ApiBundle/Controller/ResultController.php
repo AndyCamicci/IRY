@@ -121,23 +121,16 @@ class ResultController extends Controller implements ClassResourceInterface
      */
     public function putAction(Result $result)
     {
-        echo $result->getPilot()->getId();
         $form = $this->createForm(new ResultType(), $result, array('method' => 'PUT'));
         $form->bind($this->getRequest());
 
-        echo $result->getPilot()->getId();
-        die();
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($result);
             $em->flush();
 
-        echo $result->getPilot()->getId();
-        die();
             return $result;
         }
-        echo "invaliiiiid";
-        die();
 
         return array('form' => $form);
     }
