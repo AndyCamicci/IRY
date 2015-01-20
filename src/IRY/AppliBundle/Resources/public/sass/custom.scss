@@ -13,6 +13,7 @@ $grey-dark-color     : #a8a8a7;
 $grey-color          : #d1cece;
 $grey-light-color    : #EEE8EA;
 $blue-color          : #0fa7b7;
+$red-color           : #fb0301;
 
 $theme-color:$grey-dark-dark-color;
 $cm-color   :#176c73;
@@ -187,6 +188,10 @@ html{
 						display: block;
 						color: $grey-dark-color;
 					}
+				}
+				.logout{
+					color: $grey-light-color;
+					padding: 10px;
 				}
 			}
 		}
@@ -1278,6 +1283,12 @@ html{
 							color: $grey-dark-color!important;
 						}
 					}
+					.error_message{
+						margin: auto;
+						margin-bottom: 20px; 
+						color: $red-color;
+						font: 1.5rem 'biko';
+					}
 					button{
 						border-radius: 5px;
 						background: $blue-color;
@@ -1290,6 +1301,7 @@ html{
 						cursor: pointer;
 					}
 				}
+
 			}
 		}
 		.cm_images{
@@ -1304,7 +1316,6 @@ html{
 				}
 			}
 		}
-
 		footer{
 			.fake_scrollbar{
 				position: fixed;
