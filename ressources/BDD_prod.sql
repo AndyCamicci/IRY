@@ -393,8 +393,6 @@ INSERT INTO db555786140.Image (id, course_id, `path`, name, theOrder) VALUES
 	(NULL, 5, "logo2.png", "Logo", 2),              
 	(NULL, 5, "logo.png",  "Logo", 3);
 
-
-
 INSERT INTO `db555786140`.`Step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Set Scroll to on', '1', 'btn_SCROLL', '1');
 INSERT INTO `db555786140`.`Step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Set Off1 to on', '2', 'btn_OFF1', '1');
 INSERT INTO `db555786140`.`Step` (`id`, `course_id`, `name`, `order`, `btn_name`, `btn_state`) VALUES (NULL, '2', 'Turn Gene to on', '3', 'btn_GENE', '1');
