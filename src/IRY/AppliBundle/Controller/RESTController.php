@@ -4,44 +4,26 @@ namespace IRY\AppliBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 // use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use IRY\AppliBundle\Entity\Helicopter;
+use IRY\AppliBundle\Entity\Result;
 
 class RESTController extends Controller
 {
-    public function helicoptersAction()
+    public function setResultToFavoriteAction(Result $result)
     {
     	$em = $this->getDoctrine()->getManager();
-    	$repo = $em->getRepository('IRYAppliBundle:Helicopter');
-    	$helicopters = $repo->findAll();
+
+        $result->setIsFavorite(true);
+
+        $em->persist($result);
+        $em->flush();
 
     	$serializer = $this->get('jms_serializer');
 		$data = $serializer->serialize($helicopters, 'json');
 
 		$response = new JsonResponse();
-		$response->setData($data);
-
-		return $response;    	
-    }
-
-    public function helicopterAction(Helicopter $helicopter)
-    {
-    	$serializer = $this->get('jms_serializer');
-		$data = $serializer->serialize($helicopter, 'json');
-		
-		$response = new JsonResponse();
-		$response->setData($data);
-
-		return $response; 
-    }
-
-    public function helicopterPostAction(Helicopter $helicopter)
-    {
-    	$serializer = $this->get('jms_serializer');
-		$data = $serializer->serialize($helicopter, 'json');
-		
-		$response = new JsonResponse();
-		$response->setData($data);
+		$response->setData($result);
 
 		return $response;
     }
+
 }

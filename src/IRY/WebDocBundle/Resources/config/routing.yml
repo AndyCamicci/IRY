@@ -1,0 +1,3 @@
+iry_web_doc_homepage:
+    path:     /
+    defaults: { _controller: IRYWebDocBundle:Default:index }

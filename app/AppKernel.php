@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new IRY\SecurityBundle\IRYSecurityBundle(),
             new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle(),
             new IRY\ApiBundle\IRYApiBundle(),
+            new IRY\WebDocBundle\IRYWebDocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

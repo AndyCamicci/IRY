@@ -65,10 +65,10 @@ iry_crud_immersiveMovies:
     defaults: {_controller: IRYAppliBundle:CrudImmersiveMovie:immersiveMovies}
 
 
-# iry_rest_helicopters:
-#     path:   /rest/helicopters
-#     defaults: {_controller: IRYAppliBundle:REST:helicopters}
-#     methods:   [GET]
+iry_rest_set_as_favorite:
+    path:   /rest/result_favorite/{id}
+    defaults: {_controller: IRYAppliBundle:REST:setResultToFavorite}
+    methods:   [GET]
 # iry_rest_helicopter:
 #     path:   /rest/helicopter/{id}
 #     defaults: {_controller: IRYAppliBundle:REST:helicopter}
