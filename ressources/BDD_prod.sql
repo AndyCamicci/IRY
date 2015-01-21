@@ -1,6 +1,6 @@
 ALTER TABLE Helicopter AUTO_INCREMENT = 0;
-ALTER TABLE Subtheme AUTO_INCREMENT = 0;
-ALTER TABLE Typecourse AUTO_INCREMENT = 0;
+ALTER TABLE SubTheme AUTO_INCREMENT = 0;
+ALTER TABLE TypeCourse AUTO_INCREMENT = 0;
 ALTER TABLE Course AUTO_INCREMENT = 0;
 ALTER TABLE Theme AUTO_INCREMENT = 0;
 ALTER TABLE Pilot AUTO_INCREMENT = 0;
@@ -28,7 +28,7 @@ INSERT INTO db555786140.Theme (id, helicopter_id, name) VALUES
 	(NULL, "2", "Startup"),
 	(NULL, "2", "Full");
 
-INSERT INTO db555786140.Subtheme (id, theme_id, name) VALUES
+INSERT INTO db555786140.SubTheme (id, theme_id, name) VALUES
 	(NULL, "1", "Servo control"),
 	(NULL, "1", "Main rotor servocontrols"),
 	(NULL, "1", "Tail rotor servocontrol"),
@@ -45,7 +45,7 @@ INSERT INTO db555786140.Pilot (id, name) VALUES
     (NULL, 'Yassine'),
     (NULL, 'Florent');	
 
-INSERT INTO db555786140.Typecourse (id, name) VALUES
+INSERT INTO db555786140.TypeCourse (id, name) VALUES
 	(NULL, "Theorical Course"),
 	(NULL, "Demonstrative Course"),
 	(NULL, "Immersive Movie"),
@@ -69,7 +69,7 @@ INSERT INTO db555786140.Course (id, subTheme_id, name, typeCourse_id) VALUES
 INSERT INTO db555786140.Serie (id, helicopter_id, name) VALUES 
 	(NULL, 2, "FirstTeam");
 
-INSERT INTO db555786140.Series_courses (course_id, serie_id) VALUES 
+INSERT INTO db555786140.series_courses (course_id, serie_id) VALUES 
 	( 1,1),
 	( 2,1),
 	( 3,1),

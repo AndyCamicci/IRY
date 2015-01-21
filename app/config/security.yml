@@ -36,14 +36,14 @@ security:
                 # path:   _demo_logout
                 # target: _demo
             logout:
-                path:   /logout
-                target: /
+                path:   /appli/logout
+                target: /appli/
             #http_basic:
             #    realm: "Secured Demo Area"
 
     access_control:
         - { path: ^/_console, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
-        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
-        - { path: ^/, roles: ROLE_USER } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/appli/login, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/appli/register, roles: IS_AUTHENTICATED_ANONYMOUSLY } #UNCOMMENT FOR AUTHENTICATION
+        - { path: ^/appli/, roles: ROLE_USER } #UNCOMMENT FOR AUTHENTICATION
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
