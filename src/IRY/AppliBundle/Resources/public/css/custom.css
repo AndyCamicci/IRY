@@ -1266,21 +1266,14 @@ html body #content .modal .modal-dialog .close {
 html body #content #close {
   display: none;
 }
-<<<<<<< HEAD
-/* line 832, ../sass/custom.scss */
-html body #content section#dc {
-  text-align: center;
-}
-/* line 834, ../sass/custom.scss */
-=======
-/* line 1066, ../sass/custom.scss */
+/* line 1072, ../sass/custom.scss */
 html body #content .schema_image {
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
 }
-/* line 1071, ../sass/custom.scss */
+/* line 1077, ../sass/custom.scss */
 html body #content .schema_image .schema_image_plus {
   position: absolute;
   background: #a8a8a7 url(../img/moins_entoure.png) center no-repeat;
@@ -1290,33 +1283,28 @@ html body #content .schema_image .schema_image_plus {
   right: 0;
   cursor: pointer;
 }
-/* line 1079, ../sass/custom.scss */
+/* line 1085, ../sass/custom.scss */
 html body #content .schema_image .schema_image_plus.close {
   /*@transition(all, 3s, ease-in-out);*/
   background-image: url(../img/plus_entoure.png);
 }
-/* line 1084, ../sass/custom.scss */
+/* line 1090, ../sass/custom.scss */
 html body #content .schema_image .schema_image_wrap {
   position: relative;
   width: 100%;
   height: 126px;
 }
-/* line 1090, ../sass/custom.scss */
+/* line 1097, ../sass/custom.scss */
 html body #content section#dc {
   text-align: center;
 }
-/* line 1092, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1099, ../sass/custom.scss */
 html body #content section#dc .dc_wrap {
   width: 840px;
   padding: 30px 0;
   margin: auto;
 }
-<<<<<<< HEAD
-/* line 840, ../sass/custom.scss */
-=======
-/* line 1097, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1104, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li {
   background: #d1cece;
   padding: 10px;
@@ -1324,81 +1312,53 @@ html body #content section#dc .dc_wrap ul li {
   margin-bottom: 10px;
   @transition (all, 0.3, ease-in-out);
 }
-<<<<<<< HEAD
-/* line 846, ../sass/custom.scss */
-=======
-/* line 1103, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1110, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li:active {
   box-shadow: 0px 0px #a8a8a7;
   margin: 4px 4px 10px 0;
 }
-<<<<<<< HEAD
-/* line 850, ../sass/custom.scss */
-=======
-/* line 1107, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1114, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li div.element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   text-align: left;
 }
-<<<<<<< HEAD
-/* line 855, ../sass/custom.scss */
+/* line 1119, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li div.element span {
   font-size: 1.2rem;
 }
-/* line 859, ../sass/custom.scss */
+/* line 1123, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .pilot_name {
   width: 50%;
   float: left;
   margin-top: 7px;
 }
-/* line 864, ../sass/custom.scss */
+/* line 1128, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .stats {
   width: 50%;
   float: right;
   text-align: right;
 }
-/* line 870, ../sass/custom.scss */
-=======
-/* line 1111, ../sass/custom.scss */
-html body #content section#dc .dc_wrap ul li div.element span {
-  font-size: 1.2rem;
-}
-/* line 1116, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1134, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
   font-size: 1.3rem;
   padding: 5px 0;
   color: #909090;
 }
-<<<<<<< HEAD
-/* line 876, ../sass/custom.scss */
-=======
-/* line 1122, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1140, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors, html body #content section#dc .dc_wrap ul li .favorites {
   width: 75px;
   height: 30px;
 }
-<<<<<<< HEAD
-/* line 879, ../sass/custom.scss */
-=======
-/* line 1125, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1143, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
   margin-right: 40px;
   display: inline-block;
   /*padding: 5px 10px;*/
   /*padding-right: 50px;*/
 }
-<<<<<<< HEAD
-/* line 884, ../sass/custom.scss */
-=======
-/* line 1130, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1148, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span:after, html body #content section#dc .dc_wrap ul li .errors span:after, html body #content section#dc .dc_wrap ul li .favorites span:after {
   content: "";
   width: 25px;
@@ -1407,81 +1367,52 @@ html body #content section#dc .dc_wrap ul li .success span:after, html body #con
   right: 15px;
   top: 1px;
 }
-<<<<<<< HEAD
-/* line 894, ../sass/custom.scss */
+/* line 1158, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors {
   border-right: 2px solid #0fa7b7;
   text-align: right;
 }
-/* line 897, ../sass/custom.scss */
+/* line 1161, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span {
   padding: 6px 10px;
 }
-/* line 903, ../sass/custom.scss */
-=======
-/* line 1140, ../sass/custom.scss */
-html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors, html body #content section#dc .dc_wrap ul li .favorites {
-  border-right: 2px solid #0fa7b7;
-  text-align: right;
-}
-/* line 1143, ../sass/custom.scss */
-html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
-  padding: 6px 10px;
-}
-/* line 1149, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1167, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span:after {
   background: url(../img/sucess_dc.png);
   background-size: contain;
 }
-<<<<<<< HEAD
-/* line 907, ../sass/custom.scss */
-=======
-/* line 1153, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1171, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span.active:after {
   background: url(../img/sucesss.png);
   background-size: contain;
 }
-<<<<<<< HEAD
-/* line 915, ../sass/custom.scss */
-=======
-/* line 1161, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1179, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .errors span:after {
   background: url(../img/errors_dc.png);
   background-size: contain;
 }
-<<<<<<< HEAD
-/* line 921, ../sass/custom.scss */
+/* line 1185, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .favorites {
   text-align: right;
 }
-/* line 924, ../sass/custom.scss */
-=======
-/* line 1169, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1188, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .favorites span:after {
   background: url(../img/favori.png);
   background-size: contain;
 }
-<<<<<<< HEAD
-/* line 937, ../sass/custom.scss */
-=======
-/* line 1181, ../sass/custom.scss */
+/* line 1200, ../sass/custom.scss */
 html body .cm_images {
   margin: auto;
   width: 100%;
 }
-/* line 1185, ../sass/custom.scss */
+/* line 1204, ../sass/custom.scss */
 html body .cm_images .image embed {
   margin: auto;
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 1194, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1213, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -1489,11 +1420,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-<<<<<<< HEAD
-/* line 943, ../sass/custom.scss */
-=======
-/* line 1200, ../sass/custom.scss */
->>>>>>> 88849200ee0ba69b482fb580d5c16f52bc109a0f
+/* line 1219, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
