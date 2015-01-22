@@ -7,7 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="Simple\ProfileBundle\Entity\UserRepository")
+ * @ORM\Entity(repositoryClass="IRY\SecurityBundle\Entity\UserRepository")
  */
 class User implements UserInterface, \Serializable
 {
@@ -29,7 +29,7 @@ class User implements UserInterface, \Serializable
     private $salt;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
 
@@ -202,4 +202,5 @@ class User implements UserInterface, \Serializable
     {
         return $this->isActive;
     }
+
 }

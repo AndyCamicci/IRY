@@ -25,7 +25,8 @@ INSERT INTO iry.helicopter (id, name, type) VALUES
 
 INSERT INTO iry.theme (id, helicopter_id, name) VALUES
 	(NULL, "2", "Hydrolic system"),
-	(NULL, "2", "Startup");
+	(NULL, "2", "Startup"),
+	(NULL, "2", "Full");
 
 INSERT INTO iry.subtheme (id, theme_id, name) VALUES
 	(NULL, "1", "Servo control"),
@@ -34,7 +35,8 @@ INSERT INTO iry.subtheme (id, theme_id, name) VALUES
 	(NULL, "1", "Hydraulic system"),
 	(NULL, "1", "Limitations"),
 	(NULL, "1", "MMEL"),
-	(NULL, "1", "Emergency procedures");
+	(NULL, "1", "Emergency procedures"),
+	(NULL, "3", "Full");
 
 INSERT INTO iry.pilot (id, name) VALUES
     (NULL, 'Tarek'),
@@ -61,7 +63,8 @@ INSERT INTO iry.course (id, subTheme_id, name, typeCourse_id) VALUES
 	(NULL, "6", "List",                                           "3"),
 	(NULL, "7", "List",                                           "2"),
 	(NULL, "7", "Filter clogging",                                "4"),
-	(NULL, "7", "Load factor",                                    "3");
+	(NULL, "7", "Load factor",                                    "3"),
+	(NULL, "8", "Full", 	                                      "1");
 
 INSERT INTO iry.serie (id, helicopter_id, name) VALUES 
 	(NULL, 2, "FirstTeam");

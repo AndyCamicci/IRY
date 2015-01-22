@@ -3,6 +3,8 @@
 namespace IRY\AppliBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use IRY\AppliBundle\Entity\SubTheme;
+use IRY\AppliBundle\Entity\Theme;
 
 class Serie {
     private $id;
@@ -113,5 +115,31 @@ class Serie {
             }
         }
         return false;
+    }
+    public function hasAllCoursesOfSubTheme(SubTheme $subTheme)
+    {
+        foreach ($subTheme->getCourses() as $courseOfSubTheme) {
+            if ($this->getCourses()->contains($courseOfSubTheme) == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public function hasAllCoursesOfTheme(Theme $theme)
+    {
+        foreach ($theme->getSubThemes() as $subTheme) {
+            if ($this->hasAllCoursesOfSubTheme($subTheme) == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public function addCourseIfNotExists(\IRY\AppliBundle\Entity\Course $course)
+    {
+        if ($this->courses->contains($course) == false) {
+            $this->courses[] = $courses;
+        }
+
+        return $this;
     }
 }
