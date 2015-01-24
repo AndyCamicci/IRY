@@ -12,7 +12,7 @@ iry_security:
 
 iry_appli:
     resource: "@IRYAppliBundle/Resources/config/routing.yml"
-    prefix:   /application/
+    prefix:   /instructeur/
 
 _console:
     resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"

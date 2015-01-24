@@ -10,6 +10,9 @@ IRY\AppliBundle\Entity\Serie:
     fields:
         name:
             type: string
+        command:
+            type: string
+            nullable: true
     manyToMany:
         courses:
           targetEntity: Course

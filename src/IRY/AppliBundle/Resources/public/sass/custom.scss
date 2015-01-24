@@ -852,7 +852,7 @@ html{
 						}
 						h3{
 							&:before{
-								content: url(../img/moins_entoure.png) center no-repeat;
+								content: url(../img/moins_entoure.png) center no-repeat !important;
 							}
 						}
 					}
@@ -1010,6 +1010,11 @@ html{
 										background: url(../img/fav_on.png);
 										background-size:cover;
 									}
+								}
+								.no-favorite {
+									height:30px;
+									width:30px;
+									float:left;
 								}
 							}
 							li.li_head{

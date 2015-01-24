@@ -149,13 +149,9 @@ $(document).ready(function() {
 
 	/* PRACTICAL TRAINING PILOT VIEW */
 	$(".favorite").on("click", function() {
-		var url = editResultUrl.replace("0", $(this).parent().attr("data-step-id"));
+		var url = setAsFavorite.replace("0", $(this).attr("data-result-id"));
 		var $favorite = $(this);
-		$.ajax({
-		  url: url,
-		  type: "PUT",
-		  data: { "result[isFavorite]": !$(this).hasClass("is_favorite")  }
-		}).done(function(e) {
+		$.ajax(url).done(function(e) {
 			$favorite.toggleClass("is_favorite");
 			console.log(e, $favorite);
 		});

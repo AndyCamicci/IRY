@@ -6,30 +6,32 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\DataTransformer\DateTimeToStringTransformer;
+use IRY\AppliBundle\Entity\Helicopter;
 
-class PilotType extends AbstractType
+class HelicopterType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text')
-            ->add('isCalling', 'checkbox')
-            // ->add('dateCalling', 'date')->addViewTransformer(new DateTimeToStringTransformer())
-            ->add('serie', 'entity', array(
-                'class' => 'IRYAppliBundle:Serie',
-                'property' => 'name',
-            ));
+            ->add('type', 'choice', array(
+                'choices'   => array(
+                    Helicopter::TYPE_MILITARY => Helicopter::TYPE_MILITARY, 
+                    Helicopter::TYPE_CIVIL => Helicopter::TYPE_CIVIL
+                )))
+            ->add('imgHelico', 'text')
+            ->add('submit', 'submit');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
 	{
 	    $resolver->setDefaults(array(
-	        'data_class' => 'IRY\AppliBundle\Entity\Pilot',
+	        'data_class' => 'IRY\AppliBundle\Entity\Helicopter',
             'csrf_protection' => false,
 	    ));
 	}
 
     public function getName()
     {
-        return 'pilot';
+        return 'helicopter';
     }
 }

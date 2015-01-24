@@ -11,6 +11,11 @@ class Serie {
     private $name;
 	private $helicopter;
     private $courses;
+    /* Used to communicate with Immersive Application */
+    private $command;
+
+    const COMMAND_STARTCOURSE = "STARTPRACTICALTRAINING";
+
     /**
      * Constructor
      */
@@ -141,5 +146,28 @@ class Serie {
         }
 
         return $this;
+    }
+
+    /**
+     * Set command
+     *
+     * @param string $command
+     * @return Serie
+     */
+    public function setCommand($command)
+    {
+        $this->command = $command;
+
+        return $this;
+    }
+
+    /**
+     * Get command
+     *
+     * @return string 
+     */
+    public function getCommand()
+    {
+        return $this->command;
     }
 }

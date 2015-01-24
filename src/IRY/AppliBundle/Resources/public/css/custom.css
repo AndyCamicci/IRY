@@ -1036,7 +1036,7 @@ html body #content section#ep-pilote .ep_list_wrap.ep_list_opened {
 }
 /* line 854, ../sass/custom.scss */
 html body #content section#ep-pilote .ep_list_wrap.ep_list_opened h3:before {
-  content: url(../img/moins_entoure.png) center no-repeat;
+  content: url(../img/moins_entoure.png) center no-repeat !important;
 }
 /* line 860, ../sass/custom.scss */
 html body #content section#ep-pilote .ep_list_wrap .head h3 {
@@ -1209,18 +1209,24 @@ html body #content section#ep-pilote .ep_list_wrap .list ul li.step .favorite.is
   background: url(../img/fav_on.png);
   background-size: cover;
 }
-/* line 1015, ../sass/custom.scss */
+/* line 1014, ../sass/custom.scss */
+html body #content section#ep-pilote .ep_list_wrap .list ul li.step .no-favorite {
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+/* line 1020, ../sass/custom.scss */
 html body #content section#ep-pilote .ep_list_wrap .list ul li.li_head {
   height: 25px;
   padding: 0 10px;
 }
-/* line 1018, ../sass/custom.scss */
+/* line 1023, ../sass/custom.scss */
 html body #content section#ep-pilote .ep_list_wrap .list ul li.li_head .list_title {
   float: right;
   width: 75px;
   color: #a8a8a7;
 }
-/* line 1025, ../sass/custom.scss */
+/* line 1030, ../sass/custom.scss */
 html body #content section#ep-pilote .ep_list_wrap .list:after {
   content: "";
   position: absolute;
@@ -1231,21 +1237,21 @@ html body #content section#ep-pilote .ep_list_wrap .list:after {
   right: 0;
   background: url(../img/arrow_down.png) center no-repeat;
 }
-/* line 1038, ../sass/custom.scss */
+/* line 1043, ../sass/custom.scss */
 html body #content section#vi {
   text-align: center;
 }
-/* line 1040, ../sass/custom.scss */
+/* line 1045, ../sass/custom.scss */
 html body #content section#vi .video_wrap {
   width: 840px;
   padding: 30px 0;
   margin: auto;
 }
-/* line 1044, ../sass/custom.scss */
+/* line 1049, ../sass/custom.scss */
 html body #content section#vi .video_wrap video {
   width: 100%;
 }
-/* line 1050, ../sass/custom.scss */
+/* line 1055, ../sass/custom.scss */
 html body #content .modal:before {
   display: block;
   background: rgba(0, 0, 0, 0.6);
@@ -1256,7 +1262,7 @@ html body #content .modal:before {
   bottom: 0;
   z-index: 10;
 }
-/* line 1060, ../sass/custom.scss */
+/* line 1065, ../sass/custom.scss */
 html body #content .modal:target .modal-dialog {
   transform: translate(0, 0);
   -o-transform: translate(0, 0);
@@ -1264,7 +1270,7 @@ html body #content .modal:target .modal-dialog {
   -moz-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
 }
-/* line 1066, ../sass/custom.scss */
+/* line 1071, ../sass/custom.scss */
 html body #content .modal .modal-dialog {
   background: #fefefe;
   position: fixed;
@@ -1277,28 +1283,28 @@ html body #content .modal .modal-dialog {
   -webkit-transform: translate(0, -2000px);
   @transition (all, 0.3, ease-in-out);
 }
-/* line 1073, ../sass/custom.scss */
+/* line 1078, ../sass/custom.scss */
 html body #content .modal .modal-dialog video {
   width: 100%;
 }
-/* line 1076, ../sass/custom.scss */
+/* line 1081, ../sass/custom.scss */
 html body #content .modal .modal-dialog .close {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 1083, ../sass/custom.scss */
+/* line 1088, ../sass/custom.scss */
 html body #content #close {
   display: none;
 }
-/* line 1092, ../sass/custom.scss */
+/* line 1097, ../sass/custom.scss */
 html body #content .schema_image {
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
 }
-/* line 1097, ../sass/custom.scss */
+/* line 1102, ../sass/custom.scss */
 html body #content .schema_image .schema_image_plus {
   position: absolute;
   background: #a8a8a7 url(../img/moins_entoure.png) center no-repeat;
@@ -1308,28 +1314,28 @@ html body #content .schema_image .schema_image_plus {
   right: 0;
   cursor: pointer;
 }
-/* line 1105, ../sass/custom.scss */
+/* line 1110, ../sass/custom.scss */
 html body #content .schema_image .schema_image_plus.close {
   /*@transition(all, 3s, ease-in-out);*/
   background-image: url(../img/plus_entoure.png);
 }
-/* line 1110, ../sass/custom.scss */
+/* line 1115, ../sass/custom.scss */
 html body #content .schema_image .schema_image_wrap {
   position: relative;
   width: 100%;
   height: 126px;
 }
-/* line 1117, ../sass/custom.scss */
+/* line 1122, ../sass/custom.scss */
 html body #content section#dc {
   text-align: center;
 }
-/* line 1119, ../sass/custom.scss */
+/* line 1124, ../sass/custom.scss */
 html body #content section#dc .dc_wrap {
   width: 840px;
   padding: 30px 0;
   margin: auto;
 }
-/* line 1124, ../sass/custom.scss */
+/* line 1129, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li {
   background: #d1cece;
   padding: 10px;
@@ -1337,53 +1343,53 @@ html body #content section#dc .dc_wrap ul li {
   margin-bottom: 10px;
   @transition (all, 0.3, ease-in-out);
 }
-/* line 1130, ../sass/custom.scss */
+/* line 1135, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li:active {
   box-shadow: 0px 0px #a8a8a7;
   margin: 4px 4px 10px 0;
 }
-/* line 1134, ../sass/custom.scss */
+/* line 1139, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li div.element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   text-align: left;
 }
-/* line 1139, ../sass/custom.scss */
+/* line 1144, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li div.element span {
   font-size: 1.2rem;
 }
-/* line 1143, ../sass/custom.scss */
+/* line 1148, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .pilot_name {
   width: 50%;
   float: left;
   margin-top: 7px;
 }
-/* line 1148, ../sass/custom.scss */
+/* line 1153, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .stats {
   width: 50%;
   float: right;
   text-align: right;
 }
-/* line 1154, ../sass/custom.scss */
+/* line 1159, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
   font-size: 1.3rem;
   padding: 5px 0;
   color: #909090;
 }
-/* line 1160, ../sass/custom.scss */
+/* line 1165, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors, html body #content section#dc .dc_wrap ul li .favorites {
   width: 75px;
   height: 30px;
 }
-/* line 1163, ../sass/custom.scss */
+/* line 1168, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
   margin-right: 40px;
   display: inline-block;
   /*padding: 5px 10px;*/
   /*padding-right: 50px;*/
 }
-/* line 1168, ../sass/custom.scss */
+/* line 1173, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span:after, html body #content section#dc .dc_wrap ul li .errors span:after, html body #content section#dc .dc_wrap ul li .favorites span:after {
   content: "";
   width: 25px;
@@ -1392,88 +1398,88 @@ html body #content section#dc .dc_wrap ul li .success span:after, html body #con
   right: 15px;
   top: 1px;
 }
-/* line 1178, ../sass/custom.scss */
+/* line 1183, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors {
   border-right: 2px solid #0fa7b7;
   text-align: right;
 }
-/* line 1181, ../sass/custom.scss */
+/* line 1186, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span {
   padding: 6px 10px;
 }
-/* line 1187, ../sass/custom.scss */
+/* line 1192, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span:after {
   background: url(../img/sucess_dc.png);
   background-size: contain;
 }
-/* line 1191, ../sass/custom.scss */
+/* line 1196, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span.active:after {
   background: url(../img/sucesss.png);
   background-size: contain;
 }
-/* line 1199, ../sass/custom.scss */
+/* line 1204, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .errors span:after {
   background: url(../img/errors_dc.png);
   background-size: contain;
 }
-/* line 1205, ../sass/custom.scss */
+/* line 1210, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .favorites {
   text-align: right;
 }
-/* line 1208, ../sass/custom.scss */
+/* line 1213, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .favorites span:after {
   background: url(../img/favori.png);
   background-size: contain;
 }
-/* line 1218, ../sass/custom.scss */
+/* line 1223, ../sass/custom.scss */
 html body #content.login {
   background: url(../img/bg_login.jpg) 50% -100px;
   background-size: cover;
   padding: 150px;
   text-align: left;
 }
-/* line 1223, ../sass/custom.scss */
+/* line 1228, ../sass/custom.scss */
 html body #content.login form {
   display: inline-block;
   /* firefox 19+ */
   /* ie */
 }
-/* line 1225, ../sass/custom.scss */
+/* line 1230, ../sass/custom.scss */
 html body #content.login form ::-webkit-input-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1226, ../sass/custom.scss */
+/* line 1231, ../sass/custom.scss */
 html body #content.login form ::-moz-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1227, ../sass/custom.scss */
+/* line 1232, ../sass/custom.scss */
 html body #content.login form :-ms-input-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1228, ../sass/custom.scss */
+/* line 1233, ../sass/custom.scss */
 html body #content.login form input:-moz-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1229, ../sass/custom.scss */
+/* line 1234, ../sass/custom.scss */
 html body #content.login form .container {
   display: block;
   background: white;
   margin: 0 0 20px;
   border-radius: 5px;
 }
-/* line 1234, ../sass/custom.scss */
+/* line 1239, ../sass/custom.scss */
 html body #content.login form .container label {
   display: block;
   float: left;
@@ -1481,17 +1487,17 @@ html body #content.login form .container label {
   height: 30px;
   margin: 5px;
 }
-/* line 1240, ../sass/custom.scss */
+/* line 1245, ../sass/custom.scss */
 html body #content.login form .container label#username {
   background: url("../img/user_icon.png");
   background-size: cover;
 }
-/* line 1244, ../sass/custom.scss */
+/* line 1249, ../sass/custom.scss */
 html body #content.login form .container label#password {
   background: url("../img/password_icon.png");
   background-size: cover;
 }
-/* line 1249, ../sass/custom.scss */
+/* line 1254, ../sass/custom.scss */
 html body #content.login form .container input {
   color: #a8a8a7 !important;
   font: 1.5rem 'biko';
@@ -1502,7 +1508,7 @@ html body #content.login form .container input {
   border: none;
   padding: 0 10px;
 }
-/* line 1259, ../sass/custom.scss */
+/* line 1264, ../sass/custom.scss */
 html body #content.login form .container .select2-container {
   height: 40px;
   line-height: 40px;
@@ -1510,35 +1516,35 @@ html body #content.login form .container .select2-container {
   font: 1.5rem 'biko';
   color: #a8a8a7;
 }
-/* line 1265, ../sass/custom.scss */
+/* line 1270, ../sass/custom.scss */
 html body #content.login form .container .select2-container span, html body #content.login form .container .select2-container a {
   color: #a8a8a7;
   text-align: center;
   height: 40px !important;
   line-height: 40px !important;
 }
-/* line 1272, ../sass/custom.scss */
+/* line 1277, ../sass/custom.scss */
 html body #content.login form .container .select2-container .select2-choice .select2-arrow {
   width: 40px;
 }
-/* line 1274, ../sass/custom.scss */
+/* line 1279, ../sass/custom.scss */
 html body #content.login form .container .select2-container .select2-choice .select2-arrow b {
   width: 18px;
   margin: 0 11px;
   background-position-y: 7px;
 }
-/* line 1282, ../sass/custom.scss */
+/* line 1287, ../sass/custom.scss */
 html body #content.login form .container .select2-results .select2-result-label {
   color: #a8a8a7 !important;
 }
-/* line 1286, ../sass/custom.scss */
+/* line 1291, ../sass/custom.scss */
 html body #content.login form .error_message {
   margin: auto;
   margin-bottom: 20px;
   color: #fb0301;
   font: 1.5rem 'biko';
 }
-/* line 1292, ../sass/custom.scss */
+/* line 1297, ../sass/custom.scss */
 html body #content.login form button {
   border-radius: 5px;
   background: #0fa7b7;
@@ -1550,19 +1556,19 @@ html body #content.login form button {
   line-height: 40px;
   cursor: pointer;
 }
-/* line 1307, ../sass/custom.scss */
+/* line 1312, ../sass/custom.scss */
 html body .cm_images {
   margin: auto;
   width: 100%;
 }
-/* line 1311, ../sass/custom.scss */
+/* line 1316, ../sass/custom.scss */
 html body .cm_images .image embed {
   margin: auto;
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 1320, ../sass/custom.scss */
+/* line 1325, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -1570,7 +1576,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 1326, ../sass/custom.scss */
+/* line 1331, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
