@@ -27,7 +27,6 @@ class CrudCourseController extends Controller
             ->add('save', 'submit')
             ->getForm();
 
-
         $request = $this->getRequest();
 
         $form->handleRequest($request);

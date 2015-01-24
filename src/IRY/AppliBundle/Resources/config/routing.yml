@@ -27,6 +27,9 @@ iry_appli_dc:
     path:   /defriefing/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:debriefing"}
 
+iry_crud:
+    path:   /crud
+    defaults: {_controller: IRYAppliBundle:Application:crud}
 iry_crud_heli_list:
     path:   /crud/helicopters
     defaults: {_controller: IRYAppliBundle:CrudHelicopter:helicopters}
