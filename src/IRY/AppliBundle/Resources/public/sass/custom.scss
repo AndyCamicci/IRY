@@ -411,7 +411,9 @@ html{
 			}
 			#legend{
 				position: fixed;
+				bottom: 0;
 				width: 100%;
+				background: $grey-light-color;
 				border-top: 1px solid $grey-color;
 				.types_course{
 					display: inline-block;
