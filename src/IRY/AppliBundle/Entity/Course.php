@@ -156,7 +156,7 @@ class Course {
 
     public function getLastStep()
     {
-        $higherStep;
+        $higherStep = null;
         $higherStepOrder = null;
 
         foreach ($this->getSteps() as $key => $step) {

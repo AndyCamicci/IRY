@@ -855,7 +855,7 @@ html{
 						}
 						h3{
 							&:before{
-								content: url(../img/moins_entoure.png) center no-repeat;
+								content: url(../img/moins_entoure.png) center no-repeat !important;
 							}
 						}
 					}
@@ -1014,6 +1014,11 @@ html{
 										background-size:cover;
 									}
 								}
+								.no-favorite {
+									height:30px;
+									width:30px;
+									float:left;
+								}
 							}
 							li.li_head{
 								height:25px;
@@ -1086,12 +1091,6 @@ html{
 			#close {
 			  display: none; 
 			}
-			/**.text{
-				text-align: right;
-                margin: auto;
-                padding: 6px 210px;
-      
-				}**/
 			.schema_image{
 				position: fixed;
 				bottom: 0;
@@ -1116,7 +1115,6 @@ html{
 					height: 126px;
 				}
 			}
-
 			section#dc{
 				text-align: center;
 				.dc_wrap{
@@ -1304,7 +1302,148 @@ html{
 						cursor: pointer;
 					}
 				}
+			}
+			&.crud-container {
+				padding: 30px;
+				overflow: auto;
+				margin: auto;
+				.list {
+					text-align: center;
+					padding: 10px;
+					margin: 15px auto 100px;
+					li {
+						display: inline-block;
+						position: relative;
+						margin: 10px;
+						background-color: $grey-color;
+						padding: 20px 95px 20px 20px;
+						color: $cd-color;
+						text-align: left;
 
+						.actions {
+							text-align: right;
+							position: absolute;
+							top: 17px;
+							right: 20px;
+							a {
+								display: inline-block;
+								width: 20px;
+								height: 20px;
+								background-size: cover;
+							}
+							.update {
+								background-image: url("../img/crud/update.png");
+								
+							}
+							.delete {
+								background-image: url("../img/crud/delete.png");
+							}
+							.add {
+								background-image: url("../img/crud/plus.png");
+							}
+							.go {
+								background-image: url("../img/crud/go.png");
+							}
+						}
+						&:after {
+							content: "";
+							display: block;
+							border-left: 1px white solid;
+							width: 10px;
+							height: 60%;
+							position: absolute;
+							right: 70px;
+							top: 20%;
+						}
+					
+						&.add, &.go {
+							background-color: $blue-color;
+							color: white;
+							padding: 20px 70px 20px 20px;
+							&:after {
+								right: 45px;
+							}
+						}
+					}
+					tr{
+						margin: 10px;
+						padding: 20px;
+						th, td{
+							padding: 15px;
+						}
+						th{
+							color: white;
+							background: $blue-color;
+						}
+						td{
+							position: relative;
+							color: $blue-color;
+							background-color: $grey-color;
+							&.update, &.delete{
+								padding: 0;
+								a{
+									height: 100%;
+									width: 100%;
+									display: inline-block;
+								}
+							}
+							&.update{
+								background: url("../img/crud/update.png") no-repeat $grey-color center;
+								background-size: auto 30px;
+							}
+							&.delete{
+								background: url("../img/crud/delete.png") no-repeat $grey-color center;
+								background-size: auto 30px;
+							}
+						}
+					}
+				}
+				&>.label{
+					color: $blue-color;
+					font: 1.2rem 'biko';
+				}
+				form{
+					text-align: center;
+					margin: 15px;
+					&>div{
+						display: inline-block;
+						text-align: right;
+						color: $blue-color;
+						label, input{
+							color: $blue-color;
+							padding: 5px;
+							width: 260px;
+							&#immersiveMovie_file, &#image_file{
+								padding: 0;
+								width: 274px;
+							}
+						}
+						.select2-container{
+							width: 274px;
+							a{
+								border-radius: 0;
+								color: $blue-color;
+
+							}
+
+						}
+					}
+					button{
+						padding: 5px;
+						color: $blue-color;
+					}
+				}
+				.filter{
+					margin: 15px;
+					label{
+						padding: 5px;
+						color: $blue-color;
+					}
+					input{
+						padding: 5px;
+						width: 150px;
+					}
+				}
 			}
 		}
 		.cm_images{

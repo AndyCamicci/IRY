@@ -1,3 +1,7 @@
+iry_web_doc:
+    resource: "@IRYWebDocBundle/Resources/config/routing.yml"
+    prefix:   /
+
 iry_api:
     resource: "@IRYApiBundle/Resources/config/routing.yml"
     prefix:   /api
@@ -8,7 +12,7 @@ iry_security:
 
 iry_appli:
     resource: "@IRYAppliBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /instructeur/
 
 _console:
     resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"

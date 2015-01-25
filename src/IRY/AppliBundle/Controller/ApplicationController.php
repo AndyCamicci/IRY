@@ -160,4 +160,8 @@ class ApplicationController extends Controller
             "course" => $course_id
         )); 
     }
+    public function crudAction()
+    {
+        return $this->render('IRYAppliBundle:Crud:crud.html.twig'); 
+    }
 }

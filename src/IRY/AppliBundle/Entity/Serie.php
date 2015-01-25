@@ -11,6 +11,11 @@ class Serie {
     private $name;
 	private $helicopter;
     private $courses;
+    /* Used to communicate with Immersive Application */
+    private $command;
+
+    const COMMAND_STARTCOURSE = "STARTPRACTICALTRAINING";
+
     /**
      * Constructor
      */
@@ -137,9 +142,32 @@ class Serie {
     public function addCourseIfNotExists(\IRY\AppliBundle\Entity\Course $course)
     {
         if ($this->courses->contains($course) == false) {
-            $this->courses[] = $courses;
+            $this->courses[] = $course;
         }
 
         return $this;
+    }
+
+    /**
+     * Set command
+     *
+     * @param string $command
+     * @return Serie
+     */
+    public function setCommand($command)
+    {
+        $this->command = $command;
+
+        return $this;
+    }
+
+    /**
+     * Get command
+     *
+     * @return string 
+     */
+    public function getCommand()
+    {
+        return $this->command;
     }
 }

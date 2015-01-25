@@ -1,10 +1,47 @@
-{{ form(helicopterForm) }}
-<table>
-{% for helicopter in helicopters %}
-	<tr>
-		<td>{{helicopter.name}}</td>
-		<td><a href="{{ path('iry_crud_heli_update', {'id': helicopter.id}) }}">Update</a></td>
-		<td><a href="{{ path('iry_crud_heli_delete', {'id': helicopter.id}) }}">Delete</a></td>
-	</tr>
-{% endfor %}
-</ul>
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Helicopters
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+
+		<label class="label">Add an Helicopter</label>
+		{{ form(addHelicopterForm) }}
+		<label class="label">Manage Helicopters</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<ul class="list">
+			{% for helicopter in helicopters %}
+			<li>
+				<span class="name">{{helicopter.name}}</span>
+				<span class="actions">
+					<a href="{{ path('iry_crud_heli_update', {'id': helicopter.id}) }}" class="update"></a>
+					<a href="{{ path('iry_crud_heli_delete', {'id': helicopter.id}) }}" class="delete"></a>
+				</span>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<script>
+		var input = $(".filter").find("input");
+		var lis = $(".list li");
+		input.bind("keyup", function(e) {
+			lis.each(function() {
+				var name = $(this).find(".name").html();
+				if (name != null) {
+					var val = input.val();
+					if (name.toLowerCase().indexOf(val.toLowerCase()) == -1) {
+						$(this).hide();
+					} else {
+						$(this).show();
+					}
+				}
+			});
+		});
+	</script>
+{% endblock %}

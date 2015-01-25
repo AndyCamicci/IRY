@@ -1,4 +1,0 @@
-IRY\AppliBundle\Entity\Pilot:
-    properties:
-        name:
-            - NotBlank: ~

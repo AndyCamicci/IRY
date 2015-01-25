@@ -1,0 +1,7 @@
+parameters:
+#    iry_web_doc.example.class: IRY\WebDocBundle\Example
+
+services:
+#    iry_web_doc.example:
+#        class: %iry_web_doc.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

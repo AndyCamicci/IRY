@@ -32,9 +32,61 @@ class CrudImageController extends Controller
 
         $images = $repo->findAll();
 
-        return $this->render('IRYAppliBundle:Crud:Image/show.html.twig', array(
+        return $this->render('IRYAppliBundle:Crud:Image/list.html.twig', array(
             'Form' => $form->createView(),
             'images' => $images
         ));
+    }
+
+    function deleteImageAction(Image $image)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($image);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('iry_crud_images'));
+    }
+
+    function createImageAction()
+    {
+        $image = new Image();
+        $form = $this->processForm($image);
+        
+        if ($form === true) {
+            return $this->redirect($this->generateUrl('iry_crud_images'));
+        }
+
+        return $this->render('IRYAppliBundle:Crud:Image/update.html.twig', array(
+            'imageForm' => $form->createView(),
+        ));
+    }
+
+    function updateImageAction(Image $image)
+    {
+        $form = $this->processForm($image);
+
+        if ($form === true) {
+            return $this->redirect($this->generateUrl('iry_crud_images'));
+        }
+
+        return $this->render('IRYAppliBundle:Crud:Image/update.html.twig', array(
+            'imageForm' => $form->createView(),
+        ));
+    }
+
+    private function processForm(Image $image)
+    {
+        $form = $this->createForm(new ImageType(), $image);
+        $form->handleRequest($this->getRequest());
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($image);
+            $em->flush();
+
+            return true;
+        }
+
+        return $form;
     }
 }

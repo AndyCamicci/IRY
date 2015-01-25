@@ -15,7 +15,7 @@
         <section id="ep-pilote" class="cf">
             <div class="cd_video">
 
-            {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }}
+            {#{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }#}
             
             </div>
             <div class="ep_list_wrap">
@@ -61,9 +61,15 @@
                             		{% set nbSuccess = nbSuccess + 1 %}
                                 {% endif %}
                         	{% endfor %}
+
                             <li class="step" data-step-id="{{ step.id }}">
-                                <div class="favorite {{ step.lastResultFromPilot(pilot).isFavorite == true ? "is_favorite" : "" }}">                              
+                                {% if (step.lastResultFromPilot(pilot) != false) %}
+                                {% set lastResult = step.lastResultFromPilot(pilot) %}
+                                <div class="favorite {{ lastResult.isFavorite == true ? "is_favorite" : "" }}" data-result-id="{{ lastResult.id }}">                              
                                 </div>
+                                {% else %}
+                                <div class="no-favorite"></div>
+                                {% endif %}
                                 <div class="step_name element">
                                     <span>{{step.name}}</span>
                                 </div>
@@ -82,9 +88,8 @@
         </section>
     </div>
 	<script type="text/javascript">
-		var editResultUrl = "{{path("put_result", { 
-			"result"  : 0,
-			"_format" : "json"
+		var setAsFavorite = "{{path("iry_rest_set_as_favorite", { 
+			"id"  : 0,
 		})}}";
 	</script>
 {% endblock %}

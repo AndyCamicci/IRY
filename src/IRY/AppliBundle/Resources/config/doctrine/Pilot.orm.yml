@@ -11,6 +11,7 @@ IRY\AppliBundle\Entity\Pilot:
         name:
             type: string
             length: 255
+            nullable: true
         isCalling:
             type: boolean
             nullable: true

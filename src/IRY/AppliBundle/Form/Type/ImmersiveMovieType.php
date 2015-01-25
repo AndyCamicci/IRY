@@ -13,7 +13,6 @@ class ImmersiveMovieType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text')
-            ->add('file', 'file')
             ->add('course', 'entity',array(
                 'class'=>'IRYAppliBundle:Course',
                 'property'=>'fullName',
@@ -21,6 +20,7 @@ class ImmersiveMovieType extends AbstractType
                     return $er->createQueryBuilder('c')
                     ->where('c.typeCourse = 3');
                 }))
+            ->add('file', 'file')
             ->add('save', 'submit');
     }
 

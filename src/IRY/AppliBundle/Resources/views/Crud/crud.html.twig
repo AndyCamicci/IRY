@@ -1,0 +1,63 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+{% block header_title %}
+	Data Management
+{% endblock %}
+{% block header_back_btn %}
+	<a href="{{ path('iry_appli_home') }}" id="back_btn">
+		<img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+	</a>
+{% endblock %}
+{% block body %}
+    <div id="content" class="crud-container">
+      <ul class="list">
+        <li class="go">
+          <span>Serie Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_serie_list') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>Helicopters Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_heli_list') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>System Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_theme_list') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>Sub-system Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_subTheme_list') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>Chapter Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_course_list') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>Step</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_step_list') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>Image Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_images') }}" class="go"></a>
+          </span>
+        </li>
+        <li class="go">
+          <span>Immersive Movie Management</span>
+          <span class="actions">
+            <a href="{{ path('iry_crud_immersiveMovies') }}" class="go"></a>
+          </span>
+        </li>
+      </ul>
+    </div>
+{% endblock %}

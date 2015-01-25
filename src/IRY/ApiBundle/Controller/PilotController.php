@@ -108,4 +108,37 @@ class PilotController extends Controller implements ClassResourceInterface
 
         return array('form' => $form);
     }
+
+    /**
+     * This API method edit a Pilot giving it's id
+     *
+     * @ApiDoc(
+     *  resource=true,
+     * )
+     *
+     * @return array
+     * @View()
+     */
+    public function putAction(Pilot $pilot)
+    {
+        return $this->processForm($pilot);
+    }
+
+    /**
+     * This API method edit a Pilot giving it's id
+     *
+     * @ApiDoc(
+     *  description="This API method create one pilot.",
+     *  input="IRY\AppliBundle\Form\Type\PilotType",
+     *  output="IRY\AppliBundle\Entity\Pilot"
+     * )
+     *
+     * @param Pilot $pilot
+     * @return array
+     * @View()
+     */
+    public function patchAction(Pilot $pilot)
+    {
+        return $this->processForm($pilot);
+    }
 }

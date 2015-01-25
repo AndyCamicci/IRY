@@ -1,0 +1,35 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Series
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Add a Serie</label>
+		{{ form(addSerieForm) }}
+		<label class="label">Manage Series</label>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for serie in series %}
+			<tr>
+				<td>{{serie.id}}</td>
+				<td>{{serie.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_serie_update', { id: serie.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_serie_delete', { id: serie.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

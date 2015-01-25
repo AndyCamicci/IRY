@@ -1,15 +1,39 @@
-{{ form(addCourseForm) }}
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
 
-List
-<table>
+{% block header_title %}
+    Chapters
+{% endblock %}
 
-{% for course in courses %}
-	<tr>
-		<td>{{course.id}}</td>
-		<td>{{course.name}}</td>
-		<td><a href="{{ path('iry_crud_course_update', { id: course.id }) }}">MAJ</a></td>
-		<td><a href="{{ path('iry_crud_course_delete', { id: course.id }) }}">Supprimer</a></td>
-	</tr>
-{% endfor %}
-
-</table>
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Add a Chapter</label>
+		{{ form(addCourseForm) }}
+		<label class="label">Manage Chapters</label>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Sub-system</th>
+				<th>Type</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for course in courses %}
+			<tr>
+				<td>{{course.id}}</td>
+				<td>{{course.name}}</td>
+				<td>{{course.subTheme.name}}</td>
+				<td>{{course.typeCourse.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_course_update', { id: course.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_course_delete', { id: course.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}
