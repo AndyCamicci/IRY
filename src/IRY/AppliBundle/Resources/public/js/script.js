@@ -158,7 +158,33 @@ $(document).ready(function() {
 	});
 	$("select").select2();
 
+
+	/* CRUD */
+	if ($(".crud-container").length > 0) {
+		crudFilter();
+	}
 });
+
+function crudFilter() {
+	console.log("filter");
+	var input = $(".filter").find("input");
+	var trs = $(".list tr:not(:first-of-type)");
+	input.bind("keyup", function(e) {
+		trs.each(function() {
+			var name = $(this).text();
+			console.log(name);
+			if (name != null) {
+				var val = input.val();
+				if (name.toLowerCase().indexOf(val.toLowerCase()) == -1) {
+					$(this).hide();
+				} else {
+					$(this).show();
+				}
+			}
+		});
+	});
+}
+
 
 function updatePercentValue($el) {
 	var percent = $el.attr("data-percent");

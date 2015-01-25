@@ -140,7 +140,7 @@ iry_rest_get_last_instruction:
     defaults: {_controller: IRYAppliBundle:REST:getLastInstruction}
     methods:   [GET]
 
-iry_rest_get_last_instruction:
+iry_rest_get_course_instruction:
     path:   /rest/course_instructions/{id}
     defaults: {_controller: IRYAppliBundle:REST:getCourseInstructions}
     methods:   [GET]

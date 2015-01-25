@@ -1,0 +1,62 @@
+@mixin translate($x,$y){
+      transform:translate($x, $y);
+       -o-transform:translate($x, $y);
+    -ms-transform:translate($x, $y);
+     -moz-transform:translate($x, $y);
+  -webkit-transform:translate($x, $y);
+}
+
+@mixin rotate($x){
+    -webkit-transform:  rotate($x+deg);
+    -moz-transform:     rotate($x+deg);
+    -ms-transform:      rotate($x+deg);
+    -o-transform:       rotate($x+deg);
+    transform:          rotate($x+deg);
+}
+
+@mixin translate_rotate($x,$y,$r:0){
+      transform:     translate($x, $y) rotate($r+deg);
+       -o-transform: translate($x, $y) rotate($r+deg);
+    -ms-transform:   translate($x, $y) rotate($r+deg);
+     -moz-transform: translate($x, $y) rotate($r+deg);
+  -webkit-transform: translate($x, $y) rotate($r+deg);
+}
+
+@mixin translate3d($x,$y,$z,$d){
+      transform:translate3d($x,$y,$z) rotateX($d);
+       -o-transform:translate3d($x,$y,$z) rotateX($d);
+    -ms-transform:translate3d($x,$y,$z) rotateX($d);
+     -moz-transform:translate3d($x,$y,$z) rotateX($d);
+  -webkit-transform:translate3d($x,$y,$z) rotateX($d);
+}
+
+@mixin scale($x,$y){
+      transform:scale($x, $y);
+       -o-transform:scale($x, $y);
+    -ms-transform:scale($x, $y);
+     -moz-transform:scale($x, $y);
+  -webkit-transform:scale($x, $y);
+}
+
+@mixin transform-origin($x,$y){
+      transform-origin:$x $y;
+       -o-transform-origin:$x $y;
+    -ms-transform-origin:$x $y;
+     -moz-transform-origin:$x $y;
+  -webkit-transform-origin:$x $y;
+}
+
+@mixin transition($prop, $time, $ease, $delay:0){
+      transition: $prop $time $ease $delay;
+       -o-transition: $prop $time $ease $delay;
+    -ms-transition: $prop $time $ease $delay;
+     -moz-transition: $prop $time $ease $delay;
+  -webkit-transition: $prop $time $ease $delay;
+}
+@mixin border-radius($tl, $tr:tl, $br:$tl, $bl:$tl){
+      border-radius: $tl $tr $br $bl;
+       -o-border-radius: $tl $tr $br $bl;
+    -ms-border-radius: $tl $tr $br $bl;
+     -moz-border-radius: $tl $tr $br $bl;
+  -webkit-border-radius: $tl $tr $br $bl;
+}

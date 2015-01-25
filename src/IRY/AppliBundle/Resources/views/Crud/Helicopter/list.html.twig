@@ -14,34 +14,29 @@
 			<label for="">Filter</label>
 			<input type="text">
 		</div>
-		<ul class="list">
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
 			{% for helicopter in helicopters %}
-			<li>
-				<span class="name">{{helicopter.name}}</span>
-				<span class="actions">
-					<a href="{{ path('iry_crud_heli_update', {'id': helicopter.id}) }}" class="update"></a>
-					<a href="{{ path('iry_crud_heli_delete', {'id': helicopter.id}) }}" class="delete"></a>
-				</span>
-			</li>
+			<tr>
+				<td>{{helicopter.id}}</td>
+				<td>{{helicopter.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_heli_update', { id: helicopter.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_heli_delete', { id: helicopter.id }) }}">
+					</a>
+				</td>
+			</tr>
 			{% endfor %}
-		</ul>
+		</table>
 	</div>
 
-	<script>
-		var input = $(".filter").find("input");
-		var lis = $(".list li");
-		input.bind("keyup", function(e) {
-			lis.each(function() {
-				var name = $(this).find(".name").html();
-				if (name != null) {
-					var val = input.val();
-					if (name.toLowerCase().indexOf(val.toLowerCase()) == -1) {
-						$(this).hide();
-					} else {
-						$(this).show();
-					}
-				}
-			});
-		});
-	</script>
+	
 {% endblock %}

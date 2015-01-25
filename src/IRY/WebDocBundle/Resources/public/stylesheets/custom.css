@@ -1,0 +1,774 @@
+@font-face {
+  font-family: 'biko';
+  src: url("../fonts/biko_regular-webfont.eot");
+  src: url("../fonts/biko_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/biko_regular-webfont.woff2") format("woff2"), url("../fonts/biko_regular-webfont.woff") format("woff"), url("../fonts/biko_regular-webfont.ttf") format("truetype"), url("../fonts/biko_regular-webfont.svg#bikoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'biko_bold';
+  src: url("../fonts/biko_bold-webfont.eot");
+  src: url("../fonts/biko_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/biko_bold-webfont.woff2") format("woff2"), url("../fonts/biko_bold-webfont.woff") format("woff"), url("../fonts/biko_bold-webfont.ttf") format("truetype"), url("../fonts/biko_bold-webfont.svg#bikoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 4, ../sass/custom.scss */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* line 8, ../sass/custom.scss */
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+/* line 13, ../sass/custom.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 16, ../sass/custom.scss */
+.cf {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+/* line 20, ../sass/custom.scss */
+.left {
+  float: left;
+}
+
+/* line 21, ../sass/custom.scss */
+.right {
+  float: right;
+}
+
+/* line 22, ../sass/custom.scss */
+.center {
+  text-align: center;
+}
+
+/* line 23, ../sass/custom.scss */
+.hide {
+  display: none;
+}
+
+/* line 34, ../sass/custom.scss */
+html {
+  min-height: 100%;
+  height: 100%;
+}
+/* line 37, ../sass/custom.scss */
+html body {
+  position: relative;
+  font-family: arial;
+  font-size: 15px;
+  min-height: 100%;
+  height: 100%;
+}
+/* line 52, ../sass/custom.scss */
+html body header.home-header {
+  position: relative;
+  text-align: center;
+  background: #FFFFFF;
+}
+/* line 56, ../sass/custom.scss */
+html body header.home-header .logo {
+  display: inline-block;
+  padding: 10px 0 0;
+}
+/* line 59, ../sass/custom.scss */
+html body header.home-header .logo img {
+  height: 55px;
+}
+/* line 63, ../sass/custom.scss */
+html body header.home-header .langue {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 25px;
+  color: #a8a8a7;
+}
+/* line 69, ../sass/custom.scss */
+html body header.home-header .langue a {
+  color: #a8a8a7;
+  font: 1rem arial;
+  text-decoration: none;
+}
+/* line 73, ../sass/custom.scss */
+html body header.home-header .langue a.langue-active, html body header.home-header .langue a:hover, html body header.home-header .langue a:focus, html body header.home-header .langue a:active {
+  text-decoration: underline;
+}
+/* line 78, ../sass/custom.scss */
+html body header.home-header:after {
+  content: "";
+  background: url(../images/header_arrow.svg);
+  position: absolute;
+  bottom: -50px;
+  width: 180px;
+  height: 50px;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+/* line 90, ../sass/custom.scss */
+html body header.small-header {
+  width: 240px;
+  height: 240px;
+  background: url("../images/triangle-top-left-header.png") no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 97, ../sass/custom.scss */
+html body header.small-header img {
+  margin-left: 23px;
+  margin-top: 27px;
+  width: 134px;
+}
+/* line 103, ../sass/custom.scss */
+html body .content {
+  background: url(../images/bg.jpg) no-repeat;
+  padding: 40px 40px 10px 40px;
+  color: #FFFFFF;
+}
+/* line 107, ../sass/custom.scss */
+html body .content .content-left {
+  display: inline-block;
+  width: 40%;
+  margin-right: 9%;
+  margin-left: 5%;
+}
+/* line 112, ../sass/custom.scss */
+html body .content .content-left h1 {
+  font: bold 4rem 'biko_bold';
+  text-transform: uppercase;
+}
+/* line 116, ../sass/custom.scss */
+html body .content .content-left hr {
+  background: #FFFFFF;
+  height: 1px;
+  border: none;
+  margin: 15px 0;
+}
+/* line 122, ../sass/custom.scss */
+html body .content .content-left p {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+/* line 127, ../sass/custom.scss */
+html body .content .content-left .logo-airbus {
+  text-align: center;
+}
+/* line 129, ../sass/custom.scss */
+html body .content .content-left .logo-airbus img {
+  height: 55px;
+}
+/* line 134, ../sass/custom.scss */
+html body .content .content-right {
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+}
+/* line 138, ../sass/custom.scss */
+html body .content .content-right .svg {
+  text-align: center;
+  margin: 50px;
+}
+/* line 141, ../sass/custom.scss */
+html body .content .content-right .svg svg {
+  overflow: visible;
+}
+/* line 143, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert {
+  transition: all 0.1s ease-in-out 0;
+  -o-transition: all 0.1s ease-in-out 0;
+  -ms-transition: all 0.1s ease-in-out 0;
+  -moz-transition: all 0.1s ease-in-out 0;
+  -webkit-transition: all 0.1s ease-in-out 0;
+}
+/* line 145, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert .cam_titre {
+  transition: all 0.4s ease-in-out 0;
+  -o-transition: all 0.4s ease-in-out 0;
+  -ms-transition: all 0.4s ease-in-out 0;
+  -moz-transition: all 0.4s ease-in-out 0;
+  -webkit-transition: all 0.4s ease-in-out 0;
+}
+/* line 147, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert .cam_titre text {
+  font: 1.1rem 'biko_bold';
+  text-transform: uppercase;
+}
+/* line 153, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#top .cam_titre {
+  transform: translate(173px, -980px);
+  -o-transform: translate(173px, -980px);
+  -ms-transform: translate(173px, -980px);
+  -moz-transform: translate(173px, -980px);
+  -webkit-transform: translate(173px, -980px);
+}
+/* line 156, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#top:hover {
+  transform: translate(0px, -20px);
+  -o-transform: translate(0px, -20px);
+  -ms-transform: translate(0px, -20px);
+  -moz-transform: translate(0px, -20px);
+  -webkit-transform: translate(0px, -20px);
+}
+/* line 158, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#top:hover .cam_titre {
+  transform: translate(173px, 20px);
+  -o-transform: translate(173px, 20px);
+  -ms-transform: translate(173px, 20px);
+  -moz-transform: translate(173px, 20px);
+  -webkit-transform: translate(173px, 20px);
+}
+/* line 164, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#right .cam_titre {
+  transform: translate(1320px, 166px);
+  -o-transform: translate(1320px, 166px);
+  -ms-transform: translate(1320px, 166px);
+  -moz-transform: translate(1320px, 166px);
+  -webkit-transform: translate(1320px, 166px);
+}
+/* line 167, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#right:hover {
+  transform: translate(20px, 0px);
+  -o-transform: translate(20px, 0px);
+  -ms-transform: translate(20px, 0px);
+  -moz-transform: translate(20px, 0px);
+  -webkit-transform: translate(20px, 0px);
+}
+/* line 169, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#right:hover .cam_titre {
+  transform: translate(320px, 166px);
+  -o-transform: translate(320px, 166px);
+  -ms-transform: translate(320px, 166px);
+  -moz-transform: translate(320px, 166px);
+  -webkit-transform: translate(320px, 166px);
+}
+/* line 175, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#bottom .cam_titre {
+  transform: translate(173px, 1320px);
+  -o-transform: translate(173px, 1320px);
+  -ms-transform: translate(173px, 1320px);
+  -moz-transform: translate(173px, 1320px);
+  -webkit-transform: translate(173px, 1320px);
+}
+/* line 178, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#bottom:hover {
+  transform: translate(0px, 20px);
+  -o-transform: translate(0px, 20px);
+  -ms-transform: translate(0px, 20px);
+  -moz-transform: translate(0px, 20px);
+  -webkit-transform: translate(0px, 20px);
+}
+/* line 180, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#bottom:hover .cam_titre {
+  transform: translate(173px, 320px);
+  -o-transform: translate(173px, 320px);
+  -ms-transform: translate(173px, 320px);
+  -moz-transform: translate(173px, 320px);
+  -webkit-transform: translate(173px, 320px);
+}
+/* line 186, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#left .cam_titre {
+  transform: translate(-975px, 166px);
+  -o-transform: translate(-975px, 166px);
+  -ms-transform: translate(-975px, 166px);
+  -moz-transform: translate(-975px, 166px);
+  -webkit-transform: translate(-975px, 166px);
+}
+/* line 189, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#left:hover {
+  transform: translate(-20px, 0px);
+  -o-transform: translate(-20px, 0px);
+  -ms-transform: translate(-20px, 0px);
+  -moz-transform: translate(-20px, 0px);
+  -webkit-transform: translate(-20px, 0px);
+}
+/* line 191, ../sass/custom.scss */
+html body .content .content-right .svg svg .camembert#left:hover .cam_titre {
+  transform: translate(25px, 166px);
+  -o-transform: translate(25px, 166px);
+  -ms-transform: translate(25px, 166px);
+  -moz-transform: translate(25px, 166px);
+  -webkit-transform: translate(25px, 166px);
+}
+/* line 199, ../sass/custom.scss */
+html body .content .content-right .consigne {
+  font: 1rem arial;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+/* line 206, ../sass/custom.scss */
+html body .content.full {
+  min-height: 100%;
+  padding: 0;
+  text-align: center;
+}
+/* line 212, ../sass/custom.scss */
+html body .content.team {
+  background-image: url("../images/bg-team.jpg");
+  background-position: center 25%;
+}
+/* line 215, ../sass/custom.scss */
+html body .content.team h1 {
+  font-size: 36px;
+  padding-top: 34px;
+  font-family: "biko_bold";
+  padding-bottom: 36px;
+}
+/* line 221, ../sass/custom.scss */
+html body .content.team blockquote {
+  width: 500px;
+  height: 70px;
+  text-align: right;
+  margin: auto;
+  font-size: 15px;
+}
+/* line 227, ../sass/custom.scss */
+html body .content.team blockquote cite {
+  display: block;
+  padding-top: 5px;
+}
+/* line 230, ../sass/custom.scss */
+html body .content.team blockquote cite:before {
+  content: "-- ";
+}
+/* line 236, ../sass/custom.scss */
+html body .content.team .poles {
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+}
+/* line 241, ../sass/custom.scss */
+html body .content.team .poles h2 {
+  font-family: "biko_bold";
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  margin-left: 60px;
+  text-transform: uppercase;
+}
+/* line 251, ../sass/custom.scss */
+html body .content.team .poles .barre {
+  height: 2px;
+  background: #ffffff;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 40px;
+}
+/* line 259, ../sass/custom.scss */
+html body .content.team .poles .pole {
+  width: 80px;
+  height: 80px;
+  margin: 0 50px;
+  display: inline-block;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+  cursor: pointer;
+}
+/* line 272, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-gestion {
+  background-image: url(../images/poles/chef_G.png);
+}
+/* line 273, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-dev {
+  background-image: url(../images/poles/tech_G.png);
+}
+/* line 274, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-crea {
+  background-image: url(../images/poles/crea_G.png);
+}
+/* line 275, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-audio {
+  background-image: url(../images/poles/av_G.png);
+}
+/* line 276, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-comm {
+  background-image: url(../images/poles/com_G.png);
+}
+/* line 278, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-gestion.active, html body .content.team .poles .pole.pole-gestion:hover {
+  background-image: url(../images/poles/chef_B.png);
+}
+/* line 279, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-dev.active, html body .content.team .poles .pole.pole-dev:hover {
+  background-image: url(../images/poles/tech_B.png);
+}
+/* line 280, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-crea.active, html body .content.team .poles .pole.pole-crea:hover {
+  background-image: url(../images/poles/crea_B.png);
+}
+/* line 281, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-audio.active, html body .content.team .poles .pole.pole-audio:hover {
+  background-image: url(../images/poles/av_B.png);
+}
+/* line 282, ../sass/custom.scss */
+html body .content.team .poles .pole.pole-comm.active, html body .content.team .poles .pole.pole-comm:hover {
+  background-image: url(../images/poles/com_B.png);
+}
+/* line 285, ../sass/custom.scss */
+html body .content.team .poles-membres {
+  margin-top: 40px;
+}
+/* line 289, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre {
+  width: 110px;
+  height: 110px;
+  margin: 0 50px;
+  display: inline-block;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  transition: background-size 0.1s ease-in-out 0;
+  -o-transition: background-size 0.1s ease-in-out 0;
+  -ms-transition: background-size 0.1s ease-in-out 0;
+  -moz-transition: background-size 0.1s ease-in-out 0;
+  -webkit-transition: background-size 0.1s ease-in-out 0;
+  cursor: pointer;
+}
+/* line 304, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.florent {
+  background-image: url(../images/equipe/flo-gris.png);
+}
+/* line 305, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.andy {
+  background-image: url(../images/equipe/andy-gris.png);
+}
+/* line 306, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.tarek {
+  background-image: url(../images/equipe/tarek-gris.png);
+}
+/* line 307, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.yassine {
+  background-image: url(../images/equipe/yassine-gris.png);
+}
+/* line 308, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.warsama {
+  background-image: url(../images/equipe/warsama-gris.png);
+}
+/* line 309, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.robin {
+  background-image: url(../images/equipe/robin-gris.png);
+}
+/* line 310, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.yves {
+  background-image: url(../images/equipe/yves-gris.png);
+}
+/* line 311, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.anais {
+  background-image: url(../images/equipe/anais-gris.png);
+}
+/* line 312, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.madeline {
+  background-image: url(../images/equipe/mad-gris.png);
+}
+/* line 313, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.bin {
+  background-image: url(../images/equipe/bin-gris.png);
+}
+/* line 314, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.jeanedouard {
+  background-image: url(../images/equipe/JE-gris.png);
+}
+/* line 315, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.celtill {
+  background-image: url(../images/equipe/celt-gris.png);
+}
+/* line 316, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.manon {
+  background-image: url(../images/equipe/manon-gris.png);
+}
+/* line 317, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.fabio {
+  background-image: url(../images/equipe/fabio-gris.png);
+}
+/* line 318, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.jennifer {
+  background-image: url(../images/equipe/jennifer-gris.png);
+}
+/* line 319, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.marion {
+  background-image: url(../images/equipe/marion-gris.png);
+}
+/* line 320, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.jeremy {
+  background-image: url(../images/equipe/jeremy-gris.png);
+}
+/* line 321, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.lamia {
+  background-image: url(../images/equipe/lamia-gris.png);
+}
+/* line 323, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.florent.active, html body .content.team .poles-membres .pole .membre.florent:hover {
+  background-image: url(../images/equipe/flo-couleur.png);
+}
+/* line 324, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.andy.active, html body .content.team .poles-membres .pole .membre.andy:hover {
+  background-image: url(../images/equipe/andy-couleur.png);
+}
+/* line 325, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.tarek.active, html body .content.team .poles-membres .pole .membre.tarek:hover {
+  background-image: url(../images/equipe/tarek-couleur.png);
+}
+/* line 326, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.yassine.active, html body .content.team .poles-membres .pole .membre.yassine:hover {
+  background-image: url(../images/equipe/yassine-couleur.png);
+}
+/* line 327, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.warsama.active, html body .content.team .poles-membres .pole .membre.warsama:hover {
+  background-image: url(../images/equipe/warsama-couleur.png);
+}
+/* line 328, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.robin.active, html body .content.team .poles-membres .pole .membre.robin:hover {
+  background-image: url(../images/equipe/robin-couleur.png);
+}
+/* line 329, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.yves.active, html body .content.team .poles-membres .pole .membre.yves:hover {
+  background-image: url(../images/equipe/yves-couleur.png);
+}
+/* line 330, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.anais.active, html body .content.team .poles-membres .pole .membre.anais:hover {
+  background-image: url(../images/equipe/anais-couleur.png);
+}
+/* line 331, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.madeline.active, html body .content.team .poles-membres .pole .membre.madeline:hover {
+  background-image: url(../images/equipe/mad-couleur.png);
+}
+/* line 332, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.bin.active, html body .content.team .poles-membres .pole .membre.bin:hover {
+  background-image: url(../images/equipe/bin-couleur.png);
+}
+/* line 333, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.jeanedouard.active, html body .content.team .poles-membres .pole .membre.jeanedouard:hover {
+  background-image: url(../images/equipe/JE-couleur.png);
+}
+/* line 334, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.celtill.active, html body .content.team .poles-membres .pole .membre.celtill:hover {
+  background-image: url(../images/equipe/celt-couleur.png);
+}
+/* line 335, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.manon.active, html body .content.team .poles-membres .pole .membre.manon:hover {
+  background-image: url(../images/equipe/manon-couleur.png);
+}
+/* line 336, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.fabio.active, html body .content.team .poles-membres .pole .membre.fabio:hover {
+  background-image: url(../images/equipe/fabio-couleur.png);
+}
+/* line 337, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.jennifer.active, html body .content.team .poles-membres .pole .membre.jennifer:hover {
+  background-image: url(../images/equipe/jennifer-couleur.png);
+}
+/* line 338, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.marion.active, html body .content.team .poles-membres .pole .membre.marion:hover {
+  background-image: url(../images/equipe/marion-couleur.png);
+}
+/* line 339, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.jeremy.active, html body .content.team .poles-membres .pole .membre.jeremy:hover {
+  background-image: url(../images/equipe/jeremy-couleur.png);
+}
+/* line 340, ../sass/custom.scss */
+html body .content.team .poles-membres .pole .membre.lamia.active, html body .content.team .poles-membres .pole .membre.lamia:hover {
+  background-image: url(../images/equipe/lamia-couleur.png);
+}
+/* line 346, ../sass/custom.scss */
+html body .content.team .membre-selectionne {
+  margin-top: 20px;
+  font-family: "biko_bold";
+  font-size: 20px;
+}
+/* line 353, ../sass/custom.scss */
+html body .content.team .membre-selectionne p.description {
+  width: 60%;
+  margin: auto;
+  font-family: arial;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: justify;
+  line-height: 17px;
+}
+/* line 365, ../sass/custom.scss */
+html body .content.remerciements {
+  background-image: url("../images/bg-airbus.jpg");
+  background-position: center center;
+}
+/* line 369, ../sass/custom.scss */
+html body .content.remerciements.bg-airbus {
+  background-image: url("../images/bg-airbus.jpg");
+}
+/* line 372, ../sass/custom.scss */
+html body .content.remerciements.bg-ingemedia {
+  background-image: url("../images/bg-ingemedia.jpg");
+}
+/* line 375, ../sass/custom.scss */
+html body .content.remerciements section {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+/* line 382, ../sass/custom.scss */
+html body .content.remerciements section > .remerciements-body:before, html body .content.remerciements section > .remerciements-body:after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  height: 1px;
+  margin: 20px 0;
+}
+/* line 390, ../sass/custom.scss */
+html body .content.remerciements section h1 {
+  text-transform: uppercase;
+  padding: 100px 0 0 0;
+  font-family: arial;
+  font-size: 30px;
+}
+/* line 397, ../sass/custom.scss */
+html body .content.remerciements section p {
+  text-align: justify;
+  font-size: 13px;
+  line-height: 15px;
+}
+/* line 403, ../sass/custom.scss */
+html body .content.remerciements section ul {
+  font-size: 13px;
+  text-align: left;
+  margin-top: 15px;
+}
+/* line 407, ../sass/custom.scss */
+html body .content.remerciements section ul li {
+  line-height: 15px;
+}
+/* line 409, ../sass/custom.scss */
+html body .content.remerciements section ul li:before {
+  content: "- ";
+}
+/* line 415, ../sass/custom.scss */
+html body .content.remerciements section .airbus, html body .content.remerciements section .ingemedia {
+  display: inline-block;
+  margin: 0 50px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+/* line 421, ../sass/custom.scss */
+html body .content.remerciements section .airbus img, html body .content.remerciements section .ingemedia img {
+  width: 100%;
+}
+/* line 426, ../sass/custom.scss */
+html body .content.remerciements section .w50 {
+  width: 50%;
+  float: left;
+  padding-top: 20px;
+}
+/* line 431, ../sass/custom.scss */
+html body .content.remerciements section .w100 {
+  width: 100%;
+  padding-top: 20px;
+  clear: both;
+}
+/* line 438, ../sass/custom.scss */
+html body .content.remerciements section .back-btn {
+  display: inline-block;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  border: 2px white solid;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+/* line 449, ../sass/custom.scss */
+html body .content.remerciements section.remerciements-ingemedia .w50 {
+  padding-bottom: 20px;
+}
+/* line 457, ../sass/custom.scss */
+html body footer.home-footer {
+  /*position: absolute;*/
+  bottom: 0;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  background: #FFFFFF;
+}
+/* line 465, ../sass/custom.scss */
+html body footer.home-footer span {
+  font: 1rem arial;
+  color: #0fa7b7;
+}
+/* line 471, ../sass/custom.scss */
+html body footer.small-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  color: #bebdbc;
+  font-family: "biko_bold";
+}
+/* line 479, ../sass/custom.scss */
+html body footer.small-footer .small-nav {
+  vertical-align: middle;
+  text-align: right;
+  height: 100%;
+  display: inline-block;
+}
+/* line 488, ../sass/custom.scss */
+html body footer.small-footer .small-nav ul {
+  display: inline-block;
+  text-transform: uppercase;
+}
+/* line 491, ../sass/custom.scss */
+html body footer.small-footer .small-nav ul li {
+  display: inline-block;
+}
+/* line 493, ../sass/custom.scss */
+html body footer.small-footer .small-nav ul li:not(:first-of-type):before {
+  content: " | ";
+  color: #0fa7b7;
+  margin: 0 5px;
+}
+/* line 498, ../sass/custom.scss */
+html body footer.small-footer .small-nav ul li:last-of-type {
+  margin-right: 30px;
+}
+/* line 502, ../sass/custom.scss */
+html body footer.small-footer .small-nav ul li a {
+  color: #d1cece;
+  text-decoration: none;
+}
+/* line 507, ../sass/custom.scss */
+html body footer.small-footer .small-nav ul li.active a {
+  color: white;
+}
+/* line 513, ../sass/custom.scss */
+html body footer.small-footer .small-nav .menu {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  position: relative;
+  margin-right: 30px;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+/* line 521, ../sass/custom.scss */
+html body footer.small-footer .small-nav .menu p {
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+}
+/* line 528, ../sass/custom.scss */
+html body footer.small-footer .small-nav .menu img {
+  height: 100%;
+}
