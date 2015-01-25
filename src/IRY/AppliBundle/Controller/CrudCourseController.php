@@ -5,8 +5,9 @@ namespace IRY\AppliBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use IRY\AppliBundle\Entity\Helicopter;
-use IRY\AppliBundle\Entity\Theme;
+use IRY\AppliBundle\Entity\SubTheme;
 use IRY\AppliBundle\Entity\Course;
+use IRY\AppliBundle\Entity\CourseType;
 use IRY\AppliBundle\Entity\Image;
 use IRY\AppliBundle\Form\Type\ImageType;
 use IRY\AppliBundle\Entity\ImmersiveMovie;
@@ -16,17 +17,19 @@ class CrudCourseController extends Controller
 {
     function coursesAction()
     {
-
         $course = new Course();
         $form = $this->createFormBuilder($course)
             ->add('name', 'text')
-            ->add('theme', 'entity', array(
-                'class' => 'IRYAppliBundle:Theme',
-                'property' => 'fullName',
+            ->add('typeCourse', 'entity', array(
+                'class' => 'IRYAppliBundle:typeCourse',
+                'property' => 'name',
+            ))
+            ->add('subTheme', 'entity', array(
+                'class' => 'IRYAppliBundle:SubTheme',
+                'property' => 'name',
             ))
             ->add('save', 'submit')
             ->getForm();
-
 
         $request = $this->getRequest();
 
@@ -63,8 +66,12 @@ class CrudCourseController extends Controller
     {
         $form = $this->createFormBuilder($course)
             ->add('name', 'text')
-            ->add('theme', 'entity', array(
-                'class' => 'IRYAppliBundle:Theme',
+            ->add('typeCourse', 'entity', array(
+                'class' => 'IRYAppliBundle:typeCourse',
+                'property' => 'name',
+            ))
+            ->add('subTheme', 'entity', array(
+                'class' => 'IRYAppliBundle:SubTheme',
                 'property' => 'name',
             ))
             ->add('save', 'submit')

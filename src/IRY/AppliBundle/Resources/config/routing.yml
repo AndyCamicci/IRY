@@ -5,9 +5,6 @@ iry_appli_home:
 iry_appli_choixcours:
     path:   /choixcours/{helicopter_id}
     defaults: {_controller: "IRYAppliBundle:Application:choixcours"}
-# iry_appli_step:
-#     path:   /step/{course_id}
-#     defaults: {_controller: "IRYAppliBundle:Application:step"}
 iry_appli_cm:
     path:   /theoretical-course/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:coursMagistral"}
@@ -27,8 +24,9 @@ iry_appli_dc:
     path:   /defriefing/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:debriefing"}
 
-
-
+iry_crud:
+    path:   /crud
+    defaults: {_controller: IRYAppliBundle:Application:crud}
 iry_crud_heli_create:
     path:   /crud/helicopter/create
     defaults: {_controller: IRYAppliBundle:CrudHelicopter:createHelicopter}
@@ -41,8 +39,6 @@ iry_crud_heli_update:
 iry_crud_heli_delete:
     path:   /crud/helicopter/{id}/delete
     defaults: {_controller: IRYAppliBundle:CrudHelicopter:deleteHelicopter}
-
-
 iry_crud_theme_list:
     path:   /crud/themes
     defaults: {_controller: IRYAppliBundle:CrudTheme:themes}
@@ -52,7 +48,6 @@ iry_crud_theme_delete:
 iry_crud_theme_update:
     path:   /crud/theme/{id}/update
     defaults: {_controller: IRYAppliBundle:CrudTheme:updateTheme}
-
 iry_crud_course_list:
     path:   /crud/courses
     defaults: {_controller: IRYAppliBundle:CrudCourse:courses}
@@ -62,13 +57,75 @@ iry_crud_course_delete:
 iry_crud_course_update:
     path:   /crud/course/{id}/update
     defaults: {_controller: IRYAppliBundle:CrudCourse:updateCourse}
-
+iry_crud_step_list:
+    path:   /crud/steps
+    defaults: {_controller: IRYAppliBundle:CrudStep:steps}
+iry_crud_step_delete:
+    path:   /crud/step/{id}/delete
+    defaults: {_controller: IRYAppliBundle:CrudStep:deleteStep}
+iry_crud_step_update:
+    path:   /crud/step/{id}/update
+    defaults: {_controller: IRYAppliBundle:CrudStep:updateStep}
+iry_crud_serie_list:
+    path:   /crud/series
+    defaults: {_controller: IRYAppliBundle:CrudSerie:series}
+iry_crud_serie_create:
+    path:   /crud/serie/create
+    defaults: {_controller: IRYAppliBundle:CrudSerie:createSerie}
+iry_crud_serie_delete:
+    path:   /crud/serie/{id}/delete
+    defaults: {_controller: IRYAppliBundle:CrudSerie:deleteSerie}
+iry_crud_serie_update:
+    path:   /crud/serie/{id}/update
+    defaults: {_controller: IRYAppliBundle:CrudSerie:updateSerie}
+iry_crud_theme_list:
+    path:   /crud/themes
+    defaults: {_controller: IRYAppliBundle:CrudTheme:themes}
+iry_crud_theme_create:
+    path:   /crud/theme/create
+    defaults: {_controller: IRYAppliBundle:CrudTheme:createTheme}
+iry_crud_theme_delete:
+    path:   /crud/theme/{id}/delete
+    defaults: {_controller: IRYAppliBundle:CrudTheme:deleteTheme}
+iry_crud_theme_update:
+    path:   /crud/theme/{id}/update
+    defaults: {_controller: IRYAppliBundle:CrudTheme:updateTheme}
+iry_crud_subTheme_list:
+    path:   /crud/subThemes
+    defaults: {_controller: IRYAppliBundle:CrudSubTheme:subThemes}
+iry_crud_subTheme_create:
+    path:   /crud/subTheme/create
+    defaults: {_controller: IRYAppliBundle:CrudSubTheme:createSubTheme}
+iry_crud_subTheme_delete:
+    path:   /crud/subTheme/{id}/delete
+    defaults: {_controller: IRYAppliBundle:CrudSubTheme:deleteSubTheme}
+iry_crud_subTheme_update:
+    path:   /crud/subTheme/{id}/update
+    defaults: {_controller: IRYAppliBundle:CrudSubTheme:updateSubTheme}
 iry_crud_images:
     path:   /crud/images/
     defaults: {_controller: IRYAppliBundle:CrudImage:images}
+iry_crud_image_create:
+    path:   /crud/image/create
+    defaults: {_controller: IRYAppliBundle:CrudImage:createImage}
+iry_crud_image_delete:
+    path:   /crud/image/{id}/delete
+    defaults: {_controller: IRYAppliBundle:CrudImage:deleteImage}
+iry_crud_image_update:
+    path:   /crud/image/{id}/update
+    defaults: {_controller: IRYAppliBundle:CrudImage:updateImage}
 iry_crud_immersiveMovies:
     path:   /crud/immersiveMovies/
     defaults: {_controller: IRYAppliBundle:CrudImmersiveMovie:immersiveMovies}
+iry_crud_immersiveMovie_create:
+    path:   /crud/immersiveMovie/create
+    defaults: {_controller: IRYAppliBundle:CrudImmersiveMovie:createImmersiveMovie}
+iry_crud_immersiveMovie_delete:
+    path:   /crud/immersiveMovie/{id}/delete
+    defaults: {_controller: IRYAppliBundle:CrudImmersiveMovie:deleteImmersiveMovie}
+iry_crud_immersiveMovie_update:
+    path:   /crud/immersiveMovie/{id}/update
+    defaults: {_controller: IRYAppliBundle:CrudImmersiveMovie:updateImmersiveMovie}
 
 
 

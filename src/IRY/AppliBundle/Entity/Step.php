@@ -11,8 +11,11 @@ class Step {
     private $id;
     private $name;
     private $course;
-    private $order;
     private $results;
+    /**
+     * @var integer
+     */
+    private $theOrder;
     /**
      * @var string
      */
@@ -64,28 +67,6 @@ class Step {
         return $this->name;
     }
 
-    /**
-     * Set order
-     *
-     * @param integer $order
-     * @return Step
-     */
-    public function setOrder($order)
-    {
-        $this->order = $order;
-
-        return $this;
-    }
-
-    /**
-     * Get order
-     *
-     * @return integer 
-     */
-    public function getOrder()
-    {
-        return $this->order;
-    }
 
     /**
      * Add results
@@ -308,5 +289,27 @@ class Step {
             }
         }
         return $results->last();
+    }
+    /**
+     * Set theOrder
+     *
+     * @param integer $theOrder
+     * @return Step
+     */
+    public function setTheOrder($theOrder)
+    {
+        $this->theOrder = $theOrder;
+
+        return $this;
+    }
+
+    /**
+     * Get theOrder
+     *
+     * @return integer 
+     */
+    public function getTheOrder()
+    {
+        return $this->theOrder;
     }
 }

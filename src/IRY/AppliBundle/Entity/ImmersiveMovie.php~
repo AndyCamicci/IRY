@@ -196,7 +196,8 @@ class ImmersiveMovie {
     {
         // the absolute directory path where uploaded
         // documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir().$this->getFolder();
+        $reflClass = new \ReflectionClass(get_class($this));
+        return dirname($reflClass->getFileName()).'/../../../../web/'.$this->getUploadDir().$this->getFolder();
     }
 
     protected function getUploadDir()

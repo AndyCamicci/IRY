@@ -18,12 +18,35 @@ class CrudHelicopterController extends Controller
     
     function helicoptersAction()
     {
+
+        $helicopter = new Helicopter();
+        $form = $this->createFormBuilder($helicopter)
+            ->add('name', 'text')
+            ->add('type', 'choice', array(
+                'choices'   => array(
+                    Helicopter::TYPE_MILITARY => Helicopter::TYPE_MILITARY, 
+                    Helicopter::TYPE_CIVIL => Helicopter::TYPE_CIVIL
+                )))
+            ->add('imgHelico', 'text')
+            ->add('save', 'submit')
+            ->getForm();
+
+        $request = $this->getRequest();
+
+        $form->handleRequest($request);
         $em = $this->getDoctrine()->getManager();
+
+        if ($form->isValid()) {
+            $em->persist($course);
+            $em->flush();
+        }
+
         $repo = $em->getRepository('IRYAppliBundle:Helicopter');
         $helicopters = $repo->findAll();
 
         return $this->render('IRYAppliBundle:Crud:Helicopter/list.html.twig', array(
             'helicopters' => $helicopters,
+            'addHelicopterForm' => $form->createView()
         ));
     }
 
@@ -45,7 +68,7 @@ class CrudHelicopterController extends Controller
             return $this->redirect($this->generateUrl('iry_crud_heli_list'));
         }
 
-        return $this->render('IRYAppliBundle:Crud:Helicopter/form.html.twig', array(
+        return $this->render('IRYAppliBundle:Crud:Helicopter/update.html.twig', array(
             'helicopterForm' => $form->createView(),
         ));
     }
@@ -58,7 +81,7 @@ class CrudHelicopterController extends Controller
             return $this->redirect($this->generateUrl('iry_crud_heli_list'));
         }
 
-        return $this->render('IRYAppliBundle:Crud:Helicopter/form.html.twig', array(
+        return $this->render('IRYAppliBundle:Crud:Helicopter/update.html.twig', array(
             'helicopterForm' => $form->createView(),
         ));
     }

@@ -12,15 +12,17 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text')
-            // ->add('path', 'text')
-            ->add('file', 'file')
             ->add('folder', 'choice', array(
                     'choices'=>array(
                         Image::IMAGE_CM => Image::IMAGE_CM,
                         Image::IMAGE_SCHEMA => Image::IMAGE_SCHEMA
                     )
                 ))
-            // ->add('theOrder', 'text')
+            ->add('course', 'entity', array(
+                'class' => 'IRYAppliBundle:Course',
+                'property' => 'name',
+            ))
+            ->add('file', 'file')
             ->add('save', 'submit');
     }
 
