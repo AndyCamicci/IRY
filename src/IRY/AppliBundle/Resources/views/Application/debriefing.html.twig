@@ -12,142 +12,53 @@
 
 {% block body %}
     <div id="content">
-        <!--div class="text">
-            <span> SUCESS </span>
-        </div-->
         <section id="dc">
             <div class="dc_wrap cf" data-step="1">
                 <div class="list">
-                    <ul class="pilot_list">
+                    <ul>
+                        {% for step in course.steps %}
+                            {% set nbErrors = 0 %}
+                            {% set nbSuccess = 0 %}
+                            {% set nbFav = 0 %}
+                            {% for result in results %}
+                                {% if result.step.id == step.id %}
+                                    {% if result.isFavorite %}
+                                        {% set nbFav = nbFav + 1 %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            {% for result in results_errors %}
+                                {% if result.step.id == step.id %}
+                                    {% set nbErrors = nbErrors + 1 %}
+                                {% endif %}
+                            {% endfor %}
+                            {% for result in results_success %}
+                                {% if result.step.id == step.id %}
+                                    {% set nbSuccess = nbSuccess + 1 %}
+                                {% endif %}
+                            {% endfor %}
                             <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
+                                <li class="step cf" data-pilot-id="1">
                                     <div class="pilot_name element" data-step="2">
-                                        <span>Not light On</span>
+                                        <span>{{step.name}}</span>
                                     </div>
                                     <div class="stats">
                                         <div class="success element">
-                                            <span>25</span>
+                                            <span>{{nbSuccess}}</span>
                                         </div>
                                         <div class="errors element">
-                                            <span>2</span>
+                                            <span>{{nbErrors}}</span>
                                         </div>
                                         <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
+                                            <span data-favorites-time="0">{{nbFav}}</span>
                                         </div>
                                     </div>                                                                   
                                 </li>
-                            </a>
-                            <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
-                                    <div class="pilot_name element" data-step="2">
-                                        <span>FUEL PUMP On</span>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="success element">
-                                            <span>25</span>
-                                        </div>
-                                        <div class="errors element">
-                                            <span>2</span>
-                                        </div>
-                                        <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
-                                        </div>
-                                    </div>                                                                   
-                                </li>
-                            </a>
-                            <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
-                                    <div class="pilot_name element" data-step="2">
-                                        <span>ANTI COL On</span>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="success element">
-                                            <span>25</span>
-                                        </div>
-                                        <div class="errors element">
-                                            <span>2</span>
-                                        </div>
-                                        <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
-                                        </div>
-                                    </div>                                                                   
-                                </li>
-                            </a>
-                            <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
-                                    <div class="pilot_name element" data-step="2">
-                                        <span>STARTING SELECTOR On</span>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="success element">
-                                            <span>25</span>
-                                        </div>
-                                        <div class="errors element">
-                                            <span>2</span>
-                                        </div>
-                                        <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
-                                        </div>
-                                    </div>                                                                   
-                                </li>
-                            </a>
-                            <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
-                                    <div class="pilot_name element" data-step="2">
-                                        <span>Raise the speed continuously</span>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="success element">
-                                            <span>25</span>
-                                        </div>
-                                        <div class="errors element">
-                                            <span>2</span>
-                                        </div>
-                                        <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
-                                        </div>
-                                    </div>                                                                   
-                                </li>
-                            </a>
-                             <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
-                                    <div class="pilot_name element" data-step="2">
-                                        <span>FUEL PUMP Off</span>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="success element">
-                                            <span>25</span>
-                                        </div>
-                                        <div class="errors element">
-                                            <span>2</span>
-                                        </div>
-                                        <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
-                                        </div>
-                                    </div>                                                                   
-                                </li>
-                            </a>
-                             <a href="">
-                                <li class="pilot cf" data-pilot-id="1">
-                                    <div class="pilot_name element" data-step="2">
-                                        <span>PITOT On</span>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="success element">
-                                            <span>25</span>
-                                        </div>
-                                        <div class="errors element">
-                                            <span>2</span>
-                                        </div>
-                                        <div class="favorites element">
-                                            <span data-favorites-time="0"></span>
-                                        </div>
-                                    </div>                                                                   
-                                </li>
-                            </a>         
+                            </a> 
+                        {% endfor %}
                     </ul>
-             </div> 
+                </div> 
+            </div> 
         </section>
     </div>
 {% endblock %}
-

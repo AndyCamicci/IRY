@@ -12,16 +12,16 @@
 
 {% block body %}
     <div id="content">
-            <div class="cm_images">
-                {% for image in images %}
-                    <div class="image">
-                        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0" width="600" height="400" id="fullscreen" align="middle">
-                            <param name="allowFullScreen" value="true" />
-                            <param name="movie" value="/{{image.webPath}}" />
-                            <embed class="cm_embed" src="/{{image.webPath}}" allowFullScreen="true" name="fullscreen" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-                        </object>
-                    </div>
-                {% endfor %}
-            </div>
+        <div class="cm_images">
+            {% for image in images %}
+                <div class="image">
+                    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,18,0" width="600" height="400" id="fullscreen" align="middle">
+                        <param name="allowFullScreen" value="true" />
+                        <param name="movie" value="/{{image.webPath}}" />
+                        <embed class="cm_embed" src="/{{image.webPath}}" allowFullScreen="true" name="fullscreen" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                    </object>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

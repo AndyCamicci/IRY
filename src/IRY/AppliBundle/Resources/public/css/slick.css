@@ -19,10 +19,11 @@
 
 /* line 46, ../sass/slick.scss */
 .slick-list {
+  width: 90%;
   position: relative;
   overflow: hidden;
   display: block;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 /* line 53, ../sass/slick.scss */
@@ -156,12 +157,12 @@
 
 /* line 167, ../sass/slick.scss */
 .slick-prev {
-  left: -25px;
+  left: 25px;
 }
 /* line 169, ../sass/slick.scss */
 [dir="rtl"] .slick-prev {
   left: auto;
-  right: -25px;
+  right: 25px;
 }
 /* line 173, ../sass/slick.scss */
 .slick-prev:before {
@@ -174,11 +175,11 @@
 
 /* line 180, ../sass/slick.scss */
 .slick-next {
-  right: -25px;
+  right: 25px;
 }
 /* line 182, ../sass/slick.scss */
 [dir="rtl"] .slick-next {
-  left: -25px;
+  left: 25px;
   right: auto;
 }
 /* line 186, ../sass/slick.scss */
