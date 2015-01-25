@@ -14,7 +14,9 @@ class Serie {
     /* Used to communicate with Immersive Application */
     private $command;
 
-    const COMMAND_STARTCOURSE = "STARTPRACTICALTRAINING";
+    const COMMAND_STARTPRACTICALTRAINING = "STARTPRACTICALTRAINING";
+    const COMMAND_STARTDEMONSTRATIVECOURSE = "STARTDEMONSTRATIVECOURSE";
+    const COMMAND_STARTIMMERSIVEMOVIE = "COMMAND_STARTIMMERSIVEMOVIE";
 
     /**
      * Constructor

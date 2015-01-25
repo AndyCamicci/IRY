@@ -24,19 +24,13 @@ class ApplicationController extends Controller
     }
     public function choixcoursAction(Helicopter $helicopter_id)
     {
-        $request = $this->get('request');
-        $cookies = $request->cookies;
+        $serie = $this->getSerieCookie();
 
-    	$em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository("IRYAppliBundle:Serie");
+        $serie->setCommand("");
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($serie);
+        $em->flush();
 
-        if ($cookies->has('serie')) {
-            $serieCookie = $cookies->get('serie');
-        } else {
-            $serieCookie = 0;
-        }
-
-		$serie = $repo->find($serieCookie);
         if (is_null($serie) == true) {
             $this->get('security.context')->setToken(null);
             $this->get('request')->getSession()->invalidate();
@@ -64,12 +58,14 @@ class ApplicationController extends Controller
     public function coursDemonstratifAction(Course $course_id)
     {
         $this->addCourseToSerie($course_id);
+        $this->addCourseToInstructions($course_id);
         
         return $this->render('IRYAppliBundle:Application:coursDemonstratif.html.twig', array("course" => $course_id));
     }
     public function videoImmersiveAction(Course $course_id)
     {
         $this->addCourseToSerie($course_id);
+        $this->addCourseToInstructions($course_id);
         
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
@@ -84,6 +80,7 @@ class ApplicationController extends Controller
     public function exercicePratiqueAction(Course $course_id)
     {
         $this->addCourseToSerie($course_id);
+        $this->addCourseToInstructions($course_id);
 
         $em = $this->getDoctrine()->getManager();
         // $repo_results = $em->getRepository('IRYAppliBundle:Step');
@@ -100,6 +97,19 @@ class ApplicationController extends Controller
     }
 
     private function addCourseToSerie(Course $course) {
+        $serie = $this->getSerieCookie();
+
+        if (is_null($serie) == false) {
+            $serie->addCourseIfNotExists($course);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($serie);
+            $em->flush();
+        }
+
+    }
+
+    private function getSerieCookie() {
         $request = $this->get('request');
         $cookies = $request->cookies;
 
@@ -113,13 +123,33 @@ class ApplicationController extends Controller
         }
 
         $serie = $repo->find($serieCookie);
-        if (is_null($serie) == false) {
-            $serie->addCourseIfNotExists($course);
 
+        return $serie;
+    }
+
+    private function addCourseToInstructions(Course $course) {
+        $serie = $this->getSerieCookie();
+
+        if (is_null($serie) == false) {
+            switch ($course->getTypeCourse()->getId()) {
+                case 2: // Demonstrative course
+                    $serie->setCommand(Serie::COMMAND_STARTDEMONSTRATIVECOURSE . " " . $course->getId());
+                    break;
+                case 3: // Immersive movie
+                    $serie->setCommand(Serie::COMMAND_STARTIMMERSIVEMOVIE . " " . $course->getId());
+                    break;
+                case 4: // Practical training
+                    $serie->setCommand(Serie::COMMAND_STARTPRACTICALTRAINING . " " . $course->getId());
+                    break;
+                default:
+                    $serie->setCommand("");
+                    break;
+            }
+
+            $em = $this->getDoctrine()->getManager();
             $em->persist($serie);
             $em->flush();
         }
-
     }
 
     public function exercicePratiqueVuePiloteAction(Course $course_id, Pilot $pilot_id)
