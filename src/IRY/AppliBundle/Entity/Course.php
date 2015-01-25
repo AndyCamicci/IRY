@@ -95,11 +95,11 @@ class Course {
         $iterator->uasort(function ($a, $b) {
 
             // If the orders are identical, sort using theirs id's
-            if ($a->getOrder() == $b->getOrder()) {
+            if ($a->getTheOrder() == $b->getTheOrder()) {
                 return ($a->getId() < $b->getId()) ? -1 : 1;
             }
 
-            return ($a->getOrder() < $b->getOrder()) ? -1 : 1;
+            return ($a->getTheOrder() < $b->getTheOrder()) ? -1 : 1;
         });
 
         $steps = new ArrayCollection(iterator_to_array($iterator));
@@ -162,12 +162,12 @@ class Course {
         foreach ($this->getSteps() as $key => $step) {
             if ($key == 0) {
                 $higherStep = $step;
-                $higherStepOrder = $step->getOrder();
+                $higherStepOrder = $step->getTheOrder();
             } else {
 
-                if ($step->getOrder() >= $higherStepOrder) {
+                if ($step->getTheOrder() >= $higherStepOrder) {
                     $higherStep = $step;
-                    $higherStepOrder = $step->getOrder();
+                    $higherStepOrder = $step->getTheOrder();
                 }
             }
         }
