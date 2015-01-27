@@ -1132,6 +1132,12 @@ html{
 								box-shadow : 0px 0px $grey-dark-color;
 								margin : 4px 4px 10px 0;
 							} 
+							.cat{
+							   position: relative;
+							   display: inline-block;
+				               text-align: right;
+				               margin-right: auto;
+							}
 							div.element{
 								position: relative;
 								display: inline-block;
