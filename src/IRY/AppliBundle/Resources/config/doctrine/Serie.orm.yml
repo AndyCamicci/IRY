@@ -1,0 +1,34 @@
+IRY\AppliBundle\Entity\Serie:
+    type: entity
+    table: Serie
+    repositoryClass: IRY\AppliBundle\Entity\SerieRepository
+    id:
+        id:
+            type: integer
+            generator:
+                    strategy: IDENTITY
+    fields:
+        name:
+            type: string
+        command:
+            type: string
+            nullable: true
+    manyToMany:
+        courses:
+          targetEntity: Course
+          inversedBy: series
+          joinTable:
+            name: series_courses
+            joinColumns:
+              serie_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              course_id:
+                referencedColumnName: id
+    manyToOne:
+        helicopter:
+            targetEntity: Helicopter
+            inversedBy: series
+            joinColumn:
+                name: helicopter_id
+                referencedColumnName: id

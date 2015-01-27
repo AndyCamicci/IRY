@@ -1,0 +1,15 @@
+iry_web_doc_homepage:
+    path:     /
+    defaults: { _controller: IRYWebDocBundle:Default:index }
+iry_web_doc_thanks:
+    path:     /thanks
+    defaults: { _controller: IRYWebDocBundle:Default:thanks }
+iry_web_doc_categories:
+    path:     /categories
+    defaults: { _controller: IRYWebDocBundle:Default:categories }
+iry_web_doc_history:
+    path:     /history
+    defaults: { _controller: IRYWebDocBundle:Default:history }
+iry_web_doc_team:
+    path:     /team
+    defaults: { _controller: IRYWebDocBundle:Default:team }

@@ -16,7 +16,7 @@ IRY\AppliBundle\Entity\Step:
             length: 255
         btn_state:
             type: boolean
-        order:
+        theOrder:
             type: integer
     manyToOne:
         course:

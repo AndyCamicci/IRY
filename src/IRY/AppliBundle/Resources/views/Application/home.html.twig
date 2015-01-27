@@ -2,19 +2,19 @@
 {% block header %}
     <header id="header" class="cf">
       <div id="header_left" class="left">
-        <div id="logo" data-step="1" data-intro="Au clic sur le logo IRY sur l'ensemble des pages, on est redirigé sur la page d'accueil" data-position='right'>
+        <div id="logo">
           <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
         </div>
       </div>
       <div id="header_right" class="right">
-        <div id="searchbar" class="cf" data-step="3" data-intro="Barre de recherche permettant de trouver un type d'hélicoptère précis.">
+        <div id="searchbar" class="cf">
           <img src="{{ asset('bundles/iryappli') }}/img/search.png" class="search_submit left" alt="Searchbar">
           <input type="text" class="search_content" placeholder="Search">
         </div>
       </div>
       <div id="header_center" class="center">
         <div class="filters">
-          <h1 class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_CIVIL") }}" data-step="2" data-intro="Au clic, seuls les hélicoptères civils apparaitront sur la page.">
+          <h1 class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_CIVIL") }}">
             Civil Range
           </h1>
           <h1 class="helicopter_type" data-type="{{ constant("IRY\\AppliBundle\\Entity\\Helicopter::TYPE_MILITARY") }}">
@@ -26,9 +26,8 @@
 {% endblock %}
 {% block body %}
   <div id="content">
-    <a id="startButton" class="introjs" href="javascript:void(0);">Guide de présentation</a>
     <section id="choose_helicopter">
-      <h2 data-step="4" data-intro="Choisissez dans la liste un type d'hélicoptère. L'écureuil AS350B3e pa exemple." data-position='right'>Choose your Helicopter</h2>
+      <h2>Choose your Helicopter</h2>
       <div class="liste_helicopter_wrap">
         <div class="liste_helicopter">
 
@@ -38,7 +37,7 @@
             {% endif %}
 
             <a data-type="{{ helicopter.type }}" data-name="{{ helicopter.name }}" href="{{ path('iry_appli_choixcours', {helicopter_id : helicopter.id}) }}" class="helicopter_link">
-              <div class="helicopter_block">
+              <div class="helicopter_block {{helicopter.themes|length == 0 ? "inactive" : ""}}">
                 <div class="helicopter_img">
                   <img src="{{ asset('bundles/iryappli') }}/img/200x130.gif" alt="">
                 </div>

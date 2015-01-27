@@ -10,6 +10,7 @@ use IRY\AppliBundle\Entity\Step;
 use IRY\AppliBundle\Entity\Course;
 use IRY\AppliBundle\Entity\Result;
 use IRY\AppliBundle\Entity\Pilot;
+use IRY\AppliBundle\Entity\Serie;
 
 class ApplicationController extends Controller
 {
@@ -23,10 +24,27 @@ class ApplicationController extends Controller
     }
     public function choixcoursAction(Helicopter $helicopter_id)
     {
-        return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array("helicopter" => $helicopter_id));
+        $serie = $this->getSerieCookie();
+
+        $serie->setCommand("");
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($serie);
+        $em->flush();
+
+        if (is_null($serie) == true) {
+            $this->get('security.context')->setToken(null);
+            $this->get('request')->getSession()->invalidate();
+            return $this->redirect($this->generateUrl('login'));
+        }
+        return $this->render('IRYAppliBundle:Application:choixcours.html.twig', array(
+        	"helicopter" => $helicopter_id,
+        	"serie" => $serie
+        ));
     }
     public function coursMagistralAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
         $images = $repo->findBy(
@@ -39,10 +57,16 @@ class ApplicationController extends Controller
     }
     public function coursDemonstratifAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        $this->addCourseToInstructions($course_id);
+        
         return $this->render('IRYAppliBundle:Application:coursDemonstratif.html.twig', array("course" => $course_id));
     }
     public function videoImmersiveAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        $this->addCourseToInstructions($course_id);
+        
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository("IRYAppliBundle:Image"); // On accède au Repository, qui possède les méthodes find(), findAll(), findBy() etc...
         $images = $repo->findBy(
@@ -55,6 +79,9 @@ class ApplicationController extends Controller
     }
     public function exercicePratiqueAction(Course $course_id)
     {
+        $this->addCourseToSerie($course_id);
+        $this->addCourseToInstructions($course_id);
+
         $em = $this->getDoctrine()->getManager();
         // $repo_results = $em->getRepository('IRYAppliBundle:Step');
         // $repo_results = $em->getRepository('IRYAppliBundle:Result');
@@ -68,15 +95,103 @@ class ApplicationController extends Controller
             "pilots" => $pilots
         ));
     }
+
+    private function addCourseToSerie(Course $course) {
+        $serie = $this->getSerieCookie();
+
+        if (is_null($serie) == false) {
+            $serie->addCourseIfNotExists($course);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($serie);
+            $em->flush();
+        }
+
+    }
+
+    private function getSerieCookie() {
+        $request = $this->get('request');
+        $cookies = $request->cookies;
+
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Serie");
+
+        if ($cookies->has('serie')) {
+            $serieCookie = $cookies->get('serie');
+        } else {
+            $serieCookie = 0;
+        }
+
+        $serie = $repo->find($serieCookie);
+
+        return $serie;
+    }
+
+    private function addCourseToInstructions(Course $course) {
+        $serie = $this->getSerieCookie();
+
+        if (is_null($serie) == false) {
+            switch ($course->getTypeCourse()->getId()) {
+                case 2: // Demonstrative course
+                    $serie->setCommand(Serie::COMMAND_STARTDEMONSTRATIVECOURSE . " " . $course->getId());
+                    break;
+                case 3: // Immersive movie
+                    $serie->setCommand(Serie::COMMAND_STARTIMMERSIVEMOVIE . " " . $course->getId());
+                    break;
+                case 4: // Practical training
+                    $serie->setCommand(Serie::COMMAND_STARTPRACTICALTRAINING . " " . $course->getId());
+                    break;
+                default:
+                    $serie->setCommand("");
+                    break;
+            }
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($serie);
+            $em->flush();
+        }
+    }
+
     public function exercicePratiqueVuePiloteAction(Course $course_id, Pilot $pilot_id)
     {
+    	$em = $this->getDoctrine()->getManager();
+
+        $repo_steps = $em->getRepository('IRYAppliBundle:Step');
+        $steps = $repo_steps->findBy(array(
+        	'course' => $course_id,
+        ));
+
+        $repo_results = $em->getRepository('IRYAppliBundle:Result');
+        $results = $pilot_id->getResultsInCourse($course_id);
+        $results_errors = new \Doctrine\Common\Collections\ArrayCollection();
+        $results_success = new \Doctrine\Common\Collections\ArrayCollection();
+        foreach ($results as $result => $value) {
+        	if ($value->getIsError()) {
+        		$results_errors[] = $value;
+        	}
+        	else{
+        		$results_success[] = $value;        		
+        	}
+        }
+        $lastStep = $course_id->getLastStep();
         return $this->render('IRYAppliBundle:Application:exercicePratiqueVuePilote.html.twig', array(
+            'steps' => $steps, 
+            'lastStep' => $lastStep, 
+            'results' => $results, 
+            'results_errors' => $results_errors, 
+            'results_success' => $results_success, 
             'pilot' => $pilot_id, 
             "course" => $course_id
         ));
     }
-    public function debriefingAction()
+    public function debriefingAction(Course $course_id)
     {
-        return $this->render('IRYAppliBundle:Application:debriefing.html.twig');
+        return $this->render('IRYAppliBundle:Application:debriefing.html.twig', array(
+            "course" => $course_id
+        )); 
+    }
+    public function crudAction()
+    {
+        return $this->render('IRYAppliBundle:Crud:crud.html.twig'); 
     }
 }

@@ -11,6 +11,7 @@ IRY\AppliBundle\Entity\Pilot:
         name:
             type: string
             length: 255
+            nullable: true
         isCalling:
             type: boolean
             nullable: true
@@ -21,3 +22,9 @@ IRY\AppliBundle\Entity\Pilot:
         results: #Champ dans l'entité Helicopter
             targetEntity: Result #Entité visée
             mappedBy: pilot #Champ dans l'entité visée
+    manyToOne:
+        serie:
+            targetEntity: Serie
+            joinColumn:
+                name: serie_id
+                referencedColumnName: id

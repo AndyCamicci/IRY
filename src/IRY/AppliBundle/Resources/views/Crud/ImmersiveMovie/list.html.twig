@@ -1,0 +1,41 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Immersive Movie
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Add an Immersive Movie</label>
+		{{ form(Form) }}
+		<label class="label">Manage Immersive Movies</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Path</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for immersiveMovie in immersiveMovies %}
+			<tr>
+				<td>{{immersiveMovie.id}}</td>
+				<td>{{immersiveMovie.name}}</td>
+				<td>{{immersiveMovie.path}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_immersiveMovie_update', { id: immersiveMovie.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_immersiveMovie_delete', { id: immersiveMovie.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

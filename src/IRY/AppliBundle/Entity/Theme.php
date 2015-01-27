@@ -7,13 +7,13 @@ class Theme {
     private $id;
     private $name;
     private $helicopter;
-    private $subthemes;
+    private $subThemes;
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->subthemes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->subThemes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -50,36 +50,36 @@ class Theme {
     }
 
     /**
-     * Add courses
+     * Add subThemes
      *
-     * @param \IRY\AppliBundle\Entity\Course $courses
+     * @param \IRY\AppliBundle\Entity\SubTheme $subThemes
      * @return Theme
      */
-    public function addSubTheme(\IRY\AppliBundle\Entity\SubTheme $subtheme)
+    public function addSubTheme(\IRY\AppliBundle\Entity\SubTheme $subThemes)
     {
-        $this->subtheme[] = $subtheme;
+        $this->subThemes[] = $subThemes;
 
         return $this;
     }
 
     /**
-     * Remove courses
+     * Remove subThemes
      *
-     * @param \IRY\AppliBundle\Entity\Course $courses
+     * @param \IRY\AppliBundle\Entity\SubTheme $subThemes
      */
-    public function removeSubTheme(\IRY\AppliBundle\Entity\SubTheme $subtheme)
+    public function removeSubTheme(\IRY\AppliBundle\Entity\SubTheme $subThemes)
     {
-        $this->subtheme->removeElement($subtheme);
+        $this->subThemes->removeElement($subThemes);
     }
 
     /**
-     * Get courses
+     * Get subThemes
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getSubTheme()
+    public function getSubThemes()
     {
-        return $this->subtheme;
+        return $this->subThemes;
     }
 
     /**
@@ -103,20 +103,5 @@ class Theme {
     public function getHelicopter()
     {
         return $this->helicopter;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $subThemes;
-
-
-    /**
-     * Get subThemes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSubThemes()
-    {
-        return $this->subThemes;
     }
 }

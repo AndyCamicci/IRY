@@ -1,0 +1,12 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Series
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Update a Serie</label>
+		{{ form(serieForm) }}
+	</div>
+{% endblock %}

@@ -11,9 +11,9 @@ IRY\AppliBundle\Entity\Image:
         name:
             type: string
             length: 255
-        img:
+        path:
             type: text
-        order:
+        theOrder:
             type: integer
     manyToOne:
         course:
@@ -23,3 +23,9 @@ IRY\AppliBundle\Entity\Image:
             joinColumn:
                 name: course_id
                 referencedColumnName: id
+    lifecycleCallbacks:
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        preRemove: [ removeUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]

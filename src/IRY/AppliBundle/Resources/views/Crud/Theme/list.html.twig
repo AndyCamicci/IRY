@@ -1,15 +1,41 @@
-{{ form(addThemeForm) }}
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
 
-List
-<table>
+{% block header_title %}
+    System
+{% endblock %}
 
-{% for theme in themes %}
-	<tr>
-		<td>{{theme.id}}</td>
-		<td>{{theme.name}}</td>
-		<td><a href="{{ path('iry_crud_theme_update', { id: theme.id }) }}">MAJ</a></td>
-		<td><a href="{{ path('iry_crud_theme_delete', { id: theme.id }) }}">Supprimer</a></td>
-	</tr>
-{% endfor %}
-
-</table>
+{% block body %}
+	<div id="content" class="crud-container">	
+		<label class="label">Add a System</label>
+		{{ form(addThemeForm) }}
+		<label class="label">Manage Systems</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Helicopter</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for theme in themes %}
+			<tr>
+				<td>{{theme.id}}</td>
+				<td>{{theme.name}}</td>
+				<td>{{theme.helicopter.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_theme_update', { id: theme.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_theme_delete', { id: theme.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

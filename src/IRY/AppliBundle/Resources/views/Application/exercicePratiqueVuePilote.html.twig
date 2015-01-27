@@ -1,7 +1,7 @@
 {% extends 'IRYAppliBundle:Application:base.html.twig' %}
 
 {% block header_title %}
-    {{course.name}}
+    {{pilot.name}}
 {% endblock %}
 
 {% block header_back_btn %}
@@ -12,8 +12,84 @@
 
 {% block body %}
     <div id="content">
-        <section id="ep">
-            <h1>YAAAAAAA</h1>
+        <section id="ep-pilote" class="cf">
+            <div class="cd_video">
+
+            {#{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }#}
+            
+            </div>
+            <div class="ep_list_wrap">
+            	<div class="head">
+	                <h3>
+	                    Procedure
+	                </h3>
+                    <div class="errors element">
+                        <span>{{ results_errors|length }}</span>
+                    </div>
+                    <div class="success element">
+                        <span>
+                        	{% set totalSuccess = 0 %}
+                        	{% for result in results_success %}
+                            	{% if result.step.id == lastStep.id %}
+                            		{% set totalSuccess = totalSuccess + 1 %}
+                                {% endif %}
+                        	{% endfor %}
+                        	{{totalSuccess}}
+                        </span>
+                    </div>
+	            </div>
+                <div class="list">
+                    <ul>
+                        <li class="li_head">
+                            <div class="list_title element">
+                                <span>Errors</span>
+                            </div>
+                            <div class="list_title element">
+                                <span>Success</span>
+                            </div>
+                        </li>
+                        {% for step in steps %}
+							{% set nbErrors = 0 %}
+							{% set nbSuccess = 0 %}
+                        	{% for result in results_errors %}
+                            	{% if result.step.id == step.id %}
+                            		{% set nbErrors = nbErrors + 1 %}
+                                {% endif %}
+                        	{% endfor %}
+                        	{% for result in results_success %}
+                            	{% if result.step.id == step.id %}
+                            		{% set nbSuccess = nbSuccess + 1 %}
+                                {% endif %}
+                        	{% endfor %}
+
+                            <li class="step" data-step-id="{{ step.id }}">
+                                {% if (step.lastResultFromPilot(pilot) != false) %}
+                                {% set lastResult = step.lastResultFromPilot(pilot) %}
+                                <div class="favorite {{ lastResult.isFavorite == true ? "is_favorite" : "" }}" data-result-id="{{ lastResult.id }}">                              
+                                </div>
+                                {% else %}
+                                <div class="no-favorite"></div>
+                                {% endif %}
+                                <div class="step_name element">
+                                    <span>{{step.name}}</span>
+                                </div>
+                                <div class="errors element">
+                                    <span>{{ nbErrors }}</span>
+                                </div>
+                                <div class="success element">
+                                    <span>{{ nbSuccess }}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
         </section>
     </div>
+	<script type="text/javascript">
+		var setAsFavorite = "{{path("iry_rest_set_as_favorite", { 
+			"id"  : 0,
+		})}}";
+	</script>
 {% endblock %}

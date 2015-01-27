@@ -1,1 +1,14 @@
 {{ form(helicopterForm) }}
+
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Helicopters
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Update an Helicopter</label>
+		{{ form(helicopterForm) }}
+	</div>
+{% endblock %}

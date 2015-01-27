@@ -1,0 +1,14 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+{% block body %}
+
+
+	{{form(form)}}
+
+	<ul>
+		
+		{% for user in users %}
+		<li> {{ user.id }} </li>
+		{% endfor %}
+
+	</ul>
+{% endblock %}

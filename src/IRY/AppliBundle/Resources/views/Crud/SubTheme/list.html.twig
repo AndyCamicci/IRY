@@ -1,0 +1,41 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Sub-system
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Add a Sub-system</label>
+		{{ form(addSubThemeForm) }}
+		<label class="label">Manage Sub-systems</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>System</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for subTheme in subThemes %}
+			<tr>
+				<td>{{subTheme.id}}</td>
+				<td>{{subTheme.name}}</td>
+				<td>{{subTheme.theme.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_subTheme_update', { id: subTheme.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_subTheme_delete', { id: subTheme.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

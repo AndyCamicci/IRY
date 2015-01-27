@@ -1,0 +1,535 @@
+@import "font.scss";
+@import "functions";
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+  content:"";
+  display:table;
+}
+.cf:after {
+  clear:both;
+}
+.cf {
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.left{float: left;}
+.right{float: right;}
+.center{text-align: center;}
+.hide{display: none;}
+
+$white-color         : #FFFFFF;
+$grey-white-color    : #bebdbc;
+$black-color         : #343434;
+$grey-dark-dark-color: #909090;
+$grey-dark-color     : #a8a8a7;
+$grey-color          : #d1cece;
+$grey-light-color    : #EEE8EA;
+$blue-color          : #0fa7b7;
+
+html{
+	min-height: 100%;
+	height: 100%;
+	body{
+		position: relative;
+		font-family: arial;
+		font-size: 15px;
+		min-height: 100%;
+		height: 100%;
+		h1{
+
+		}
+		h2{
+
+		}
+		h3{
+
+		}
+		header.home-header{
+			position: relative;
+			text-align: center;
+			background: $white-color;
+			.logo{
+				display: inline-block;
+				padding: 10px 0 0;
+				img{
+					height: 55px;
+				}
+			}
+			.langue{
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 25px;
+				color: $grey-dark-color;
+				a{
+					color: $grey-dark-color;
+					font: 1rem arial;
+					text-decoration: none;
+					&.langue-active, &:hover, &:focus, &:active{
+						text-decoration: underline;
+					}
+				}
+			}
+			&:after{
+				content:"";
+				background: url(../images/header_arrow.svg);
+				position: absolute;
+				bottom: -50px;
+				width: 180px;
+				height: 50px;
+				margin: auto;
+				left: 0;
+				right: 0;
+			}
+		}
+		header.small-header {
+			width: 240px;
+			height: 240px;
+			background: url("../images/triangle-top-left-header.png") no-repeat;
+			position: absolute;
+			top: 0;
+			left: 0;
+			img {
+				margin-left: 23px;
+				margin-top: 27px;
+				width: 134px;
+			}
+		}
+		.content {
+			background:url(../images/bg.jpg) no-repeat;
+			padding: 40px 40px 10px 40px;
+			color: $white-color;
+			.content-left{
+				display: inline-block;
+				width: 40%;
+				margin-right: 9%;
+				margin-left: 5%;
+				h1{
+					font : bold 4rem 'biko_bold';
+					text-transform: uppercase;
+				}
+				hr{
+					background: $white-color;
+					height: 1px;
+					border: none;
+					margin: 15px 0;
+				}
+				p{
+					text-align: justify;
+					font-size: 1rem;
+					line-height: 1.2rem;
+				}
+				.logo-airbus{
+					text-align: center;
+					img{
+						height: 55px;
+					}
+				}
+			}
+			.content-right{
+				display: inline-block;
+				width: 45%;
+				text-align: center;
+				.svg{
+					text-align: center;
+					margin:50px;
+					svg{
+						overflow: visible;
+						.camembert{
+							@include transition(all, 0.1s, ease-in-out);
+							.cam_titre{
+								@include transition(all, 0.4s, ease-in-out);
+								text{
+									font : 1.1rem 'biko_bold';
+									text-transform: uppercase;
+								}
+							}
+							&#top{
+								.cam_titre{
+									@include translate(173px, -980px);
+								}
+								&:hover{
+									@include translate(0px, -20px);
+									.cam_titre{
+										@include translate(173px, 20px);
+									}
+								}
+							}
+							&#right{
+								.cam_titre{
+									@include translate(1320px, 166px);
+								}
+								&:hover{
+									@include translate(20px, 0px);
+									.cam_titre{
+										@include translate(320px, 166px);
+									}
+								}
+							}
+							&#bottom{
+								.cam_titre{
+									@include translate(173px, 1320px);
+								}
+								&:hover{
+									@include translate(0px, 20px);
+									.cam_titre{
+										@include translate(173px, 320px);
+									}
+								}
+							}
+							&#left{
+								.cam_titre{
+									@include translate(-975px, 166px);
+								}
+								&:hover{
+									@include translate(-20px, 0px);
+									.cam_titre{
+										@include translate(25px, 166px);
+									}
+								}
+							}
+						}
+					}
+				}
+				.consigne{
+					font: 1rem arial;
+					color: $white-color;
+					text-transform: uppercase;
+				}
+			}
+
+			&.full {
+				min-height: 100%;
+				padding: 0;
+				text-align: center;
+				
+			}
+			&.team {
+				background-image: url("../images/bg-team.jpg");
+				background-position: center 25%;
+				h1 {
+					font-size: 36px;
+					padding-top: 34px;
+					font-family: "biko_bold";
+					padding-bottom: 36px;
+				}
+				blockquote {
+					width: 500px;
+					height: 70px;
+					text-align: right;
+					margin: auto;
+					font-size: 15px;
+					cite {
+						display: block;
+						padding-top: 5px;
+						&:before {
+							content: "-- ";
+						}
+					}
+				}
+
+				.poles {
+					margin-top: 30px;
+					width: 100%;
+					position: relative;
+
+					h2 {
+						font-family: "biko_bold";
+						color: white;
+						font-size: 2em;
+						position: absolute;
+						margin-left: 60px;
+						text-transform: uppercase;
+
+					}
+
+					.barre {
+						height: 2px;
+						background: #ffffff;
+						position: relative;
+						left: 0;
+						right: 0;
+						top: 40px;
+					}
+					.pole {
+						width: 80px;
+						height: 80px;
+						margin: 0 50px;
+						display: inline-block;
+						position: relative;
+						background-color: #ffffff;
+						border-radius: 50%;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: 50%;
+						cursor: pointer;
+
+						&.pole-gestion { background-image: url(../images/poles/chef_G.png); }
+						&.pole-dev { background-image: url(../images/poles/tech_G.png); }
+						&.pole-crea { background-image: url(../images/poles/crea_G.png); }
+						&.pole-audio { background-image: url(../images/poles/av_G.png); }
+						&.pole-comm { background-image: url(../images/poles/com_G.png); }
+
+						&.pole-gestion.active, &.pole-gestion:hover { background-image: url(../images/poles/chef_B.png); }
+						&.pole-dev.active, &.pole-dev:hover { background-image: url(../images/poles/tech_B.png); }
+						&.pole-crea.active, &.pole-crea:hover { background-image: url(../images/poles/crea_B.png); }
+						&.pole-audio.active, &.pole-audio:hover { background-image: url(../images/poles/av_B.png); }
+						&.pole-comm.active, &.pole-comm:hover { background-image: url(../images/poles/com_B.png); }
+					}
+				}
+				.poles-membres {
+					margin-top: 40px;
+					.pole {
+
+						.membre {
+							width: 110px;
+							height: 110px;
+							margin: 0 50px;
+							display: inline-block;
+							// background: #ffffff;
+							border-radius: 50%;
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-size: 100%;
+							@include transition(background-size, 0.1s, ease-in-out);
+							&:hover {
+								// background-size: 120%;
+							}
+							cursor: pointer;
+							&.florent 	  { background-image: url(../images/equipe/flo-gris.png); }
+							&.andy 		  { background-image: url(../images/equipe/andy-gris.png); }
+							&.tarek 	  { background-image: url(../images/equipe/tarek-gris.png); }
+							&.yassine 	  { background-image: url(../images/equipe/yassine-gris.png); }
+							&.warsama 	  { background-image: url(../images/equipe/warsama-gris.png); }
+							&.robin 	  { background-image: url(../images/equipe/robin-gris.png); }
+							&.yves 		  { background-image: url(../images/equipe/yves-gris.png); }
+							&.anais 	  { background-image: url(../images/equipe/anais-gris.png); }
+							&.madeline 	  { background-image: url(../images/equipe/mad-gris.png); }
+							&.bin 		  { background-image: url(../images/equipe/bin-gris.png); }
+							&.jeanedouard { background-image: url(../images/equipe/JE-gris.png); }
+							&.celtill 	  { background-image: url(../images/equipe/celt-gris.png); }
+							&.manon 	  { background-image: url(../images/equipe/manon-gris.png); }
+							&.fabio 	  { background-image: url(../images/equipe/fabio-gris.png); }
+							&.jennifer 	  { background-image: url(../images/equipe/jennifer-gris.png); }
+							&.marion 	  { background-image: url(../images/equipe/marion-gris.png); }
+							&.jeremy 	  { background-image: url(../images/equipe/jeremy-gris.png); }
+							&.lamia 	  { background-image: url(../images/equipe/lamia-gris.png); }
+
+							&.florent.active, &.florent:hover 		  { background-image: url(../images/equipe/flo-couleur.png); }
+							&.andy.active, &.andy:hover 			  { background-image: url(../images/equipe/andy-couleur.png); }
+							&.tarek.active, &.tarek:hover 			  { background-image: url(../images/equipe/tarek-couleur.png); }
+							&.yassine.active, &.yassine:hover 		  { background-image: url(../images/equipe/yassine-couleur.png); }
+							&.warsama.active, &.warsama:hover 		  { background-image: url(../images/equipe/warsama-couleur.png); }
+							&.robin.active, &.robin:hover 			  { background-image: url(../images/equipe/robin-couleur.png); }
+							&.yves.active, &.yves:hover 			  { background-image: url(../images/equipe/yves-couleur.png); }
+							&.anais.active, &.anais:hover 			  { background-image: url(../images/equipe/anais-couleur.png); }
+							&.madeline.active, &.madeline:hover 	  { background-image: url(../images/equipe/mad-couleur.png); }
+							&.bin.active, &.bin:hover 				  { background-image: url(../images/equipe/bin-couleur.png); }
+							&.jeanedouard.active, &.jeanedouard:hover { background-image: url(../images/equipe/JE-couleur.png); }
+							&.celtill.active, &.celtill:hover 		  { background-image: url(../images/equipe/celt-couleur.png); }
+							&.manon.active, &.manon:hover 			  { background-image: url(../images/equipe/manon-couleur.png); }
+							&.fabio.active, &.fabio:hover 			  { background-image: url(../images/equipe/fabio-couleur.png); }
+							&.jennifer.active, &.jennifer:hover 	  { background-image: url(../images/equipe/jennifer-couleur.png); }
+							&.marion.active, &.marion:hover 		  { background-image: url(../images/equipe/marion-couleur.png); }
+							&.jeremy.active, &.jeremy:hover 		  { background-image: url(../images/equipe/jeremy-couleur.png); }
+							&.lamia.active, &.lamia:hover 			  { background-image: url(../images/equipe/lamia-couleur.png); }
+						}
+
+					}
+				}
+
+				.membre-selectionne {
+					margin-top: 20px;
+					font-family: "biko_bold";
+					font-size: 20px;
+					h2 {
+					}
+					p {
+						&.description {
+							width: 60%;
+							margin: auto;
+							font-family: arial;
+							font-size: 14px;
+							margin-top: 10px;
+							text-align: justify;
+							line-height: 17px;
+						}
+					}
+				}
+			}
+			&.remerciements {
+				background-image: url("../images/bg-airbus.jpg");
+				background-position: center center;
+
+				&.bg-airbus {
+					background-image: url("../images/bg-airbus.jpg");
+				}
+				&.bg-ingemedia {
+					background-image: url("../images/bg-ingemedia.jpg");
+				}
+				section {
+
+					width: 50%;
+					margin: auto;
+					text-align: center;
+					font-family: arial;
+
+					> .remerciements-body:before, > .remerciements-body:after {
+						content: "";
+						display: block;
+						background-color: #fff;
+						height: 1px;
+						margin: 20px 0;
+					}
+
+					h1 {
+						text-transform: uppercase;
+						padding: 100px 0 0 0;
+						font-family: arial;
+						font-size: 30px;
+					}
+
+					p {
+						text-align: justify;
+						font-size: 13px;
+						line-height: 15px;
+					}
+
+					ul {
+						font-size: 13px;
+						text-align: left;
+						margin-top: 15px;
+						li {
+							line-height: 15px;
+							&:before {
+								content: "- ";
+							}
+						}
+					}
+
+					.airbus, .ingemedia {
+						display: inline-block;
+						margin: 0 50px;
+						width: 100px;
+						height: 100px;
+						cursor: pointer;
+						img {
+							width: 100%;
+						}
+					}
+
+					.w50 {
+						width: 50%;
+						float: left;
+						padding-top: 20px;
+					}
+					.w100 {
+						width: 100%;
+						padding-top: 20px;
+						clear: both;
+					}
+
+
+					.back-btn {
+						display: inline-block;
+						padding: 5px 20px;
+						text-transform: uppercase;
+						border: 2px white solid;
+						color: white;
+						text-decoration: none;
+						font-size: 12px;
+					}
+				
+					&.remerciements-ingemedia {
+						.w50 {
+							padding-bottom: 20px
+						}
+					}
+
+				}
+			}
+		}
+		footer.home-footer
+		{
+			/*position: absolute;*/
+			bottom: 0;
+			text-align: center;
+			padding: 15px 0;
+			width: 100%;
+			background: $white-color;
+			span{
+				font: 1rem arial;
+				color: $blue-color;
+			}
+		}
+
+		footer.small-footer {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 100px;
+			color: $grey-white-color;
+			font-family: "biko_bold";
+
+			.small-nav {
+				vertical-align: middle;
+				// position: absolute;
+				// bottom: 0;
+				// right: 0;
+				text-align: right;
+				height: 100%;
+				display: inline-block;
+
+				ul {
+					display: inline-block;
+					text-transform: uppercase;
+					li {
+						display: inline-block;
+						&:not(:first-of-type):before {
+							content: " | ";
+							color: $blue-color;
+							margin: 0 5px;
+						}
+						&:last-of-type {
+							margin-right: 30px;
+						}
+
+						a {
+							color: $grey-color;
+							text-decoration: none;
+						}
+						&.active {
+							a {
+								color: white;
+							}
+						}
+					}
+				}
+				.menu {
+					display: inline-block;
+					vertical-align: middle;
+					height: 100%;
+					position: relative;
+					margin-right: 30px;
+					padding: 10px 0;
+					text-transform: uppercase;
+					p {
+						position:absolute;
+						top: -10px;
+						width: 100%;
+						text-align: center;
+						font-size: 10px;
+					}
+					img {
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+}

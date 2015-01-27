@@ -1,0 +1,115 @@
+{% extends 'IRYWebDocBundle:Default:base.html.twig' %}
+
+{% block header %}
+    <header class="home-header">
+		<div class="logo">
+			<img src="{{ asset('bundles/irywebdoc') }}/images/logo.png">
+		</div>
+		<div class="langue">
+			<a href="#">EN</a>
+			-
+			<a href="#" class="langue-active">FR</a>
+		</div>
+	</header>
+{% endblock %}
+		
+
+{% block body %}
+		
+		<div class="content">
+			<div class="content-left">
+				<h1>Projet IRY</h1>
+				<hr>
+				<p>
+					Au sein d’Airbus Helicopters la formation théorique des pilotes est dispensée de manière magistrale. Les apprenants ne découvrent l’environnement de l’hélicoptère qu’en phase pratique.
+				</p>
+				<br>
+				<p>
+					Pour améliorer la familiarisation avec l’hélicoptère et l’ancrage mémoriel, Airbus Helicopters souhaite adapter ses méthodes de formation.
+				</p>
+				<br>
+				<p>
+					En ajoutant de l’immersion et de la pédagogie active dans les salles de cours, le système IRY apporte de nouveaux modes d’apprentissage tout en conservant les avantages d’un cours magistral.
+				</p>
+				<br>
+				<p>
+					Le concept consiste à agréger à la formation théorique différents types de cours que l’instructeur sélectionne selon le sujet abordé : Cours Magistraux, Cours Immersifs, Exercices Pratiques et Débriefings Collaboratifs.
+				</p>
+				<hr>
+				<div class="logo-airbus">
+					<img src="{{ asset('bundles/irywebdoc') }}/images/logo-airbus.png">
+				</div>
+				<hr>
+			</div>
+			<div class="content-right">
+				<div class="svg">
+
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="340" height="340">
+						<a xlink:href="{{ path('iry_web_doc_categories') }}">
+							<g class="camembert" id="top">
+								<path fill="#1D939F" d="M282.2,45.4c-62.5-62.5-163.7-62.5-226.2,0l113.1,113.1L282.2,45.4z"/>
+								<path fill="#3EB8C4" d="M282.2,45.4c-60.5-60.5-158.7-60.5-219.2,0L172.6,155L282.2,45.4z"/>
+								<g class="cam_titre">
+									<circle r="5" fill="white" />
+									<line x1="0" y1="0" x2="35" y2="-35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<line x1="35" y1="-35" x2="118" y2="-35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<text x="35" y="-42" fill="white">Concept</text>
+								</g>
+								<image x="138" y="33" xlink:href="{{ asset('bundles/irywebdoc') }}/images/cam_iry.png" width="70px" height="70px"></image>
+							</g>
+						</a>
+						<a xlink:href="{{ path('iry_web_doc_categories') }}">
+							<g class="camembert" id="right">
+								<path fill="#188098" d="M289.1,278.5c62.4-62.4,62.4-163.5,0-225.9L176.2,165.6L289.1,278.5z"/>
+								<path fill="#3CA4BD" d="M292.8,275.2c60.5-60.5,60.5-158.7,0-219.2L183.2,165.6L292.8,275.2z"/>
+								<g class="cam_titre">
+									<circle r="5" fill="white" />
+									<line x1="0" y1="0" x2="35" y2="35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<line x1="35" y1="35" x2="102" y2="35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<text x="35" y="28" fill="white">Enjeux</text>
+								</g>
+								<image x="238" y="133" xlink:href="{{ asset('bundles/irywebdoc') }}/images/cam_cer.png" width="70px" height="70px"></image>
+							</g>
+						</a>
+						<a xlink:href="{{ path('iry_web_doc_thanks') }}">
+							<g class="camembert" id="bottom">
+								<path fill="#176D74" d="M56,285.8c62.5,62.5,163.7,62.5,226.2,0L169.1,172.7L56,285.8z"/>
+								<path fill="#3C8F98" d="M63,285.8c60.5,60.5,158.7,60.5,219.2,0L172.6,176.2L63,285.8z"/>
+								<image x="138" y="233" xlink:href="{{ asset('bundles/irywebdoc') }}/images/cam_sac.png" width="70px" height="70px"></image>
+								<g class="cam_titre">
+									<circle r="5" fill="white" />
+									<line x1="0" y1="0" x2="-35" y2="35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<line x1="-35" y1="35" x2="-154" y2="35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<text x="-154" y="28" fill="white">Partenariat</text>
+								</g>
+							</g>
+						</a>
+						<a xlink:href="{{ path('iry_web_doc_categories') }}">
+							<g class="camembert" id="left">
+								<path fill="#188098" d="M48.9,52.5c-62.5,62.5-62.5,163.7,0,226.2L162,165.6L48.9,52.5z"/>
+								<path fill="#3CA4BD" d="M52.4,56c-60.5,60.5-60.5,158.7,0,219.2L162,165.6L52.4,56z"/>
+								<image x="38" y="133" xlink:href="{{ asset('bundles/irywebdoc') }}/images/cam_ocu.png" width="70px" height="70px"></image>
+								<g class="cam_titre">
+									<circle r="5" fill="white" />
+									<line x1="0" y1="0" x2="-35" y2="-35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<line x1="-129" y1="-35" x2="-35" y2="-35" style="stroke:rgb(255,255,255);stroke-width:2" />
+									<text x="-129" y="-42" fill="white">Dispositif</text>
+								</g>
+							</g>
+						</a>
+					</svg>
+
+				</div>
+				<span class="consigne" >CHOISISSEZ LA CATEGORIE QUE VOUS SOUHAITEZ VISIONNER</span>
+			</div>
+		</div>
+    
+{% endblock %}
+
+{% block footer %}
+    <footer class="home-footer">
+		<span>
+			IRY - All rights reserved - Designed and developped by IRY
+		</span>
+	</footer>
+{% endblock %}

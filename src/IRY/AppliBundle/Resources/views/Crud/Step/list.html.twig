@@ -1,0 +1,47 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Steps
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Add a Step</label>
+		{{ form(addStepForm) }}
+		<label class="label">Manage Steps</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Course</th>
+				<th>Btn Name</th>
+				<th>Btn State</th>
+				<th>Order</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for step in steps %}
+			<tr>
+				<td>{{step.id}}</td>
+				<td>{{step.name}}</td>
+				<td>{{step.course.name}}</td>
+				<td>{{step.btnName}}</td>
+				<td>{{step.btnState}}</td>
+				<td>{{step.theOrder}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_step_update', { id: step.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_step_delete', { id: step.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

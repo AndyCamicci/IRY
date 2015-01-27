@@ -23,10 +23,10 @@ class AppKernel extends Kernel
             new IRY\SecurityBundle\IRYSecurityBundle(),
             new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle(),
             new IRY\ApiBundle\IRYApiBundle(),
+            new IRY\WebDocBundle\IRYWebDocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

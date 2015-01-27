@@ -1,0 +1,43 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Image
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Add an Image</label>
+		{{ form(Form) }}
+		<label class="label">Manage Images</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Path</th>
+				<th>Course</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for image in images %}
+			<tr>
+				<td>{{image.id}}</td>
+				<td>{{image.name}}</td>
+				<td>{{image.path}}</td>
+				<td>{{image.course.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_image_update', { id: image.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_image_delete', { id: image.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

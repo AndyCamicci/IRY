@@ -1,10 +1,42 @@
-{{ form(helicopterForm) }}
-<table>
-{% for helicopter in helicopters %}
-	<tr>
-		<td>{{helicopter.name}}</td>
-		<td><a href="{{ path('iry_crud_heli_update', {'id': helicopter.id}) }}">Update</a></td>
-		<td><a href="{{ path('iry_crud_heli_delete', {'id': helicopter.id}) }}">Delete</a></td>
-	</tr>
-{% endfor %}
-</ul>
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Helicopters
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+
+		<label class="label">Add an Helicopter</label>
+		{{ form(addHelicopterForm) }}
+		<label class="label">Manage Helicopters</label>
+		<div class="filter">
+			<label for="">Filter</label>
+			<input type="text">
+		</div>
+		<table class="list">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			{% for helicopter in helicopters %}
+			<tr>
+				<td>{{helicopter.id}}</td>
+				<td>{{helicopter.name}}</td>
+				<td class="update">
+					<a href="{{ path('iry_crud_heli_update', { id: helicopter.id }) }}">
+					</a>
+				</td>
+				<td class="delete">
+					<a href="{{ path('iry_crud_heli_delete', { id: helicopter.id }) }}">
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+
+	
+{% endblock %}

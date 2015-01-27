@@ -5,6 +5,8 @@ IRY\AppliBundle\Entity\Step:
             expose: true
         name:
             expose: true
+        btn_name:
+          expose: true
     virtual_properties:
         getPercentInCourse:
             serialized_name: percent_in_course

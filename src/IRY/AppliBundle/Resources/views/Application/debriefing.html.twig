@@ -1,12 +1,159 @@
 {% extends 'IRYAppliBundle:Application:base.html.twig' %}
 
 {% block header_title %}
+    {{course.name}}
 {% endblock %}
 
 {% block header_back_btn %}
+<a href="{{ path('iry_appli_home') }}" id="back_btn">
+		<img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+	</a>
 {% endblock %}
 
 {% block body %}
     <div id="content">
+        <section id="dc">
+            <div class="dc_wrap cf" data-step="1">
+                <div class="list">
+                    <div class="cat">
+                         <span> SUCESS </span> 
+                         <span> ERRORS </span> 
+                         <span> FAVORITES </span>
+
+
+        
+                      <ul class="pilot_list">
+                            <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>Not light On</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                            </a>
+                            <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>FUEL PUMP On</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                            </a>
+                            <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>ANTI COL On</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                            </a>
+                            <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>STARTING SELECTOR On</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                            </a>
+                            <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>Raise the speed continuously</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                            </a>
+                             <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>FUEL PUMP Off</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                            </a>
+                             <a href="">
+                                <li class="pilot cf" data-pilot-id="1">
+                                    <div class="pilot_name element" data-step="2">
+                                        <span>PITOT On</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div class="success element">
+                                            <span>25</span>
+                                        </div>
+                                        <div class="errors element">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="favorites element">
+                                            <span data-favorites-time="0"></span>
+                                        </div>
+                                    </div>                                                                   
+                                </li>
+                   
+                            </a>         
+                      </ul>
+                  <div>  
+             </div> 
+        </section>
     </div>
 {% endblock %}
+

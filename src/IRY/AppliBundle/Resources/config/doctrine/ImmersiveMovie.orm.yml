@@ -1,0 +1,21 @@
+IRY\AppliBundle\Entity\ImmersiveMovie:
+    type: entity
+    table: ImmersiveMovie
+    repositoryClass: IRY\AppliBundle\Entity\ImmersiveMovieRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            length: 255
+        path:
+            type: text
+    lifecycleCallbacks:
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        preRemove: [ removeUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]

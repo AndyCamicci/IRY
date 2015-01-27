@@ -1,0 +1,79 @@
+$black-color         : #343434;
+$grey-dark-dark-color: #909090;
+$grey-dark-color     : #a8a8a7;
+$grey-color          : #d1cece;
+$grey-light-color    : #EEE8EA;
+$blue-color          : #0fa7b7;
+$red-color           : #fb0301;
+
+$theme-color:$grey-dark-dark-color;
+$cm-color   :#176c73;
+$cd-color   :#178098;
+$vi-color   :#0b8ead;
+$ep-color   :#0fa7b7;
+
+*, *:before, *:after {
+	/*box-sizing: border-box;*/
+}
+.crud-container {
+	padding: 30px;
+	margin: auto;
+	.list {
+		display: inline-block;
+		text-align: left;
+		margin-top: 10px;
+
+		li {
+			display: inline-block;
+			position: relative;
+			margin: 10px;
+			background-color: $grey-color;
+			padding: 20px 80px 20px 20px;
+			color: $cd-color;
+			text-align: left;
+
+			.actions {
+				text-align: right;
+				position: absolute;
+				top: 17px;
+				right: 20px;
+				a {
+					display: inline-block;
+					width: 20px;
+					height: 20px;
+					background-size: cover;
+				}
+				.update {
+					background-image: url("../img/crud/update.png");
+					
+				}
+				.delete {
+					background-image: url("../img/crud/delete.png");
+				}
+				.add {
+					background-image: url("../img/crud/plus.png");
+				}
+			}
+			&:after {
+				content: "";
+				display: block;
+				border-left: 1px white solid;
+				width: 10px;
+				height: 60%;
+				position: absolute;
+				right: 60px;
+				top: 20%;
+			}
+		
+			&.add {
+				background-color: $blue-color;
+				color: white;
+				padding: 20px 60px 20px 20px;
+				&:after {
+					right: 40px;
+				}
+			}
+		}
+	}
+	
+}

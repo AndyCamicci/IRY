@@ -3,3 +3,8 @@ login:
     defaults:  { _controller: IRYSecurityBundle:Security:login }
 login_check:
     pattern:   /login_check
+register:
+    pattern:   /register
+    defaults:  { _controller: IRYSecurityBundle:Security:register }
+logout:
+    path:     /logout

@@ -12,10 +12,12 @@
 
 {% block body %}
     <div id="content">
-        <a id="startButton" class="introjs" style="top:-50px;left:300px;" href="javascript:void(0);">Guide de présentation</a>
         <section id ="vi" class="cf">
             <div class="video_wrap">
-                <video src="{{ asset('bundles/iryappli') }}/img/video.mp4" controls autoplay muted></video>
+                {% if not course.immersiveMovie is null %}
+                {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : '/'~course.immersiveMovie.unityPath}) }}
+                {% endif %}
+                {# <video src="{{ asset('bundles/iryappli') }}/img/video.mp4" controls autoplay muted></video> #}
             </div>
         </section>
         <section class="schema_image">
@@ -25,7 +27,7 @@
                     {% for image in images %}
                         <li>
                             <span>{{image.name}}</span>
-                            <img src="{{ asset('bundles/iryappli') }}/img/schema/{{image.img}}" alt="{{image.name}}">
+                            <img src="vi/{{image.webPath}}" alt="{{image.name}}">
                         </li>
                     {% endfor %}
                 </ul>

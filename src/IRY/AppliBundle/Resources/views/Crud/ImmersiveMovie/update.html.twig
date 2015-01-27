@@ -1,0 +1,12 @@
+{% extends 'IRYAppliBundle:Application:base.html.twig' %}
+
+{% block header_title %}
+    Immersive Movie
+{% endblock %}
+
+{% block body %}
+	<div id="content" class="crud-container">
+		<label class="label">Update an Immersive Movie</label>
+		{{ form(immersiveMovieForm) }}
+	</div>
+{% endblock %}

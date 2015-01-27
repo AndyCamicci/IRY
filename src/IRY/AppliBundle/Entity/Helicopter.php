@@ -130,4 +130,42 @@ class Helicopter {
     {
         return $this->imgHelico;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $series;
+
+
+    /**
+     * Add series
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $series
+     * @return Helicopter
+     */
+    public function addSeries(\IRY\AppliBundle\Entity\Serie $series)
+    {
+        $this->series[] = $series;
+
+        return $this;
+    }
+
+    /**
+     * Remove series
+     *
+     * @param \IRY\AppliBundle\Entity\Serie $series
+     */
+    public function removeSeries(\IRY\AppliBundle\Entity\Serie $series)
+    {
+        $this->series->removeElement($series);
+    }
+
+    /**
+     * Get series
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeries()
+    {
+        return $this->series;
+    }
 }

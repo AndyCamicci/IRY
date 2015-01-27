@@ -12,21 +12,20 @@
 
 {% block body %}
     <div id="content">
-        <a id="startButton" class="introjs" href="javascript:void(0);">Guide de présentation</a>
         <section id="ep">
-            <div class="ep_wrap cf" data-step="1" data-intro="Pendant l'exercice pratique de chaque apprenant, l'instructeur pourra suivre l'avancement de chaque pilote via cette interface.">
+            <div class="ep_wrap cf">
                 <div class="list">
                     <ul class="pilot_list">
             			{% for pilot in pilots %}
                             <a href="{{ path("iry_appli_ep_pilot", {course_id: course.id, pilot_id: pilot.id}) }}">
                                 
                                 <li class="pilot" data-pilot-id="{{ pilot.id }}">
-                                    <div class="pilot_name element" data-step="2" data-intro="Pour chaque pilote, différentes informations sont transmises à l'instructeur en direct, comme le nom...">
+                                    <div class="pilot_name element">
                                         <span>{{pilot.name}}</span>
                                     </div>
                                     
                                     {% set currentStep = pilot.currentStep %}
-                                    <div class="step element percent" data-step="3" data-intro="...le nom de l'étape où il en est, avec le pourcentage d'avancement dans l'ensemble de la procédure...">
+                                    <div class="step element percent">
                                         <span class="bar percent-value" data-percent="{{ (currentStep is null) ? 0 : currentStep.percentInCourse}}"></span>
                                         <span class="title">
                                             {% if not currentStep is null %}
@@ -36,13 +35,13 @@
                                             {% endif %}
                                         </span>
                                     </div>
-                                    <div class="success element" data-step="4" data-intro="...le nombre de procédures réussies...">
+                                    <div class="success element">
                                         <span>{{ pilot.nbSuccess }}</span>
                                     </div>
-                                    <div class="errors element" data-step="5" data-intro=" ainsi que le nombre de procédures échouées.">
+                                    <div class="errors element">
                                         <span>{{ pilot.nbErrors }}</span>
                                     </div>
-                                    <div class="call element" data-step="6" data-intro="Enfin, cet icone signifie que cet apprennat a besoin d'aide et souhaiterait que l'instructeur rentre en communication avec lui. Afin de faciliter le travail de l'instructeur, l'apprenant qui a appelé le premier sera automatiquement remonté dans la liste et sera aidé le premier.">
+                                    <div class="call element">
                                         <span {% if (pilot.isCalling == true) %}class="active"{% endif %} data-call-time="{{pilot.javascriptTimestampDateCalling}}"></span>
                                     </div>
                                 </li>
@@ -50,12 +49,13 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <a href="{{ path('iry_appli_dc') }}" class="gotodebriefing"  data-step="8" data-intro="Lorsque l'exercice pratique est terminé, l'instructeur propose aux apprennats de débriefer autour de cet exercice (page pas encore développée).">
+                <a href="{{ path('iry_appli_dc', {course_id: course.id}) }}" class="gotodebriefing"  data-step="8" data-intro="Lorsque l'exercice pratique est terminé, l'instructeur propose aux apprennats de débriefer autour de cet exercice (page en cours de developpement).">
+                    
                     Go to Debriefing
                 </a>
             </div>
             <div class="ep_list_wrap">
-                <div class="plus" data-step="7" data-intro="Une fenêtre dépliable permet également à l'instructeur de savoir lors de quelle étape de la procédure les echecs des apprennats ont été commis" data-position='left'></div>
+                <div class="plus"></div>
                 <h3>
                     {{course.name}}
                 </h3>
@@ -107,10 +107,8 @@
             </li>
         </a>
     </script>
-
     <script>
         var checkPilotsUrl = "{{ path('get_pilots', { "_format" : "json" }) }}";
         var viewPilotUrl = "{{ path("iry_appli_ep_pilot", {course_id: course.id, pilot_id: "pilotId"}) }}";
     </script>
-
 {% endblock %}
