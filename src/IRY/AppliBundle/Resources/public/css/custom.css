@@ -1346,54 +1346,47 @@ html body #content section#dc .dc_wrap ul li:active {
   margin: 4px 4px 10px 0;
 }
 /* line 1135, ../sass/custom.scss */
-html body #content section#dc .dc_wrap ul li .cat {
-  position: relative;
-  display: inline-block;
-  text-align: right;
-  margin-right: auto;
-}
-/* line 1141, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li div.element {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   text-align: left;
 }
-/* line 1146, ../sass/custom.scss */
+/* line 1140, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li div.element span {
   font-size: 1.2rem;
 }
-/* line 1150, ../sass/custom.scss */
+/* line 1144, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .pilot_name {
   width: 50%;
   float: left;
   margin-top: 7px;
 }
-/* line 1155, ../sass/custom.scss */
+/* line 1149, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .stats {
   width: 50%;
   float: right;
   text-align: right;
 }
-/* line 1161, ../sass/custom.scss */
+/* line 1155, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
   font-size: 1.3rem;
   padding: 5px 0;
   color: #909090;
 }
-/* line 1167, ../sass/custom.scss */
+/* line 1161, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors, html body #content section#dc .dc_wrap ul li .favorites {
   width: 75px;
   height: 30px;
 }
-/* line 1170, ../sass/custom.scss */
+/* line 1164, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span, html body #content section#dc .dc_wrap ul li .favorites span {
   margin-right: 40px;
   display: inline-block;
   /*padding: 5px 10px;*/
   /*padding-right: 50px;*/
 }
-/* line 1175, ../sass/custom.scss */
+/* line 1169, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span:after, html body #content section#dc .dc_wrap ul li .errors span:after, html body #content section#dc .dc_wrap ul li .favorites span:after {
   content: "";
   width: 25px;
@@ -1402,88 +1395,121 @@ html body #content section#dc .dc_wrap ul li .success span:after, html body #con
   right: 15px;
   top: 1px;
 }
-/* line 1185, ../sass/custom.scss */
+/* line 1179, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success, html body #content section#dc .dc_wrap ul li .errors {
   border-right: 2px solid #0fa7b7;
   text-align: right;
 }
-/* line 1188, ../sass/custom.scss */
+/* line 1182, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span, html body #content section#dc .dc_wrap ul li .errors span {
   padding: 6px 10px;
 }
-/* line 1194, ../sass/custom.scss */
+/* line 1188, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span:after {
   background: url(../img/sucess_dc.png);
   background-size: contain;
 }
-/* line 1198, ../sass/custom.scss */
+/* line 1192, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .success span.active:after {
   background: url(../img/sucesss.png);
   background-size: contain;
 }
-/* line 1206, ../sass/custom.scss */
+/* line 1200, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .errors span:after {
   background: url(../img/errors_dc.png);
   background-size: contain;
 }
-/* line 1212, ../sass/custom.scss */
+/* line 1206, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .favorites {
   text-align: right;
 }
-/* line 1215, ../sass/custom.scss */
+/* line 1209, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul li .favorites span:after {
   background: url(../img/favori.png);
   background-size: contain;
 }
-/* line 1225, ../sass/custom.scss */
+/* line 1217, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .cat {
+  height: 25px;
+  position: relative;
+  text-align: right;
+  /*float: left;*/
+  color: #a8a8a7;
+}
+/* line 1224, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .cat div {
+  display: inline-block;
+}
+/* line 1228, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .success_1 {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+/* line 1231, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .success_1 span {
+  padding-right: 30px;
+}
+/* line 1236, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .errors_1 span {
+  padding-right: 30px;
+}
+/* line 1240, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .favorites_1 {
+  text-align: left;
+}
+/* line 1242, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .favorites_1 span {
+  padding: 10px;
+}
+/* line 1248, ../sass/custom.scss */
 html body #content.login {
   background: url(../img/bg_login.jpg) 50% -100px;
   background-size: cover;
   padding: 150px;
   text-align: left;
 }
-/* line 1230, ../sass/custom.scss */
+/* line 1253, ../sass/custom.scss */
 html body #content.login form {
   display: inline-block;
   /* firefox 19+ */
   /* ie */
 }
-/* line 1232, ../sass/custom.scss */
+/* line 1255, ../sass/custom.scss */
 html body #content.login form ::-webkit-input-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1233, ../sass/custom.scss */
+/* line 1256, ../sass/custom.scss */
 html body #content.login form ::-moz-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1234, ../sass/custom.scss */
+/* line 1257, ../sass/custom.scss */
 html body #content.login form :-ms-input-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1235, ../sass/custom.scss */
+/* line 1258, ../sass/custom.scss */
 html body #content.login form input:-moz-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
-/* line 1236, ../sass/custom.scss */
+/* line 1259, ../sass/custom.scss */
 html body #content.login form .container {
   display: block;
   background: white;
   margin: 0 0 20px;
   border-radius: 5px;
 }
-/* line 1241, ../sass/custom.scss */
+/* line 1264, ../sass/custom.scss */
 html body #content.login form .container label {
   display: block;
   float: left;
@@ -1491,17 +1517,17 @@ html body #content.login form .container label {
   height: 30px;
   margin: 5px;
 }
-/* line 1247, ../sass/custom.scss */
+/* line 1270, ../sass/custom.scss */
 html body #content.login form .container label#username {
   background: url("../img/user_icon.png");
   background-size: cover;
 }
-/* line 1251, ../sass/custom.scss */
+/* line 1274, ../sass/custom.scss */
 html body #content.login form .container label#password {
   background: url("../img/password_icon.png");
   background-size: cover;
 }
-/* line 1256, ../sass/custom.scss */
+/* line 1279, ../sass/custom.scss */
 html body #content.login form .container input {
   color: #a8a8a7 !important;
   font: 1.5rem 'biko';
@@ -1512,7 +1538,7 @@ html body #content.login form .container input {
   border: none;
   padding: 0 10px;
 }
-/* line 1266, ../sass/custom.scss */
+/* line 1289, ../sass/custom.scss */
 html body #content.login form .container .select2-container {
   height: 40px;
   line-height: 40px;
@@ -1520,35 +1546,35 @@ html body #content.login form .container .select2-container {
   font: 1.5rem 'biko';
   color: #a8a8a7;
 }
-/* line 1272, ../sass/custom.scss */
+/* line 1295, ../sass/custom.scss */
 html body #content.login form .container .select2-container span, html body #content.login form .container .select2-container a {
   color: #a8a8a7;
   text-align: center;
   height: 40px !important;
   line-height: 40px !important;
 }
-/* line 1279, ../sass/custom.scss */
+/* line 1302, ../sass/custom.scss */
 html body #content.login form .container .select2-container .select2-choice .select2-arrow {
   width: 40px;
 }
-/* line 1281, ../sass/custom.scss */
+/* line 1304, ../sass/custom.scss */
 html body #content.login form .container .select2-container .select2-choice .select2-arrow b {
   width: 18px;
   margin: 0 11px;
   background-position-y: 7px;
 }
-/* line 1289, ../sass/custom.scss */
+/* line 1312, ../sass/custom.scss */
 html body #content.login form .container .select2-results .select2-result-label {
   color: #a8a8a7 !important;
 }
-/* line 1293, ../sass/custom.scss */
+/* line 1316, ../sass/custom.scss */
 html body #content.login form .error_message {
   margin: auto;
   margin-bottom: 20px;
   color: #fb0301;
   font: 1.5rem 'biko';
 }
-/* line 1299, ../sass/custom.scss */
+/* line 1322, ../sass/custom.scss */
 html body #content.login form button {
   border-radius: 5px;
   background: #0fa7b7;
@@ -1560,19 +1586,19 @@ html body #content.login form button {
   line-height: 40px;
   cursor: pointer;
 }
-/* line 1312, ../sass/custom.scss */
+/* line 1335, ../sass/custom.scss */
 html body #content.crud-container {
   padding: 30px;
   overflow: auto;
   margin: auto;
 }
-/* line 1316, ../sass/custom.scss */
+/* line 1339, ../sass/custom.scss */
 html body #content.crud-container .list {
   text-align: center;
   padding: 10px;
   margin: 15px auto 100px;
 }
-/* line 1320, ../sass/custom.scss */
+/* line 1343, ../sass/custom.scss */
 html body #content.crud-container .list li {
   display: inline-block;
   position: relative;
@@ -1582,37 +1608,37 @@ html body #content.crud-container .list li {
   color: #178098;
   text-align: left;
 }
-/* line 1329, ../sass/custom.scss */
+/* line 1352, ../sass/custom.scss */
 html body #content.crud-container .list li .actions {
   text-align: right;
   position: absolute;
   top: 17px;
   right: 20px;
 }
-/* line 1334, ../sass/custom.scss */
+/* line 1357, ../sass/custom.scss */
 html body #content.crud-container .list li .actions a {
   display: inline-block;
   width: 20px;
   height: 20px;
   background-size: cover;
 }
-/* line 1340, ../sass/custom.scss */
+/* line 1363, ../sass/custom.scss */
 html body #content.crud-container .list li .actions .update {
   background-image: url("../img/crud/update.png");
 }
-/* line 1344, ../sass/custom.scss */
+/* line 1367, ../sass/custom.scss */
 html body #content.crud-container .list li .actions .delete {
   background-image: url("../img/crud/delete.png");
 }
-/* line 1347, ../sass/custom.scss */
+/* line 1370, ../sass/custom.scss */
 html body #content.crud-container .list li .actions .add {
   background-image: url("../img/crud/plus.png");
 }
-/* line 1350, ../sass/custom.scss */
+/* line 1373, ../sass/custom.scss */
 html body #content.crud-container .list li .actions .go {
   background-image: url("../img/crud/go.png");
 }
-/* line 1354, ../sass/custom.scss */
+/* line 1377, ../sass/custom.scss */
 html body #content.crud-container .list li:after {
   content: "";
   display: block;
@@ -1623,124 +1649,124 @@ html body #content.crud-container .list li:after {
   right: 70px;
   top: 20%;
 }
-/* line 1365, ../sass/custom.scss */
+/* line 1388, ../sass/custom.scss */
 html body #content.crud-container .list li.add, html body #content.crud-container .list li.go {
   background-color: #0fa7b7;
   color: white;
   padding: 20px 70px 20px 20px;
 }
-/* line 1369, ../sass/custom.scss */
+/* line 1392, ../sass/custom.scss */
 html body #content.crud-container .list li.add:after, html body #content.crud-container .list li.go:after {
   right: 45px;
 }
-/* line 1374, ../sass/custom.scss */
+/* line 1397, ../sass/custom.scss */
 html body #content.crud-container .list tr {
   margin: 10px;
   padding: 20px;
 }
-/* line 1377, ../sass/custom.scss */
+/* line 1400, ../sass/custom.scss */
 html body #content.crud-container .list tr th, html body #content.crud-container .list tr td {
   padding: 15px;
 }
-/* line 1380, ../sass/custom.scss */
+/* line 1403, ../sass/custom.scss */
 html body #content.crud-container .list tr th {
   color: white;
   background: #0fa7b7;
 }
-/* line 1384, ../sass/custom.scss */
+/* line 1407, ../sass/custom.scss */
 html body #content.crud-container .list tr td {
   position: relative;
   color: #0fa7b7;
   background-color: #d1cece;
 }
-/* line 1388, ../sass/custom.scss */
+/* line 1411, ../sass/custom.scss */
 html body #content.crud-container .list tr td.update, html body #content.crud-container .list tr td.delete {
   padding: 0;
 }
-/* line 1390, ../sass/custom.scss */
+/* line 1413, ../sass/custom.scss */
 html body #content.crud-container .list tr td.update a, html body #content.crud-container .list tr td.delete a {
   height: 100%;
   width: 100%;
   display: inline-block;
 }
-/* line 1396, ../sass/custom.scss */
+/* line 1419, ../sass/custom.scss */
 html body #content.crud-container .list tr td.update {
   background: url("../img/crud/update.png") no-repeat #d1cece center;
   background-size: auto 30px;
 }
-/* line 1400, ../sass/custom.scss */
+/* line 1423, ../sass/custom.scss */
 html body #content.crud-container .list tr td.delete {
   background: url("../img/crud/delete.png") no-repeat #d1cece center;
   background-size: auto 30px;
 }
-/* line 1407, ../sass/custom.scss */
+/* line 1430, ../sass/custom.scss */
 html body #content.crud-container > .label {
   color: #0fa7b7;
   font: 1.2rem 'biko';
 }
-/* line 1411, ../sass/custom.scss */
+/* line 1434, ../sass/custom.scss */
 html body #content.crud-container form {
   text-align: center;
   margin: 15px;
 }
-/* line 1414, ../sass/custom.scss */
+/* line 1437, ../sass/custom.scss */
 html body #content.crud-container form > div {
   display: inline-block;
   text-align: right;
   color: #0fa7b7;
 }
-/* line 1418, ../sass/custom.scss */
+/* line 1441, ../sass/custom.scss */
 html body #content.crud-container form > div label, html body #content.crud-container form > div input {
   color: #0fa7b7;
   padding: 5px;
   width: 260px;
 }
-/* line 1422, ../sass/custom.scss */
+/* line 1445, ../sass/custom.scss */
 html body #content.crud-container form > div label#immersiveMovie_file, html body #content.crud-container form > div label#image_file, html body #content.crud-container form > div input#immersiveMovie_file, html body #content.crud-container form > div input#image_file {
   padding: 0;
   width: 274px;
 }
-/* line 1427, ../sass/custom.scss */
+/* line 1450, ../sass/custom.scss */
 html body #content.crud-container form > div .select2-container {
   width: 274px;
 }
-/* line 1429, ../sass/custom.scss */
+/* line 1452, ../sass/custom.scss */
 html body #content.crud-container form > div .select2-container a {
   border-radius: 0;
   color: #0fa7b7;
 }
-/* line 1437, ../sass/custom.scss */
+/* line 1460, ../sass/custom.scss */
 html body #content.crud-container form button {
   padding: 5px;
   color: #0fa7b7;
 }
-/* line 1442, ../sass/custom.scss */
+/* line 1465, ../sass/custom.scss */
 html body #content.crud-container .filter {
   margin: 15px;
 }
-/* line 1444, ../sass/custom.scss */
+/* line 1467, ../sass/custom.scss */
 html body #content.crud-container .filter label {
   padding: 5px;
   color: #0fa7b7;
 }
-/* line 1448, ../sass/custom.scss */
+/* line 1471, ../sass/custom.scss */
 html body #content.crud-container .filter input {
   padding: 5px;
   width: 150px;
 }
-/* line 1455, ../sass/custom.scss */
+/* line 1478, ../sass/custom.scss */
 html body .cm_images {
   margin: auto;
   width: 100%;
 }
-/* line 1459, ../sass/custom.scss */
+/* line 1482, ../sass/custom.scss */
 html body .cm_images .image embed {
   margin: auto;
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 1468, ../sass/custom.scss */
+/* line 1491, ../sass/custom.scss */
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -1748,7 +1774,7 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
-/* line 1474, ../sass/custom.scss */
+/* line 1497, ../sass/custom.scss */
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
