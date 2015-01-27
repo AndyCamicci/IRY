@@ -10,17 +10,17 @@ ALTER TABLE db555786140.Result AUTO_INCREMENT = 0;
 SET foreign_key_checks = 0;
 
 INSERT INTO db555786140.Helicopter (id, name, type, imgHelico) VALUES
-	(NULL, "EC120B", "Civil", "imgHelico1"),
-	(NULL, "Ecureuil AS350B3e", "Civil", "imgHelico2"),
-	(NULL, "Ecureuil AS350B2", "Civil", "imgHelico3"),
-	(NULL, "EC135", "Civil", "imgHelico4"),
-	(NULL, "EC145", "Civil", "imgHelico5"),
-	(NULL, "Dauphin", "Civil", "imgHelico6"),
-	(NULL, "Super Puma", "Civil", "imgHelico7"),
-	(NULL, "EC175", "Civil", "imgHelico8"),
-	(NULL, "Fennec", "Military", "imgHelico9"),
-	(NULL, "Panther", "Military", "imgHelico10"),
-	(NULL, "Cougar", "Military", "imgHelico11");
+	(NULL, "EC120B", "Civil", "EC120B.png"),
+	(NULL, "Ecureuil AS350B3e", "Civil", "AS350B3e.png"),
+	(NULL, "Ecureuil AS350B2", "Civil", "AS350B2.png"),
+	(NULL, "EC135", "Civil", "EC135.png"),
+	(NULL, "EC145", "Civil", "EC145.png"),
+	(NULL, "Dauphin", "Civil", "Dauphin.png"),
+	(NULL, "Super Puma", "Civil", "SuperPuma.png"),
+	(NULL, "EC175", "Civil", "EC175.png"),
+	(NULL, "Fennec", "Military", "Fennec.png"),
+	(NULL, "Panther", "Military", "Panther.png"),
+	(NULL, "Cougar", "Military", "Cougar.png");
 
 INSERT INTO db555786140.Theme (id, helicopter_id, name) VALUES
 	(NULL, "2", "Hydrolic system"),
