@@ -1,15 +1,27 @@
 iry_web_doc_homepage:
     path:     /
     defaults: { _controller: IRYWebDocBundle:Default:index }
-iry_web_doc_thanks:
-    path:     /thanks
-    defaults: { _controller: IRYWebDocBundle:Default:thanks }
-iry_web_doc_categories:
-    path:     /categories
-    defaults: { _controller: IRYWebDocBundle:Default:categories }
-iry_web_doc_history:
-    path:     /history
-    defaults: { _controller: IRYWebDocBundle:Default:history }
-iry_web_doc_team:
-    path:     /team
-    defaults: { _controller: IRYWebDocBundle:Default:team }
+iry_web_doc_concept:
+    path:     /concept
+    defaults: { _controller: IRYWebDocBundle:Default:concept }
+iry_web_doc_enjeux:
+    path:     /enjeux
+    defaults: { _controller: IRYWebDocBundle:Default:enjeux }
+iry_web_doc_leap:
+    path:     /leap
+    defaults: { _controller: IRYWebDocBundle:Default:leap }
+iry_web_doc_oculus:
+    path:     /oculus
+    defaults: { _controller: IRYWebDocBundle:Default:oculus }
+iry_web_doc_dispositif:
+    path:     /dispositif
+    defaults: { _controller: IRYWebDocBundle:Default:dispositif }
+iry_web_doc_equipe:
+    path:     /equipe
+    defaults: { _controller: IRYWebDocBundle:Default:equipe }
+iry_web_doc_historique:
+    path:     /historique
+    defaults: { _controller: IRYWebDocBundle:Default:historique }
+iry_web_doc_remerciements:
+    path:     /remerciements
+    defaults: { _controller: IRYWebDocBundle:Default:remerciements }

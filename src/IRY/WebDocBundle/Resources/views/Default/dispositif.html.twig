@@ -1,0 +1,38 @@
+{% extends 'IRYWebDocBundle:Default:base.html.twig' %}		
+
+{% block body %}
+		
+		<div class="content full team dispositif bg-dispositif">
+			<div class="dispositifs">
+				<div class="barre"></div>
+				<h2 class="troislignes">Les éléments du dispositif</h2>
+				<div class="dispo oculus" data-link="oculus.html">
+					<div class="subnav">
+						<h3>Oculus Rift</h3>
+						<ul class="menu-deroulant">
+							<a href="#"><li>Fiche technique</li></a>
+							<a href="#"><li>Avis de spécialistes de la Réalité Virtuelle</li></a>
+						</ul>
+					</div>
+				</div>
+				<div class="dispo leap" data-link="leap.html">
+					<div class="subnav">
+						<h3>Leap Motion</h3>
+						<ul class="menu-deroulant">
+							<a href="#"><li>Fiche technique</li></a>
+							<a href="#"><li>Intervenant spécialité dans l'interaction 3D</li></a>
+						</ul>
+					</div>
+				</div>
+				<div class="dispo instructeur" data-link="instructeur.html">
+					<div class="subnav">
+						<h3>Application instructeur</h3>
+						<ul class="menu-deroulant">
+							<a href="#"><li>Fiche technique</li></a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    
+{% endblock %}

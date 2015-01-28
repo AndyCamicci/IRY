@@ -1,0 +1,28 @@
+{% extends 'IRYWebDocBundle:Default:base.html.twig' %}		
+
+{% block body %}
+		
+    <div class="content full video">
+      <video id="v1" class="content-video">    
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueLeap.mov" type="video/mp4">
+      </video>
+    </div>
+    <div class="barre-wrap">
+      <h2>Leap Motion</h2>
+      <div id="defile">
+        <h3 class="title_video_1">Fiche technique</h3>   
+        <div id="precharge"></div>
+        <h3 class="title_video_4" style="left:50%">Intervenant spécialité dans l'interaction 3D</h3>
+        <div class="trait" style="left:50%"></div> 
+      </div>
+    </div>
+    <script>
+      var videosSources = [
+        "{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueLeap.mov",
+        "{{ asset('bundles/irywebdoc') }}/videos/Specialiste3D.mov",
+      ];
+    </script>
+    
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'IRYWebDocBundle:Default:base.html.twig' %}		
+
+{% block body %}
+		
+    <div class="content full video">
+      <video id="v1" class="content-video">    
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueOculus.mov" type="video/mp4">
+      </video>
+    </div>
+    <div class="barre-wrap">
+      <h2>Oculus Rift</h2>
+      <div id="defile">
+        <h3 class="title_video_1">Fiche technique</h3>   
+        <div id="precharge"></div>
+        <h3 class="title_video_4" style="left:50%">Avis de spécialistes de la Réalité Virtuelle</h3>
+        <div class="trait" style="left:50%"></div> 
+      </div>
+    </div>
+    <script>
+      var videosSources = [
+        "{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueOculus.mov",
+        "{{ asset('bundles/irywebdoc') }}/videos/SpecialistesRV.mov",
+      ];
+    </script>
+    
+{% endblock %}
+{% block footer %}
+{% endblock %}

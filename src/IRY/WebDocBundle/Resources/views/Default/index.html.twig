@@ -5,7 +5,7 @@
 		<div class="logo">
 			<img src="{{ asset('bundles/irywebdoc') }}/images/logo.png">
 		</div>
-		<div class="langue">
+		<div class="langue hide">
 			<a href="#">EN</a>
 			-
 			<a href="#" class="langue-active">FR</a>
@@ -13,10 +13,9 @@
 	</header>
 {% endblock %}
 		
-
 {% block body %}
 		
-		<div class="content">
+		<div class="content bg-home">
 			<div class="content-left">
 				<h1>Projet IRY</h1>
 				<hr>
@@ -45,7 +44,7 @@
 				<div class="svg">
 
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="340" height="340">
-						<a xlink:href="{{ path('iry_web_doc_categories') }}">
+						<a xlink:href="{{ path("iry_web_doc_concept") }}">
 							<g class="camembert" id="top">
 								<path fill="#1D939F" d="M282.2,45.4c-62.5-62.5-163.7-62.5-226.2,0l113.1,113.1L282.2,45.4z"/>
 								<path fill="#3EB8C4" d="M282.2,45.4c-60.5-60.5-158.7-60.5-219.2,0L172.6,155L282.2,45.4z"/>
@@ -58,7 +57,7 @@
 								<image x="138" y="33" xlink:href="{{ asset('bundles/irywebdoc') }}/images/cam_iry.png" width="70px" height="70px"></image>
 							</g>
 						</a>
-						<a xlink:href="{{ path('iry_web_doc_categories') }}">
+						<a xlink:href="enjeux.html">
 							<g class="camembert" id="right">
 								<path fill="#188098" d="M289.1,278.5c62.4-62.4,62.4-163.5,0-225.9L176.2,165.6L289.1,278.5z"/>
 								<path fill="#3CA4BD" d="M292.8,275.2c60.5-60.5,60.5-158.7,0-219.2L183.2,165.6L292.8,275.2z"/>
@@ -71,7 +70,7 @@
 								<image x="238" y="133" xlink:href="{{ asset('bundles/irywebdoc') }}/images/cam_cer.png" width="70px" height="70px"></image>
 							</g>
 						</a>
-						<a xlink:href="{{ path('iry_web_doc_thanks') }}">
+						<a xlink:href="remerciements.html">
 							<g class="camembert" id="bottom">
 								<path fill="#176D74" d="M56,285.8c62.5,62.5,163.7,62.5,226.2,0L169.1,172.7L56,285.8z"/>
 								<path fill="#3C8F98" d="M63,285.8c60.5,60.5,158.7,60.5,219.2,0L172.6,176.2L63,285.8z"/>
@@ -84,7 +83,7 @@
 								</g>
 							</g>
 						</a>
-						<a xlink:href="{{ path('iry_web_doc_categories') }}">
+						<a xlink:href="dispositif.html">
 							<g class="camembert" id="left">
 								<path fill="#188098" d="M48.9,52.5c-62.5,62.5-62.5,163.7,0,226.2L162,165.6L48.9,52.5z"/>
 								<path fill="#3CA4BD" d="M52.4,56c-60.5,60.5-60.5,158.7,0,219.2L162,165.6L52.4,56z"/>

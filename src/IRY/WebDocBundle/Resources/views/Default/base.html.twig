@@ -10,6 +10,8 @@
         <link href="{{ asset('bundles/irywebdoc/stylesheets/screen.css') }}" rel="stylesheet">
         <link href="{{ asset('bundles/irywebdoc/stylesheets/custom.css') }}" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="{{ asset('bundles/irywebdoc') }}/scripts/main.js"></script>
+
     </head>
     <body>
         {% block header %}
@@ -19,25 +21,116 @@
         {% endblock %}
 
         {% block body %}
-
         {% endblock %}
 
         {% block footer %}
             <footer class="small-footer">
-
                 <nav class="small-nav">
                     <ul>
-                        <li><a href="{{ path('iry_web_doc_history') }}">Historique</a></li>
-                        <li><a href="{{ path('iry_web_doc_team') }}">Équipe</a></li>
+                        <li><a href="{{ path('iry_web_doc_historique') }}">Historique</a></li>
+                        <li class="active"><a href="{{ path('iry_web_doc_equipe') }}">Équipe</a></li>
                     </ul>
                     <div class="menu">
-                        <p>Partenariat</p>
-                        <img src="{{ asset('bundles/irywebdoc') }}/images/menu-small.png" alt="Menu">
+                        <p class="camembert_title"></p>
+                        <div class="camembert">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" enable-background="new 0 0 80 80" xml:space="preserve">
+                                <g>
+                                    <a xlink:href="{{ path('iry_web_doc_concept') }}">
+                                        <g class="quart top" data-title="Concept">
+                                            <path fill="#3EB8C4" d="M67.2,11.3c-15-15-39.5-15-54.5,0L40,38.5L67.2,11.3z"/>
+                                        </g>
+                                    </a>
+                                    <a xlink:href="{{ path('iry_web_doc_enjeux') }}">
+                                        <g class="quart right" data-title="Enjeux">
+                                            <path fill="#3CA4BD" d="M68.7,67.2c15-15,15-39.5,0-54.5L41.5,40L68.7,67.2z"/>
+                                        </g>
+                                    </a>
+                                    <a xlink:href="{{ path('iry_web_doc_remerciements') }}">
+                                        <g class="quart bottom" data-title="Partenariat">
+                                            <path fill="#3C8F98" d="M12.8,68.7c15,15,39.5,15,54.5,0L40,41.5L12.8,68.7z"/>
+                                        </g>
+                                    </a>
+                                    <a xlink:href="{{ path('iry_web_doc_dispositif') }}">
+                                        <g class="quart left" data-title="Dispositif">
+                                            <path fill="#3CA4BD" d="M11.3,12.8c-15,15-15,39.5,0,54.5L38.5,40L11.3,12.8z"/>
+                                        </g>
+                                    </a>
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </nav>
-
             </footer>
         {% endblock %}
-        
+        <div class="fake hide">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/logo.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/alias1_color.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/alias2_color.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/alias3_color.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/alias1_nb.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/alias2_nb.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/alias3_nb.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/esaac_nb.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/icare_nb.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/esaac_color.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/icare_color.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/odin_color.png">
+
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/av_G.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/chef_G.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/com_G.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/crea_G.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/tech_G.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/av_B.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/chef_B.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/com_B.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/crea_B.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/poles/tech_B.png">
+
+            <img src="{{ asset('bundles/irywebdoc') }}/images/instructeur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/leap.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/oculus.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/instructeur_off.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/leap_off.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/oculus_off.png">
+
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/anais-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/bin-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/mad-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/andy-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/flo-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/tarek-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/yassine-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/warsama-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/yves-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/robin-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/manon-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/je-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/celt-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/fabio-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/jennifer-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/marion-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/jeremy-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/lamia-couleur.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/anais-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/bin-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/mad-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/andy-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/flo-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/tarek-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/yassine-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/warsama-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/yves-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/robin-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/manon-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/je-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/celt-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/fabio-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/jennifer-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/marion-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/jeremy-gris.png">
+            <img src="{{ asset('bundles/irywebdoc') }}/images/equipe/lamia-gris.png">
+        </div>
+        <script src="{{ asset('bundles/irywebdoc') }}/scripts/functions_souscat.js"></script>
     </body>
 </html>	

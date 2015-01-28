@@ -15,7 +15,7 @@ class LoginType extends AbstractType
                         'id' => 'username',
                         'placeholder' => 'Username',
                     )))
-                ->add('_password', 'text', array(
+                ->add('_password', 'password', array(
                     'attr' => array(
                         'id' => 'password',
                         'placeholder' => 'Password',

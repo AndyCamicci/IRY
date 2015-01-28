@@ -10,20 +10,36 @@ class DefaultController extends Controller
     {
         return $this->render('IRYWebDocBundle:Default:index.html.twig');
     }
-    public function thanksAction()
+    public function conceptAction()
     {
-        return $this->render('IRYWebDocBundle:Default:thanks.html.twig');
+        return $this->render('IRYWebDocBundle:Default:concept.html.twig');
     }
-    public function categoriesAction()
+    public function historiqueAction()
     {
-        return $this->render('IRYWebDocBundle:Default:thanks.html.twig');
+        return $this->render('IRYWebDocBundle:Default:historique.html.twig');
     }
-    public function historyAction()
+    public function equipeAction()
     {
-        return $this->render('IRYWebDocBundle:Default:history.html.twig');
+        return $this->render('IRYWebDocBundle:Default:equipe.html.twig');
     }
-    public function teamAction()
+    public function dispositifAction()
     {
-        return $this->render('IRYWebDocBundle:Default:team.html.twig');
+        return $this->render('IRYWebDocBundle:Default:dispositif.html.twig');
+    }
+    public function enjeuxAction()
+    {
+        return $this->render('IRYWebDocBundle:Default:enjeux.html.twig');
+    }
+    public function remerciementsAction()
+    {
+        return $this->render('IRYWebDocBundle:Default:remerciements.html.twig');
+    }
+    public function oculusAction()
+    {
+        return $this->render('IRYWebDocBundle:Default:oculus.html.twig');
+    }
+    public function leapAction()
+    {
+        return $this->render('IRYWebDocBundle:Default:leap.html.twig');
     }
 }

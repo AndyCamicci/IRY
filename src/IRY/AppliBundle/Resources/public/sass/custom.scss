@@ -234,6 +234,10 @@ html{
 									.helicopter_img{
 										position: relative;
 										height: 130px;
+										img{
+											height: 130px;
+											width: 200px;
+										}
 										&::after{
 											content:url(../img/plus.png);
 											/*background-image: url(../img/plus.png);*/

@@ -77,8 +77,19 @@ $(document).ready(function() {
 		$sectionAirbus.addClass("hide");
 		$sectionGlobal.removeClass("hide");
 		$sectionContainer.removeClass('bg-ingemedia');
-		$sectionContainer.removeClass('bg-airbus');
+		$sectionContainer.addClass('bg-airbus');
 		e.preventDefault();
+	});
+
+	//menu camembert
+	$(".menu .quart").on("mouseover", function(e) {
+		var title = $(this).attr("data-title");
+		$(".camembert_title").html(title);
+	});
+
+
+	$(".dispositifs .dispo").on("click", function(e) {
+		window.location.href = $(this).attr("data-link");
 	});
 
 

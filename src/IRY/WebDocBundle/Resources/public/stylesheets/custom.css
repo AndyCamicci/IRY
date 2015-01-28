@@ -18,49 +18,54 @@
 }
 
 /* line 8, ../sass/custom.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 12, ../sass/custom.scss */
 .cf:before,
 .cf:after {
   content: "";
   display: table;
 }
 
-/* line 13, ../sass/custom.scss */
+/* line 17, ../sass/custom.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 16, ../sass/custom.scss */
+/* line 20, ../sass/custom.scss */
 .cf {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
 
-/* line 20, ../sass/custom.scss */
+/* line 24, ../sass/custom.scss */
 .left {
   float: left;
 }
 
-/* line 21, ../sass/custom.scss */
+/* line 25, ../sass/custom.scss */
 .right {
   float: right;
 }
 
-/* line 22, ../sass/custom.scss */
+/* line 26, ../sass/custom.scss */
 .center {
   text-align: center;
 }
 
-/* line 23, ../sass/custom.scss */
+/* line 27, ../sass/custom.scss */
 .hide {
   display: none;
 }
 
-/* line 34, ../sass/custom.scss */
+/* line 38, ../sass/custom.scss */
 html {
   min-height: 100%;
   height: 100%;
 }
-/* line 37, ../sass/custom.scss */
+/* line 41, ../sass/custom.scss */
 html body {
   position: relative;
   font-family: arial;
@@ -68,22 +73,22 @@ html body {
   min-height: 100%;
   height: 100%;
 }
-/* line 52, ../sass/custom.scss */
+/* line 56, ../sass/custom.scss */
 html body header.home-header {
   position: relative;
   text-align: center;
   background: #FFFFFF;
 }
-/* line 56, ../sass/custom.scss */
+/* line 60, ../sass/custom.scss */
 html body header.home-header .logo {
   display: inline-block;
   padding: 10px 0 0;
 }
-/* line 59, ../sass/custom.scss */
+/* line 63, ../sass/custom.scss */
 html body header.home-header .logo img {
   height: 55px;
 }
-/* line 63, ../sass/custom.scss */
+/* line 67, ../sass/custom.scss */
 html body header.home-header .langue {
   position: absolute;
   top: 0;
@@ -91,17 +96,17 @@ html body header.home-header .langue {
   padding: 25px;
   color: #a8a8a7;
 }
-/* line 69, ../sass/custom.scss */
+/* line 73, ../sass/custom.scss */
 html body header.home-header .langue a {
   color: #a8a8a7;
   font: 1rem arial;
   text-decoration: none;
 }
-/* line 73, ../sass/custom.scss */
+/* line 77, ../sass/custom.scss */
 html body header.home-header .langue a.langue-active, html body header.home-header .langue a:hover, html body header.home-header .langue a:focus, html body header.home-header .langue a:active {
   text-decoration: underline;
 }
-/* line 78, ../sass/custom.scss */
+/* line 82, ../sass/custom.scss */
 html body header.home-header:after {
   content: "";
   background: url(../images/header_arrow.svg);
@@ -113,76 +118,75 @@ html body header.home-header:after {
   left: 0;
   right: 0;
 }
-/* line 90, ../sass/custom.scss */
+/* line 94, ../sass/custom.scss */
 html body header.small-header {
   width: 240px;
   height: 240px;
   background: url("../images/triangle-top-left-header.png") no-repeat;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
-/* line 97, ../sass/custom.scss */
+/* line 101, ../sass/custom.scss */
 html body header.small-header img {
   margin-left: 23px;
   margin-top: 27px;
   width: 134px;
 }
-/* line 103, ../sass/custom.scss */
+/* line 107, ../sass/custom.scss */
 html body .content {
-  background: url(../images/bg.jpg) no-repeat;
   padding: 40px 40px 10px 40px;
   color: #FFFFFF;
 }
-/* line 107, ../sass/custom.scss */
+/* line 110, ../sass/custom.scss */
 html body .content .content-left {
   display: inline-block;
   width: 40%;
   margin-right: 9%;
   margin-left: 5%;
 }
-/* line 112, ../sass/custom.scss */
+/* line 115, ../sass/custom.scss */
 html body .content .content-left h1 {
   font: bold 4rem 'biko_bold';
   text-transform: uppercase;
 }
-/* line 116, ../sass/custom.scss */
+/* line 119, ../sass/custom.scss */
 html body .content .content-left hr {
   background: #FFFFFF;
   height: 1px;
   border: none;
   margin: 15px 0;
 }
-/* line 122, ../sass/custom.scss */
+/* line 125, ../sass/custom.scss */
 html body .content .content-left p {
   text-align: justify;
   font-size: 1rem;
   line-height: 1.2rem;
 }
-/* line 127, ../sass/custom.scss */
+/* line 130, ../sass/custom.scss */
 html body .content .content-left .logo-airbus {
   text-align: center;
 }
-/* line 129, ../sass/custom.scss */
+/* line 132, ../sass/custom.scss */
 html body .content .content-left .logo-airbus img {
   height: 55px;
 }
-/* line 134, ../sass/custom.scss */
+/* line 137, ../sass/custom.scss */
 html body .content .content-right {
   display: inline-block;
   width: 45%;
   text-align: center;
 }
-/* line 138, ../sass/custom.scss */
+/* line 141, ../sass/custom.scss */
 html body .content .content-right .svg {
   text-align: center;
   margin: 50px;
 }
-/* line 141, ../sass/custom.scss */
+/* line 144, ../sass/custom.scss */
 html body .content .content-right .svg svg {
   overflow: visible;
 }
-/* line 143, ../sass/custom.scss */
+/* line 146, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert {
   transition: all 0.1s ease-in-out 0;
   -o-transition: all 0.1s ease-in-out 0;
@@ -190,7 +194,7 @@ html body .content .content-right .svg svg .camembert {
   -moz-transition: all 0.1s ease-in-out 0;
   -webkit-transition: all 0.1s ease-in-out 0;
 }
-/* line 145, ../sass/custom.scss */
+/* line 148, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert .cam_titre {
   transition: all 0.4s ease-in-out 0;
   -o-transition: all 0.4s ease-in-out 0;
@@ -198,12 +202,12 @@ html body .content .content-right .svg svg .camembert .cam_titre {
   -moz-transition: all 0.4s ease-in-out 0;
   -webkit-transition: all 0.4s ease-in-out 0;
 }
-/* line 147, ../sass/custom.scss */
+/* line 150, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert .cam_titre text {
   font: 1.1rem 'biko_bold';
   text-transform: uppercase;
 }
-/* line 153, ../sass/custom.scss */
+/* line 156, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#top .cam_titre {
   transform: translate(173px, -980px);
   -o-transform: translate(173px, -980px);
@@ -211,7 +215,7 @@ html body .content .content-right .svg svg .camembert#top .cam_titre {
   -moz-transform: translate(173px, -980px);
   -webkit-transform: translate(173px, -980px);
 }
-/* line 156, ../sass/custom.scss */
+/* line 159, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#top:hover {
   transform: translate(0px, -20px);
   -o-transform: translate(0px, -20px);
@@ -219,7 +223,7 @@ html body .content .content-right .svg svg .camembert#top:hover {
   -moz-transform: translate(0px, -20px);
   -webkit-transform: translate(0px, -20px);
 }
-/* line 158, ../sass/custom.scss */
+/* line 161, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#top:hover .cam_titre {
   transform: translate(173px, 20px);
   -o-transform: translate(173px, 20px);
@@ -227,7 +231,7 @@ html body .content .content-right .svg svg .camembert#top:hover .cam_titre {
   -moz-transform: translate(173px, 20px);
   -webkit-transform: translate(173px, 20px);
 }
-/* line 164, ../sass/custom.scss */
+/* line 167, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#right .cam_titre {
   transform: translate(1320px, 166px);
   -o-transform: translate(1320px, 166px);
@@ -235,7 +239,7 @@ html body .content .content-right .svg svg .camembert#right .cam_titre {
   -moz-transform: translate(1320px, 166px);
   -webkit-transform: translate(1320px, 166px);
 }
-/* line 167, ../sass/custom.scss */
+/* line 170, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#right:hover {
   transform: translate(20px, 0px);
   -o-transform: translate(20px, 0px);
@@ -243,7 +247,7 @@ html body .content .content-right .svg svg .camembert#right:hover {
   -moz-transform: translate(20px, 0px);
   -webkit-transform: translate(20px, 0px);
 }
-/* line 169, ../sass/custom.scss */
+/* line 172, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#right:hover .cam_titre {
   transform: translate(320px, 166px);
   -o-transform: translate(320px, 166px);
@@ -251,7 +255,7 @@ html body .content .content-right .svg svg .camembert#right:hover .cam_titre {
   -moz-transform: translate(320px, 166px);
   -webkit-transform: translate(320px, 166px);
 }
-/* line 175, ../sass/custom.scss */
+/* line 178, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#bottom .cam_titre {
   transform: translate(173px, 1320px);
   -o-transform: translate(173px, 1320px);
@@ -259,7 +263,7 @@ html body .content .content-right .svg svg .camembert#bottom .cam_titre {
   -moz-transform: translate(173px, 1320px);
   -webkit-transform: translate(173px, 1320px);
 }
-/* line 178, ../sass/custom.scss */
+/* line 181, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#bottom:hover {
   transform: translate(0px, 20px);
   -o-transform: translate(0px, 20px);
@@ -267,7 +271,7 @@ html body .content .content-right .svg svg .camembert#bottom:hover {
   -moz-transform: translate(0px, 20px);
   -webkit-transform: translate(0px, 20px);
 }
-/* line 180, ../sass/custom.scss */
+/* line 183, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#bottom:hover .cam_titre {
   transform: translate(173px, 320px);
   -o-transform: translate(173px, 320px);
@@ -275,7 +279,7 @@ html body .content .content-right .svg svg .camembert#bottom:hover .cam_titre {
   -moz-transform: translate(173px, 320px);
   -webkit-transform: translate(173px, 320px);
 }
-/* line 186, ../sass/custom.scss */
+/* line 189, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#left .cam_titre {
   transform: translate(-975px, 166px);
   -o-transform: translate(-975px, 166px);
@@ -283,7 +287,7 @@ html body .content .content-right .svg svg .camembert#left .cam_titre {
   -moz-transform: translate(-975px, 166px);
   -webkit-transform: translate(-975px, 166px);
 }
-/* line 189, ../sass/custom.scss */
+/* line 192, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#left:hover {
   transform: translate(-20px, 0px);
   -o-transform: translate(-20px, 0px);
@@ -291,7 +295,7 @@ html body .content .content-right .svg svg .camembert#left:hover {
   -moz-transform: translate(-20px, 0px);
   -webkit-transform: translate(-20px, 0px);
 }
-/* line 191, ../sass/custom.scss */
+/* line 194, ../sass/custom.scss */
 html body .content .content-right .svg svg .camembert#left:hover .cam_titre {
   transform: translate(25px, 166px);
   -o-transform: translate(25px, 166px);
@@ -299,64 +303,71 @@ html body .content .content-right .svg svg .camembert#left:hover .cam_titre {
   -moz-transform: translate(25px, 166px);
   -webkit-transform: translate(25px, 166px);
 }
-/* line 199, ../sass/custom.scss */
+/* line 202, ../sass/custom.scss */
 html body .content .content-right .consigne {
   font: 1rem arial;
   color: #FFFFFF;
   text-transform: uppercase;
 }
-/* line 206, ../sass/custom.scss */
+/* line 209, ../sass/custom.scss */
 html body .content.full {
   min-height: 100%;
   padding: 0;
   text-align: center;
 }
-/* line 212, ../sass/custom.scss */
-html body .content.team {
-  background-image: url("../images/bg-team.jpg");
-  background-position: center 25%;
-}
 /* line 215, ../sass/custom.scss */
+html body .content.team {
+  /*background-position: center 25%;*/
+  background-size: cover;
+}
+/* line 218, ../sass/custom.scss */
 html body .content.team h1 {
   font-size: 36px;
-  padding-top: 34px;
+  padding: 25px 0;
   font-family: "biko_bold";
-  padding-bottom: 36px;
 }
-/* line 221, ../sass/custom.scss */
+/* line 223, ../sass/custom.scss */
 html body .content.team blockquote {
   width: 500px;
-  height: 70px;
+  height: 65px;
   text-align: right;
   margin: auto;
   font-size: 15px;
 }
-/* line 227, ../sass/custom.scss */
+/* line 229, ../sass/custom.scss */
 html body .content.team blockquote cite {
   display: block;
   padding-top: 5px;
 }
-/* line 230, ../sass/custom.scss */
+/* line 232, ../sass/custom.scss */
 html body .content.team blockquote cite:before {
   content: "-- ";
 }
-/* line 236, ../sass/custom.scss */
-html body .content.team .poles {
-  margin-top: 30px;
+/* line 238, ../sass/custom.scss */
+html body .content.team .dispositifs, html body .content.team .poles {
+  margin-top: 25px;
   width: 100%;
   position: relative;
+  text-decoration: none;
+  /*display: block;*/
 }
-/* line 241, ../sass/custom.scss */
-html body .content.team .poles h2 {
+/* line 244, ../sass/custom.scss */
+html body .content.team .dispositifs h2, html body .content.team .poles h2 {
   font-family: "biko_bold";
   color: white;
   font-size: 2em;
   position: absolute;
   margin-left: 60px;
   text-transform: uppercase;
+  width: 205px;
+  text-align: left;
 }
-/* line 251, ../sass/custom.scss */
-html body .content.team .poles .barre {
+/* line 253, ../sass/custom.scss */
+html body .content.team .dispositifs h2.troislignes, html body .content.team .poles h2.troislignes {
+  top: -60px;
+}
+/* line 258, ../sass/custom.scss */
+html body .content.team .dispositifs .barre, html body .content.team .poles .barre {
   height: 2px;
   background: #ffffff;
   position: relative;
@@ -364,8 +375,8 @@ html body .content.team .poles .barre {
   right: 0;
   top: 40px;
 }
-/* line 259, ../sass/custom.scss */
-html body .content.team .poles .pole {
+/* line 266, ../sass/custom.scss */
+html body .content.team .dispositifs .pole, html body .content.team .poles .pole {
   width: 80px;
   height: 80px;
   margin: 0 50px;
@@ -378,51 +389,274 @@ html body .content.team .poles .pole {
   background-size: 50%;
   cursor: pointer;
 }
-/* line 272, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-gestion {
+/* line 280, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-gestion, html body .content.team .poles .pole.pole-gestion {
   background-image: url(../images/poles/chef_G.png);
 }
-/* line 273, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-dev {
+/* line 281, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-dev, html body .content.team .poles .pole.pole-dev {
   background-image: url(../images/poles/tech_G.png);
 }
-/* line 274, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-crea {
+/* line 282, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-crea, html body .content.team .poles .pole.pole-crea {
   background-image: url(../images/poles/crea_G.png);
 }
-/* line 275, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-audio {
+/* line 283, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-audio, html body .content.team .poles .pole.pole-audio {
   background-image: url(../images/poles/av_G.png);
 }
-/* line 276, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-comm {
+/* line 284, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-comm, html body .content.team .poles .pole.pole-comm {
   background-image: url(../images/poles/com_G.png);
 }
-/* line 278, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-gestion.active, html body .content.team .poles .pole.pole-gestion:hover {
+/* line 286, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-gestion.active, html body .content.team .dispositifs .pole.pole-gestion:hover, html body .content.team .poles .pole.pole-gestion.active, html body .content.team .poles .pole.pole-gestion:hover {
   background-image: url(../images/poles/chef_B.png);
 }
-/* line 279, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-dev.active, html body .content.team .poles .pole.pole-dev:hover {
+/* line 287, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-dev.active, html body .content.team .dispositifs .pole.pole-dev:hover, html body .content.team .poles .pole.pole-dev.active, html body .content.team .poles .pole.pole-dev:hover {
   background-image: url(../images/poles/tech_B.png);
 }
-/* line 280, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-crea.active, html body .content.team .poles .pole.pole-crea:hover {
+/* line 288, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-crea.active, html body .content.team .dispositifs .pole.pole-crea:hover, html body .content.team .poles .pole.pole-crea.active, html body .content.team .poles .pole.pole-crea:hover {
   background-image: url(../images/poles/crea_B.png);
 }
-/* line 281, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-audio.active, html body .content.team .poles .pole.pole-audio:hover {
+/* line 289, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-audio.active, html body .content.team .dispositifs .pole.pole-audio:hover, html body .content.team .poles .pole.pole-audio.active, html body .content.team .poles .pole.pole-audio:hover {
   background-image: url(../images/poles/av_B.png);
 }
-/* line 282, ../sass/custom.scss */
-html body .content.team .poles .pole.pole-comm.active, html body .content.team .poles .pole.pole-comm:hover {
+/* line 290, ../sass/custom.scss */
+html body .content.team .dispositifs .pole.pole-comm.active, html body .content.team .dispositifs .pole.pole-comm:hover, html body .content.team .poles .pole.pole-comm.active, html body .content.team .poles .pole.pole-comm:hover {
   background-image: url(../images/poles/com_B.png);
 }
-/* line 285, ../sass/custom.scss */
-html body .content.team .poles-membres {
-  margin-top: 40px;
+/* line 293, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo, html body .content.team .poles .dispo {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 50px;
+  /*background-color: #ffffff;*/
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90%;
+  cursor: pointer;
 }
-/* line 289, ../sass/custom.scss */
+/* line 306, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo.oculus, html body .content.team .poles .dispo.oculus {
+  background-image: url(../images/oculus_off.png);
+}
+/* line 307, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo.leap, html body .content.team .poles .dispo.leap {
+  background-image: url(../images/leap_off.png);
+}
+/* line 308, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo.instructeur, html body .content.team .poles .dispo.instructeur {
+  background-image: url(../images/instructeur_off.png);
+}
+/* line 310, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo.oculus.active, html body .content.team .dispositifs .dispo.oculus:hover, html body .content.team .poles .dispo.oculus.active, html body .content.team .poles .dispo.oculus:hover {
+  background-image: url(../images/oculus.png);
+}
+/* line 311, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo.leap.active, html body .content.team .dispositifs .dispo.leap:hover, html body .content.team .poles .dispo.leap.active, html body .content.team .poles .dispo.leap:hover {
+  background-image: url(../images/leap.png);
+}
+/* line 312, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo.instructeur.active, html body .content.team .dispositifs .dispo.instructeur:hover, html body .content.team .poles .dispo.instructeur.active, html body .content.team .poles .dispo.instructeur:hover {
+  background-image: url(../images/instructeur.png);
+}
+/* line 313, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo .subnav, html body .content.team .poles .dispo .subnav {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.2s ease-in-out 0;
+  -o-transition: all 0.2s ease-in-out 0;
+  -ms-transition: all 0.2s ease-in-out 0;
+  -moz-transition: all 0.2s ease-in-out 0;
+  -webkit-transition: all 0.2s ease-in-out 0;
+  position: absolute;
+  left: 50%;
+  width: 362px;
+  text-align: left;
+  bottom: 80px;
+  color: white;
+  margin-left: -8px;
+}
+/* line 324, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo .subnav h3, html body .content.team .poles .dispo .subnav h3 {
+  font: 1.5rem 'biko_bold';
+  text-transform: uppercase;
+  color: white;
+}
+/* line 332, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo .subnav .menu-deroulant, html body .content.team .poles .dispo .subnav .menu-deroulant {
+  margin-left: 8px;
+  padding: 0 5px;
+  border-left: 2px solid white;
+}
+/* line 336, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo .subnav .menu-deroulant a, html body .content.team .poles .dispo .subnav .menu-deroulant a {
+  text-decoration: none;
+}
+/* line 338, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo .subnav .menu-deroulant a li, html body .content.team .poles .dispo .subnav .menu-deroulant a li {
+  font: 1rem 'biko';
+  margin: 10px 5px;
+  color: white;
+}
+/* line 343, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo .subnav .menu-deroulant a:hover li, html body .content.team .poles .dispo .subnav .menu-deroulant a:hover li {
+  color: #0fa7b7;
+}
+/* line 350, ../sass/custom.scss */
+html body .content.team .dispositifs .dispo:hover .subnav, html body .content.team .poles .dispo:hover .subnav {
+  max-height: 200%;
+  /*overflow: visible;*/
+}
+/* line 356, ../sass/custom.scss */
+html body .content.team .dispositifs .projet, html body .content.team .poles .projet {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90%;
+  cursor: pointer;
+}
+/* line 368, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.alias1, html body .content.team .poles .projet.alias1 {
+  background-image: url(../images/alias1_nb.png);
+}
+/* line 369, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.alias1.active, html body .content.team .dispositifs .projet.alias1:hover, html body .content.team .poles .projet.alias1.active, html body .content.team .poles .projet.alias1:hover {
+  background-image: url(../images/alias1_color.png);
+}
+/* line 370, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.alias2, html body .content.team .poles .projet.alias2 {
+  background-image: url(../images/alias2_nb.png);
+}
+/* line 371, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.alias2.active, html body .content.team .dispositifs .projet.alias2:hover, html body .content.team .poles .projet.alias2.active, html body .content.team .poles .projet.alias2:hover {
+  background-image: url(../images/alias2_color.png);
+}
+/* line 372, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.alias3, html body .content.team .poles .projet.alias3 {
+  background-image: url(../images/alias3_nb.png);
+}
+/* line 373, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.alias3.active, html body .content.team .dispositifs .projet.alias3:hover, html body .content.team .poles .projet.alias3.active, html body .content.team .poles .projet.alias3:hover {
+  background-image: url(../images/alias3_color.png);
+}
+/* line 374, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.icare, html body .content.team .poles .projet.icare {
+  background-image: url(../images/icare_nb.png);
+}
+/* line 375, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.icare.active, html body .content.team .dispositifs .projet.icare:hover, html body .content.team .poles .projet.icare.active, html body .content.team .poles .projet.icare:hover {
+  background-image: url(../images/icare_color.png);
+}
+/* line 376, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.esaac, html body .content.team .poles .projet.esaac {
+  background-image: url(../images/esaac_nb.png);
+}
+/* line 377, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.esaac.active, html body .content.team .dispositifs .projet.esaac:hover, html body .content.team .poles .projet.esaac.active, html body .content.team .poles .projet.esaac:hover {
+  background-image: url(../images/esaac_color.png);
+}
+/* line 378, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.odin, html body .content.team .poles .projet.odin {
+  background-image: url(../images/odin_color.png);
+}
+/* line 379, ../sass/custom.scss */
+html body .content.team .dispositifs .projet.odin.active, html body .content.team .dispositifs .projet.odin:hover, html body .content.team .poles .projet.odin.active, html body .content.team .poles .projet.odin:hover {
+  background-image: url(../images/odin_color.png);
+}
+/* line 381, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav, html body .content.team .poles .projet .subnav {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-in-out 0;
+  -o-transition: all 0.5s ease-in-out 0;
+  -ms-transition: all 0.5s ease-in-out 0;
+  -moz-transition: all 0.5s ease-in-out 0;
+  -webkit-transition: all 0.5s ease-in-out 0;
+  position: absolute;
+  left: 50%;
+  width: 362px;
+  text-align: left;
+  bottom: 85px;
+  color: white;
+  margin-left: -61px;
+}
+/* line 392, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav h3, html body .content.team .poles .projet .subnav h3 {
+  font: 1.5rem 'biko_bold';
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+/* line 397, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav h4, html body .content.team .poles .projet .subnav h4 {
+  font: 1.2rem 'arial';
+  margin-bottom: 8px;
+}
+/* line 401, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav .date, html body .content.team .poles .projet .subnav .date {
+  width: 50px;
+  font: 1.5rem 'biko';
+  float: left;
+  margin-right: 10px;
+  text-align: center;
+}
+/* line 408, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav .description, html body .content.team .poles .projet .subnav .description {
+  width: 300px;
+  float: left;
+  padding-left: 10px;
+  border-left: 2px solid;
+  font: 1rem arial;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+/* line 417, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav .menu-deroulant, html body .content.team .poles .projet .subnav .menu-deroulant {
+  margin-left: 61px;
+  padding: 0 5px;
+  border-left: 2px solid white;
+}
+/* line 421, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav .menu-deroulant a, html body .content.team .poles .projet .subnav .menu-deroulant a {
+  text-decoration: none;
+}
+/* line 423, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav .menu-deroulant a li, html body .content.team .poles .projet .subnav .menu-deroulant a li {
+  font: 1rem 'biko';
+  margin: 10px 5px;
+  color: white;
+}
+/* line 428, ../sass/custom.scss */
+html body .content.team .dispositifs .projet .subnav .menu-deroulant a:hover li, html body .content.team .poles .projet .subnav .menu-deroulant a:hover li {
+  color: #0fa7b7;
+}
+/* line 435, ../sass/custom.scss */
+html body .content.team .dispositifs .projet:hover .subnav, html body .content.team .poles .projet:hover .subnav {
+  max-height: 500%;
+  /*overflow: visible;*/
+}
+/* line 442, ../sass/custom.scss */
+html body .content.team .poles-membres {
+  margin-top: 25px;
+}
+/* line 444, ../sass/custom.scss */
+html body .content.team .poles-membres .pole {
+  width: 900px;
+  margin: auto;
+}
+/* line 447, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre {
   width: 110px;
   height: 110px;
@@ -439,159 +673,159 @@ html body .content.team .poles-membres .pole .membre {
   -webkit-transition: background-size 0.1s ease-in-out 0;
   cursor: pointer;
 }
-/* line 304, ../sass/custom.scss */
+/* line 460, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.florent {
   background-image: url(../images/equipe/flo-gris.png);
 }
-/* line 305, ../sass/custom.scss */
+/* line 461, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.andy {
   background-image: url(../images/equipe/andy-gris.png);
 }
-/* line 306, ../sass/custom.scss */
+/* line 462, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.tarek {
   background-image: url(../images/equipe/tarek-gris.png);
 }
-/* line 307, ../sass/custom.scss */
+/* line 463, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.yassine {
   background-image: url(../images/equipe/yassine-gris.png);
 }
-/* line 308, ../sass/custom.scss */
+/* line 464, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.warsama {
   background-image: url(../images/equipe/warsama-gris.png);
 }
-/* line 309, ../sass/custom.scss */
+/* line 465, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.robin {
   background-image: url(../images/equipe/robin-gris.png);
 }
-/* line 310, ../sass/custom.scss */
+/* line 466, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.yves {
   background-image: url(../images/equipe/yves-gris.png);
 }
-/* line 311, ../sass/custom.scss */
+/* line 467, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.anais {
   background-image: url(../images/equipe/anais-gris.png);
 }
-/* line 312, ../sass/custom.scss */
+/* line 468, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.madeline {
   background-image: url(../images/equipe/mad-gris.png);
 }
-/* line 313, ../sass/custom.scss */
+/* line 469, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.bin {
   background-image: url(../images/equipe/bin-gris.png);
 }
-/* line 314, ../sass/custom.scss */
+/* line 470, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.jeanedouard {
   background-image: url(../images/equipe/JE-gris.png);
 }
-/* line 315, ../sass/custom.scss */
+/* line 471, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.celtill {
   background-image: url(../images/equipe/celt-gris.png);
 }
-/* line 316, ../sass/custom.scss */
+/* line 472, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.manon {
   background-image: url(../images/equipe/manon-gris.png);
 }
-/* line 317, ../sass/custom.scss */
+/* line 473, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.fabio {
   background-image: url(../images/equipe/fabio-gris.png);
 }
-/* line 318, ../sass/custom.scss */
+/* line 474, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.jennifer {
   background-image: url(../images/equipe/jennifer-gris.png);
 }
-/* line 319, ../sass/custom.scss */
+/* line 475, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.marion {
   background-image: url(../images/equipe/marion-gris.png);
 }
-/* line 320, ../sass/custom.scss */
+/* line 476, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.jeremy {
   background-image: url(../images/equipe/jeremy-gris.png);
 }
-/* line 321, ../sass/custom.scss */
+/* line 477, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.lamia {
   background-image: url(../images/equipe/lamia-gris.png);
 }
-/* line 323, ../sass/custom.scss */
+/* line 479, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.florent.active, html body .content.team .poles-membres .pole .membre.florent:hover {
   background-image: url(../images/equipe/flo-couleur.png);
 }
-/* line 324, ../sass/custom.scss */
+/* line 480, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.andy.active, html body .content.team .poles-membres .pole .membre.andy:hover {
   background-image: url(../images/equipe/andy-couleur.png);
 }
-/* line 325, ../sass/custom.scss */
+/* line 481, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.tarek.active, html body .content.team .poles-membres .pole .membre.tarek:hover {
   background-image: url(../images/equipe/tarek-couleur.png);
 }
-/* line 326, ../sass/custom.scss */
+/* line 482, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.yassine.active, html body .content.team .poles-membres .pole .membre.yassine:hover {
   background-image: url(../images/equipe/yassine-couleur.png);
 }
-/* line 327, ../sass/custom.scss */
+/* line 483, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.warsama.active, html body .content.team .poles-membres .pole .membre.warsama:hover {
   background-image: url(../images/equipe/warsama-couleur.png);
 }
-/* line 328, ../sass/custom.scss */
+/* line 484, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.robin.active, html body .content.team .poles-membres .pole .membre.robin:hover {
   background-image: url(../images/equipe/robin-couleur.png);
 }
-/* line 329, ../sass/custom.scss */
+/* line 485, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.yves.active, html body .content.team .poles-membres .pole .membre.yves:hover {
   background-image: url(../images/equipe/yves-couleur.png);
 }
-/* line 330, ../sass/custom.scss */
+/* line 486, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.anais.active, html body .content.team .poles-membres .pole .membre.anais:hover {
   background-image: url(../images/equipe/anais-couleur.png);
 }
-/* line 331, ../sass/custom.scss */
+/* line 487, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.madeline.active, html body .content.team .poles-membres .pole .membre.madeline:hover {
   background-image: url(../images/equipe/mad-couleur.png);
 }
-/* line 332, ../sass/custom.scss */
+/* line 488, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.bin.active, html body .content.team .poles-membres .pole .membre.bin:hover {
   background-image: url(../images/equipe/bin-couleur.png);
 }
-/* line 333, ../sass/custom.scss */
+/* line 489, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.jeanedouard.active, html body .content.team .poles-membres .pole .membre.jeanedouard:hover {
   background-image: url(../images/equipe/JE-couleur.png);
 }
-/* line 334, ../sass/custom.scss */
+/* line 490, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.celtill.active, html body .content.team .poles-membres .pole .membre.celtill:hover {
   background-image: url(../images/equipe/celt-couleur.png);
 }
-/* line 335, ../sass/custom.scss */
+/* line 491, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.manon.active, html body .content.team .poles-membres .pole .membre.manon:hover {
   background-image: url(../images/equipe/manon-couleur.png);
 }
-/* line 336, ../sass/custom.scss */
+/* line 492, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.fabio.active, html body .content.team .poles-membres .pole .membre.fabio:hover {
   background-image: url(../images/equipe/fabio-couleur.png);
 }
-/* line 337, ../sass/custom.scss */
+/* line 493, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.jennifer.active, html body .content.team .poles-membres .pole .membre.jennifer:hover {
   background-image: url(../images/equipe/jennifer-couleur.png);
 }
-/* line 338, ../sass/custom.scss */
+/* line 494, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.marion.active, html body .content.team .poles-membres .pole .membre.marion:hover {
   background-image: url(../images/equipe/marion-couleur.png);
 }
-/* line 339, ../sass/custom.scss */
+/* line 495, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.jeremy.active, html body .content.team .poles-membres .pole .membre.jeremy:hover {
   background-image: url(../images/equipe/jeremy-couleur.png);
 }
-/* line 340, ../sass/custom.scss */
+/* line 496, ../sass/custom.scss */
 html body .content.team .poles-membres .pole .membre.lamia.active, html body .content.team .poles-membres .pole .membre.lamia:hover {
   background-image: url(../images/equipe/lamia-couleur.png);
 }
-/* line 346, ../sass/custom.scss */
+/* line 502, ../sass/custom.scss */
 html body .content.team .membre-selectionne {
   margin-top: 20px;
   font-family: "biko_bold";
   font-size: 20px;
 }
-/* line 353, ../sass/custom.scss */
+/* line 509, ../sass/custom.scss */
 html body .content.team .membre-selectionne p.description {
-  width: 60%;
+  width: 50%;
   margin: auto;
   font-family: arial;
   font-size: 14px;
@@ -599,27 +833,44 @@ html body .content.team .membre-selectionne p.description {
   text-align: justify;
   line-height: 17px;
 }
-/* line 365, ../sass/custom.scss */
-html body .content.remerciements {
-  background-image: url("../images/bg-airbus.jpg");
-  background-position: center center;
+/* line 520, ../sass/custom.scss */
+html body .content.team .dispositifs {
+  top: 50%;
+  position: absolute;
 }
-/* line 369, ../sass/custom.scss */
-html body .content.remerciements.bg-airbus {
+/* line 525, ../sass/custom.scss */
+html body .content.bg-home {
+  background-image: url("../images/bg.jpg");
+}
+/* line 528, ../sass/custom.scss */
+html body .content.bg-airbus {
   background-image: url("../images/bg-airbus.jpg");
 }
-/* line 372, ../sass/custom.scss */
-html body .content.remerciements.bg-ingemedia {
+/* line 531, ../sass/custom.scss */
+html body .content.bg-ingemedia {
   background-image: url("../images/bg-ingemedia.jpg");
 }
-/* line 375, ../sass/custom.scss */
+/* line 534, ../sass/custom.scss */
+html body .content.bg-dispositif {
+  background-image: url("../images/bg-dispositif.png");
+}
+/* line 537, ../sass/custom.scss */
+html body .content.bg-team {
+  background-image: url("../images/bg-team.jpg");
+  background-position: center 25%;
+}
+/* line 541, ../sass/custom.scss */
+html body .content.remerciements {
+  background-position: center center;
+}
+/* line 544, ../sass/custom.scss */
 html body .content.remerciements section {
   width: 50%;
   margin: auto;
   text-align: center;
   font-family: arial;
 }
-/* line 382, ../sass/custom.scss */
+/* line 551, ../sass/custom.scss */
 html body .content.remerciements section > .remerciements-body:before, html body .content.remerciements section > .remerciements-body:after {
   content: "";
   display: block;
@@ -627,34 +878,34 @@ html body .content.remerciements section > .remerciements-body:before, html body
   height: 1px;
   margin: 20px 0;
 }
-/* line 390, ../sass/custom.scss */
+/* line 559, ../sass/custom.scss */
 html body .content.remerciements section h1 {
   text-transform: uppercase;
-  padding: 100px 0 0 0;
+  padding: 50px 0 0 0;
   font-family: arial;
   font-size: 30px;
 }
-/* line 397, ../sass/custom.scss */
+/* line 566, ../sass/custom.scss */
 html body .content.remerciements section p {
   text-align: justify;
   font-size: 13px;
   line-height: 15px;
 }
-/* line 403, ../sass/custom.scss */
+/* line 572, ../sass/custom.scss */
 html body .content.remerciements section ul {
   font-size: 13px;
   text-align: left;
   margin-top: 15px;
 }
-/* line 407, ../sass/custom.scss */
+/* line 576, ../sass/custom.scss */
 html body .content.remerciements section ul li {
   line-height: 15px;
 }
-/* line 409, ../sass/custom.scss */
+/* line 578, ../sass/custom.scss */
 html body .content.remerciements section ul li:before {
   content: "- ";
 }
-/* line 415, ../sass/custom.scss */
+/* line 584, ../sass/custom.scss */
 html body .content.remerciements section .airbus, html body .content.remerciements section .ingemedia {
   display: inline-block;
   margin: 0 50px;
@@ -662,23 +913,23 @@ html body .content.remerciements section .airbus, html body .content.remerciemen
   height: 100px;
   cursor: pointer;
 }
-/* line 421, ../sass/custom.scss */
+/* line 590, ../sass/custom.scss */
 html body .content.remerciements section .airbus img, html body .content.remerciements section .ingemedia img {
   width: 100%;
 }
-/* line 426, ../sass/custom.scss */
+/* line 595, ../sass/custom.scss */
 html body .content.remerciements section .w50 {
   width: 50%;
   float: left;
   padding-top: 20px;
 }
-/* line 431, ../sass/custom.scss */
+/* line 600, ../sass/custom.scss */
 html body .content.remerciements section .w100 {
   width: 100%;
   padding-top: 20px;
   clear: both;
 }
-/* line 438, ../sass/custom.scss */
+/* line 607, ../sass/custom.scss */
 html body .content.remerciements section .back-btn {
   display: inline-block;
   padding: 5px 20px;
@@ -688,11 +939,11 @@ html body .content.remerciements section .back-btn {
   text-decoration: none;
   font-size: 12px;
 }
-/* line 449, ../sass/custom.scss */
+/* line 618, ../sass/custom.scss */
 html body .content.remerciements section.remerciements-ingemedia .w50 {
   padding-bottom: 20px;
 }
-/* line 457, ../sass/custom.scss */
+/* line 626, ../sass/custom.scss */
 html body footer.home-footer {
   /*position: absolute;*/
   bottom: 0;
@@ -701,12 +952,12 @@ html body footer.home-footer {
   width: 100%;
   background: #FFFFFF;
 }
-/* line 465, ../sass/custom.scss */
+/* line 634, ../sass/custom.scss */
 html body footer.home-footer span {
   font: 1rem arial;
   color: #0fa7b7;
 }
-/* line 471, ../sass/custom.scss */
+/* line 640, ../sass/custom.scss */
 html body footer.small-footer {
   position: absolute;
   bottom: 0;
@@ -715,42 +966,42 @@ html body footer.small-footer {
   color: #bebdbc;
   font-family: "biko_bold";
 }
-/* line 479, ../sass/custom.scss */
+/* line 648, ../sass/custom.scss */
 html body footer.small-footer .small-nav {
   vertical-align: middle;
   text-align: right;
   height: 100%;
   display: inline-block;
 }
-/* line 488, ../sass/custom.scss */
+/* line 654, ../sass/custom.scss */
 html body footer.small-footer .small-nav ul {
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 491, ../sass/custom.scss */
+/* line 657, ../sass/custom.scss */
 html body footer.small-footer .small-nav ul li {
   display: inline-block;
 }
-/* line 493, ../sass/custom.scss */
+/* line 659, ../sass/custom.scss */
 html body footer.small-footer .small-nav ul li:not(:first-of-type):before {
   content: " | ";
   color: #0fa7b7;
   margin: 0 5px;
 }
-/* line 498, ../sass/custom.scss */
+/* line 664, ../sass/custom.scss */
 html body footer.small-footer .small-nav ul li:last-of-type {
   margin-right: 30px;
 }
-/* line 502, ../sass/custom.scss */
+/* line 668, ../sass/custom.scss */
 html body footer.small-footer .small-nav ul li a {
   color: #d1cece;
   text-decoration: none;
 }
-/* line 507, ../sass/custom.scss */
+/* line 673, ../sass/custom.scss */
 html body footer.small-footer .small-nav ul li.active a {
   color: white;
 }
-/* line 513, ../sass/custom.scss */
+/* line 679, ../sass/custom.scss */
 html body footer.small-footer .small-nav .menu {
   display: inline-block;
   vertical-align: middle;
@@ -760,7 +1011,7 @@ html body footer.small-footer .small-nav .menu {
   padding: 10px 0;
   text-transform: uppercase;
 }
-/* line 521, ../sass/custom.scss */
+/* line 687, ../sass/custom.scss */
 html body footer.small-footer .small-nav .menu p {
   position: absolute;
   top: -10px;
@@ -768,7 +1019,121 @@ html body footer.small-footer .small-nav .menu p {
   text-align: center;
   font-size: 10px;
 }
-/* line 528, ../sass/custom.scss */
-html body footer.small-footer .small-nav .menu img {
-  height: 100%;
+
+/* line 699, ../sass/custom.scss */
+.camembert {
+  height: 80px;
+  width: 80px;
+}
+/* line 702, ../sass/custom.scss */
+.camembert svg {
+  overflow: visible;
+}
+/* line 704, ../sass/custom.scss */
+.camembert svg .quart {
+  transition: all 0.1s ease-in-out 0;
+  -o-transition: all 0.1s ease-in-out 0;
+  -ms-transition: all 0.1s ease-in-out 0;
+  -moz-transition: all 0.1s ease-in-out 0;
+  -webkit-transition: all 0.1s ease-in-out 0;
+  transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+}
+/* line 708, ../sass/custom.scss */
+.camembert svg .quart.top:hover {
+  transform: translate(0px, -5px);
+  -o-transform: translate(0px, -5px);
+  -ms-transform: translate(0px, -5px);
+  -moz-transform: translate(0px, -5px);
+  -webkit-transform: translate(0px, -5px);
+}
+/* line 713, ../sass/custom.scss */
+.camembert svg .quart.right:hover {
+  transform: translate(5px, 0px);
+  -o-transform: translate(5px, 0px);
+  -ms-transform: translate(5px, 0px);
+  -moz-transform: translate(5px, 0px);
+  -webkit-transform: translate(5px, 0px);
+}
+/* line 718, ../sass/custom.scss */
+.camembert svg .quart.bottom:hover {
+  transform: translate(0px, 5px);
+  -o-transform: translate(0px, 5px);
+  -ms-transform: translate(0px, 5px);
+  -moz-transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+}
+/* line 723, ../sass/custom.scss */
+.camembert svg .quart.left:hover {
+  transform: translate(-5px, 0px);
+  -o-transform: translate(-5px, 0px);
+  -ms-transform: translate(-5px, 0px);
+  -moz-transform: translate(-5px, 0px);
+  -webkit-transform: translate(-5px, 0px);
+}
+
+/* line 734, ../sass/custom.scss */
+.barre-wrap {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  bottom: 0;
+}
+/* line 739, ../sass/custom.scss */
+.barre-wrap h2 {
+  padding: 20px 20px 40px;
+  font-family: "biko_bold";
+  color: white;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+/* line 746, ../sass/custom.scss */
+.barre-wrap #defile {
+  background: #d1cece;
+  /*		position: absolute;
+  		height: 35px;
+  		bottom: 0;
+  		width: 100%;*/
+}
+/* line 752, ../sass/custom.scss */
+.barre-wrap #defile h3 {
+  /*padding: 20px 20px 40px;*/
+  font-family: "biko";
+  position: absolute;
+  bottom: 45px;
+  margin: 0 20px;
+  color: white;
+  font-size: 1.3em;
+}
+/* line 761, ../sass/custom.scss */
+.barre-wrap #defile #precharge {
+  height: 35px;
+  background-color: #0fa6b7;
+}
+/* line 765, ../sass/custom.scss */
+.barre-wrap #defile .trait {
+  width: 100%;
+  /*			width: 1px;
+  			height: 35px;*/
+  width: 10px;
+  height: 52px;
+  border-top: 1px dotted #ffffff;
+  border-left: 1px dotted #ffffff;
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: 0px;
+}
+/* line 777, ../sass/custom.scss */
+.barre-wrap #defile:hover {
+  cursor: pointer;
+}
+
+/* line 782, ../sass/custom.scss */
+.content-video {
+  display: block;
+  margin: auto;
+  width: 100%;
 }

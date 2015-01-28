@@ -5,6 +5,10 @@
 	box-sizing: border-box;
 }
 
+a{
+	text-decoration: none;
+}
+
 .cf:before,
 .cf:after {
   content:"";
@@ -91,7 +95,7 @@ html{
 			width: 240px;
 			height: 240px;
 			background: url("../images/triangle-top-left-header.png") no-repeat;
-			position: absolute;
+			position: fixed;
 			top: 0;
 			left: 0;
 			img {
@@ -101,7 +105,6 @@ html{
 			}
 		}
 		.content {
-			background:url(../images/bg.jpg) no-repeat;
 			padding: 40px 40px 10px 40px;
 			color: $white-color;
 			.content-left{
@@ -210,17 +213,16 @@ html{
 				
 			}
 			&.team {
-				background-image: url("../images/bg-team.jpg");
-				background-position: center 25%;
+				/*background-position: center 25%;*/
+				background-size: cover;
 				h1 {
 					font-size: 36px;
-					padding-top: 34px;
+					padding: 25px 0;
 					font-family: "biko_bold";
-					padding-bottom: 36px;
 				}
 				blockquote {
 					width: 500px;
-					height: 70px;
+					height: 65px;
 					text-align: right;
 					margin: auto;
 					font-size: 15px;
@@ -233,10 +235,11 @@ html{
 					}
 				}
 
-				.poles {
-					margin-top: 30px;
+				.dispositifs, .poles {
+					margin-top: 25px;
 					width: 100%;
 					position: relative;
+					text-decoration: none;
 
 					h2 {
 						font-family: "biko_bold";
@@ -245,7 +248,11 @@ html{
 						position: absolute;
 						margin-left: 60px;
 						text-transform: uppercase;
-
+						width: 205px;
+						text-align: left;
+						&.troislignes{
+							top: -60px;
+						}
 					}
 
 					.barre {
@@ -256,7 +263,8 @@ html{
 						right: 0;
 						top: 40px;
 					}
-					.pole {
+					.pole{
+
 						width: 80px;
 						height: 80px;
 						margin: 0 50px;
@@ -281,24 +289,172 @@ html{
 						&.pole-audio.active, &.pole-audio:hover { background-image: url(../images/poles/av_B.png); }
 						&.pole-comm.active, &.pole-comm:hover { background-image: url(../images/poles/com_B.png); }
 					}
+						/*display: block;*/
+					.dispo{
+						display: inline-block;
+						position: relative;
+						width: 80px;
+						height: 80px;
+						margin: 0 50px;
+						/*background-color: #ffffff;*/
+						border-radius: 50%;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: 90%;
+						cursor: pointer;
+
+						&.oculus { background-image: url(../images/oculus_off.png); }
+						&.leap { background-image: url(../images/leap_off.png); }
+						&.instructeur { background-image: url(../images/instructeur_off.png); }
+
+						&.oculus.active,      &.oculus:hover { background-image: url(../images/oculus.png); }
+						&.leap.active,        &.leap:hover { background-image: url(../images/leap.png); }
+						&.instructeur.active, &.instructeur:hover { background-image: url(../images/instructeur.png); }
+						.subnav{
+							overflow: hidden;
+							max-height: 0;
+							@include transition(all, 0.2s, ease-in-out);
+							position: absolute;
+							left: 50%;
+							width: 362px;
+							text-align: left;
+							bottom: 80px;
+							color: white;
+							margin-left: -8px;
+							h3{
+								font:1.5rem 'biko_bold';
+								text-transform: uppercase;
+								color: white;
+								//position: absolute;
+								//left: -8px;
+								//top: -28px;
+							}
+							.menu-deroulant{
+								margin-left: 8px;
+								padding: 0 5px;
+								border-left: 2px solid white;
+								a{
+									text-decoration: none;
+									li{
+										font : 1rem 'biko';
+										margin: 10px 5px;
+										color: white;
+									}
+									&:hover li{
+										color: $blue-color;
+									}
+								}
+							}
+						}
+						&:hover{
+							.subnav{
+								max-height: 200%;
+								/*overflow: visible;*/
+							}
+						}
+					}
+					.projet{
+						display: inline-block;
+						position: relative;
+						width: 80px;
+						height: 80px;
+						margin: 0 30px;
+						border-radius: 50%;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: 90%;
+						cursor: pointer;
+
+						&.alias1 { background-image: url(../images/alias1_nb.png); }
+						&.alias1.active, &.alias1:hover { background-image: url(../images/alias1_color.png); }
+						&.alias2 { background-image: url(../images/alias2_nb.png); }
+						&.alias2.active, &.alias2:hover { background-image: url(../images/alias2_color.png); }
+						&.alias3 { background-image: url(../images/alias3_nb.png); }
+						&.alias3.active, &.alias3:hover { background-image: url(../images/alias3_color.png); }
+						&.icare { background-image: url(../images/icare_nb.png); }
+						&.icare.active, &.icare:hover { background-image: url(../images/icare_color.png); }
+						&.esaac { background-image: url(../images/esaac_nb.png); }
+						&.esaac.active, &.esaac:hover { background-image: url(../images/esaac_color.png); }
+						&.odin { background-image: url(../images/odin_color.png); }
+						&.odin.active, &.odin:hover { background-image: url(../images/odin_color.png); }
+						
+						.subnav{
+							overflow: hidden;
+							max-height: 0;
+							@include transition(all, 0.5s, ease-in-out);
+							position: absolute;
+							left: 50%;
+							width: 362px;
+							text-align: left;
+							bottom: 85px;
+							color: white;
+							margin-left: -61px;
+							h3{
+								font:1.5rem 'biko_bold';
+								text-transform: uppercase;
+								margin-bottom: 8px;
+							}
+							h4{
+								font:1.2rem 'arial';
+								margin-bottom: 8px;
+							}
+							.date{
+								width: 50px;
+								font:1.5rem 'biko';
+								float: left;
+								margin-right: 10px;
+								text-align: center;
+							}
+							.description{
+								width: 300px;
+								float: left;
+								padding-left: 10px;
+								border-left: 2px solid;
+								font: 1rem arial;
+								line-height: 1.5rem;
+								text-align: justify;
+							}
+							.menu-deroulant{
+								margin-left: 61px;
+								padding: 0 5px;
+								border-left: 2px solid white;
+								a{
+									text-decoration: none;
+									li{
+										font : 1rem 'biko';
+										margin: 10px 5px;
+										color: white;
+									}
+									&:hover li{
+										color: $blue-color;
+									}
+								}
+							}
+						}
+						&:hover{
+							.subnav{
+								max-height: 500%;
+								/*overflow: visible;*/
+							}
+						}
+					}
 				}
 				.poles-membres {
-					margin-top: 40px;
+					margin-top: 25px;
 					.pole {
-
+						width: 900px;
+						margin: auto;
 						.membre {
 							width: 110px;
 							height: 110px;
 							margin: 0 50px;
 							display: inline-block;
-							// background: #ffffff;
 							border-radius: 50%;
 							background-repeat: no-repeat;
 							background-position: center center;
 							background-size: 100%;
 							@include transition(background-size, 0.1s, ease-in-out);
 							&:hover {
-								// background-size: 120%;
 							}
 							cursor: pointer;
 							&.florent 	  { background-image: url(../images/equipe/flo-gris.png); }
@@ -351,7 +507,7 @@ html{
 					}
 					p {
 						&.description {
-							width: 60%;
+							width: 50%;
 							margin: auto;
 							font-family: arial;
 							font-size: 14px;
@@ -361,17 +517,30 @@ html{
 						}
 					}
 				}
+				.dispositifs{
+					top: 50%;
+					position: absolute;
+				}
+			}
+			&.bg-home {
+				background-image: url("../images/bg.jpg");
+			}
+			&.bg-airbus {
+				background-image: url("../images/bg-airbus.jpg");
+			}
+			&.bg-ingemedia {
+				background-image: url("../images/bg-ingemedia.jpg");
+			}
+			&.bg-dispositif {
+				background-image: url("../images/bg-dispositif.png");
+			}
+			&.bg-team {
+				background-image: url("../images/bg-team.jpg");
+				background-position: center 25%;
 			}
 			&.remerciements {
-				background-image: url("../images/bg-airbus.jpg");
 				background-position: center center;
 
-				&.bg-airbus {
-					background-image: url("../images/bg-airbus.jpg");
-				}
-				&.bg-ingemedia {
-					background-image: url("../images/bg-ingemedia.jpg");
-				}
 				section {
 
 					width: 50%;
@@ -389,7 +558,7 @@ html{
 
 					h1 {
 						text-transform: uppercase;
-						padding: 100px 0 0 0;
+						padding: 50px 0 0 0;
 						font-family: arial;
 						font-size: 30px;
 					}
@@ -478,9 +647,6 @@ html{
 
 			.small-nav {
 				vertical-align: middle;
-				// position: absolute;
-				// bottom: 0;
-				// right: 0;
 				text-align: right;
 				height: 100%;
 				display: inline-block;
@@ -525,11 +691,96 @@ html{
 						text-align: center;
 						font-size: 10px;
 					}
-					img {
-						height: 100%;
-					}
 				}
 			}
 		}
 	}
+}
+.camembert {
+	height: 80px;
+	width: 80px;
+	svg{
+		overflow: visible;
+		.quart{
+			@include transition(all, 0.1s, ease-in-out);
+			@include translate(0px, 0px);
+			&.top{
+				&:hover{
+					@include translate(0px, -5px);
+				}
+			}
+			&.right{
+				&:hover{
+					@include translate(5px, 0px);
+				}
+			}
+			&.bottom{
+				&:hover{
+					@include translate(0px, 5px);
+				}
+			}
+			&.left{
+				&:hover{
+					@include translate(-5px, 0px);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+.barre-wrap{
+	position: fixed;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	bottom: 0;
+	h2{
+		padding: 20px 20px 40px;
+		font-family: "biko_bold";
+		color: white;
+		font-size: 2em;
+		text-transform: uppercase;
+	}
+	#defile{
+		background: $grey-color;
+/*		position: absolute;
+		height: 35px;
+		bottom: 0;
+		width: 100%;*/
+		h3{
+			/*padding: 20px 20px 40px;*/
+			font-family: "biko";
+			position: absolute;
+			bottom: 45px;
+			margin: 0 20px;
+			color: white;
+			font-size: 1.3em;
+		}
+		#precharge{
+			height: 35px;
+			background-color:#0fa6b7;
+		}
+		.trait{
+			width: 100%;
+	/*			width: 1px;
+				height: 35px;*/
+				width: 10px;
+				height: 52px;
+				border-top: 1px dotted #ffffff;
+			border-left: 1px dotted #ffffff;
+			position: absolute;
+			bottom: 0px;
+			padding-bottom: 0px;
+		}
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+.content-video{
+	display:block;
+	margin:auto;
+	width: 100%;
 }

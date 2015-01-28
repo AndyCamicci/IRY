@@ -1,0 +1,25 @@
+{% extends 'IRYWebDocBundle:Default:base.html.twig' %}		
+
+{% block body %}
+		
+    <div class="content full video">
+      <video id="v1" class="content-video">    
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mov">
+      </video>
+    </div>
+    <div class="barre-wrap">
+      <h2>IRY - Vidéo concept</h2>
+      <div id="defile">
+        <div id="precharge"></div> 
+      </div>
+    </div>
+    <script>
+      var videosSources = [
+        "{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mov"
+      ];
+    </script>
+    
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -7,4 +7,4 @@ register:
     pattern:   /register
     defaults:  { _controller: IRYSecurityBundle:Security:register }
 logout:
-    path:     /logout
+    path:     /instructeur/logout
