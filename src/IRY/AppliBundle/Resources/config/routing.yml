@@ -145,6 +145,21 @@ iry_rest_get_course_instruction:
     defaults: {_controller: IRYAppliBundle:REST:getCourseInstructions}
     methods:   [GET]
 
+iry_rest_demonstrative_course_show:
+    path:   /rest/demonstrative_show/{course}/{step}
+    defaults: {_controller: IRYAppliBundle:REST:demonstrativeCourseShow}
+    methods:   [GET]
+
+iry_rest_post_step:
+    path:   /rest/poststep/{step}/{pilot}/{success}
+    defaults: {_controller: IRYAppliBundle:REST:postStep}
+    methods:   [GET]
+
+iry_rest_call_instructor:
+    path:   /rest/call_instructor/{pilot}
+    defaults: {_controller: IRYAppliBundle:REST:callInstructor}
+    methods:   [GET]
+
 
 # iry_folder_theoretical_course:
 #     defaults: { /src/IRY/AppliBundle/Resources/public/cm }

@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use IRY\AppliBundle\Entity\Result;
 use IRY\AppliBundle\Entity\Serie;
+use IRY\AppliBundle\Entity\Pilot;
+use IRY\AppliBundle\Entity\Step;
 use IRY\AppliBundle\Entity\Course;
 
 class RESTController extends Controller
@@ -53,5 +55,84 @@ class RESTController extends Controller
         $response->setData($data);
         return $response;
     }
+
+    public function demonstrativeCourseShowAction(Course $course, Step $step) {
+        $response = new JsonResponse();
+        $serie = $this->getSerieCookie();
+
+        if ($serie == null) {
+            $response->setData(array("error" => "Serie is null"));
+            return $response;
+        }
+
+        $serie->setCommand(Serie::COMMAND_SHOWBTN . " " . $step->getBtnName());
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($serie);
+        $em->flush();
+
+        $response->setData(array("success" => true));
+
+        return $response;
+    }
+
+
+    public function getSerieCookie() {
+        $request = $this->get('request');
+        $cookies = $request->cookies;
+
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Serie");
+
+        if ($cookies->has('serie')) {
+            $serieCookie = $cookies->get('serie');
+        } else {
+            $serieCookie = 0;
+        }
+
+        $serie = $repo->find($serieCookie);
+
+        return $serie;
+    }
+
+    public function postStepAction(Step $step, Pilot $pilot, $success) {
+
+        $time_start = microtime(true);
+
+        $response = new JsonResponse();
+
+        $em = $this->getDoctrine()->getManager();
+
+        $result = new Result();
+        $result->setIsGlobal(false);
+        $result->setIsFavorite(false);
+        $result->setPilot($pilot);
+        $result->setStep($step);
+        $result->setIsError($success === "1");
+
+        $em->persist($result);
+        $em->flush();
+
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+
+        $response->setData(array("success" => true, "time" => $time));
+
+        return $response;
+    }
+
+    public function callInstructorAction(Pilot $pilot) {
+        $response = new JsonResponse();
+        $em = $this->getDoctrine()->getManager();
+        $pilot->setIsCalling(true);
+        $pilot->setDateCalling(new \DateTime());
+
+        $em->persist($pilot);
+        $em->flush();
+
+        $response->setData(array("success" => true));
+
+        return $response;
+    }
+
 
 }
