@@ -26,7 +26,7 @@ class ApplicationController extends Controller
     {
         $serie = $this->getSerieCookie();
 
-        $serie->setCommand("");
+        $serie->setCommand(Serie::COMMAND_GOTO_WAITING);
         $em = $this->getDoctrine()->getManager();
         $em->persist($serie);
         $em->flush();
@@ -109,7 +109,7 @@ class ApplicationController extends Controller
 
     }
 
-    private function getSerieCookie() {
+    public function getSerieCookie() {
         $request = $this->get('request');
         $cookies = $request->cookies;
 

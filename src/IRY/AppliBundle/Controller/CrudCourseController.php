@@ -21,7 +21,7 @@ class CrudCourseController extends Controller
         $form = $this->createFormBuilder($course)
             ->add('name', 'text')
             ->add('typeCourse', 'entity', array(
-                'class' => 'IRYAppliBundle:typeCourse',
+                'class' => 'IRYAppliBundle:TypeCourse',
                 'property' => 'name',
             ))
             ->add('subTheme', 'entity', array(
@@ -67,7 +67,7 @@ class CrudCourseController extends Controller
         $form = $this->createFormBuilder($course)
             ->add('name', 'text')
             ->add('typeCourse', 'entity', array(
-                'class' => 'IRYAppliBundle:typeCourse',
+                'class' => 'IRYAppliBundle:TypeCourse',
                 'property' => 'name',
             ))
             ->add('subTheme', 'entity', array(

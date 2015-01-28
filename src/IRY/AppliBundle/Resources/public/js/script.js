@@ -74,17 +74,25 @@ $(document).ready(function() {
 	});
 
 	/* DEMONSTRATIVE COURSE */
-	$(".cd_step").each(function() {
-		var $title = $(this).find(".title");
-		var $percent = $(this).find(".var");
-		$(this).on("click", function() {
-			$(this).toggleClass("activated"); // Allow user to show a previous step
 
-			if ($(this).hasClass("activated") == true) {
-				immersiveApp.showItem( $(this).attr("data-btn-name"), $(this).attr("data-btn-state") );
+		$(".cd_step").each(function() {
+			if (urlDemonstrativeCourseShow != null) {
+				var $title = $(this).find(".title");
+				var $percent = $(this).find(".var");
+				$(this).on("click", function() {
+					$(this).toggleClass("activated"); // Allow user to show a previous step
+
+					if ($(this).hasClass("activated") == true) {
+						// immersiveApp.showItem( $(this).attr("data-btn-name"), $(this).attr("data-btn-state") );
+						var url = urlDemonstrativeCourseShow.replace("step", $(this).attr("data-step-id"));
+						$.ajax(url).done(function(e) {
+							console.log(e);
+						});
+					}
+				});
 			}
-		});
-	});	
+		});	
+
 
 	/* IMMERSIVE MOVIE */
 	$(".schema_image_plus").on("click", function() {
@@ -141,7 +149,7 @@ $(document).ready(function() {
 					sortPilots();
 				});
 			})(checkPilotsUrl, currentPilots, templateEPPilot);
-		}, 3000);
+		}, 1000);
 
 		sortPilots();
 

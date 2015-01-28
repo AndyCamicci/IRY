@@ -15,7 +15,7 @@
         <section id="cd" class="cf">
             <div class="cd_video">
 
-            {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : asset('bundles/iryappli') ~ "/unity/WebPlayer.unity3d"}) }}
+            {{ include('IRYAppliBundle:ImmersiveApplication:blockUnityPlayer.html.twig', {'pathUnityFile' : "cd/DemonstrativeCourse-Webplayer.unity3d"}) }}
             
             </div>
             <div class="cd_wrap">
@@ -23,7 +23,7 @@
                 <div class="list">
                     <ul>
                         {% for step in course.steps %}
-                            <li class="cd_step" data-btn-name="{{ step.btnName }}" data-btn-state="{{ step.btnState }}">
+                            <li class="cd_step" data-step-id="{{ step.id }}" data-btn-name="{{ step.btnName }}" data-btn-state="{{ step.btnState }}">
                                 <div class="step element">
                                     <span class="title">{{ step.name }}</span>
                                 </div>
@@ -37,4 +37,8 @@
             </div>
         </section>
     </div>
+
+    <script>
+        var urlDemonstrativeCourseShow = "{{ path('iry_rest_demonstrative_course_show', {course: course.id, step: 'step' }) }}";
+    </script>
 {% endblock %}
