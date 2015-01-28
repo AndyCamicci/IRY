@@ -83,7 +83,7 @@ $(document).ready(function() {
 					$(this).toggleClass("activated"); // Allow user to show a previous step
 
 					if ($(this).hasClass("activated") == true) {
-						// immersiveApp.showItem( $(this).attr("data-btn-name"), $(this).attr("data-btn-state") );
+						immersiveApp.showItem( $(this).attr("data-btn-name"));
 						var url = urlDemonstrativeCourseShow.replace("step", $(this).attr("data-step-id"));
 						$.ajax(url).done(function(e) {
 							console.log(e);
@@ -384,11 +384,10 @@ function showCourseOfSubtheme(subtheme) {
 }
 
 var IAClass = function() {
-	this.showItem = function(name, state) {
+	this.showItem = function(name) {
 
 
-		console.log("On immersive app, show", name, "on position", state);
-
+		console.log("On immersive app, show", name);
 		u.getUnity().SendMessage("NETWORK", "SetAsInstructor", "");
 		u.getUnity().SendMessage("NETWORK", "SetActive", name);
 
