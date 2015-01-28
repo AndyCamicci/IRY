@@ -16,6 +16,17 @@
             <div class="dc_wrap cf" data-step="1">
                 <div class="list">
                     <ul>
+                        <li class="cat">
+                            <div class="success_1">
+                                <span> Success </span>
+                            </div>
+                            <div class="errors_1">
+                                <span> Errors </span> 
+                            </div>
+                            <div class="favorites_1">
+                                <span> Favorites </span> 
+                            </div>
+                        </li> 
                         {% for step in course.steps %}
                             {% set nbErrors = 0 %}
                             {% set nbSuccess = 0 %}
@@ -36,7 +47,7 @@
                                 {% if result.step.id == step.id %}
                                     {% set nbSuccess = nbSuccess + 1 %}
                                 {% endif %}
-                            {% endfor %}
+                            {% endfor %}  
                             <a href="">
                                 <li class="step cf" data-pilot-id="1">
                                     <div class="pilot_name element" data-step="2">
@@ -58,7 +69,7 @@
                         {% endfor %}
                     </ul>
                 </div> 
-            </div> 
+            </div>
         </section>
     </div>
 {% endblock %}

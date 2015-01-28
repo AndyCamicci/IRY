@@ -1470,6 +1470,7 @@ html body #content section#dc .dc_wrap ul li .favorites span:after {
   background: url(../img/favori.png);
   background-size: contain;
 }
+<<<<<<< HEAD
 /* line 1255, ../sass/custom.scss */
 html body #content section#dc .dc_wrap ul .list {
   position: relative;
@@ -1600,54 +1601,123 @@ html body #content section#dc .dc_wrap ul .list:after {
   background: url(../img/arrow_down.png) center no-repeat;
 }
 /* line 1374, ../sass/custom.scss */
+=======
+/* line 1217, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .cat {
+  height: 25px;
+  position: relative;
+  text-align: right;
+  /*float: left;*/
+  color: #a8a8a7;
+}
+/* line 1224, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .cat div {
+  display: inline-block;
+}
+/* line 1228, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .success_1 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+/* line 1231, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .success_1 span {
+  padding-right: 20px;
+}
+/* line 1235, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .errors_1 {
+  font-size: 17px;
+}
+/* line 1237, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .errors_1 span {
+  padding-right: 15px;
+}
+/* line 1241, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .favorites_1 {
+  font-size: 17px;
+  text-align: left;
+}
+/* line 1244, ../sass/custom.scss */
+html body #content section#dc .dc_wrap .favorites_1 span {
+  padding: 10px;
+}
+/* line 1250, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login {
   background: url(../img/bg_login.jpg) 50% -100px;
   background-size: cover;
   padding: 150px;
   text-align: left;
 }
+<<<<<<< HEAD
 /* line 1379, ../sass/custom.scss */
+=======
+/* line 1255, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form {
   display: inline-block;
   /* firefox 19+ */
   /* ie */
 }
+<<<<<<< HEAD
 /* line 1381, ../sass/custom.scss */
+=======
+/* line 1257, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form ::-webkit-input-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
+<<<<<<< HEAD
 /* line 1382, ../sass/custom.scss */
+=======
+/* line 1258, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form ::-moz-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
+<<<<<<< HEAD
 /* line 1383, ../sass/custom.scss */
+=======
+/* line 1259, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form :-ms-input-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
+<<<<<<< HEAD
 /* line 1384, ../sass/custom.scss */
+=======
+/* line 1260, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form input:-moz-placeholder {
   color: #d1cece;
   font: 1.5rem 'biko';
   height: 40px;
   line-height: 40px;
 }
+<<<<<<< HEAD
 /* line 1385, ../sass/custom.scss */
+=======
+/* line 1261, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container {
   display: block;
   background: white;
   margin: 0 0 20px;
   border-radius: 5px;
 }
+<<<<<<< HEAD
 /* line 1390, ../sass/custom.scss */
+=======
+/* line 1266, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container label {
   display: block;
   float: left;
@@ -1655,17 +1725,29 @@ html body #content.login form .container label {
   height: 30px;
   margin: 5px;
 }
+<<<<<<< HEAD
 /* line 1396, ../sass/custom.scss */
+=======
+/* line 1272, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container label#username {
   background: url("../img/user_icon.png");
   background-size: cover;
 }
+<<<<<<< HEAD
 /* line 1400, ../sass/custom.scss */
+=======
+/* line 1276, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container label#password {
   background: url("../img/password_icon.png");
   background-size: cover;
 }
+<<<<<<< HEAD
 /* line 1405, ../sass/custom.scss */
+=======
+/* line 1281, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container input {
   color: #a8a8a7 !important;
   font: 1.5rem 'biko';
@@ -1676,7 +1758,11 @@ html body #content.login form .container input {
   border: none;
   padding: 0 10px;
 }
+<<<<<<< HEAD
 /* line 1415, ../sass/custom.scss */
+=======
+/* line 1291, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container .select2-container {
   height: 40px;
   line-height: 40px;
@@ -1684,35 +1770,59 @@ html body #content.login form .container .select2-container {
   font: 1.5rem 'biko';
   color: #a8a8a7;
 }
+<<<<<<< HEAD
 /* line 1421, ../sass/custom.scss */
+=======
+/* line 1297, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container .select2-container span, html body #content.login form .container .select2-container a {
   color: #a8a8a7;
   text-align: center;
   height: 40px !important;
   line-height: 40px !important;
 }
+<<<<<<< HEAD
 /* line 1428, ../sass/custom.scss */
 html body #content.login form .container .select2-container .select2-choice .select2-arrow {
   width: 40px;
 }
 /* line 1430, ../sass/custom.scss */
+=======
+/* line 1304, ../sass/custom.scss */
+html body #content.login form .container .select2-container .select2-choice .select2-arrow {
+  width: 40px;
+}
+/* line 1306, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .container .select2-container .select2-choice .select2-arrow b {
   width: 18px;
   margin: 0 11px;
   background-position-y: 7px;
 }
+<<<<<<< HEAD
 /* line 1438, ../sass/custom.scss */
 html body #content.login form .container .select2-results .select2-result-label {
   color: #a8a8a7 !important;
 }
 /* line 1442, ../sass/custom.scss */
+=======
+/* line 1314, ../sass/custom.scss */
+html body #content.login form .container .select2-results .select2-result-label {
+  color: #a8a8a7 !important;
+}
+/* line 1318, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form .error_message {
   margin: auto;
   margin-bottom: 20px;
   color: #fb0301;
   font: 1.5rem 'biko';
 }
+<<<<<<< HEAD
 /* line 1448, ../sass/custom.scss */
+=======
+/* line 1324, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.login form button {
   border-radius: 5px;
   background: #0fa7b7;
@@ -1724,19 +1834,31 @@ html body #content.login form button {
   line-height: 40px;
   cursor: pointer;
 }
+<<<<<<< HEAD
 /* line 1461, ../sass/custom.scss */
+=======
+/* line 1337, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container {
   padding: 30px;
   overflow: auto;
   margin: auto;
 }
+<<<<<<< HEAD
 /* line 1465, ../sass/custom.scss */
+=======
+/* line 1341, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list {
   text-align: center;
   padding: 10px;
   margin: 15px auto 100px;
 }
+<<<<<<< HEAD
 /* line 1469, ../sass/custom.scss */
+=======
+/* line 1345, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list li {
   display: inline-block;
   position: relative;
@@ -1746,20 +1868,29 @@ html body #content.crud-container .list li {
   color: #178098;
   text-align: left;
 }
+<<<<<<< HEAD
 /* line 1478, ../sass/custom.scss */
+=======
+/* line 1354, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list li .actions {
   text-align: right;
   position: absolute;
   top: 17px;
   right: 20px;
 }
+<<<<<<< HEAD
 /* line 1483, ../sass/custom.scss */
+=======
+/* line 1359, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list li .actions a {
   display: inline-block;
   width: 20px;
   height: 20px;
   background-size: cover;
 }
+<<<<<<< HEAD
 /* line 1489, ../sass/custom.scss */
 html body #content.crud-container .list li .actions .update {
   background-image: url("../img/crud/update.png");
@@ -1777,6 +1908,25 @@ html body #content.crud-container .list li .actions .go {
   background-image: url("../img/crud/go.png");
 }
 /* line 1503, ../sass/custom.scss */
+=======
+/* line 1365, ../sass/custom.scss */
+html body #content.crud-container .list li .actions .update {
+  background-image: url("../img/crud/update.png");
+}
+/* line 1369, ../sass/custom.scss */
+html body #content.crud-container .list li .actions .delete {
+  background-image: url("../img/crud/delete.png");
+}
+/* line 1372, ../sass/custom.scss */
+html body #content.crud-container .list li .actions .add {
+  background-image: url("../img/crud/plus.png");
+}
+/* line 1375, ../sass/custom.scss */
+html body #content.crud-container .list li .actions .go {
+  background-image: url("../img/crud/go.png");
+}
+/* line 1379, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list li:after {
   content: "";
   display: block;
@@ -1787,125 +1937,221 @@ html body #content.crud-container .list li:after {
   right: 70px;
   top: 20%;
 }
+<<<<<<< HEAD
 /* line 1514, ../sass/custom.scss */
+=======
+/* line 1390, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list li.add, html body #content.crud-container .list li.go {
   background-color: #0fa7b7;
   color: white;
   padding: 20px 70px 20px 20px;
 }
+<<<<<<< HEAD
 /* line 1518, ../sass/custom.scss */
 html body #content.crud-container .list li.add:after, html body #content.crud-container .list li.go:after {
   right: 45px;
 }
 /* line 1523, ../sass/custom.scss */
+=======
+/* line 1394, ../sass/custom.scss */
+html body #content.crud-container .list li.add:after, html body #content.crud-container .list li.go:after {
+  right: 45px;
+}
+/* line 1399, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list tr {
   margin: 10px;
   padding: 20px;
 }
+<<<<<<< HEAD
 /* line 1526, ../sass/custom.scss */
 html body #content.crud-container .list tr th, html body #content.crud-container .list tr td {
   padding: 15px;
 }
 /* line 1529, ../sass/custom.scss */
+=======
+/* line 1402, ../sass/custom.scss */
+html body #content.crud-container .list tr th, html body #content.crud-container .list tr td {
+  padding: 15px;
+}
+/* line 1405, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list tr th {
   color: white;
   background: #0fa7b7;
 }
+<<<<<<< HEAD
 /* line 1533, ../sass/custom.scss */
+=======
+/* line 1409, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list tr td {
   position: relative;
   color: #0fa7b7;
   background-color: #d1cece;
 }
+<<<<<<< HEAD
 /* line 1537, ../sass/custom.scss */
 html body #content.crud-container .list tr td.update, html body #content.crud-container .list tr td.delete {
   padding: 0;
 }
 /* line 1539, ../sass/custom.scss */
+=======
+/* line 1413, ../sass/custom.scss */
+html body #content.crud-container .list tr td.update, html body #content.crud-container .list tr td.delete {
+  padding: 0;
+}
+/* line 1415, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list tr td.update a, html body #content.crud-container .list tr td.delete a {
   height: 100%;
   width: 100%;
   display: inline-block;
 }
+<<<<<<< HEAD
 /* line 1545, ../sass/custom.scss */
+=======
+/* line 1421, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list tr td.update {
   background: url("../img/crud/update.png") no-repeat #d1cece center;
   background-size: auto 30px;
 }
+<<<<<<< HEAD
 /* line 1549, ../sass/custom.scss */
+=======
+/* line 1425, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .list tr td.delete {
   background: url("../img/crud/delete.png") no-repeat #d1cece center;
   background-size: auto 30px;
 }
+<<<<<<< HEAD
 /* line 1556, ../sass/custom.scss */
+=======
+/* line 1432, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container > .label {
   color: #0fa7b7;
   font: 1.2rem 'biko';
 }
+<<<<<<< HEAD
 /* line 1560, ../sass/custom.scss */
+=======
+/* line 1436, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container form {
   text-align: center;
   margin: 15px;
 }
+<<<<<<< HEAD
 /* line 1563, ../sass/custom.scss */
+=======
+/* line 1439, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container form > div {
   display: inline-block;
   text-align: right;
   color: #0fa7b7;
 }
+<<<<<<< HEAD
 /* line 1567, ../sass/custom.scss */
+=======
+/* line 1443, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container form > div label, html body #content.crud-container form > div input {
   color: #0fa7b7;
   padding: 5px;
   width: 260px;
 }
+<<<<<<< HEAD
 /* line 1571, ../sass/custom.scss */
+=======
+/* line 1447, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container form > div label#immersiveMovie_file, html body #content.crud-container form > div label#image_file, html body #content.crud-container form > div input#immersiveMovie_file, html body #content.crud-container form > div input#image_file {
   padding: 0;
   width: 274px;
 }
+<<<<<<< HEAD
 /* line 1576, ../sass/custom.scss */
 html body #content.crud-container form > div .select2-container {
   width: 274px;
 }
 /* line 1578, ../sass/custom.scss */
+=======
+/* line 1452, ../sass/custom.scss */
+html body #content.crud-container form > div .select2-container {
+  width: 274px;
+}
+/* line 1454, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container form > div .select2-container a {
   border-radius: 0;
   color: #0fa7b7;
 }
+<<<<<<< HEAD
 /* line 1586, ../sass/custom.scss */
+=======
+/* line 1462, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container form button {
   padding: 5px;
   color: #0fa7b7;
 }
+<<<<<<< HEAD
 /* line 1591, ../sass/custom.scss */
 html body #content.crud-container .filter {
   margin: 15px;
 }
 /* line 1593, ../sass/custom.scss */
+=======
+/* line 1467, ../sass/custom.scss */
+html body #content.crud-container .filter {
+  margin: 15px;
+}
+/* line 1469, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .filter label {
   padding: 5px;
   color: #0fa7b7;
 }
+<<<<<<< HEAD
 /* line 1597, ../sass/custom.scss */
+=======
+/* line 1473, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body #content.crud-container .filter input {
   padding: 5px;
   width: 150px;
 }
+<<<<<<< HEAD
 /* line 1604, ../sass/custom.scss */
+=======
+/* line 1480, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body .cm_images {
   background: white;
   margin: auto;
   width: 100%;
 }
+<<<<<<< HEAD
 /* line 1609, ../sass/custom.scss */
+=======
+/* line 1484, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body .cm_images .image embed {
   margin: auto;
   display: block;
   width: 100%;
   height: 100%;
 }
+<<<<<<< HEAD
 /* line 1618, ../sass/custom.scss */
+=======
+/* line 1493, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body footer .fake_scrollbar {
   position: fixed;
   bottom: 0;
@@ -1913,7 +2159,11 @@ html body footer .fake_scrollbar {
   width: 100%;
   background: #343434;
 }
+<<<<<<< HEAD
 /* line 1624, ../sass/custom.scss */
+=======
+/* line 1499, ../sass/custom.scss */
+>>>>>>> 5a7798bb0b8b70bb756787573690ca4bd8e975a4
 html body footer .fake_scrollbar:before {
   content: "";
   position: absolute;
