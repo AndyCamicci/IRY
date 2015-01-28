@@ -111,25 +111,6 @@ class RESTController extends Controller
         return $response;
     }
 
-
-    public function getSerieCookie() {
-        $request = $this->get('request');
-        $cookies = $request->cookies;
-
-        $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository("IRYAppliBundle:Serie");
-
-        if ($cookies->has('serie')) {
-            $serieCookie = $cookies->get('serie');
-        } else {
-            $serieCookie = 0;
-        }
-
-        $serie = $repo->find($serieCookie);
-
-        return $serie;
-    }
-
     public function postStepAction(Step $step, Pilot $pilot, $success) {
 
         $time_start = microtime(true);
