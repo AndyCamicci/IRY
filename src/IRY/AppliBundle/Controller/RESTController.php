@@ -55,6 +55,42 @@ class RESTController extends Controller
         $response->setData($data);
         return $response;
     }
+    public function sendImageAction ($url){
+        $response = new JsonResponse();
+        $serie = $this->getSerieCookie();
+
+        if ($serie == null) {
+            $response->setData(array("error" => "Serie is null"));
+            return $response;
+        }
+
+        $serie->setCommand(Serie::COMMAND_SHOWIMAGE . " " . $url);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($serie);
+        $em->flush();
+
+        $response->setData(array("success" => true));
+
+        return $response;
+    }
+    
+    private function getSerieCookie() {
+        $request = $this->get('request');
+        $cookies = $request->cookies;
+
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository("IRYAppliBundle:Serie");
+
+        if ($cookies->has('serie')) {
+            $serieCookie = $cookies->get('serie');
+        } else {
+            $serieCookie = 0;
+        }
+
+        $serie = $repo->find($serieCookie);
+
+        return $serie;
+    }
 
     public function demonstrativeCourseShowAction(Course $course, Step $step) {
         $response = new JsonResponse();

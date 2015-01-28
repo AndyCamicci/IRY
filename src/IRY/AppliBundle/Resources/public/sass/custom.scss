@@ -1096,6 +1096,7 @@ html{
 				bottom: 0;
 				right: 0;
 				left: 0;
+
 				.schema_image_plus{
 					position: absolute;
 					background: $grey-dark-color url(../img/moins_entoure.png) center no-repeat;
@@ -1110,9 +1111,45 @@ html{
 					}
 				}
 				.schema_image_wrap{
+					/*position: fixed;*/
+					/*bottom: 0;*/
+					background: $grey-light-color;
+					border-top: solid 2px $grey-dark-color;
 					position: relative;
 					width: 100%;
 					height: 126px;
+					margin: auto;
+					ul{
+						white-space: nowrap;
+						padding: 10px;
+						li{
+							display: inline-block;
+							text-align: center;
+							margin: 0 5px;
+							cursor: pointer;
+							span{
+								display: block;
+								font: 1rem 'biko';
+								color: $grey-dark-color;
+								margin: 0 0 5px 0;
+							}
+							img{
+								height: 60px;
+								border: solid 1px $grey-dark-color;
+							}
+							&:hover, &:active{
+								span{
+ 									color: $blue-color;
+								}
+								img{
+									border-color : $blue-color;
+								}
+							}
+						}
+					}
+					&.close{
+						height: 1px;
+					}
 				}
 			}
 			section#dc{
@@ -1124,6 +1161,7 @@ html{
 					ul{
 						li{
 							background:$grey-color;
+							color: $grey-dark-dark-color;
 							padding: 10px;
 							box-shadow: -4px 4px $grey-dark-color; 
 							margin-bottom: 10px;
@@ -1131,8 +1169,8 @@ html{
 							&:active{
 								box-shadow : 0px 0px $grey-dark-color;
 								margin : 4px 4px 10px 0;
-							} 
-							div.element{
+							} 					
+				           div.element{
 								position: relative;
 								display: inline-block;
 								vertical-align: middle;
@@ -1144,7 +1182,7 @@ html{
 							.pilot_name {
 								width: 50%;
 								float: left;
-								margin-top:	7px;
+								margin-top: 7px;
 							}
 							.stats {
 								width: 50%;
@@ -1213,7 +1251,155 @@ html{
 								}
 							}							
 						}
+
+					.list{
+						position: relative;
+						padding-bottom: 40px;
+						height: 100%;
+						overflow: auto;
+						ul{
+							padding: 10px;
+							overflow: auto;
+							li.step{
+								background:$grey-color;
+								padding: 10px;
+								height:30px;
+								margin: 0px 0px 10px 0px;
+								@transition(all, 0.3, ease-in-out);
+								div.element{
+									position: relative;
+									display: inline-block;
+									vertical-align: middle;
+									span{
+										font-size: 1.2rem;
+									}
+								}
+								.step_name, .success, .errors {
+									span{
+										font-size: 1.3rem;
+										padding: 5px 0;
+										color: $grey-dark-dark-color;
+									}
+								}
+								.step_name{
+									width: 200px;
+									margin : 6px 10px;
+									float:left;
+									text-align: left;
+								}
+								.success, .errors{
+									width: 75px;
+									height: 30px;
+									span{
+										margin-right: 40px;
+										display: inline-block;
+										/*padding: 5px 10px;*/
+										/*padding-right: 50px;*/
+										&:after{
+											content:"";
+											width:25px;
+											height: 25px;
+											position: absolute;
+											right: 15px;
+											top: 1px;
+										}
+									}
+								}
+								.success, .errors{
+									text-align: right;
+									float:right;
+									span{
+										padding: 6px 10px;
+									}
+								}
+								.success{
+									border-right: 2px solid $blue-color;
+									span{
+										&:after{
+											background: url(../img/success.png);
+											background-size: contain;
+										}
+									}
+								}
+								.errors{
+									span{
+										&:after{
+											background: url(../img/errors.png);
+											background-size: contain;
+										}
+									}
+								}
+								.favorite{
+									height:30px;
+									width:30px;
+									cursor:pointer;
+									float:left;
+									background: url(../img/fav_off.png);
+									background-size:cover;
+									&.is_favorite{
+										background: url(../img/fav_on.png);
+										background-size:cover;
+									}
+								}
+								.no-favorite {
+									height:30px;
+									width:30px;
+									float:left;
+								}
+							}
+							li.li_head{
+								height:25px;
+								padding: 0 10px;
+								.list_title{
+									float:right;
+									width:75px;
+									color:$grey-dark-color;
+								}
+							}
+						}
+						&:after{
+							content: "";
+							position: absolute;
+							bottom: 0;
+							height: 50px;
+							/*width: 100%;*/
+							left: 0;
+							right: 0;
+							background: url(../img/arrow_down.png) center no-repeat;
+						}
 					}
+					}
+					.cat{
+							   height:25px;
+						       position: relative;
+							   text-align: right;
+							   /*float: left;*/							   							   
+							   color:$grey-dark-color;					   
+
+							   div{
+							   	display: inline-block;
+							   }
+				        }
+				        .success_1{	
+				           margin-bottom:10px;	
+				           font-size: 17px;		        	
+				           	span{				         
+				        		padding-right:20px;
+				        	}
+				        }
+				        .errors_1{
+				        	font-size: 17px;
+				        	span{
+				        		padding-right: 15px;
+				        	}
+				        }
+				        .favorites_1{
+				        	font-size: 17px;
+				        	text-align: left;
+				        	span{
+				        		padding: 10px;
+				        	}
+				        }
 				}
 			}
 			&.login{
@@ -1447,6 +1633,7 @@ html{
 			}
 		}
 		.cm_images{
+			background: white;
 			margin: auto;
 			width: 100%;
 			.image{

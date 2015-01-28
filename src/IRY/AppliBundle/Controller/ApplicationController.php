@@ -186,8 +186,28 @@ class ApplicationController extends Controller
     }
     public function debriefingAction(Course $course_id)
     {
+        $em = $this->getDoctrine()->getManager();
+        $repo_pilots = $em->getRepository('IRYAppliBundle:Pilot');
+        $pilots = $repo_pilots->findAll();
+
+        $repo_results = $em->getRepository('IRYAppliBundle:Result');
+        $results = $repo_results->findAll();
+        $results_errors = new \Doctrine\Common\Collections\ArrayCollection();
+        $results_success = new \Doctrine\Common\Collections\ArrayCollection();
+        foreach ($results as $result => $value) {
+            if ($value->getIsError()) {
+                $results_errors[] = $value;
+            }
+            else{
+                $results_success[] = $value;                
+            }
+        }
         return $this->render('IRYAppliBundle:Application:debriefing.html.twig', array(
-            "course" => $course_id
+            'results' => $results, 
+            'results_errors' => $results_errors, 
+            'results_success' => $results_success, 
+            "course" => $course_id,
+            "pilots" => $pilots
         )); 
     }
     public function crudAction()
