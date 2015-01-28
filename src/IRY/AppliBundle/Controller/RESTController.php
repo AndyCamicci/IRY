@@ -124,7 +124,7 @@ class RESTController extends Controller
         $result->setIsFavorite(false);
         $result->setPilot($pilot);
         $result->setStep($step);
-        $result->setIsError($success === "1");
+        $result->setIsError(strval($success) === "0");
 
         $em->persist($result);
         $em->flush();
