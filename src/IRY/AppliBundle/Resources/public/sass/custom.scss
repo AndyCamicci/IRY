@@ -1159,6 +1159,17 @@ html{
 					padding: 30px 0;
 					margin: auto;
 					ul{
+						.titles{
+							height:25px;
+							padding: 0 10px;
+							/*text-align: center;*/
+							/*width: 80px;*/
+							span{
+								float:right;
+								width:80px;
+								color:$grey-dark-color;
+							}
+						}
 						li{
 							background:$grey-color;
 							color: $grey-dark-dark-color;
@@ -1169,8 +1180,8 @@ html{
 							&:active{
 								box-shadow : 0px 0px $grey-dark-color;
 								margin : 4px 4px 10px 0;
-							} 					
-				           div.element{
+							} 
+							div.element{
 								position: relative;
 								display: inline-block;
 								vertical-align: middle;
@@ -1214,12 +1225,14 @@ html{
 									}
 								}
 							}
-							.success, .errors{
-								border-right: 2px solid $blue-color;
-								text-align: right;
+							.success, .errors, .favorites{
 								span{
 									padding: 6px 10px;
 								}
+							}
+							.success, .errors{
+								border-right: 2px solid $blue-color;
+								text-align: right;
 							}
 							.success{
 								span{
@@ -1251,155 +1264,123 @@ html{
 								}
 							}							
 						}
-
-					.list{
-						position: relative;
-						padding-bottom: 40px;
-						height: 100%;
-						overflow: auto;
-						ul{
-							padding: 10px;
+						.list{
+							position: relative;
+							padding-bottom: 40px;
+							height: 100%;
 							overflow: auto;
-							li.step{
-								background:$grey-color;
+							ul{
 								padding: 10px;
-								height:30px;
-								margin: 0px 0px 10px 0px;
-								@transition(all, 0.3, ease-in-out);
-								div.element{
-									position: relative;
-									display: inline-block;
-									vertical-align: middle;
-									span{
-										font-size: 1.2rem;
-									}
-								}
-								.step_name, .success, .errors {
-									span{
-										font-size: 1.3rem;
-										padding: 5px 0;
-										color: $grey-dark-dark-color;
-									}
-								}
-								.step_name{
-									width: 200px;
-									margin : 6px 10px;
-									float:left;
-									text-align: left;
-								}
-								.success, .errors{
-									width: 75px;
-									height: 30px;
-									span{
-										margin-right: 40px;
+								overflow: auto;
+								li.step{
+									background:$grey-color;
+									padding: 10px;
+									height:30px;
+									margin: 0px 0px 10px 0px;
+									@transition(all, 0.3, ease-in-out);
+									div.element{
+										position: relative;
 										display: inline-block;
-										/*padding: 5px 10px;*/
-										/*padding-right: 50px;*/
-										&:after{
-											content:"";
-											width:25px;
-											height: 25px;
-											position: absolute;
-											right: 15px;
-											top: 1px;
+										vertical-align: middle;
+										span{
+											font-size: 1.2rem;
 										}
 									}
-								}
-								.success, .errors{
-									text-align: right;
-									float:right;
-									span{
-										padding: 6px 10px;
-									}
-								}
-								.success{
-									border-right: 2px solid $blue-color;
-									span{
-										&:after{
-											background: url(../img/success.png);
-											background-size: contain;
+									.step_name, .success, .errors {
+										span{
+											font-size: 1.3rem;
+											padding: 5px 0;
+											color: $grey-dark-dark-color;
 										}
 									}
-								}
-								.errors{
-									span{
-										&:after{
-											background: url(../img/errors.png);
-											background-size: contain;
+									.step_name{
+										width: 200px;
+										margin : 6px 10px;
+										float:left;
+										text-align: left;
+									}
+									.success, .errors{
+										width: 75px;
+										height: 30px;
+										span{
+											margin-right: 40px;
+											display: inline-block;
+											/*padding: 5px 10px;*/
+											/*padding-right: 50px;*/
+											&:after{
+												content:"";
+												width:25px;
+												height: 25px;
+												position: absolute;
+												right: 15px;
+												top: 1px;
+											}
 										}
 									}
-								}
-								.favorite{
-									height:30px;
-									width:30px;
-									cursor:pointer;
-									float:left;
-									background: url(../img/fav_off.png);
-									background-size:cover;
-									&.is_favorite{
-										background: url(../img/fav_on.png);
+									.success, .errors{
+										text-align: right;
+										float:right;
+										span{
+											padding: 6px 10px;
+										}
+									}
+									.success{
+										border-right: 2px solid $blue-color;
+										span{
+											&:after{
+												background: url(../img/success.png);
+												background-size: contain;
+											}
+										}
+									}
+									.errors{
+										span{
+											&:after{
+												background: url(../img/errors.png);
+												background-size: contain;
+											}
+										}
+									}
+									.favorite{
+										height:30px;
+										width:30px;
+										cursor:pointer;
+										float:left;
+										background: url(../img/fav_off.png);
 										background-size:cover;
+										&.is_favorite{
+											background: url(../img/fav_on.png);
+											background-size:cover;
+										}
+									}
+									.no-favorite {
+										height:30px;
+										width:30px;
+										float:left;
 									}
 								}
-								.no-favorite {
-									height:30px;
-									width:30px;
-									float:left;
+								li.li_head{
+									height:25px;
+									padding: 0 10px;
+									.list_title{
+										float:right;
+										width:75px;
+										color:$grey-dark-color;
+									}
 								}
 							}
-							li.li_head{
-								height:25px;
-								padding: 0 10px;
-								.list_title{
-									float:right;
-									width:75px;
-									color:$grey-dark-color;
-								}
+							&:after{
+								content: "";
+								position: absolute;
+								bottom: 0;
+								height: 50px;
+								/*width: 100%;*/
+								left: 0;
+								right: 0;
+								background: url(../img/arrow_down.png) center no-repeat;
 							}
 						}
-						&:after{
-							content: "";
-							position: absolute;
-							bottom: 0;
-							height: 50px;
-							/*width: 100%;*/
-							left: 0;
-							right: 0;
-							background: url(../img/arrow_down.png) center no-repeat;
-						}
 					}
-					}
-					.cat{
-							   height:25px;
-						       position: relative;
-							   text-align: right;
-							   /*float: left;*/							   							   
-							   color:$grey-dark-color;					   
-
-							   div{
-							   	display: inline-block;
-							   }
-				        }
-				        .success_1{	
-				           margin-bottom:10px;	
-				           font-size: 17px;		        	
-				           	span{				         
-				        		padding-right:20px;
-				        	}
-				        }
-				        .errors_1{
-				        	font-size: 17px;
-				        	span{
-				        		padding-right: 15px;
-				        	}
-				        }
-				        .favorites_1{
-				        	font-size: 17px;
-				        	text-align: left;
-				        	span{
-				        		padding: 10px;
-				        	}
-				        }
 				}
 			}
 			&.login{

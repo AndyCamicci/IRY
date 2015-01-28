@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header_back_btn %}
-    <a href="{{ path('iry_appli_choixcours', {helicopter_id: course.subTheme.theme.helicopter.id}) }}" id="back_btn">
+    <a href="{{ path('iry_appli_ep', {course_id: course.id}) }}" id="back_btn">
         <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
     </a>
 {% endblock %}
