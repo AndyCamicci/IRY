@@ -156,13 +156,23 @@ $(document).ready(function() {
 			console.log(e, $favorite);
 		});
 	});
-	$("select").select2();
-
+	if ($("select").length > 0) {
+		$("select").select2();
+	}
 
 	/* CRUD */
 	if ($(".crud-container").length > 0) {
 		crudFilter();
 	}
+
+	$(".imgschema").on("click", function() {
+		var url = $(this).attr("src")
+        // url = encodeURIComponent(url);
+        url = imageUrl.replace("0", url);
+        $.ajax(url).done(function(e) {
+            console.log(e);
+        });
+    });
 });
 
 function crudFilter() {

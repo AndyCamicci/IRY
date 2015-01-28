@@ -145,6 +145,13 @@ iry_rest_get_course_instruction:
     defaults: {_controller: IRYAppliBundle:REST:getCourseInstructions}
     methods:   [GET]
 
-
 # iry_folder_theoretical_course:
 #     defaults: { /src/IRY/AppliBundle/Resources/public/cm }
+
+
+iry_rest_send_image:
+    path:   /rest/sendImage/{url}
+    defaults: {_controller: IRYAppliBundle:REST:sendImage}
+    methods:   [GET]
+    requirements:
+        url: .+
