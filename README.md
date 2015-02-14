@@ -24,7 +24,7 @@ Le dépot Github de cette application se trouve à l'adresse suivante : [https:/
 Un guide utilisateur se trouve à l'adresse suivante : [https://github.com/AndyCamicci/IRY/tree/master/Documents/documentation.pdf][5].
 
 [1]:  https://github.com/AndyCamicci/IRYImmersiveApplication
-[2]:  https://github.com/AndyCamicci/IRY/tree/master/web
+[2]:  https://github.com/AndyCamicci/IRY/tree/master/web#readme
 [3]:  https://developer.oculus.com/downloads/#version=0.4.4-beta
 [4]:  https://developer.leapmotion.com/
-[5]:  https://github.com/AndyCamicci/IRY/tree/master/Documents/documentation.pdf
+[5]:  https://github.com/AndyCamicci/IRY/tree/master/Documents/documentation.pdf?raw=true
