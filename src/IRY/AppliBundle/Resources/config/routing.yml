@@ -23,6 +23,9 @@ iry_appli_ep_pilot:
 iry_appli_dc:
     path:   /defriefing/{course_id}
     defaults: {_controller: "IRYAppliBundle:Application:debriefing"}
+iry_appli_dc_step:
+    path:   /defriefing/{course}/{step}
+    defaults: {_controller: "IRYAppliBundle:Application:debriefingStep"}
 
 iry_crud:
     path:   /crud

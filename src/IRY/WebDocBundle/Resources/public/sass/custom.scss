@@ -98,6 +98,7 @@ html{
 			position: fixed;
 			top: 0;
 			left: 0;
+			z-index: 2;
 			img {
 				margin-left: 23px;
 				margin-top: 27px;
@@ -467,7 +468,7 @@ html{
 							&.anais 	  { background-image: url(../images/equipe/anais-gris.png); }
 							&.madeline 	  { background-image: url(../images/equipe/mad-gris.png); }
 							&.bin 		  { background-image: url(../images/equipe/bin-gris.png); }
-							&.jeanedouard { background-image: url(../images/equipe/JE-gris.png); }
+							&.jeanedouard { background-image: url(../images/equipe/je-gris.png); }
 							&.celtill 	  { background-image: url(../images/equipe/celt-gris.png); }
 							&.manon 	  { background-image: url(../images/equipe/manon-gris.png); }
 							&.fabio 	  { background-image: url(../images/equipe/fabio-gris.png); }
@@ -486,7 +487,7 @@ html{
 							&.anais.active, &.anais:hover 			  { background-image: url(../images/equipe/anais-couleur.png); }
 							&.madeline.active, &.madeline:hover 	  { background-image: url(../images/equipe/mad-couleur.png); }
 							&.bin.active, &.bin:hover 				  { background-image: url(../images/equipe/bin-couleur.png); }
-							&.jeanedouard.active, &.jeanedouard:hover { background-image: url(../images/equipe/JE-couleur.png); }
+							&.jeanedouard.active, &.jeanedouard:hover { background-image: url(../images/equipe/je-couleur.png); }
 							&.celtill.active, &.celtill:hover 		  { background-image: url(../images/equipe/celt-couleur.png); }
 							&.manon.active, &.manon:hover 			  { background-image: url(../images/equipe/manon-couleur.png); }
 							&.fabio.active, &.fabio:hover 			  { background-image: url(../images/equipe/fabio-couleur.png); }
@@ -783,4 +784,31 @@ html{
 	display:block;
 	margin:auto;
 	width: 100%;
+}
+.pause {
+	background: rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: none;
+}
+.pause-icon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -35px;
+	margin-left: -27px;
+}
+
+.pause-icon:before, .pause-icon:after {
+	content: "";
+	display: block;
+	background-color: rgba(255,255,255, 0.7);
+	height: 70px;
+	width: 15px;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 0px 6px;
 }

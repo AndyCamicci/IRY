@@ -6,6 +6,12 @@
     Helicopters
 {% endblock %}
 
+{% block header_back_btn %}
+    <a href="{{ path('iry_crud_heli_list') }}" id="back_btn">
+        <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
+    </a>
+{% endblock %}
+
 {% block body %}
 	<div id="content" class="crud-container">
 		<label class="label">Update an Helicopter</label>

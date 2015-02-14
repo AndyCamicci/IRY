@@ -210,6 +210,17 @@ class ApplicationController extends Controller
             "pilots" => $pilots
         )); 
     }
+
+    public function debriefingStepAction(Course $course, Step $step) {
+
+        return $this->render('IRYAppliBundle:Application:debriefingStep.html.twig', array(
+            'course' => $course,
+            'step' => $step,
+
+        ));
+
+    }
+
     public function crudAction()
     {
         return $this->render('IRYAppliBundle:Crud:crud.html.twig'); 

@@ -3,19 +3,21 @@
 {% block body %}
 		
     <div class="content full video">
+      <div class="pause"><i class="pause-icon"></i></div>
       <video id="v1" class="content-video">    
-        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mov">
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mp4">
       </video>
     </div>
     <div class="barre-wrap">
       <h2>IRY - Vidéo concept</h2>
       <div id="defile">
-        <div id="precharge"></div> 
+        <div id="precharge">
+        </div> 
       </div>
     </div>
     <script>
       var videosSources = [
-        "{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mov"
+        "{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mp4",
       ];
     </script>
     

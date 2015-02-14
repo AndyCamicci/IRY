@@ -3,8 +3,9 @@
 {% block body %}
 		
     <div class="content full video">
+      <div class="pause"><i class="pause-icon"></i></div>
       <video id="v1" class="content-video">    
-        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueOculus.mov" type="video/mp4">
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueOculus.mp4">
       </video>
     </div>
     <div class="barre-wrap">
@@ -18,8 +19,8 @@
     </div>
     <script>
       var videosSources = [
-        "{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueOculus.mov",
-        "{{ asset('bundles/irywebdoc') }}/videos/SpecialistesRV.mov",
+        "{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueOculus.mp4",
+        "{{ asset('bundles/irywebdoc') }}/videos/SpecialistesRV.mp4",
       ];
     </script>
     
