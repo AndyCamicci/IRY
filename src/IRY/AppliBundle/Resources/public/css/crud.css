@@ -1,73 +1,51 @@
-/* line 15, ../sass/crud.scss */
 *, *:before, *:after {
-  /*box-sizing: border-box;*/
-}
+  /*box-sizing: border-box;*/ }
 
-/* line 18, ../sass/crud.scss */
 .crud-container {
   padding: 30px;
-  margin: auto;
-}
-/* line 21, ../sass/crud.scss */
-.crud-container .list {
-  display: inline-block;
-  text-align: left;
-  margin-top: 10px;
-}
-/* line 26, ../sass/crud.scss */
-.crud-container .list li {
-  display: inline-block;
-  position: relative;
-  margin: 10px;
-  background-color: #d1cece;
-  padding: 20px 80px 20px 20px;
-  color: #178098;
-  text-align: left;
-}
-/* line 35, ../sass/crud.scss */
-.crud-container .list li .actions {
-  text-align: right;
-  position: absolute;
-  top: 17px;
-  right: 20px;
-}
-/* line 40, ../sass/crud.scss */
-.crud-container .list li .actions a {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: cover;
-}
-/* line 46, ../sass/crud.scss */
-.crud-container .list li .actions .update {
-  background-image: url("../img/crud/update.png");
-}
-/* line 50, ../sass/crud.scss */
-.crud-container .list li .actions .delete {
-  background-image: url("../img/crud/delete.png");
-}
-/* line 53, ../sass/crud.scss */
-.crud-container .list li .actions .add {
-  background-image: url("../img/crud/plus.png");
-}
-/* line 57, ../sass/crud.scss */
-.crud-container .list li:after {
-  content: "";
-  display: block;
-  border-left: 1px white solid;
-  width: 10px;
-  height: 60%;
-  position: absolute;
-  right: 60px;
-  top: 20%;
-}
-/* line 68, ../sass/crud.scss */
-.crud-container .list li.add {
-  background-color: #0fa7b7;
-  color: white;
-  padding: 20px 60px 20px 20px;
-}
-/* line 72, ../sass/crud.scss */
-.crud-container .list li.add:after {
-  right: 40px;
-}
+  margin: auto; }
+  .crud-container .list {
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px; }
+    .crud-container .list li {
+      display: inline-block;
+      position: relative;
+      margin: 10px;
+      background-color: #d1cece;
+      padding: 20px 80px 20px 20px;
+      color: #178098;
+      text-align: left; }
+      .crud-container .list li .actions {
+        text-align: right;
+        position: absolute;
+        top: 17px;
+        right: 20px; }
+        .crud-container .list li .actions a {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-size: cover; }
+        .crud-container .list li .actions .update {
+          background-image: url("../img/crud/update.png"); }
+        .crud-container .list li .actions .delete {
+          background-image: url("../img/crud/delete.png"); }
+        .crud-container .list li .actions .add {
+          background-image: url("../img/crud/plus.png"); }
+      .crud-container .list li:after {
+        content: "";
+        display: block;
+        border-left: 1px white solid;
+        width: 10px;
+        height: 60%;
+        position: absolute;
+        right: 60px;
+        top: 20%; }
+      .crud-container .list li.add {
+        background-color: #0fa7b7;
+        color: white;
+        padding: 20px 60px 20px 20px; }
+        .crud-container .list li.add:after {
+          right: 40px; }
+
+/*# sourceMappingURL=crud.css.map */

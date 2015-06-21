@@ -38,7 +38,7 @@
   -webkit-transform-origin:$x $y;
 }
 
-@mixin transition($prop, $time, $ease, $delay:0){
+@mixin transition($prop, $time, $ease, $delay:0s){
       transition: $prop $time $ease $delay;
        -o-transition: $prop $time $ease $delay;
     -ms-transition: $prop $time $ease $delay;
