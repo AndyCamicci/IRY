@@ -3,8 +3,9 @@
 {% block body %}
 		
     <div class="content full video">
+      <div class="pause"><i class="pause-icon"></i></div>
       <video id="v1" class="content-video">    
-        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/PiloteMonacair.mov" type="video/mp4">
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/PiloteMonacair.mp4">
       </video>
     </div>
     <div class="barre-wrap">
@@ -20,9 +21,9 @@
     </div>
     <script>
       var videosSources = [
-        "{{ asset('bundles/irywebdoc') }}/videos/PiloteMonacair.m4v",
-        "{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mov",
-        "{{ asset('bundles/irywebdoc') }}/videos/LearningByDoing.mov",
+        "{{ asset('bundles/irywebdoc') }}/videos/PiloteMonacair.mp4",
+        "{{ asset('bundles/irywebdoc') }}/videos/InstructeurAH.mp4",
+        "{{ asset('bundles/irywebdoc') }}/videos/LearningByDoing.mp4",
       ];
     </script>
     

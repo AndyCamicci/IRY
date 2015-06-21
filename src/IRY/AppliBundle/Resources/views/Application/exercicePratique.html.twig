@@ -19,32 +19,6 @@
             			{% for pilot in pilots %}
                             <a href="{{ path("iry_appli_ep_pilot", {course_id: course.id, pilot_id: pilot.id}) }}">
                                 
-<li class="pilot" data-pilot-id="{{ pilot.id }}">
-    <div class="pilot_name element">
-        <span>{{pilot.name}}</span>
-    </div>
-    
-    {% set currentStep = pilot.currentStep %}
-    <div class="step element percent">
-        <span class="bar percent-value" data-percent="{{ (currentStep is null) ? 0 : currentStep.percentInCourse}}"></span>
-        <span class="title">
-            {% if not currentStep is null %}
-                {{ pilot.currentStep.name }}
-            {% else %}
-                Pilot has not started
-            {% endif %}
-        </span>
-    </div>
-    <div class="success element">
-        <span>{{ pilot.nbSuccess }}</span>
-    </div>
-    <div class="errors element">
-        <span>{{ pilot.nbErrors }}</span>
-    </div>
-    <div class="call element">
-        <span {% if (pilot.isCalling == true) %}class="active"{% endif %} data-call-time="{{pilot.javascriptTimestampDateCalling}}"></span>
-    </div>
-</li>
                                 <li class="pilot" data-pilot-id="{{ pilot.id }}">
                                     <div class="pilot_name element">
                                         <span>{{pilot.name}}</span>
@@ -71,6 +45,7 @@
                                         <span {% if (pilot.isCalling == true) %}class="active"{% endif %} data-call-time="{{pilot.javascriptTimestampDateCalling}}"></span>
                                     </div>
                                 </li>
+                                
                             </a>
                         {% endfor %}
                     </ul>

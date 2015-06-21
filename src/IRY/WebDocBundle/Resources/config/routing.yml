@@ -13,6 +13,9 @@ iry_web_doc_leap:
 iry_web_doc_oculus:
     path:     /oculus
     defaults: { _controller: IRYWebDocBundle:Default:oculus }
+iry_web_doc_instructeur:
+    path:     /instructeur
+    defaults: { _controller: IRYWebDocBundle:Default:instructeur }
 iry_web_doc_dispositif:
     path:     /dispositif
     defaults: { _controller: IRYWebDocBundle:Default:dispositif }

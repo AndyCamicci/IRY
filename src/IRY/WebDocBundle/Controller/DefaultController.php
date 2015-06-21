@@ -42,4 +42,8 @@ class DefaultController extends Controller
     {
         return $this->render('IRYWebDocBundle:Default:leap.html.twig');
     }
+    public function instructeurAction()
+    {
+        return $this->render('IRYWebDocBundle:Default:instructeur.html.twig');
+    }
 }

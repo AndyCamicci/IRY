@@ -23,7 +23,7 @@
                 <div id="header_left" class="left">
                     {% block header_back_btn %}{% endblock %}
                     <div id="logo">
-                        <a href="c">
+                        <a href="{{path("iry_appli_home")}}">
                             <img src="{{ asset('bundles/iryappli') }}/img/logo.png" alt="Logo IRY">
                         </a>
                     </div>
@@ -41,6 +41,7 @@
         {% block footer %}{% endblock %}
         
         <script type="text/javascript" src="{{ asset('bundles/iryappli/libraries/jquery.cookies.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/iryappli/libraries/mustache.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/iryappli/js/script.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/iryappli/js/slick.min.js') }}"></script>
 

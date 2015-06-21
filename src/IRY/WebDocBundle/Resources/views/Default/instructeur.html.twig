@@ -1,0 +1,26 @@
+{% extends 'IRYWebDocBundle:Default:base.html.twig' %}		
+
+{% block body %}
+		
+    <div class="content full video">
+      <div class="pause"><i class="pause-icon"></i></div>
+      <video id="v1" class="content-video">    
+        <source class="video" src="{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueLeap.mp4">
+      </video>
+    </div>
+    <div class="barre-wrap">
+      <h2>Instructeur</h2>
+      <div id="defile">
+        <h3 class="title_video_1">Fiche technique</h3>   
+        <div id="precharge"></div>
+      </div>
+    </div>
+    <script>
+      var videosSources = [
+        "{{ asset('bundles/irywebdoc') }}/videos/FicheTechniqueLeap.mp4",
+      ];
+    </script>
+    
+{% endblock %}
+{% block footer %}
+{% endblock %}

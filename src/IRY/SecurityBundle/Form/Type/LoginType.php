@@ -14,11 +14,13 @@ class LoginType extends AbstractType
                     'attr' => array(
                         'id' => 'username',
                         'placeholder' => 'Username',
+                        'value' => 'IRYDemo',
                     )))
                 ->add('_password', 'password', array(
                     'attr' => array(
                         'id' => 'password',
                         'placeholder' => 'Password',
+                        'value' => 'airbushelicopters',
                     )))
                 ->add('serie', 'entity', array(
                     'class' => 'IRY\AppliBundle\Entity\Serie',

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header_back_btn %}
-<a href="{{ path('iry_appli_home') }}" id="back_btn">
+<a href="{{ path('iry_appli_ep', {course_id: course.id} ) }}" id="back_btn">
         <img src="{{ asset('bundles/iryappli') }}/img/fleche_gauche.png" alt="Retour accueil">
     </a>
 {% endblock %}
@@ -42,7 +42,7 @@
                                     {% set nbSuccess = nbSuccess + 1 %}
                                 {% endif %}
                             {% endfor %}
-                            <a href="">
+                            <a href="{{ path('iry_appli_dc_step', { 'course': course.id, 'step': step.id }) }}">
                                 <li class="step cf" data-pilot-id="1">
                                     <div class="pilot_name element" data-step="2">
                                         <span>{{step.name}}</span>
